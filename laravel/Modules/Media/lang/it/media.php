@@ -1,9 +1,6 @@
 <?php
 
-declare(strict_types=1);
-
 return [
-    // 'resources' => 'Risorse',
     'pages' => 'Pagine',
     'widgets' => 'Widgets',
     'navigation' => [

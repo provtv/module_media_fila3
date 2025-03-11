@@ -6,6 +6,7 @@ namespace Modules\Media\Filament\Resources\MediaConvertResource\Pages;
 
 use Filament\Tables;
 use Filament\Tables\Actions\Action;
+use Filament\Tables\Actions\DeleteBulkAction;
 use Filament\Tables\Actions\EditAction;
 use Filament\Tables\Actions\ViewAction;
 use Filament\Tables\Columns\TextColumn;
@@ -74,7 +75,7 @@ class ListMediaConverts extends XotBaseListRecords
     }
 
     /**
-     * @return array<string, Action|Tables\Actions\ActionGroup>
+     * @return array<string, Tables\Actions\Action|Tables\Actions\ActionGroup>
      */
     public function getTableActions(): array
     {
@@ -88,6 +89,16 @@ class ListMediaConverts extends XotBaseListRecords
                         ->onQueue()
                         ->execute($record);
                 }),
+        ];
+    }
+
+    /**
+     * @return array<string, Tables\Actions\BulkAction>
+     */
+    public function getTableBulkActions(): array
+    {
+        return [
+            'delete' => DeleteBulkAction::make(),
         ];
     }
 

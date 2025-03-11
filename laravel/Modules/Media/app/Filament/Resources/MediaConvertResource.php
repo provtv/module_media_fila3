@@ -6,6 +6,7 @@ namespace Modules\Media\Filament\Resources;
 
 use Filament\Forms\Components\Radio;
 use Filament\Forms\Components\TextInput;
+use Modules\Media\Filament\Resources\MediaConvertResource\Pages;
 use Modules\Media\Models\MediaConvert;
 use Modules\Xot\Filament\Resources\XotBaseResource;
 
@@ -52,6 +53,21 @@ class MediaConvertResource extends XotBaseResource
             TextInput::make('height')->numeric(),
             TextInput::make('threads'),
             TextInput::make('speed'),
+        ];
+    }
+
+    public static function getRelations(): array
+    {
+        return [
+        ];
+    }
+
+    public static function getPages(): array
+    {
+        return [
+            'index' => Pages\ListMediaConverts::route('/'),
+            'create' => Pages\CreateMediaConvert::route('/create'),
+            'edit' => Pages\EditMediaConvert::route('/{record}/edit'),
         ];
     }
 }

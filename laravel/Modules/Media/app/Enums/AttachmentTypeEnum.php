@@ -23,7 +23,7 @@ enum AttachmentTypeEnum: string implements HasLabel
             ->toArray();
     }
 
-    /* @method Modules\Media\Enums\AttachmentTypeEnum::operationCases() never returns null so it can be removed from the return type
+    /* Method Modules\Media\Enums\AttachmentTypeEnum::operationCases() never returns null so it can be removed from the return type
     public static function operationCases(): ?array
     {
         $originalCases = self::cases();
