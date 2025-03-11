@@ -15,7 +15,6 @@ namespace Modules\Activity\Models;
  * @property \Illuminate\Support\Carbon|null $updated_at
  * @property string|null $updated_by
  * @property string|null $created_by
- *
  * @method static \Illuminate\Database\Eloquent\Builder|Snapshot newModelQuery()
  * @method static \Illuminate\Database\Eloquent\Builder|Snapshot newQuery()
  * @method static \Illuminate\Database\Eloquent\Builder|Snapshot query()
@@ -28,7 +27,6 @@ namespace Modules\Activity\Models;
  * @method static \Illuminate\Database\Eloquent\Builder|Snapshot whereState($value)
  * @method static \Illuminate\Database\Eloquent\Builder|Snapshot whereUpdatedAt($value)
  * @method static \Illuminate\Database\Eloquent\Builder|Snapshot whereUpdatedBy($value)
- *
  * @mixin \Eloquent
  */
 class Snapshot extends BaseSnapshot

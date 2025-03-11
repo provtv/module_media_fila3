@@ -13,6 +13,8 @@ use Filament\Tables\Actions\BulkAction;
 use Filament\Tables\Actions\DeleteBulkAction;
 use Filament\Tables\Columns\Layout\Stack;
 use Filament\Tables\Columns\TextColumn;
+use Filament\Tables\Enums\ActionsPosition;
+use Filament\Tables\Enums\FiltersLayout;
 use Filament\Tables\Filters\BaseFilter;
 use Filament\Tables\Filters\TernaryFilter;
 use Filament\Tables\Table;
@@ -21,6 +23,7 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\Relation;
 use Modules\UI\Enums\TableLayoutEnum;
 use Modules\UI\Filament\Actions\Table\TableLayoutToggleTableAction;
+use Modules\Xot\Actions\Model\TableExistsByModelClassActions;
 use Webmozart\Assert\Assert;
 
 /**
@@ -55,14 +58,14 @@ trait HasXotTable
 
         if ($this->shouldShowAssociateAction()) {
             $actions['associate'] = Tables\Actions\AssociateAction::make()
-
+                
                 ->icon('heroicon-o-paper-clip')
                 ->tooltip(__('user::actions.associate_user'));
         }
 
         if ($this->shouldShowAttachAction()) {
             $actions['attach'] = Tables\Actions\AttachAction::make()
-
+                
                 ->icon('heroicon-o-link')
                 ->tooltip(__('user::actions.attach_user'))
                 ->preloadRecordSelect();
@@ -200,7 +203,7 @@ trait HasXotTable
 
         if ($this->shouldShowReplicateAction()) {
             $actions['replicate'] = Tables\Actions\ReplicateAction::make()
-
+                
                 ->tooltip(__('user::actions.replicate'))
                 ->iconButton();
         }
@@ -213,7 +216,7 @@ trait HasXotTable
 
         if ($this->shouldShowDetachAction()) {
             $actions['detach'] = Tables\Actions\DetachAction::make()
-
+                
                 ->tooltip(__('user::actions.detach'))
                 ->icon('heroicon-o-link-slash')
                 ->color('danger')
@@ -232,7 +235,7 @@ trait HasXotTable
     {
         return [
             'delete' => DeleteBulkAction::make()
-
+                
                 ->tooltip(__('user::actions.delete_selected'))
                 ->icon('heroicon-o-trash')
                 ->color('danger')
@@ -243,9 +246,9 @@ trait HasXotTable
     /**
      * Get model class.
      *
-     * @return class-string<Model>
-     *
      * @throws \Exception Se non viene trovata una classe modello valida
+     *
+     * @return class-string<Model>
      */
     public function getModelClass(): string
     {

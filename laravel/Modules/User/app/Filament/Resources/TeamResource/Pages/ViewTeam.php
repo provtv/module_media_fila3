@@ -5,9 +5,10 @@ declare(strict_types=1);
 namespace Modules\User\Filament\Resources\TeamResource\Pages;
 
 use Filament\Actions\EditAction;
-use Filament\Infolists\Components\Section;
 use Filament\Infolists\Components\TextEntry;
+use Filament\Infolists\Components\Section;
 use Modules\User\Filament\Resources\TeamResource;
+use Modules\Xot\Filament\Resources\Pages\XotBaseViewRecord;
 
 class ViewTeam extends \Modules\Xot\Filament\Resources\Pages\XotBaseViewRecord
 {
@@ -28,7 +29,7 @@ class ViewTeam extends \Modules\Xot\Filament\Resources\Pages\XotBaseViewRecord
                     TextEntry::make('description'),
                     TextEntry::make('created_at'),
                     TextEntry::make('updated_at'),
-                ]),
+                ])
         ];
     }
 

@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace Modules\User\Filament\Resources\UserResource\RelationManagers;
 
+use Filament\Forms\Form;
 use Filament\Tables\Actions;
 use Filament\Tables\Actions\AttachAction;
 use Filament\Tables\Actions\CreateAction;
@@ -13,12 +14,25 @@ use Filament\Tables\Enums\FiltersLayout;
 use Filament\Tables\Table;
 use Modules\User\Filament\Resources\TeamResource;
 use Modules\Xot\Filament\Resources\RelationManagers\XotBaseRelationManager;
+use Modules\Xot\Filament\Traits\HasXotTable;
+
+
+
+
+
+
+
+
 
 class TeamsRelationManager extends XotBaseRelationManager
 {
+    
+
     protected static string $relationship = 'teams';
 
     protected static ?string $recordTitleAttribute = 'name';
+
+    
 
     public function getColumns(Table $table): array
     {
@@ -50,10 +64,10 @@ class TeamsRelationManager extends XotBaseRelationManager
     {
         $actions = [
             Actions\DetachAction::make()
-
+                
                 ->tooltip(__('filament-actions::detach.single.label')),
             Actions\Action::make('make_current')
-
+                
                 ->tooltip('set current')
                 ->icon('heroicon-o-user-plus')
                 ->action(function ($record, $livewire) {

@@ -8,7 +8,7 @@ use Spatie\EventSourcing\StoredEvents\Models\EloquentStoredEvent;
 
 /**
  * Class StoredEvent.
- *
+ * 
  * Represents a stored event in the activity module.
  *
  * @property int $id
@@ -22,7 +22,6 @@ use Spatie\EventSourcing\StoredEvents\Models\EloquentStoredEvent;
  * @property string|null $updated_by
  * @property string|null $created_by
  * @property-read \Spatie\EventSourcing\StoredEvents\ShouldBeStored|null $event
- *
  * @method static \Spatie\EventSourcing\StoredEvents\Models\EloquentStoredEventQueryBuilder<static>|StoredEvent afterVersion(int $version)
  * @method static \Spatie\EventSourcing\StoredEvents\Models\EloquentStoredEventCollection<EloquentStoredEvent> all()
  * @method static \Spatie\EventSourcing\StoredEvents\Models\EloquentStoredEventCollection<EloquentStoredEvent> get()
@@ -46,7 +45,6 @@ use Spatie\EventSourcing\StoredEvents\Models\EloquentStoredEvent;
  * @method static \Spatie\EventSourcing\StoredEvents\Models\EloquentStoredEventQueryBuilder<static>|StoredEvent wherePropertyIsNot(string $property, ?mixed $value)
  * @method static \Spatie\EventSourcing\StoredEvents\Models\EloquentStoredEventQueryBuilder<static>|StoredEvent whereUpdatedBy($value)
  * @method static \Spatie\EventSourcing\StoredEvents\Models\EloquentStoredEventQueryBuilder<static>|StoredEvent withMetaDataAttributes()
- *
  * @mixin \Eloquent
  */
 class StoredEvent extends EloquentStoredEvent

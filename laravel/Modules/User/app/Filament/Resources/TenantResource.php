@@ -20,16 +20,31 @@ use Modules\User\Filament\Resources\TenantResource\RelationManagers;
 use Modules\Xot\Datas\XotData;
 use Modules\Xot\Filament\Resources\XotBaseResource;
 
+
+
+
+use Modules\Xot\Filament\Resources\RelationManagers\XotBaseRelationManager;
+
+
+
+
+
 class TenantResource extends XotBaseResource
 {
     // protected static ?string $model = Tenant::class;
 
     protected static ?string $navigationIcon = 'heroicon-o-user-group';
 
+    /**
+     * Get the model class name for this resource.
+     *
+     * @return class-string<\Illuminate\Database\Eloquent\Model>
+     */
     public static function getModel(): string
     {
         $xot = XotData::make();
 
+        /** @var class-string<\Illuminate\Database\Eloquent\Model> */
         return $xot->getTenantClass();
     }
 

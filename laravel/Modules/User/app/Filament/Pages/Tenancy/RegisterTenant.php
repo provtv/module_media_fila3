@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace Modules\User\Filament\Pages\Tenancy;
 
 use Filament\Forms\Components\TextInput;
+use Filament\Forms\Form;
 use Filament\Pages\Tenancy\RegisterTenant as BaseRegisterTenant;
 use Illuminate\Database\Eloquent\Model;
 use Modules\User\Contracts\TenantContract;
@@ -19,25 +20,26 @@ class RegisterTenant extends BaseRegisterTenant
     }
 
     public function getFormSchema(): array
-    {
-
-        return [
-
-            TextInput::make('name')
-                ->required()
-                ->translateLabel(),
-            TextInput::make('phone')
-                ->required()
-                ->tel()
-                ->telRegex('/^[+]*[(]{0,1}[0-9]{1,4}[)]{0,1}[-\s\.\/0-9]*$/')
-                ->translateLabel(),
-            TextInput::make('email')
-                ->required()
-                ->email()
-                ->translateLabel(),
-
-        ];
-    }
+{
+    
+        
+    return [
+              
+                    TextInput::make('name')
+                        ->required()
+                        ->translateLabel(),
+                    TextInput::make('phone')
+                        ->required()
+                        ->tel()
+                        ->telRegex('/^[+]*[(]{0,1}[0-9]{1,4}[)]{0,1}[-\s\.\/0-9]*$/')
+                        ->translateLabel(),
+                    TextInput::make('email')
+                        ->required()
+                        ->email()
+                        ->translateLabel(),
+                
+      ];
+}
 
     /**
      * @param  array<string, mixed>  $data

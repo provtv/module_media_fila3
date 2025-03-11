@@ -15,8 +15,15 @@ use Modules\Xot\Datas\XotData;
  */
 trait InteractsWithTenant
 {
+    /**
+     * Relazione con il tenant a cui appartiene il modello.
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo<\Illuminate\Database\Eloquent\Model, self>
+     * @phpstan-return \Illuminate\Database\Eloquent\Relations\BelongsTo<\Illuminate\Database\Eloquent\Model, $this>
+     */
     public function tenant(): BelongsTo
     {
+        /** @var class-string<\Illuminate\Database\Eloquent\Model> $class */
         $class = XotData::make()->getTenantClass();
 
         return $this->belongsTo($class);

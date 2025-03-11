@@ -29,6 +29,7 @@ abstract class XotBaseRouteServiceProvider extends RouteServiceProvider
     public function boot(): void
     {
         Config::set('extra_conn', Request::segment(2)); // Se configurato va a prendere db diverso
+        
 
         parent::boot();
     }
@@ -47,7 +48,7 @@ abstract class XotBaseRouteServiceProvider extends RouteServiceProvider
      */
     protected function mapWebRoutes(): void
     {
-        if ($this->name == '') {
+        if ('' == $this->name) {
             Notification::make()
                 ->title('Error')
                 ->danger()
@@ -68,7 +69,7 @@ abstract class XotBaseRouteServiceProvider extends RouteServiceProvider
      */
     protected function mapApiRoutes(): void
     {
-        if ($this->name === '') {
+        if ('' === $this->name) {
             throw new \Exception('name is empty on ['.static::class.']');
         }
         // -- da usare il config

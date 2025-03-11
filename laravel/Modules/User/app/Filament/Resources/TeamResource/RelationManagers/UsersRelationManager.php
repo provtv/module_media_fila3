@@ -4,9 +4,12 @@ declare(strict_types=1);
 
 namespace Modules\User\Filament\Resources\TeamResource\RelationManagers;
 
-use Filament\Tables;
+use Filament\Forms\Form;
 use Filament\Tables\Columns\TextColumn;
+use Filament\Tables\Table;
+use Modules\User\Filament\Resources\UserResource;
 use Modules\Xot\Filament\Resources\RelationManagers\XotBaseRelationManager;
+use Filament\Tables;
 
 class UsersRelationManager extends XotBaseRelationManager
 {
@@ -27,14 +30,14 @@ class UsersRelationManager extends XotBaseRelationManager
             'role' => TextColumn::make('role'),
         ];
     }
-
+    
     public function getTableHeaderActions(): array
     {
         return [
             Tables\Actions\AttachAction::make(),
         ];
     }
-
+    
     public function getTableActions(): array
     {
         return [
@@ -44,7 +47,7 @@ class UsersRelationManager extends XotBaseRelationManager
             Tables\Actions\DeleteAction::make(),
         ];
     }
-
+    
     public function getTableBulkActions(): array
     {
         return [

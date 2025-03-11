@@ -79,8 +79,10 @@ class Login extends Component implements HasForms
     {
         $data = $this->validate();
 
-        // Estrai remember dal data array
+        // Estrai remember dal data array e assicurati che sia un booleano
         $remember = $data['remember'] ?? false;
+        // Converto esplicitamente a bool per PHPStan livello 9
+        $remember = (bool) $remember;
         unset($data['remember']);
 
         if (Auth::attempt($data, $remember)) {

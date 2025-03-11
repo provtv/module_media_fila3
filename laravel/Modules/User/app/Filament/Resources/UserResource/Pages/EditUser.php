@@ -11,6 +11,15 @@ namespace Modules\User\Filament\Resources\UserResource\Pages;
 use Filament\Actions\DeleteAction;
 use Modules\User\Filament\Resources\UserResource;
 
+
+
+
+use Modules\Xot\Filament\Resources\RelationManagers\XotBaseRelationManager;
+
+
+
+
+
 class EditUser extends \Modules\Xot\Filament\Resources\Pages\XotBaseEditRecord
 {
     // //

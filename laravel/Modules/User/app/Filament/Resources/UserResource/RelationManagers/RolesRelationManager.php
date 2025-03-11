@@ -6,6 +6,7 @@ namespace Modules\User\Filament\Resources\UserResource\RelationManagers;
 
 use Filament\Forms\Components\Select;
 use Filament\Forms\Components\TextInput;
+use Filament\Forms\Form;
 use Filament\Tables\Actions\AttachAction;
 use Filament\Tables\Actions\DeleteBulkAction;
 use Filament\Tables\Actions\DetachAction;
@@ -14,6 +15,14 @@ use Filament\Tables\Columns\TextColumn;
 use Filament\Tables\Table;
 use Modules\Xot\Datas\XotData;
 use Modules\Xot\Filament\Resources\RelationManagers\XotBaseRelationManager;
+
+
+
+
+
+
+
+
 
 class RolesRelationManager extends XotBaseRelationManager
 {
@@ -29,20 +38,21 @@ class RolesRelationManager extends XotBaseRelationManager
     // }
 
     public function getFormSchema(): array
-    {
-
-        return [
-
-            TextInput::make('name')
-                ->required()
-                ->maxLength(255),
-            /*
-                    Forms\Components\Select::make('team_id')
-                        ->relationship('teams', 'name'),
-                    */
-
-        ];
-    }
+{
+    
+        
+    return [
+              
+                    TextInput::make('name')
+                        ->required()
+                        ->maxLength(255),
+                    /*
+                Forms\Components\Select::make('team_id')
+                    ->relationship('teams', 'name'),
+                */
+                
+      ];
+}
 
     public function table(Table $table): Table
     {

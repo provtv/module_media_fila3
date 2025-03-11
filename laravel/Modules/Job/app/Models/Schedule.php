@@ -46,7 +46,6 @@ use Webmozart\Assert\Assert;
  * @property string|null $deleted_by
  * @property \Modules\Xot\Contracts\ProfileContract|null $creator
  * @property \Modules\Xot\Contracts\ProfileContract|null $updater
- *
  * @method static \Illuminate\Database\Eloquent\Builder|Schedule active()
  * @method static \Modules\Job\Database\Factories\ScheduleFactory factory($count = null, $state = [])
  * @method static \Illuminate\Database\Eloquent\Builder|Schedule inactive()
@@ -83,7 +82,6 @@ use Webmozart\Assert\Assert;
  * @method static \Illuminate\Database\Eloquent\Builder|Schedule whereWithoutOverlapping($value)
  * @method static \Illuminate\Database\Eloquent\Builder|Schedule withTrashed()
  * @method static \Illuminate\Database\Eloquent\Builder|Schedule withoutTrashed()
- *
  * @mixin \Eloquent
  */
 class Schedule extends BaseModel

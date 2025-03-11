@@ -10,6 +10,7 @@ use Filament\Forms\ComponentContainer;
 use Filament\Forms\Components\Component;
 use Filament\Forms\Components\TextInput;
 use Filament\Forms\Contracts\HasForms;
+use Filament\Forms\Form;
 use Filament\Notifications\Notification;
 use Filament\Pages\Concerns\InteractsWithFormActions;
 use Filament\Pages\Page;
@@ -17,6 +18,7 @@ use Illuminate\Support\Arr;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Schema;
+use Illuminate\Validation\Rules\Password as PasswordRule;
 use Modules\User\Datas\PasswordData;
 use Modules\User\Events\NewPasswordSet;
 use Modules\User\Http\Response\PasswordResetResponse;
@@ -130,7 +132,7 @@ class PasswordExpired extends Page implements HasForms
             ->success()
             ->send();
 
-        return new PasswordResetResponse;
+        return new PasswordResetResponse();
     }
 
     protected function getCurrentPasswordFormComponent(): Component

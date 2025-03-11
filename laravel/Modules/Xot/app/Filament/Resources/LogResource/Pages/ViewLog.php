@@ -4,9 +4,10 @@ declare(strict_types=1);
 
 namespace Modules\Xot\Filament\Resources\LogResource\Pages;
 
-use Filament\Infolists\Components\Grid;
+use Filament\Actions;
 use Filament\Infolists\Components\Section;
 use Filament\Infolists\Components\TextEntry;
+use Filament\Infolists\Components\Grid;
 use Modules\Xot\Filament\Resources\LogResource;
 
 use function Safe\json_encode;

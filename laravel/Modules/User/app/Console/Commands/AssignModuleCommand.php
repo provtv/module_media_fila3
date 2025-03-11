@@ -7,6 +7,7 @@ namespace Modules\User\Console\Commands;
 use Illuminate\Console\Command;
 use Illuminate\Support\Str;
 use Modules\User\Models\Role;
+use Modules\Xot\Contracts\UserContract;
 use Modules\Xot\Datas\XotData;
 use Nwidart\Modules\Facades\Module;
 use Symfony\Component\Console\Input\InputOption;
@@ -46,6 +47,9 @@ class AssignModuleCommand extends Command
     public function handle(): void
     {
         $email = text('email ?');
+        /**
+         * @var UserContract $user
+         */
         $user = XotData::make()->getUserByEmail($email);
         /*
         $modules = collect(Module::all())->map(function ($module) {

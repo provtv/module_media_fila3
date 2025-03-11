@@ -82,11 +82,10 @@ class GenerateModelsFromSchemaCommand extends Command
         }
 
         $schemaContent = File::get($schemaFilePath);
-        $schema = json_decode($schemaContent, true);
-
-        if (json_last_error() !== JSON_ERROR_NONE) {
-            $this->error('Errore nella decodifica del file JSON: '.json_last_error_msg());
-
+        try {
+            $schema = \Safe\json_decode($schemaContent, true);
+        } catch (\Exception $e) {
+            $this->error('Errore nella decodifica del file JSON: ' . $e->getMessage());
             return 1;
         }
 
@@ -142,13 +141,15 @@ class GenerateModelsFromSchemaCommand extends Command
 
         $fillableColumns = array_keys($tableInfo['columns']);
         $fillableColumns = array_filter($fillableColumns, function ($column) use ($primaryKey) {
-            return $column !== $primaryKey && ! Str::endsWith($column, ['_at', 'created_at', 'updated_at', 'deleted_at']);
+            // Assicuriamoci che $column sia una stringa
+            $columnStr = (string)$column;
+            return $columnStr !== $primaryKey && ! Str::endsWith($columnStr, ['_at', 'created_at', 'updated_at', 'deleted_at']);
         });
 
         $casts = [];
         foreach ($tableInfo['columns'] as $columnName => $column) {
             $castType = $this->getCastType($column['type']);
-            if ($castType !== 'string') {
+            if ('string' !== $castType) {
                 $casts[$columnName] = $castType;
             }
         }
@@ -185,7 +186,7 @@ class GenerateModelsFromSchemaCommand extends Command
             $tableInfo['foreign_keys']
         );
 
-        $timestamp = date('Y_m_d_His');
+        $timestamp = \Safe\date('Y_m_d_His');
         $migrationFilePath = $migrationPath.'/'.$timestamp.'_create_'.$tableName.'_table.php';
 
         File::put($migrationFilePath, $migrationContent);
@@ -307,7 +308,7 @@ PHP;
         $indexesStr = '';
 
         foreach ($indexes as $indexName => $index) {
-            if ($indexName === 'PRIMARY') {
+            if ('PRIMARY' === $indexName) {
                 continue;
             }
 
@@ -365,10 +366,10 @@ PHP;
      */
     protected function getCastType(string $sqlType): string
     {
-        $baseType = strtolower(preg_replace('/\(.*\)/', '', $sqlType));
+        $baseType = strtolower(\Safe\preg_replace('/\(.*\)/', '', $sqlType));
 
         foreach ($this->typeMappings as $sqlPattern => $laravelType) {
-            if (strpos($baseType, $sqlPattern) === 0) {
+            if (0 === strpos($baseType, $sqlPattern)) {
                 return $laravelType;
             }
         }
@@ -381,12 +382,12 @@ PHP;
      */
     protected function generateColumnCode(string $columnName, array $column): string
     {
-        $columnType = strtolower($column['type']);
-        $baseType = preg_replace('/\(.*\)/', '', $columnType);
+        $columnType = $column['type'];
+        $baseType = \Safe\preg_replace('/\(.*\)/', '', $columnType);
         $length = null;
 
-        if (preg_match('/\((\d+)\)/', $columnType, $matches)) {
-            $length = (int) $matches[1];
+        if (\Safe\preg_match('/\((\d+)\)/', $columnType, $matches)) {
+            $length = $matches[1];
         }
 
         $methodName = match ($baseType) {
@@ -410,16 +411,16 @@ PHP;
 
         $code = "\$table->{$methodName}('{$columnName}'";
 
-        if ($methodName === 'string' && $length !== null) {
-            $code .= ", {$length}";
-        } elseif ($methodName === 'decimal') {
-            if (preg_match('/\((\d+),\s*(\d+)\)/', $columnType, $matches)) {
+        if ('string' === $methodName && null !== $length) {
+            $code .= "->length({$length})";
+        } elseif ('decimal' === $methodName) {
+            if (\Safe\preg_match('/\((\d+),\s*(\d+)\)/', $columnType, $matches)) {
                 $precision = (int) $matches[1];
                 $scale = (int) $matches[2];
                 $code .= ", {$precision}, {$scale}";
             }
-        } elseif ($methodName === 'enum') {
-            if (preg_match('/enum\(\'(.*)\'\)/', $columnType, $matches)) {
+        } elseif ('enum' === $methodName) {
+            if (\Safe\preg_match('/enum\(\'(.*)\'\)/', $columnType, $matches)) {
                 $options = explode("','", $matches[1]);
                 $optionsStr = implode("', '", $options);
                 $code .= ", ['{$optionsStr}']";
@@ -432,7 +433,7 @@ PHP;
             $code .= '->nullable()';
         }
 
-        if (isset($column['default']) && $column['default'] !== null) {
+        if (isset($column['default']) && $column['default'] !== '') {
             $default = $column['default'];
             if (is_string($default) && ! is_numeric($default)) {
                 $default = "'{$default}'";
@@ -440,7 +441,7 @@ PHP;
             $code .= "->default({$default})";
         }
 
-        if (! empty($column['extra']) && strpos($column['extra'], 'auto_increment') !== false) {
+        if (! empty($column['extra']) && false !== strpos($column['extra'], 'auto_increment')) {
             $code .= '->autoIncrement()';
         }
 
@@ -501,7 +502,7 @@ PHP;
                 continue;
             }
 
-            if ($relationship['from_table'] === $tableName && $relationship['type'] === 'belongs_to') {
+            if ($relationship['from_table'] === $tableName && 'belongs_to' === $relationship['type']) {
                 $modelRelationships[] = [
                     'type' => 'belongs_to',
                     'method' => Str::camel(Str::singular($relationship['to_table'])),
@@ -509,7 +510,7 @@ PHP;
                     'foreign_key' => $relationship['from_columns'][0],
                     'owner_key' => $relationship['to_columns'][0],
                 ];
-            } elseif ($relationship['to_table'] === $tableName && $relationship['type'] === 'has_many') {
+            } elseif ($relationship['to_table'] === $tableName && 'has_many' === $relationship['type']) {
                 $modelRelationships[] = [
                     'type' => 'has_many',
                     'method' => Str::camel(Str::plural($relationship['from_table'])),
@@ -531,7 +532,7 @@ PHP;
         $methodName = $relationship['method'];
         $modelName = $relationship['model'];
 
-        if ($relationship['type'] === 'belongs_to') {
+        if ('belongs_to' === $relationship['type']) {
             return <<<PHP
     /**
      * Relazione: {$methodName}.
@@ -541,7 +542,7 @@ PHP;
         return \$this->belongsTo({$modelName}::class, '{$relationship['foreign_key']}', '{$relationship['owner_key']}');
     }
 PHP;
-        } elseif ($relationship['type'] === 'has_many') {
+        } elseif ('has_many' === $relationship['type']) {
             return <<<PHP
     /**
      * Relazione: {$methodName}.

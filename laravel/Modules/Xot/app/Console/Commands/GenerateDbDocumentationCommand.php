@@ -31,23 +31,21 @@ class GenerateDbDocumentationCommand extends Command
         $schemaFilePath = $this->argument('schema_file');
         $outputDir = $this->argument('output_dir') ?? base_path('docs/database');
 
-        if (! File::exists($schemaFilePath)) {
+        if (!File::exists($schemaFilePath)) {
             $this->error("Il file schema {$schemaFilePath} non esiste!");
-
             return 1;
         }
 
         $schemaContent = File::get($schemaFilePath);
-        $schema = json_decode($schemaContent, true);
-
-        if (json_last_error() !== JSON_ERROR_NONE) {
-            $this->error('Errore nella decodifica del file JSON: '.json_last_error_msg());
-
+        try {
+            $schema = \Safe\json_decode($schemaContent, true);
+        } catch (\Exception $e) {
+            $this->error("Errore nella decodifica del file JSON: " . $e->getMessage());
             return 1;
         }
 
         // Crea directory se non esiste
-        if (! File::exists($outputDir)) {
+        if (!File::exists($outputDir)) {
             File::makeDirectory($outputDir, 0755, true);
         }
 
@@ -78,7 +76,7 @@ class GenerateDbDocumentationCommand extends Command
     {
         $database = $schema['database'];
         $tableCount = count($schema['tables']);
-
+        
         $content = <<<MARKDOWN
 # Documentazione Database: {$database}
 
@@ -98,7 +96,7 @@ MARKDOWN;
 
         foreach ($schema['tables'] as $tableName => $tableInfo) {
             $recordCount = $tableInfo['record_count'];
-            $fileName = $tableName.'.md';
+            $fileName = $tableName . '.md';
             $content .= "| [{$tableName}]({$fileName}) | | {$recordCount} |\n";
         }
 
@@ -113,7 +111,7 @@ MARKDOWN;
                 $to = $relationship['to_table'];
                 $key = "{$from}_{$to}";
 
-                if (! in_array($key, $processedRelationships)) {
+                if (!in_array($key, $processedRelationships)) {
                     $content .= "    {$from} ||--o{ {$to} : \"\"\n";
                     $processedRelationships[] = $key;
                 }
@@ -122,7 +120,7 @@ MARKDOWN;
 
         $content .= "```\n";
 
-        File::put($outputDir.'/README.md', $content);
+        File::put($outputDir . '/README.md', $content);
     }
 
     /**
@@ -160,11 +158,11 @@ MARKDOWN;
             $default = $column['default'] ?? 'NULL';
             $extra = $column['extra'] ?? '';
             $comment = $column['comment'] ?? '';
-
+            
             $content .= "| {$columnName} | {$type} | {$nullable} | {$default} | {$extra} | {$comment} |\n";
         }
 
-        if (! empty($indexes) && count($indexes) > 0) {
+        if (!empty($indexes) && count($indexes) > 0) {
             $content .= "\n## Indici\n\n";
             $content .= "| Nome | Colonne | Unico |\n";
             $content .= "|------|---------|-------|\n";
@@ -173,15 +171,15 @@ MARKDOWN;
                 if ($indexName === 'PRIMARY') {
                     continue;
                 }
-
+                
                 $columns = implode(', ', $index['columns']);
                 $unique = $index['unique'] ? 'Sì' : 'No';
-
+                
                 $content .= "| {$indexName} | {$columns} | {$unique} |\n";
             }
         }
 
-        if (! empty($foreignKeys) && count($foreignKeys) > 0) {
+        if (!empty($foreignKeys) && count($foreignKeys) > 0) {
             $content .= "\n## Chiavi Esterne\n\n";
             $content .= "| Nome | Colonne | Tabella Riferimento | Colonne Riferimento |\n";
             $content .= "|------|---------|---------------------|--------------------|\n";
@@ -191,58 +189,62 @@ MARKDOWN;
                 $localColumns = $foreignKey['local_columns'] ?? $foreignKey['columns'] ?? [];
                 $refTable = $foreignKey['foreign_table'] ?? $foreignKey['references_table'] ?? 'unknown_table';
                 $refColumns = $foreignKey['foreign_columns'] ?? $foreignKey['references_columns'] ?? [];
-
+                
                 $columns = implode(', ', $localColumns);
                 $refColumnsStr = implode(', ', $refColumns);
-
+                
                 $content .= "| {$foreignKeyName} | {$columns} | {$refTable} | {$refColumnsStr} |\n";
             }
         }
 
         // Relazioni
         $tableRelationships = $this->getTableRelationships($tableName, $relationships);
-
-        if (! empty($tableRelationships)) {
+        
+        if (!empty($tableRelationships)) {
             $content .= "\n## Relazioni\n\n";
-
-            if (! empty($tableRelationships['belongs_to'])) {
+            
+            if (!empty($tableRelationships['belongs_to'])) {
                 $content .= "### Belongs To\n\n";
                 $content .= "| Tabella | Chiave Esterna | Chiave Riferimento |\n";
                 $content .= "|---------|---------------|-------------------|\n";
-
+                
                 foreach ($tableRelationships['belongs_to'] as $relation) {
                     $targetTable = $relation['to_table'];
                     $foreignKey = implode(', ', $relation['from_columns']);
                     $targetKey = implode(', ', $relation['to_columns']);
-
+                    
                     $content .= "| [{$targetTable}]({$targetTable}.md) | {$foreignKey} | {$targetKey} |\n";
                 }
             }
-
-            if (! empty($tableRelationships['has_many'])) {
+            
+            if (!empty($tableRelationships['has_many'])) {
                 $content .= "\n### Has Many\n\n";
                 $content .= "| Tabella | Chiave Esterna | Chiave Locale |\n";
                 $content .= "|---------|---------------|-------------|\n";
-
+                
                 foreach ($tableRelationships['has_many'] as $relation) {
                     $targetTable = $relation['to_table'];
                     $foreignKey = implode(', ', $relation['to_columns']);
                     $localKey = implode(', ', $relation['from_columns']);
-
+                    
                     $content .= "| [{$targetTable}]({$targetTable}.md) | {$foreignKey} | {$localKey} |\n";
                 }
             }
         }
 
         // Dati di esempio
-        if (! empty($tableInfo['sample_data'])) {
+        if (!empty($tableInfo['sample_data'])) {
             $content .= "\n## Dati di Esempio\n\n";
             $content .= "```json\n";
-            $content .= json_encode($tableInfo['sample_data'], JSON_PRETTY_PRINT);
+            try {
+                $content .= \Safe\json_encode($tableInfo['sample_data'], JSON_PRETTY_PRINT);
+            } catch (\Exception $e) {
+                $content .= "Errore nella formattazione dei dati di esempio: " . $e->getMessage();
+            }
             $content .= "\n```\n";
         }
 
-        File::put($outputDir.'/'.$tableName.'.md', $content);
+        File::put($outputDir . '/' . $tableName . '.md', $content);
     }
 
     /**
@@ -254,23 +256,23 @@ MARKDOWN;
             'belongs_to' => [],
             'has_many' => [],
         ];
-
+        
         foreach ($relationships as $relationship) {
             // Verifica che tutti i campi necessari esistano
-            if (! isset($relationship['from_table']) || ! isset($relationship['to_table']) ||
-                ! isset($relationship['type']) ||
-                ! isset($relationship['from_columns']) || ! isset($relationship['to_columns']) ||
+            if (!isset($relationship['from_table']) || !isset($relationship['to_table']) || 
+                !isset($relationship['type']) || 
+                !isset($relationship['from_columns']) || !isset($relationship['to_columns']) ||
                 empty($relationship['from_columns']) || empty($relationship['to_columns'])) {
                 continue;
             }
-
+            
             if ($relationship['from_table'] === $tableName && $relationship['type'] === 'belongs_to') {
                 $tableRelationships['belongs_to'][] = $relationship;
             } elseif ($relationship['from_table'] === $tableName && $relationship['type'] === 'has_many') {
                 $tableRelationships['has_many'][] = $relationship;
             }
         }
-
+        
         return $tableRelationships;
     }
-}
+} 

@@ -18,7 +18,7 @@ class MetatagData extends Data implements Wireable
 {
     use WireableData;
 
-    public string $title = 'Test';
+    public string $title;
 
     public string $sitename;
 
@@ -44,9 +44,9 @@ class MetatagData extends Data implements Wireable
 
     public string $logo_square;
 
-    public string $logo_header = 'fixcity::images/logo.svg';
+    public string $logo_header;
 
-    public string $logo_header_dark = 'fixcity::images/logo.svg';
+    public string $logo_header_dark;
 
     public string $logo_height = '2em';
 

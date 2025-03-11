@@ -12,7 +12,57 @@ use Sushi\Sushi;
 
 /**
  * Represents a table in the INFORMATION_SCHEMA.TABLES.
+ * 
  * Provides metadata and statistics about database tables.
+ *
+ * @property string|null $TABLE_CATALOG
+ * @property string|null $TABLE_SCHEMA
+ * @property string|null $TABLE_NAME
+ * @property string|null $TABLE_TYPE
+ * @property string|null $ENGINE
+ * @property int|null $VERSION
+ * @property string|null $ROW_FORMAT
+ * @property int|null $TABLE_ROWS
+ * @property int|null $AVG_ROW_LENGTH
+ * @property int|null $DATA_LENGTH
+ * @property int|null $MAX_DATA_LENGTH
+ * @property int|null $INDEX_LENGTH
+ * @property int|null $DATA_FREE
+ * @property int|null $AUTO_INCREMENT
+ * @property \Illuminate\Support\Carbon|null $CREATE_TIME
+ * @property \Illuminate\Support\Carbon|null $UPDATE_TIME
+ * @property \Illuminate\Support\Carbon|null $CHECK_TIME
+ * @property string|null $TABLE_COLLATION
+ * @property int|null $CHECKSUM
+ * @property string|null $CREATE_OPTIONS
+ * @property string|null $TABLE_COMMENT
+ * @property int $id
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|InformationSchemaTable newModelQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|InformationSchemaTable newQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|InformationSchemaTable query()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|InformationSchemaTable whereAUTOINCREMENT($value)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|InformationSchemaTable whereAVGROWLENGTH($value)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|InformationSchemaTable whereCHECKSUM($value)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|InformationSchemaTable whereCHECKTIME($value)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|InformationSchemaTable whereCREATEOPTIONS($value)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|InformationSchemaTable whereCREATETIME($value)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|InformationSchemaTable whereDATAFREE($value)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|InformationSchemaTable whereDATALENGTH($value)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|InformationSchemaTable whereENGINE($value)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|InformationSchemaTable whereINDEXLENGTH($value)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|InformationSchemaTable whereId($value)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|InformationSchemaTable whereMAXDATALENGTH($value)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|InformationSchemaTable whereROWFORMAT($value)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|InformationSchemaTable whereTABLECATALOG($value)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|InformationSchemaTable whereTABLECOLLATION($value)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|InformationSchemaTable whereTABLECOMMENT($value)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|InformationSchemaTable whereTABLENAME($value)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|InformationSchemaTable whereTABLEROWS($value)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|InformationSchemaTable whereTABLESCHEMA($value)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|InformationSchemaTable whereTABLETYPE($value)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|InformationSchemaTable whereUPDATETIME($value)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|InformationSchemaTable whereVERSION($value)
+ * @mixin \Eloquent
  */
 class InformationSchemaTable extends Model
 {
@@ -120,7 +170,7 @@ class InformationSchemaTable extends Model
      */
     public function getRows(): array
     {
-        $query = 'SELECT 
+        $query = "SELECT 
             TABLE_CATALOG,
             TABLE_SCHEMA,
             TABLE_NAME,
@@ -143,13 +193,12 @@ class InformationSchemaTable extends Model
             CREATE_OPTIONS,
             TABLE_COMMENT
         FROM information_schema.TABLES
-        WHERE TABLE_SCHEMA = ?';
+        WHERE TABLE_SCHEMA = ?";
 
         $results = collect(DB::select($query, [DB::connection()->getDatabaseName()]))
             ->map(function ($row, $index) {
                 $data = (array) $row;
                 $data['id'] = $index + 1; // Aggiungi un ID incrementale
-
                 return $data;
             })
             ->toArray();
@@ -160,8 +209,8 @@ class InformationSchemaTable extends Model
     /**
      * Get table statistics from Sushi or information_schema as fallback.
      *
-     * @param  string  $schema  The schema name
-     * @param  string  $table  The table name
+     * @param string $schema The schema name
+     * @param string $table The table name
      */
     public static function getTableStats(string $schema, string $table): ?self
     {
@@ -188,22 +237,21 @@ class InformationSchemaTable extends Model
                 'TABLE_COLLATION',
                 'CHECKSUM',
                 'CREATE_OPTIONS',
-                'TABLE_COMMENT',
+                'TABLE_COMMENT'
             ])
             ->where('TABLE_SCHEMA', '=', $schema)
             ->where('TABLE_NAME', '=', $table)
             ->first();
 
-        if (! $result) {
+        if (!$result) {
             return null;
         }
 
         // Creiamo una nuova istanza e popoliamola manualmente
-        $instance = new self;
+        $instance = new self();
         foreach ((array) $result as $key => $value) {
             $instance->setAttribute($key, $value);
         }
-
         return $instance;
     }
 
@@ -211,7 +259,7 @@ class InformationSchemaTable extends Model
      * Get the row count for a model class.
      * This method incorporates the logic from CountAction.
      *
-     * @param  class-string<Model>  $modelClass  The fully qualified model class name
+     * @param class-string<Model> $modelClass The fully qualified model class name
      *
      * @throws InvalidArgumentException If model class is invalid or not found
      */
@@ -234,12 +282,12 @@ class InformationSchemaTable extends Model
         $table = $model->getTable();
 
         // Handle in-memory database
-        if ($database === ':memory:') {
+        if (':memory:' === $database) {
             return (int) $model->count();
         }
 
         // Handle SQLite specifically
-        if ($driver === 'sqlite') {
+        if ('sqlite' === $driver) {
             return (int) $model->count();
         }
 
@@ -249,8 +297,8 @@ class InformationSchemaTable extends Model
     /**
      * Get accurate row count for a table.
      *
-     * @param  string  $tableName  The name of the table
-     * @param  string  $database  The database name
+     * @param string $tableName The name of the table
+     * @param string $database The database name
      */
     public static function getAccurateRowCount(string $tableName, string $database): int
     {
@@ -270,8 +318,8 @@ class InformationSchemaTable extends Model
     /**
      * Get table size in bytes.
      *
-     * @param  string  $tableName  The name of the table
-     * @param  string  $database  The database name
+     * @param string $tableName The name of the table
+     * @param string $database The database name
      */
     public static function getTableSize(string $tableName, string $database): int
     {
@@ -293,12 +341,12 @@ class InformationSchemaTable extends Model
     /**
      * Refresh the cache for a specific table.
      *
-     * @param  string  $tableName  The name of the table
-     * @param  string  $database  The database name
+     * @param string $tableName The name of the table
+     * @param string $database The database name
      */
     public static function refreshCache(string $tableName, string $database): void
     {
         DB::connection('mysql')
             ->statement("ANALYZE TABLE `{$database}`.`{$tableName}`");
     }
-}
+} 

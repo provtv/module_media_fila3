@@ -149,11 +149,11 @@ class XotServiceProvider extends XotBaseServiceProvider
     {
         $files = File::files($path);
         foreach ($files as $file) {
-            if ($file->getExtension() !== 'php') {
+            if ('php' !== $file->getExtension()) {
                 continue;
             }
 
-            if ($file->getRealPath() === false) {
+            if (false === $file->getRealPath()) {
                 continue;
             }
 
@@ -201,8 +201,8 @@ class XotServiceProvider extends XotBaseServiceProvider
     {
         // --- meglio ficcare un controllo anche sull'env
         if (
-            config('xra.forcessl') && (isset($_SERVER['SERVER_NAME']) && $_SERVER['SERVER_NAME'] !== 'localhost'
-            && isset($_SERVER['REQUEST_SCHEME']) && $_SERVER['REQUEST_SCHEME'] === 'http')
+            config('xra.forcessl') && (isset($_SERVER['SERVER_NAME']) && 'localhost' !== $_SERVER['SERVER_NAME']
+            && isset($_SERVER['REQUEST_SCHEME']) && 'http' === $_SERVER['REQUEST_SCHEME'])
         ) {
             URL::forceScheme('https');
             /*
@@ -233,4 +233,6 @@ class XotServiceProvider extends XotBaseServiceProvider
     {
         View::composer('*', XotComposer::class);
     }
+
+
 } // end class

@@ -23,11 +23,13 @@ trait IsProfileTrait
     use InteractsWithMedia;
 
     /**
-     * Undocumented function.
-     * return BelongsTo<UserContract>.
+     * Relazione con l'utente a cui appartiene il profilo.
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo<\Illuminate\Database\Eloquent\Model, self>
      */
     public function user(): BelongsTo
     {
+        /** @var class-string<\Illuminate\Database\Eloquent\Model> $userClass */
         $userClass = XotData::make()->getUserClass();
 
         return $this->belongsTo($userClass);
@@ -119,11 +121,21 @@ trait IsProfileTrait
         }
     }
 
+    /**
+     * Ottiene tutti i dispositivi mobili associati al profilo attraverso una relazione many-to-many.
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsToMany<\Modules\User\Models\Device>
+     */
     public function mobileDevices(): BelongsToMany
     {
         return $this->devices();
     }
 
+    /**
+     * Ottiene tutti i dispositivi associati al profilo attraverso una relazione many-to-many.
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsToMany<\Modules\User\Models\Device>
+     */
     public function devices(): BelongsToMany
     {
         return $this
@@ -138,11 +150,21 @@ trait IsProfileTrait
             );
     }
 
+    /**
+     * Ottiene tutti i dispositivi mobili associati all'utente.
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany<\Modules\User\Models\DeviceUser>
+     */
     public function mobileDeviceUsers(): HasMany
     {
         return $this->deviceUsers();
     }
 
+    /**
+     * Ottiene tutti i dispositivi associati all'utente.
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany<\Modules\User\Models\DeviceUser>
+     */
     public function deviceUsers(): HasMany
     {
         return $this->hasMany(
@@ -153,7 +175,9 @@ trait IsProfileTrait
     }
 
     /**
-     * @return Collection<(int|string), mixed>
+     * Recupera i token dei dispositivi mobili per le notifiche push.
+     *
+     * @return \Illuminate\Support\Collection<int|string, string>
      */
     public function getMobileDeviceTokens(): Collection
     {
@@ -167,10 +191,13 @@ trait IsProfileTrait
 
     /**
      * Get all of the teams the user belongs to.
+     * 
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsToMany<\Illuminate\Database\Eloquent\Model>
      */
     public function teams(): BelongsToMany
     {
         $xot = XotData::make();
+        /** @var class-string<\Illuminate\Database\Eloquent\Model> $teamClass */
         $teamClass = $xot->getTeamClass();
 
         // $this->setConnection('mysql');
@@ -180,6 +207,8 @@ trait IsProfileTrait
 
     /**
      * Get the user's user_name.
+     * 
+     * @return \Illuminate\Database\Eloquent\Casts\Attribute<string|null, never>
      */
     protected function userName(): Attribute
     {
@@ -191,7 +220,9 @@ trait IsProfileTrait
     }
 
     /**
-     * Get the user's avatar.
+     * Get the user's avatar URL.
+     * 
+     * @return \Illuminate\Database\Eloquent\Casts\Attribute<string, never>
      */
     protected function avatar(): Attribute
     {

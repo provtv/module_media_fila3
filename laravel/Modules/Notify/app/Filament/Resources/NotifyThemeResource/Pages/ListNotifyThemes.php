@@ -9,6 +9,15 @@ use Filament\Tables\Filters;
 use Modules\Notify\Filament\Resources\NotifyThemeResource;
 use Modules\Xot\Filament\Resources\Pages\XotBaseListRecords;
 
+
+
+
+use Modules\Xot\Filament\Resources\RelationManagers\XotBaseRelationManager;
+
+
+
+
+
 class ListNotifyThemes extends XotBaseListRecords
 {
     protected static string $resource = NotifyThemeResource::class;
@@ -47,7 +56,8 @@ class ListNotifyThemes extends XotBaseListRecords
             'post_type' => Filters\SelectFilter::make('post_type')
                 ->options(NotifyThemeResource::fieldOptions('post_type')),
             'type' => Filters\SelectFilter::make('type')
-                ->options(NotifyThemeResource::fieldOptions('type')),
+                ->options(NotifyThemeResource::fieldOptions('type'))
         ];
     }
+
 }

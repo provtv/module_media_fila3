@@ -18,7 +18,6 @@ abstract class XotBaseEditRecord extends FilamentEditRecord
             $resource = $this->getResource();
             $schema = $resource::getFormSchema();
         }
-
         return $form->schema($schema);
     }
 }

@@ -120,7 +120,7 @@ class XotData extends Data implements Wireable
     public function getUserByEmail(string $email): UserContract
     {
         $user_class = $this->getUserClass();
-        $userInstance = new $user_class;
+        $userInstance = new $user_class();
         if (! in_array('email', $userInstance->getFillable())) {
             throw new \Exception("Attribute 'email' not found in model ".get_class($userInstance));
         }
@@ -200,11 +200,15 @@ class XotData extends Data implements Wireable
     public function getProfileClass(): string
     {
         $class = 'Modules\\'.$this->main_module.'\Models\Profile';
-        // Assert::classExists($class, '['.$class.']['.__LINE__.']['.class_basename($this).']');
-        // Assert::isInstanceOf($class, Model::class, '['.__LINE__.']['.class_basename($this).']['.$class.']');
-        // Assert::isAOf($class, Model::class, '['.__LINE__.']['.class_basename($this).']['.$class.']');
-        // Assert::implementsInterface($class, ProfileContract::class, '['.__LINE__.']['.class_basename($this).']['.$class.']');
-
+        
+        // Verifica che la classe esista
+        Assert::classExists($class, '['.$class.']['.__LINE__.']['.class_basename($this).']');
+        
+        // Verifica che sia un Model e implementi ProfileContract
+        Assert::isAOf($class, Model::class, '['.__LINE__.']['.class_basename($this).']['.$class.']');
+        Assert::implementsInterface($class, ProfileContract::class, '['.__LINE__.']['.class_basename($this).']['.$class.']');
+        
+        /** @var class-string<Model&ProfileContract> */
         return $class;
     }
 
@@ -244,7 +248,7 @@ class XotData extends Data implements Wireable
     public function iAmSuperAdmin(): bool
     {
         $user = auth()->user();
-        if ($user === null) {
+        if (null === $user) {
             return false;
         }
 
@@ -253,7 +257,7 @@ class XotData extends Data implements Wireable
 
     public function getProfileModel(): ProfileContract
     {
-        if ($this->profile !== null) {
+        if (null !== $this->profile) {
             return $this->profile;
         }
         $user_id = (string) authId();
