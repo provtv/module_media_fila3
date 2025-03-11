@@ -10,14 +10,6 @@ use Filament\Tables;
 use Filament\Tables\Table;
 use Modules\Xot\Filament\Resources\RelationManagers\XotBaseRelationManager;
 
-
-
-
-
-
-
-
-
 class PermissionsRelationManager extends XotBaseRelationManager
 {
     protected static string $relationship = 'permissions';
@@ -26,19 +18,18 @@ class PermissionsRelationManager extends XotBaseRelationManager
      * Configura lo schema del form per la gestione dei permessi.
      */
     public function getFormSchema(): array
-{
-    
-        
-    return [
-              
+    {
+
+        return [
+
             Forms\Components\TextInput::make('name')
                 ->required()
                 ->maxLength(255)
 
                 ->placeholder(__('Inserisci il nome del permesso')),
-        
-      ];
-}
+
+        ];
+    }
 
     /**
      * Configura la tabella per la visualizzazione e la gestione dei permessi.

@@ -14,7 +14,7 @@ enum ReportStatusEnum: string
 
     public function label(): string
     {
-        return match($this) {
+        return match ($this) {
             self::PENDING => 'In attesa',
             self::VERIFIED => 'Verificato',
             self::IN_PROGRESS => 'In lavorazione',
@@ -25,7 +25,7 @@ enum ReportStatusEnum: string
 
     public function color(): string
     {
-        return match($this) {
+        return match ($this) {
             self::PENDING => 'warning',
             self::VERIFIED => 'info',
             self::IN_PROGRESS => 'primary',
@@ -33,4 +33,4 @@ enum ReportStatusEnum: string
             self::REJECTED => 'danger'
         };
     }
-} 
+}

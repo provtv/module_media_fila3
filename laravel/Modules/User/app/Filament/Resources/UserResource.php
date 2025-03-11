@@ -19,15 +19,6 @@ use Modules\User\Filament\Resources\UserResource\RelationManagers;
 use Modules\User\Filament\Resources\UserResource\Widgets\UserOverview;
 use Modules\Xot\Filament\Resources\XotBaseResource;
 
-
-
-
-use Modules\Xot\Filament\Resources\RelationManagers\XotBaseRelationManager;
-
-
-
-
-
 class UserResource extends XotBaseResource
 {
     // protected static ?string $model = \Modules\Xot\Datas\XotData::make()->getUserClass();

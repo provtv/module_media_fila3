@@ -75,7 +75,7 @@ final class GetAddressFromGoogleMapsAction
         /** @var GoogleMapResponseData $responseData */
         $responseData = GoogleMapResponseData::from($response->json());
 
-        if (0 === $responseData->results->count()) {
+        if ($responseData->results->count() === 0) {
             throw GoogleMapsApiException::noResultsFound();
         }
 
@@ -86,7 +86,7 @@ final class GetAddressFromGoogleMapsAction
     {
         $firstResult = $responseData->results->first();
 
-        if (null === $firstResult->geometry?->location) {
+        if ($firstResult->geometry?->location === null) {
             throw GoogleMapsApiException::invalidLocationData();
         }
 
@@ -114,9 +114,9 @@ final class GetAddressFromGoogleMapsAction
     /**
      * Ottiene un componente dell'indirizzo dal risultato di Google Maps.
      *
-     * @param DataCollection $components Componenti dell'indirizzo
-     * @param array<string>  $types      Tipi di componente da cercare
-     * @param bool           $short      Se true, restituisce il nome breve invece di quello lungo
+     * @param  DataCollection  $components  Componenti dell'indirizzo
+     * @param  array<string>  $types  Tipi di componente da cercare
+     * @param  bool  $short  Se true, restituisce il nome breve invece di quello lungo
      */
     private function getComponent(DataCollection $components, array $types, bool $short = false): ?string
     {

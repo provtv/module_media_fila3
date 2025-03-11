@@ -1,13 +1,12 @@
-<?php return array (
-  'fields' => 
-  array (
-    'article_id' => 
-    array (
-      'label' => 'article_id',
-    ),
-    'text' => 
-    array (
-      'label' => 'text',
-    ),
-  ),
-);
+<?php
+
+return [
+    'fields' => [
+        'article_id' => [
+            'label' => 'article_id',
+        ],
+        'text' => [
+            'label' => 'text',
+        ],
+    ],
+];

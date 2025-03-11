@@ -120,8 +120,8 @@ class Place extends BaseModel implements HasGeolocation
 
     public function hasValidCoordinates(): bool
     {
-        return null !== $this->latitude
-            && null !== $this->longitude
+        return $this->latitude !== null
+            && $this->longitude !== null
             && $this->latitude >= -90
             && $this->latitude <= 90
             && $this->longitude >= -180

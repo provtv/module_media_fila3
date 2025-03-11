@@ -1,13 +1,12 @@
-<?php return array (
-  'fields' => 
-  array (
-    'title' => 
-    array (
-      'label' => 'title',
-    ),
-    'layout' => 
-    array (
-      'label' => 'layout',
-    ),
-  ),
-);
+<?php
+
+return [
+    'fields' => [
+        'title' => [
+            'label' => 'title',
+        ],
+        'layout' => [
+            'label' => 'layout',
+        ],
+    ],
+];

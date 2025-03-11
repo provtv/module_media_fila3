@@ -8,15 +8,6 @@ use Filament\Tables\Actions\Action;
 use Modules\User\Actions\Otp\SendOtpByUserAction;
 use Modules\User\Models\User;
 
-
-
-
-use Modules\Xot\Filament\Resources\RelationManagers\XotBaseRelationManager;
-
-
-
-
-
 class SendOtpAction extends Action
 {
     protected function setUp(): void
@@ -24,7 +15,7 @@ class SendOtpAction extends Action
         parent::setUp();
 
         $this
-            
+
             ->tooltip(trans('user::otp.actions.send_otp'))
             ->icon('heroicon-o-key')
             ->action(function (User $record) {

@@ -6,14 +6,12 @@ namespace Modules\Xot\Console\Commands;
 
 use Illuminate\Console\Command;
 use Modules\Xot\Helpers\ResourceFormSchemaGenerator;
-use function Safe\json_encode;
-use function Safe\json_decode;
+
 use function Safe\file_get_contents;
 use function Safe\file_put_contents;
 use function Safe\glob;
 use function Safe\preg_match;
 use function Safe\preg_replace;
-use function Safe\error_log;
 
 class GenerateResourceFormSchemaCommand extends Command
 {
@@ -68,7 +66,7 @@ class GenerateResourceFormSchemaCommand extends Command
                     throw new \RuntimeException("Failed to match class in file: {$file}");
                 }
 
-                if (!empty($namespaceMatch[1]) && !empty($classMatch[1])) {
+                if (! empty($namespaceMatch[1]) && ! empty($classMatch[1])) {
                     $fullClassName = $namespaceMatch[1].'\\'.$classMatch[1];
 
                     // Modify the file to add getFormSchema method
@@ -87,14 +85,14 @@ class GenerateResourceFormSchemaCommand extends Command
                     }
 
                     $this->info("Updated Clusters Resource: {$fullClassName}");
-                    ++$clustersUpdated;
+                    $clustersUpdated++;
                 } else {
                     $this->warn("Could not process Clusters Resource: {$file}");
-                    ++$clustersSkipped;
+                    $clustersSkipped++;
                 }
             } catch (\Exception $e) {
                 $this->error("Error processing Clusters Resource {$file}: ".$e->getMessage());
-                ++$clustersSkipped;
+                $clustersSkipped++;
             }
         }
 

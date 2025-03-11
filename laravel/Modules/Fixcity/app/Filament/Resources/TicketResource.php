@@ -4,25 +4,20 @@ declare(strict_types=1);
 
 namespace Modules\Fixcity\Filament\Resources;
 
+use Dotswan\MapPicker\Fields\Map;
+use Filament\Facades\Filament;
 use Filament\Forms;
-use Filament\Tables;
+use Filament\Forms\Components\SpatieMediaLibraryFileUpload;
 use Filament\Forms\Get;
 use Filament\Forms\Set;
-use Filament\Forms\Form;
-use Filament\Tables\Table;
-use Illuminate\Support\Str;
-use Webmozart\Assert\Assert;
-use Filament\Facades\Filament;
 use Filament\Resources\Resource;
-use Dotswan\MapPicker\Fields\Map;
-use Modules\Fixcity\Models\Ticket;
-use Modules\Fixcity\Enums\TicketTypeEnum;
-use Modules\Fixcity\Enums\TicketStatusEnum;
+use Illuminate\Support\Str;
 use Modules\Fixcity\Enums\TicketPriorityEnum;
-use Modules\Xot\Filament\Resources\XotBaseResource;
-use Modules\Fixcity\Rules\FilterCoordinatesInRadius;
-use Filament\Forms\Components\SpatieMediaLibraryFileUpload;
+use Modules\Fixcity\Enums\TicketTypeEnum;
 use Modules\Fixcity\Filament\Resources\TicketResource\Pages;
+use Modules\Fixcity\Models\Ticket;
+use Modules\Fixcity\Rules\FilterCoordinatesInRadius;
+use Webmozart\Assert\Assert;
 
 class TicketResource extends Resource
 {
@@ -36,7 +31,7 @@ class TicketResource extends Resource
                     // Ticket Name
                     Forms\Components\TextInput::make('name')
                         ->hiddenLabel()
-                        ->placeholder(__('ticket::ticket.title.placeholder') . '*')
+                        ->placeholder(__('ticket::ticket.title.placeholder').'*')
                         ->columnSpanFull() // Occupa tutta la larghezza disponibile
                         ->required()
                         ->maxLength(255)
@@ -47,7 +42,7 @@ class TicketResource extends Resource
                             $set('slug', Str::slug($state));
                         })
                         ->extraAttributes([
-                            'style' => ''
+                            'style' => '',
                         ]),
 
                     // Slug
@@ -60,7 +55,7 @@ class TicketResource extends Resource
                     // Ticket Type
                     Forms\Components\Select::make('type')
                         ->hiddenLabel()
-                        ->placeholder(__('ticket::ticket.type.placeholder') . '*')
+                        ->placeholder(__('ticket::ticket.type.placeholder').'*')
                         ->searchable()
                         ->options(TicketTypeEnum::class)
                         ->columnSpanFull(),
@@ -81,14 +76,12 @@ class TicketResource extends Resource
                     //     ->columnSpanFull()
                     //     ->extraAttributes(['class' => 'max-w-full', 'style' => 'padding: 0; margin: 0;']), // Rimozione del padding e margini
 
-
                     Forms\Components\Textarea::make('content')
                         ->hiddenLabel()
-                        ->placeholder(__('ticket::ticket.content.placeholder') . '**')
+                        ->placeholder(__('ticket::ticket.content.placeholder').'**')
                         ->rows(2)
                         ->cols(10)
                         ->helperText(__('ticket::ticket.content.helper_text')),
-
 
                     // Hidden Latitude and Longitude
                     Forms\Components\TextInput::make('latitude')
@@ -130,7 +123,7 @@ class TicketResource extends Resource
                         ->afterStateHydrated(function ($state, $record, Set $set): void {
                             $set('location', ['lat' => $record?->latitude, 'lng' => $record?->longitude]);
                         })
-                        ->rules([new FilterCoordinatesInRadius()])
+                        ->rules([new FilterCoordinatesInRadius])
                         ->liveLocation()
                         ->showMarker(false) // https://github.com/dotswan/filament-map-picker/pull/51
                         ->markerColor('#22c55eff')
@@ -141,8 +134,8 @@ class TicketResource extends Resource
                         ->zoom(15)
                         ->detectRetina()
                         ->showMyLocationButton()
-                        // ->extraAttributes(['class' => 'max-w-full', 'style' => 'min-height: 300px; padding: 0; margin: 0;'])
-                        ,
+                    // ->extraAttributes(['class' => 'max-w-full', 'style' => 'min-height: 300px; padding: 0; margin: 0;'])
+                    ,
 
                     // Image Upload
                     // SpatieMediaLibraryFileUpload::make('images')
@@ -157,7 +150,6 @@ class TicketResource extends Resource
                     //     // ->extraAttributes(['class' => 'max-w-full', 'style' => 'padding: 0; margin: 0;'])
                     //     ,
 
-
                     SpatieMediaLibraryFileUpload::make('images')
                         ->label(__('ticket::ticket.insert-images'))
                         ->collection('ticket')
@@ -169,8 +161,7 @@ class TicketResource extends Resource
                         ->maxFiles(5) // Limita il numero di file caricabili
                         ->maxSize(10240) // Imposta un limite massimo di 10MB per file
                         ->acceptedFileTypes(['image/png', 'image/jpeg', 'image/jpg']) // Accetta solo immagini
-                        ->columnSpanFull()
-                        ,
+                        ->columnSpanFull(),
 
                 ])
                 ->columns(1) // Imposta il layout su una colonna

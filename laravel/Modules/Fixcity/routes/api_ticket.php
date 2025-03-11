@@ -9,22 +9,22 @@ Route::middleware(['api', 'auth:sanctum'])->prefix('api/ticket')->group(function
     // Lista e creazione ticket
     Route::get('/', [TicketController::class, 'index'])->name('api.ticket.index');
     Route::post('/', [TicketController::class, 'store'])->name('api.ticket.store');
-    
+
     // Operazioni su singolo ticket
     Route::get('/{ticket}', [TicketController::class, 'show'])->name('api.ticket.show');
     Route::put('/{ticket}', [TicketController::class, 'update'])->name('api.ticket.update');
     Route::delete('/{ticket}', [TicketController::class, 'destroy'])->name('api.ticket.destroy');
-    
+
     // Commenti
     Route::get('/{ticket}/comments', [TicketController::class, 'comments'])->name('api.ticket.comments.index');
     Route::post('/{ticket}/comments', [TicketController::class, 'storeComment'])->name('api.ticket.comments.store');
-    
+
     // Attività
     Route::get('/{ticket}/activities', [TicketController::class, 'activities'])->name('api.ticket.activities');
-    
+
     // Assegnazioni
     Route::post('/{ticket}/assign', [TicketController::class, 'assign'])->name('api.ticket.assign');
-    
+
     // Statistiche
     Route::get('/stats', [TicketController::class, 'stats'])->name('api.ticket.stats');
-}); 
+});

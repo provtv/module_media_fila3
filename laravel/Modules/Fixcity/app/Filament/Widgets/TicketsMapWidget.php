@@ -3,21 +3,18 @@
 namespace Modules\Fixcity\Filament\Widgets;
 
 use Cheesegrits\FilamentGoogleMaps\Widgets\MapWidget;
-use Modules\Fixcity\Models\Ticket;
-use Modules\Fixcity\Enums\TicketStatusEnum;
-use Illuminate\Support\Facades\Log;
-use Filament\Support\RawJs;
-use Livewire\Attributes\Reactive;
 use Filament\Actions\Action;
 use Filament\Infolists\Components\Card;
 use Filament\Infolists\Components\ImageEntry;
-use Filament\Infolists\Components\Split;
 use Filament\Infolists\Components\TextEntry;
-use Illuminate\Support\HtmlString;
+use Livewire\Attributes\Reactive;
+use Modules\Fixcity\Enums\TicketStatusEnum;
+use Modules\Fixcity\Models\Ticket;
 
 class TicketsMapWidget extends MapWidget
 {
     public $userLatitude;
+
     public $userLongitude;
 
     protected static ?string $markerAction = 'markerAction';
@@ -38,8 +35,8 @@ class TicketsMapWidget extends MapWidget
                     ImageEntry::make('media_urls')
                         ->label('Immagini')
                         ->extraAttributes(['class' => 'flex flex-wrap gap-2 justify-start w-full'])
-                        ->disk('uploads')
-                ])
+                        ->disk('uploads'),
+                ]),
             ])
             ->record(function (array $arguments) {
                 // Retrieve the Ticket model instance
@@ -48,12 +45,13 @@ class TicketsMapWidget extends MapWidget
                 // Calculate the address if the ticket exists
                 if ($ticket) {
                     $ticket->media_urls = $ticket->media->isNotEmpty()
-                        ? $ticket->media->map(fn($media) => $media->getFullUrl())->toArray()
+                        ? $ticket->media->map(fn ($media) => $media->getFullUrl())->toArray()
                         : [asset('images/placeholder.jpg')];
+
                     return $ticket;
                 }
 
-                return null; // Return null if the ticket is not found
+                 // Return null if the ticket is not found
             })
             ->modalSubmitAction(false);
     }
@@ -102,7 +100,7 @@ class TicketsMapWidget extends MapWidget
         $query = Ticket::query();
 
         // Apply category filter if any categories are selected
-        if (!empty($this->categoryFilter)) {
+        if (! empty($this->categoryFilter)) {
             $query->whereIn('type', $this->categoryFilter);
         }
 
@@ -138,7 +136,6 @@ class TicketsMapWidget extends MapWidget
     {
         $this->dispatchBrowserEvent('open-ticket-modal', ['ticketId' => $ticketId]); // Dispatch the event to open the modal
     }
-
 
     protected function getMapOptions(): array
     {

@@ -18,16 +18,15 @@ use Webmozart\Assert\Assert;
 /**
  * Base class for list records pages.
  *
- * @property ?string         $model
- * @property ?string         $resource
- * @property ?string         $slug
+ * @property ?string $model
+ * @property ?string $resource
+ * @property ?string $slug
  * @property TableLayoutEnum $layoutView
  */
 abstract class XotBaseListRecords extends FilamentListRecords
 {
     use HasXotTable;
 
-    
     /**
      * Get the table columns.
      *
@@ -78,7 +77,7 @@ abstract class XotBaseListRecords extends FilamentListRecords
     {
         $perPage = $this->getTableRecordsPerPage();
 
-        if ('all' === $perPage) {
+        if ($perPage === 'all') {
             $count = $query->count();
 
             /* @var \Illuminate\Contracts\Pagination\Paginator */

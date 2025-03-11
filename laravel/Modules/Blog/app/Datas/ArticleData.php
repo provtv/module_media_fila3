@@ -7,15 +7,13 @@ namespace Modules\Blog\Datas;
 use Carbon\Carbon;
 use Illuminate\Support\Collection;
 use Modules\Blog\Actions\Category\GetBloodline;
+use Modules\Blog\Enums\ArticleStatus;
 use Modules\Blog\Models\Article;
 use Modules\Blog\Models\Category;
-use Spatie\LaravelData\Data;
-use Webmozart\Assert\Assert;
 use Spatie\LaravelData\Attributes\WithCast;
 use Spatie\LaravelData\Casts\DateTimeInterfaceCast;
-use Spatie\LaravelData\Optional;
-use Modules\Blog\Enums\ArticleStatus;
-use DateTimeImmutable;
+use Spatie\LaravelData\Data;
+use Webmozart\Assert\Assert;
 
 class ArticleData extends Data implements \Stringable
 {
@@ -48,16 +46,16 @@ class ArticleData extends Data implements \Stringable
         // public int $credit;
         #[WithCast(DateTimeInterfaceCast::class)]
         public readonly ?Carbon $bet_end_date = null,
-        
+
         #[WithCast(DateTimeInterfaceCast::class)]
         public readonly ?Carbon $event_start_date = null,
-        
+
         #[WithCast(DateTimeInterfaceCast::class)]
         public readonly ?Carbon $event_end_date = null,
-        
+
         /** @var array<int,array<string,mixed>> */
         public readonly array $category = [],
-        
+
         public readonly string $status_display = '',
         public readonly bool $is_wagerable = false,
         public readonly float $brier_score = 0.0,
@@ -66,16 +64,16 @@ class ArticleData extends Data implements \Stringable
         public readonly int $wagers_count = 0,
         public readonly int $wagers_count_canonical = 0,
         public readonly int $wagers_count_total = 0,
-        
+
         /** @var array<int,array<string,mixed>> */
         public readonly array $wagers = [],
-        
+
         public readonly float $volume_play_money = 0.0,
         public readonly float $volume_real_money = 0.0,
-        
+
         /** @var array<int,array<string,mixed>> */
         public readonly array $outcomes = [],
-        
+
         public readonly ?string $thumbnail_2x = null,
     ) {
         if (is_array($title)) {
@@ -142,7 +140,7 @@ class ArticleData extends Data implements \Stringable
     public function url(string $type): string
     {
         $lang = app()->getLocale();
-        if ('show' === $type) {
+        if ($type === 'show') {
             return '/'.$lang.'/article/'.$this->slug;
         }
 
@@ -156,7 +154,7 @@ class ArticleData extends Data implements \Stringable
     /**
      * Create from array with type casting.
      *
-     * @param array<string,mixed> $data
+     * @param  array<string,mixed>  $data
      */
     public static function fromArray(array $data): self
     {
@@ -165,20 +163,20 @@ class ArticleData extends Data implements \Stringable
             event_start_date: isset($data['event_start_date']) ? Carbon::parse($data['event_start_date']) : null,
             event_end_date: isset($data['event_end_date']) ? Carbon::parse($data['event_end_date']) : null,
             category: $data['category'] ?? [],
-            title: (string)($data['title'] ?? ''),
-            slug: (string)($data['slug'] ?? ''),
-            status: ArticleStatus::fromString((string)($data['status'] ?? 'draft')),
-            status_display: (string)($data['status_display'] ?? ''),
-            is_wagerable: (bool)($data['is_wagerable'] ?? false),
-            brier_score: (float)($data['brier_score'] ?? 0.0),
-            brier_score_play_money: (float)($data['brier_score_play_money'] ?? 0.0),
-            brier_score_real_money: (float)($data['brier_score_real_money'] ?? 0.0),
-            wagers_count: (int)($data['wagers_count'] ?? 0),
-            wagers_count_canonical: (int)($data['wagers_count_canonical'] ?? 0),
-            wagers_count_total: (int)($data['wagers_count_total'] ?? 0),
+            title: (string) ($data['title'] ?? ''),
+            slug: (string) ($data['slug'] ?? ''),
+            status: ArticleStatus::fromString((string) ($data['status'] ?? 'draft')),
+            status_display: (string) ($data['status_display'] ?? ''),
+            is_wagerable: (bool) ($data['is_wagerable'] ?? false),
+            brier_score: (float) ($data['brier_score'] ?? 0.0),
+            brier_score_play_money: (float) ($data['brier_score_play_money'] ?? 0.0),
+            brier_score_real_money: (float) ($data['brier_score_real_money'] ?? 0.0),
+            wagers_count: (int) ($data['wagers_count'] ?? 0),
+            wagers_count_canonical: (int) ($data['wagers_count_canonical'] ?? 0),
+            wagers_count_total: (int) ($data['wagers_count_total'] ?? 0),
             wagers: $data['wagers'] ?? [],
-            volume_play_money: (float)($data['volume_play_money'] ?? 0.0),
-            volume_real_money: (float)($data['volume_real_money'] ?? 0.0),
+            volume_play_money: (float) ($data['volume_play_money'] ?? 0.0),
+            volume_real_money: (float) ($data['volume_real_money'] ?? 0.0),
             outcomes: $data['outcomes'] ?? [],
             thumbnail_2x: $data['thumbnail_2x'] ?? null,
         );

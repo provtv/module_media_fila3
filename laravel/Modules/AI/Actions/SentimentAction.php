@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @see https://dev.to/robertobutti/machine-learning-with-php-5gb
  */
@@ -8,13 +9,13 @@ declare(strict_types=1);
 namespace Modules\AI\Actions;
 
 // @phpstan-ignore function.notFound
-use function Codewithkyrian\Transformers\Pipelines\pipeline;
-
-// 002 importing the Transformers class
 use Codewithkyrian\Transformers\Transformers;
-// 003 importing the pipeline function
+// 002 importing the Transformers class
 use Spatie\QueueableAction\QueueableAction;
+// 003 importing the pipeline function
 use Webmozart\Assert\Assert;
+
+use function Codewithkyrian\Transformers\Pipelines\pipeline;
 
 class SentimentAction
 {

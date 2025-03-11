@@ -3,8 +3,8 @@
 namespace Modules\Fixcity\Filament\Resources\TicketResource\RelationManagers;
 
 use Filament\Forms;
-use Filament\Tables;
 use Filament\Resources\RelationManagers\RelationManager;
+use Filament\Tables;
 
 class CommentsRelationManager extends RelationManager
 {
@@ -46,4 +46,4 @@ class CommentsRelationManager extends RelationManager
                 ]),
             ]);
     }
-} 
+}

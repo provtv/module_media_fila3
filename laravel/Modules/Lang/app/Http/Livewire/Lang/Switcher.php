@@ -38,7 +38,7 @@ class Switcher extends Component
         $langs = Arr::map($langs, function (array $item, string $key) {
             // @phpstan-ignore staticMethod.notFound
             $url = LaravelLocalization::getLocalizedURL($key, $this->url, [], true);
-            if (false !== $url) {
+            if ($url !== false) {
                 $url = Str::of($url)->replace(url(''), '')->toString();
             }
             $item['url'] = $url;

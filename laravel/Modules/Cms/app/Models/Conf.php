@@ -11,7 +11,7 @@ use Sushi\Sushi;
 /**
  * Modules\Cms\Models\Conf.
  *
- * @property int         $id
+ * @property int $id
  * @property string|null $name
  *
  * @method static \Illuminate\Database\Eloquent\Builder|Conf newModelQuery()

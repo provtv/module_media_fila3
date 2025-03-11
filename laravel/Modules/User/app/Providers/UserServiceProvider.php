@@ -28,7 +28,9 @@ use SocialiteProviders\Manager\ServiceProvider as SocialiteServiceProvider;
 class UserServiceProvider extends XotBaseServiceProvider
 {
     public string $name = 'User';
+
     protected string $module_dir = __DIR__;
+
     protected string $module_ns = __NAMESPACE__;
 
     public function boot(): void

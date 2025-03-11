@@ -237,7 +237,7 @@ abstract class BaseUser extends Authenticatable implements HasName, HasTenants, 
 
     public function treeSons(): Collection
     {
-        return $this->teams ?? new Collection();
+        return $this->teams ?? new Collection;
     }
 
     public function treeSonsCount(): int
@@ -310,7 +310,7 @@ abstract class BaseUser extends Authenticatable implements HasName, HasTenants, 
         if ($value !== null || $this->getKey() === null) {
             return $value;
         }
-        $name = Str::of((string)$this->email)->before('@')->toString();
+        $name = Str::of((string) $this->email)->before('@')->toString();
         $i = 1;
         $value = $name.'-'.$i;
         while (self::firstWhere(['name' => $value]) !== null) {

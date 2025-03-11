@@ -9,18 +9,9 @@ declare(strict_types=1);
 namespace Modules\User\Filament\Resources\PermissionResource\RelationManager;
 
 use Filament\Forms\Components\TextInput;
-use Filament\Forms\Form;
 use Filament\Tables\Columns\TextColumn;
 use Filament\Tables\Table;
 use Modules\Xot\Filament\Resources\RelationManagers\XotBaseRelationManager;
-
-
-
-
-
-
-
-
 
 class RoleRelationManager extends XotBaseRelationManager
 {
@@ -29,16 +20,15 @@ class RoleRelationManager extends XotBaseRelationManager
     protected static ?string $recordTitleAttribute = 'name';
 
     public function getFormSchema(): array
-{
-    
-        
-    return [
-              
-                    TextInput::make('name'),
-                    TextInput::make('guard_name'),
-                
-      ];
-}
+    {
+
+        return [
+
+            TextInput::make('name'),
+            TextInput::make('guard_name'),
+
+        ];
+    }
 
     public function table(Table $table): Table
     {

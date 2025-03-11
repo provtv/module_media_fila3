@@ -6,8 +6,8 @@ namespace Modules\Rating\Filament\Resources\RatingResource\Pages;
 
 use Filament\Actions\CreateAction;
 use Filament\Resources\Pages\ListRecords;
-use Filament\Tables\Table;
 use Filament\Tables\Actions\DeleteBulkAction;
+use Filament\Tables\Table;
 use Modules\Rating\Filament\Resources\RatingResource;
 
 class ListRatings extends ListRecords
@@ -41,7 +41,7 @@ class ListRatings extends ListRecords
     /**
      * Configura le opzioni aggiuntive della tabella.
      *
-     * @param Table $table
+     * @param  Table  $table
      * @return array<string, mixed>
      */
     protected function getTableConfiguration(): array

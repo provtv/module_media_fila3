@@ -9,26 +9,21 @@ declare(strict_types=1);
 namespace Modules\Fixcity\Filament\Widgets;
 
 use Filament\Forms\ComponentContainer;
-use Filament\Forms\Components\Actions;
 use Filament\Forms\Components\Actions\Action;
+use Filament\Forms\Components\Checkbox;
 use Filament\Forms\Components\Placeholder;
-use Filament\Forms\Components\Section;
-use Filament\Forms\Components\Select;
+use Filament\Forms\Components\RichEditor;
 use Filament\Forms\Components\Wizard;
 use Filament\Forms\Components\Wizard\Step;
 use Filament\Forms\Concerns\InteractsWithForms;
 use Filament\Forms\Contracts\HasForms;
 use Filament\Forms\Form;
 use Filament\Widgets\Widget as BaseWidget;
-use Modules\Xot\Filament\Widgets\XotBaseWidget;
+use Illuminate\Support\Facades\Blade;
+use Illuminate\Support\HtmlString;
 use Modules\Fixcity\Events\TicketCreatedEvent;
 use Modules\Fixcity\Filament\Resources\TicketResource;
 use Modules\Fixcity\Models\Ticket;
-use Filament\Forms\Components\ViewField;
-use Filament\Forms\Components\RichEditor;
-use Filament\Forms\Components\Checkbox;
-use Illuminate\Support\HtmlString;
-use Illuminate\Support\Facades\Blade;
 
 /**
  * @property ComponentContainer $form
@@ -36,7 +31,7 @@ use Illuminate\Support\Facades\Blade;
 class CreateTicketWidget extends BaseWidget implements HasForms
 {
     use InteractsWithForms;
-    
+
     protected static string $view = 'fixcity::filament.widgets.create-ticket';
 
     protected int|string|array $columnSpan = 'full';
@@ -71,8 +66,8 @@ class CreateTicketWidget extends BaseWidget implements HasForms
                             ->extraAttributes(['class' => 'text-green-500 text-lg checked:bg-green-500 checked:hover:bg-green-500 focus:ring-green-500'])
                             ->rules(['accepted']),
                     ])
-                    ->afterValidation(function($state) {
-                        if (!$state['accept_terms']) {
+                    ->afterValidation(function ($state) {
+                        if (! $state['accept_terms']) {
                             $this->addError('data.accept_terms', __('fixcity::ticket.validation.accept_terms'));
                             $this->stop();
                         }
@@ -84,7 +79,7 @@ class CreateTicketWidget extends BaseWidget implements HasForms
                     ->description(__('fixcity::ticket.steps.data.description'))
                     ->schema([
                         Placeholder::make('')
-                            ->content(new HtmlString('<h1 class="subtitle text-4xl font-bold mb-4">' . __('fixcity::ticket.fields.issue.label') . '</h1>')),
+                            ->content(new HtmlString('<h1 class="subtitle text-4xl font-bold mb-4">'.__('fixcity::ticket.fields.issue.label').'</h1>')),
                         ...TicketResource::getFormSchema(),
                     ]),
             ])
@@ -96,7 +91,7 @@ class CreateTicketWidget extends BaseWidget implements HasForms
                         ->size('xl')
                         ->extraAttributes(['class' => 'px-8 py-4 text-lg font-bold w-96 -ml-6'])
                 )
-                ->submitAction(new HtmlString(Blade::render(<<<BLADE
+                ->submitAction(new HtmlString(Blade::render(<<<'BLADE'
                     <button
                         type="submit"
                         class="fi-btn relative grid-flow-col items-center justify-center font-semibold outline-none transition duration-75 focus-visible:ring-2 rounded-lg fi-btn-size-md gap-1.5 px-8 py-4 text-md font-bold w-64 bg-white text-green-600 border-2 border-green-600 hover:bg-green-50"
@@ -107,7 +102,7 @@ class CreateTicketWidget extends BaseWidget implements HasForms
                 ->columnSpanFull()
                 ->extraAttributes([
                     'class' => 'w-full max-w-full mx-auto',
-                    'navigationContainerAttributes' => 'class="justify-start"'
+                    'navigationContainerAttributes' => 'class="justify-start"',
                 ]),
         ];
     }
@@ -123,18 +118,17 @@ class CreateTicketWidget extends BaseWidget implements HasForms
     {
         // Ottieni i dati dal form
         $data = $this->form->getState();
-    
+
         // Crea il ticket senza le immagini
         $ticket = Ticket::create($data);
-    
+
         // Salva le immagini usando saveRelationships()
         $this->form->model($ticket)->saveRelationships();
-    
+
         // Dispatch dell'evento
         TicketCreatedEvent::dispatch($ticket);
-    
+
         // Redirect alla pagina principale
         redirect('/');
     }
-    
 }

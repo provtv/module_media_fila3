@@ -6,7 +6,6 @@ namespace Modules\Blog\Filament\Resources;
 
 use Filament\Forms;
 use Filament\Forms\Components\SpatieMediaLibraryFileUpload;
-use Filament\Forms\Form;
 use Filament\Resources\Concerns\Translatable;
 use Illuminate\Support\Str;
 use Modules\Blog\Filament\Resources\CategoryResource\Pages;
@@ -72,8 +71,6 @@ class CategoryResource extends XotBaseResource
             ,
         ];
     }
-
-  
 
     public static function getPages(): array
     {

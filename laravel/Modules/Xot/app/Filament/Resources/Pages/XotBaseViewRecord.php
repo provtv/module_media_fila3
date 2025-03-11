@@ -20,5 +20,4 @@ abstract class XotBaseViewRecord extends FilamentViewRecord
      * @return array<Component>
      */
     abstract protected function getInfolistSchema(): array;
-    
 }

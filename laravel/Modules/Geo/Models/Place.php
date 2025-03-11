@@ -16,33 +16,33 @@ use Modules\Xot\Traits\Updater;
 /**
  * Class Place.
  *
- * @property int             $id
- * @property string|null     $post_type
- * @property int|null        $post_id
- * @property string|null     $formatted_address
- * @property string|null     $latitude
- * @property string|null     $longitude
- * @property string|null     $premise
- * @property string|null     $locality
- * @property string|null     $postal_town
- * @property string|null     $administrative_area_level_3
- * @property string|null     $administrative_area_level_2
- * @property string|null     $administrative_area_level_1
- * @property string|null     $country
- * @property string|null     $street_number
- * @property string|null     $route
- * @property string|null     $postal_code
- * @property string|null     $googleplace_url
- * @property string|null     $point_of_interest
- * @property string|null     $political
- * @property string|null     $campground
- * @property string|null     $nearest_street
- * @property string|null     $created_by
- * @property string|null     $updated_by
- * @property string|null     $deleted_by
- * @property Carbon|null     $created_at
- * @property Carbon|null     $updated_at
- * @property string          $value
+ * @property int $id
+ * @property string|null $post_type
+ * @property int|null $post_id
+ * @property string|null $formatted_address
+ * @property string|null $latitude
+ * @property string|null $longitude
+ * @property string|null $premise
+ * @property string|null $locality
+ * @property string|null $postal_town
+ * @property string|null $administrative_area_level_3
+ * @property string|null $administrative_area_level_2
+ * @property string|null $administrative_area_level_1
+ * @property string|null $country
+ * @property string|null $street_number
+ * @property string|null $route
+ * @property string|null $postal_code
+ * @property string|null $googleplace_url
+ * @property string|null $point_of_interest
+ * @property string|null $political
+ * @property string|null $campground
+ * @property string|null $nearest_street
+ * @property string|null $created_by
+ * @property string|null $updated_by
+ * @property string|null $deleted_by
+ * @property Carbon|null $created_at
+ * @property Carbon|null $updated_at
+ * @property string $value
  * @property Model|\Eloquent $linked
  * @property mixed $address
  * @property mixed $latlng

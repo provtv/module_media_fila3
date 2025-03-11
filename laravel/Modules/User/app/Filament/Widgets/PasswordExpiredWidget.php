@@ -165,7 +165,7 @@ class PasswordExpiredWidget extends Widget implements HasForms
             ->success()
             ->send();
 
-        return new PasswordResetResponse();
+        return new PasswordResetResponse;
     }
 
     protected function getCurrentPasswordFormComponent(): Component
@@ -174,7 +174,7 @@ class PasswordExpiredWidget extends Widget implements HasForms
             ->password()
             ->revealable()
             ->required()
-            ->rule(new CheckOtpExpiredRule())
+            ->rule(new CheckOtpExpiredRule)
             ->validationAttribute(static::trans('fields.current_password.validation_attribute'));
     }
 

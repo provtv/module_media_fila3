@@ -3,8 +3,8 @@
 namespace Modules\Fixcity\Filament\Resources\TicketResource\RelationManagers;
 
 use Filament\Forms;
-use Filament\Tables;
 use Filament\Resources\RelationManagers\RelationManager;
+use Filament\Tables;
 
 class MediaRelationManager extends RelationManager
 {
@@ -19,7 +19,7 @@ class MediaRelationManager extends RelationManager
                     ->directory('tickets/attachments')
                     ->preserveFilenames()
                     ->acceptedFileTypes(['application/pdf', 'image/*']),
-                    
+
                 Forms\Components\TextInput::make('description')
                     ->maxLength(255),
             ]);
@@ -31,10 +31,10 @@ class MediaRelationManager extends RelationManager
             ->columns([
                 Tables\Columns\TextColumn::make('filename')
                     ->label('File'),
-                    
+
                 Tables\Columns\TextColumn::make('description')
                     ->searchable(),
-                    
+
                 Tables\Columns\TextColumn::make('created_at')
                     ->dateTime(),
             ])
@@ -55,4 +55,4 @@ class MediaRelationManager extends RelationManager
                 ]),
             ]);
     }
-} 
+}

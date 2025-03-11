@@ -2,11 +2,11 @@
 
 namespace Modules\Xot\Tests\Unit;
 
-use PHPUnit\Framework\TestCase;
-use Mockery;
-use Filament\Tables\Table;
 use Filament\Tables\Contracts\HasTable;
+use Filament\Tables\Table;
+use Mockery;
 use Modules\Xot\Filament\Traits\HasXotTable;
+use PHPUnit\Framework\TestCase;
 
 class HasXotTableTest extends TestCase
 {
@@ -20,10 +20,8 @@ class HasXotTableTest extends TestCase
 
     /**
      * Test the table method with all methods implemented.
-     *
-     * @return void
      */
-    public function testTableMethodWithAllMethodsImplemented(): void
+    public function test_table_method_with_all_methods_implemented(): void
     {
         // Create mock object that uses HasXotTable trait
         $mock = Mockery::mock(HasTableWithXot::class);
@@ -83,10 +81,8 @@ class HasXotTableTest extends TestCase
 
     /**
      * Test the table method without any of the optional methods implemented.
-     *
-     * @return void
      */
-    public function testTableMethodWithNoOptionalMethodsImplemented(): void
+    public function test_table_method_with_no_optional_methods_implemented(): void
     {
         // Create mock object that uses HasXotTable trait but doesn't implement optional methods
         $mock = Mockery::mock(HasTableWithoutOptionalMethods::class);
@@ -140,6 +136,7 @@ class HasTableWithXot implements HasTable
         $mock = Mockery::mock();
         $mock->shouldReceive('getTableColumns')->andReturn([]);
         $mock->shouldReceive('getTableContentGrid')->andReturn([]);
+
         return $mock;
     }
 
@@ -328,42 +325,26 @@ class HasTableWithXot implements HasTable
         return null;
     }
 
-    public function deselectAllTableRecords(): void
-    {
-    }
+    public function deselectAllTableRecords(): void {}
 
-    public function mountTableAction(): void
-    {
-    }
+    public function mountTableAction(): void {}
 
-    public function mountTableBulkAction(): void
-    {
-    }
+    public function mountTableBulkAction(): void {}
 
     public function mountedTableActionRecord(): mixed
     {
         return null;
     }
 
-    public function replaceMountedTableAction(): void
-    {
-    }
+    public function replaceMountedTableAction(): void {}
 
-    public function replaceMountedTableBulkAction(): void
-    {
-    }
+    public function replaceMountedTableBulkAction(): void {}
 
-    public function resetTableSearch(): void
-    {
-    }
+    public function resetTableSearch(): void {}
 
-    public function resetTableColumnSearch(): void
-    {
-    }
+    public function resetTableColumnSearch(): void {}
 
-    public function toggleTableReordering(): void
-    {
-    }
+    public function toggleTableReordering(): void {}
 
     public function parseTableFilterName(): string
     {
@@ -388,6 +369,7 @@ class HasTableWithoutOptionalMethods implements HasTable
         $mock = Mockery::mock();
         $mock->shouldReceive('getTableColumns')->andReturn([]);
         $mock->shouldReceive('getTableContentGrid')->andReturn([]);
+
         return $mock;
     }
 
@@ -576,42 +558,26 @@ class HasTableWithoutOptionalMethods implements HasTable
         return null;
     }
 
-    public function deselectAllTableRecords(): void
-    {
-    }
+    public function deselectAllTableRecords(): void {}
 
-    public function mountTableAction(): void
-    {
-    }
+    public function mountTableAction(): void {}
 
-    public function mountTableBulkAction(): void
-    {
-    }
+    public function mountTableBulkAction(): void {}
 
     public function mountedTableActionRecord(): mixed
     {
         return null;
     }
 
-    public function replaceMountedTableAction(): void
-    {
-    }
+    public function replaceMountedTableAction(): void {}
 
-    public function replaceMountedTableBulkAction(): void
-    {
-    }
+    public function replaceMountedTableBulkAction(): void {}
 
-    public function resetTableSearch(): void
-    {
-    }
+    public function resetTableSearch(): void {}
 
-    public function resetTableColumnSearch(): void
-    {
-    }
+    public function resetTableColumnSearch(): void {}
 
-    public function toggleTableReordering(): void
-    {
-    }
+    public function toggleTableReordering(): void {}
 
     public function parseTableFilterName(): string
     {

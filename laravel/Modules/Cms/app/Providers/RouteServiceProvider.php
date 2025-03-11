@@ -30,6 +30,7 @@ class RouteServiceProvider extends XotBaseRouteServiceProvider
      * The module namespace.
      */
     protected string $module_ns = __NAMESPACE__;
+
     public string $name = 'Cms';
 
     public function boot(): void

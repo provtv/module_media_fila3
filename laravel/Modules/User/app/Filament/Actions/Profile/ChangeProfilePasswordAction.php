@@ -27,7 +27,7 @@ class ChangeProfilePasswordAction extends Action
     {
         parent::setUp();
         $this->translateLabel()
-            
+
             ->tooltip(__('user::user.actions.change_password'))
             ->icon('heroicon-o-key')
             ->action(static function (ProfileContract $record, array $data): void {

@@ -63,8 +63,7 @@ class OSMMapWidget extends MapWidget
     }
 
     /**
-     * @param Collection<int, Place> $places
-     *
+     * @param  Collection<int, Place>  $places
      * @return array{lat: float, lng: float}
      */
     protected function getMapCenter(Collection $places): array
@@ -83,7 +82,7 @@ class OSMMapWidget extends MapWidget
     }
 
     /**
-     * @param Collection<int, Place> $places
+     * @param  Collection<int, Place>  $places
      */
     protected function getMapZoom(Collection $places): int
     {

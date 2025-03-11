@@ -27,18 +27,18 @@ class ImportArticlesFromByJsonTextAction
         Assert::isArray($data);
 
         /** @var Collection<int,Article> */
-        $articles = new Collection();
+        $articles = new Collection;
 
         foreach ($data as $item) {
             Assert::isArray($item);
             $articleData = ArticleData::fromArray($item);
-            
+
             $article = Article::query()
                 ->where('slug', $articleData->slug)
                 ->first();
 
-            if (null === $article) {
-                $article = new Article();
+            if ($article === null) {
+                $article = new Article;
             }
 
             $this->updateArticle($article, $articleData);
@@ -56,14 +56,14 @@ class ImportArticlesFromByJsonTextAction
         $article->title = $data->title;
         $article->slug = $data->slug;
         $article->status = $data->status->value;
-        $article->status_display = (int)$data->status_display;
+        $article->status_display = (int) $data->status_display;
         $article->bet_end_date = $data->bet_end_date?->format('Y-m-d H:i:s');
         $article->event_start_date = $data->event_start_date?->format('Y-m-d H:i:s');
         $article->event_end_date = $data->event_end_date?->format('Y-m-d H:i:s');
-        $article->is_wagerable = (int)$data->is_wagerable;
-        $article->brier_score = (string)$data->brier_score;
-        $article->brier_score_play_money = (string)$data->brier_score_play_money;
-        $article->brier_score_real_money = (string)$data->brier_score_real_money;
+        $article->is_wagerable = (int) $data->is_wagerable;
+        $article->brier_score = (string) $data->brier_score;
+        $article->brier_score_play_money = (string) $data->brier_score_play_money;
+        $article->brier_score_real_money = (string) $data->brier_score_real_money;
         $article->wagers_count = $data->wagers_count;
         $article->wagers_count_canonical = $data->wagers_count_canonical;
         $article->wagers_count_total = $data->wagers_count_total;
@@ -80,9 +80,9 @@ class ImportArticlesFromByJsonTextAction
 
         foreach ($data->outcomes as $outcome) {
             Assert::isArray($outcome);
-            $rating = new Rating();
-            $rating->title = (string)($outcome['title'] ?? '');
-            $rating->disabled = (bool)($outcome['disabled'] ?? false);
+            $rating = new Rating;
+            $rating->title = (string) ($outcome['title'] ?? '');
+            $rating->disabled = (bool) ($outcome['disabled'] ?? false);
             $rating->save();
         }
     }

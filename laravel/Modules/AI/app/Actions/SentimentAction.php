@@ -7,6 +7,7 @@ namespace Modules\AI\Actions;
 use Modules\AI\Contracts\SentimentAnalyzer;
 use Spatie\QueueableAction\QueueableAction;
 use Webmozart\Assert\Assert;
+
 use function Safe\error_log;
 
 class BasicSentimentAnalyzer implements SentimentAnalyzer
@@ -21,14 +22,14 @@ class BasicSentimentAnalyzer implements SentimentAnalyzer
         $negativeCount = 0;
 
         foreach ($positiveWords as $word) {
-            if (false !== stripos($text, $word)) {
-                ++$positiveCount;
+            if (stripos($text, $word) !== false) {
+                $positiveCount++;
             }
         }
 
         foreach ($negativeWords as $word) {
-            if (false !== stripos($text, $word)) {
-                ++$negativeCount;
+            if (stripos($text, $word) !== false) {
+                $negativeCount++;
             }
         }
 
@@ -67,8 +68,8 @@ class SentimentAction
     public function __construct()
     {
         $this->analyzer = class_exists('Codewithkyrian\Transformers\Transformers')
-            ? new TransformersSentimentAnalyzer()
-            : new BasicSentimentAnalyzer();
+            ? new TransformersSentimentAnalyzer
+            : new BasicSentimentAnalyzer;
     }
 
     public function execute(string $prompt): array
@@ -102,7 +103,7 @@ class TransformersSentimentAnalyzer implements SentimentAnalyzer
              * @var \Codewithkyrian\Transformers\Transformers|null $transformers
              */
             $transformersClass = 'Codewithkyrian\Transformers\Transformers';
-            if (!method_exists($transformersClass, 'setup')) {
+            if (! method_exists($transformersClass, 'setup')) {
                 throw new \Exception('Transformers setup method not found');
             }
 

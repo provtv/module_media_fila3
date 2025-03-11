@@ -4,11 +4,10 @@ declare(strict_types=1);
 
 namespace Modules\Fixcity\View\Components\Blocks\TicketList;
 
-use Modules\Fixcity\View\Components\Blocks\TicketList\Agid as BaseAgid;
 use Illuminate\Support\Collection;
 use Illuminate\Support\Facades\DB;
-use Modules\Fixcity\Enums\ReportStatusEnum;
 use Illuminate\View\Component;
+use Modules\Fixcity\Enums\ReportStatusEnum;
 
 class Agid extends Component
 {
@@ -24,7 +23,7 @@ class Agid extends Component
                 'category',
                 'status',
                 'metadata',
-                'created_at'
+                'created_at',
             ])
             ->orderBy('created_at', 'desc')
             ->get()
@@ -38,7 +37,7 @@ class Agid extends Component
                     'category' => $report->category,
                     'status' => ReportStatusEnum::from($report->status),
                     'metadata' => json_decode($report->metadata, true),
-                    'created_at' => $report->created_at
+                    'created_at' => $report->created_at,
                 ];
             });
     }
@@ -50,7 +49,7 @@ class Agid extends Component
                 'id',
                 'name',
                 'description',
-                'icon'
+                'icon',
             ])
             ->get()
             ->mapWithKeys(function ($category) {
@@ -58,8 +57,8 @@ class Agid extends Component
                     $category->id => [
                         'name' => $category->name,
                         'description' => $category->description,
-                        'icon' => $category->icon
-                    ]
+                        'icon' => $category->icon,
+                    ],
                 ];
             });
     }
@@ -68,7 +67,7 @@ class Agid extends Component
     {
         return view('fixcity::components.blocks.ticket_list.agid', [
             'reports' => $this->getReports(),
-            'categories' => $this->getCategories()
+            'categories' => $this->getCategories(),
         ]);
     }
-} 
+}

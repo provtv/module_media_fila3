@@ -1,4 +1,5 @@
 <?php
+
 /**
  * ---.
  */
@@ -74,7 +75,7 @@ enum TicketStatusEnum: string implements HasColor, HasIcon, HasLabel
 
     public function getColorClass(): string
     {
-        return match($this) {
+        return match ($this) {
             self::PENDING => 'badge-warning',
             self::IN_REVIEW => 'badge-info',
             self::IN_PROGRESS => 'badge-info',
@@ -88,7 +89,7 @@ enum TicketStatusEnum: string implements HasColor, HasIcon, HasLabel
 
     public function label(): string
     {
-        return match($this) {
+        return match ($this) {
             self::PENDING => trans('fixcity::ticket.fields.status.options.pending'),
             self::IN_REVIEW => trans('fixcity::ticket.fields.status.options.in_review'),
             self::IN_PROGRESS => trans('fixcity::ticket.fields.status.options.in_progress'),

@@ -5,15 +5,12 @@ namespace Modules\Notify\Filament\Resources;
 use Filament\Forms\Components\DateTimePicker;
 use Filament\Forms\Components\KeyValue;
 use Filament\Forms\Components\TextInput;
-use Modules\Notify\Filament\Resources\NotificationResource\Pages;
 use Modules\Notify\Models\Notification;
 use Modules\Xot\Filament\Resources\XotBaseResource;
-use Modules\Xot\Filament\Resources\RelationManagers\XotBaseRelationManager;
 
 class NotificationResource extends XotBaseResource
 {
     protected static ?string $model = Notification::class;
-
 
     public static function getFormSchema(): array
     {
@@ -49,6 +46,4 @@ class NotificationResource extends XotBaseResource
                 ->disabled(),
         ];
     }
-
-   
 }

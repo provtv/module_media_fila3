@@ -25,7 +25,7 @@ class TranslationData extends Data
     {
         $hints = app('translator')->getLoader()->namespaces();
         $path = collect($hints)->get($this->namespace);
-        if (null === $path) {
+        if ($path === null) {
             throw new \Exception('['.__LINE__.']['.class_basename($this).']');
         }
 

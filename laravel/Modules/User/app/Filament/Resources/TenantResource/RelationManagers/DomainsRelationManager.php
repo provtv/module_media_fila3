@@ -8,37 +8,27 @@ declare(strict_types=1);
 namespace Modules\User\Filament\Resources\TenantResource\RelationManagers;
 
 use Filament\Forms;
-use Filament\Forms\Form;
 use Filament\Tables;
 use Filament\Tables\Table;
 use Modules\Xot\Filament\Resources\RelationManagers\XotBaseRelationManager;
-
-
-
-
-
-
-
-
 
 class DomainsRelationManager extends XotBaseRelationManager
 {
     protected static string $relationship = 'domains';
 
     public function getFormSchema(): array
-{
-    
-        
-    return [
-              
-                    Forms\Components\TextInput::make('domain')
-                        ->required()
-                        ->prefix('http(s)://')
-                        ->suffix('.'.request()->getHost())
-                        ->maxLength(255),
-                
-      ];
-}
+    {
+
+        return [
+
+            Forms\Components\TextInput::make('domain')
+                ->required()
+                ->prefix('http(s)://')
+                ->suffix('.'.request()->getHost())
+                ->maxLength(255),
+
+        ];
+    }
 
     public function table(Table $table): Table
     {

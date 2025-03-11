@@ -14,9 +14,9 @@ class ThemeComposer
     /**
      * Get all supported languages as a DataCollection.
      *
-     * @throws \Exception if supportedLocales config is not an array
-     *
      * @return DataCollection<LangData>
+     *
+     * @throws \Exception if supportedLocales config is not an array
      */
     public function languages(): DataCollection
     {
@@ -34,7 +34,7 @@ class ThemeComposer
 
             // Extract regional code and handle 'en' to 'gb' mapping.
             $regionalCode = explode('_', (string) $item['regional'])[0] ?? 'en';
-            if ('en' === $regionalCode) {
+            if ($regionalCode === 'en') {
                 $regionalCode = 'gb';
             }
 

@@ -5,7 +5,6 @@ declare(strict_types=1);
 namespace Modules\Notify\Filament\Resources;
 
 use Filament\Forms\Components\TextInput;
-use Filament\Resources\Pages\PageRegistration;
 use Modules\Notify\Filament\Resources\ContactResource\Pages;
 use Modules\Notify\Models\Contact;
 use Modules\Xot\Filament\Resources\XotBaseResource;
