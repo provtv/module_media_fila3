@@ -18,7 +18,7 @@ class MetatagData extends Data implements Wireable
 {
     use WireableData;
 
-    public string $title;
+    public string $title = 'Test';
 
     public string $sitename;
 
