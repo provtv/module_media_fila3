@@ -46,7 +46,7 @@ class MetatagData extends Data implements Wireable
 
     public string $logo_header = 'fixcity::images/logo.svg';
 
-    public string $logo_header_dark;
+    public string $logo_header_dark = 'fixcity::images/logo.svg';
 
     public string $logo_height = '2em';
 
