@@ -118,7 +118,7 @@ class TicketsMapTableWidget extends MapTableWidget
         */
     }
 
-    protected function getTableActions(): array
+    public function getTableActions(): array
     {
         return app(ListTickets::class)->getTableActions();
     }

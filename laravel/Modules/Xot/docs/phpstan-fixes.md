@@ -210,7 +210,7 @@ public function execute(Model $model, array $data): array
 
 3. **Azioni e Validazione**
    ```php
-   protected function getTableActions(): array
+   public function getTableActions(): array
    {
        return [
            Tables\Actions\EditAction::make()

@@ -4221,7 +4221,7 @@ class ListTickets extends XotBaseListRecords
 {
     protected function getTableColumns(): array {...}
     protected function getTableFilters(): array {...}
-    protected function getTableActions(): array {...}
+    public function getTableActions(): array {...}
     protected function getTableBulkActions(): array {...}
 }
 ```
@@ -4249,7 +4249,7 @@ class ListTickets extends XotBaseListRecords
    ```php
    protected function getTableColumns(): array
    protected function getTableFilters(): array
-   protected function getTableActions(): array
+   public function getTableActions(): array
    protected function getTableBulkActions(): array
    ```
 
@@ -4300,7 +4300,7 @@ class ListTickets extends XotBaseListRecords
 // ❌ ERRATO: Metodi standard di Filament
 protected function getTableColumns(): array
 protected function getTableFilters(): array
-protected function getTableActions(): array
+public function getTableActions(): array
 protected function getTableBulkActions(): array
 
 // ✅ CORRETTO: Metodi di XotBaseListRecords
@@ -6921,7 +6921,7 @@ class ListTickets extends XotBaseListRecords
 {
     protected function getTableColumns(): array {...}
     protected function getTableFilters(): array {...}
-    protected function getTableActions(): array {...}
+    public function getTableActions(): array {...}
     protected function getTableBulkActions(): array {...}
 }
 ```
@@ -6949,7 +6949,7 @@ class ListTickets extends XotBaseListRecords
    ```php
    protected function getTableColumns(): array
    protected function getTableFilters(): array
-   protected function getTableActions(): array
+   public function getTableActions(): array
    protected function getTableBulkActions(): array
    ```
 
@@ -7000,7 +7000,7 @@ class ListTickets extends XotBaseListRecords
 // ❌ ERRATO: Metodi standard di Filament
 protected function getTableColumns(): array
 protected function getTableFilters(): array
-protected function getTableActions(): array
+public function getTableActions(): array
 protected function getTableBulkActions(): array
 
 // ✅ CORRETTO: Metodi di XotBaseListRecords
