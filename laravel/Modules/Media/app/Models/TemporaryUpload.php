@@ -20,12 +20,12 @@ use Webmozart\Assert\Assert;
 /**
  * Modules\Media\Models\TemporaryUpload.
  *
- * @property int $id
- * @property string $session_id
- * @property \Illuminate\Support\Carbon|null $created_at
- * @property \Illuminate\Support\Carbon|null $updated_at
+ * @property int                                                                                  $id
+ * @property string                                                                               $session_id
+ * @property \Illuminate\Support\Carbon|null                                                      $created_at
+ * @property \Illuminate\Support\Carbon|null                                                      $updated_at
  * @property \Spatie\MediaLibrary\MediaCollections\Models\Collections\MediaCollection<int, Media> $media
- * @property int|null $media_count
+ * @property int|null                                                                             $media_count
  *
  * @method static \Illuminate\Database\Eloquent\Builder<static>|TemporaryUpload newModelQuery()
  * @method static \Illuminate\Database\Eloquent\Builder<static>|TemporaryUpload newQuery()
@@ -34,7 +34,7 @@ use Webmozart\Assert\Assert;
  * @method static \Illuminate\Database\Eloquent\Builder<static>|TemporaryUpload whereId($value)
  * @method static \Illuminate\Database\Eloquent\Builder<static>|TemporaryUpload whereSessionId($value)
  * @method static \Illuminate\Database\Eloquent\Builder<static>|TemporaryUpload whereUpdatedAt($value)
-<<<<<<< HEAD
+ *
  * @property string|null $updated_by
  * @property string|null $created_by
  * @property string|null $deleted_at
@@ -44,7 +44,7 @@ use Webmozart\Assert\Assert;
  * @method static \Illuminate\Database\Eloquent\Builder<static>|TemporaryUpload whereDeletedAt($value)
  * @method static \Illuminate\Database\Eloquent\Builder<static>|TemporaryUpload whereDeletedBy($value)
  * @method static \Illuminate\Database\Eloquent\Builder<static>|TemporaryUpload whereUpdatedBy($value)
->>>>>>> 12c05b24a2 (**Remove unnecessary files and directories from the Setting module**)
+ *
  * @mixin \Eloquent
  */
 class TemporaryUpload extends Model implements HasMedia

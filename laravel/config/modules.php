@@ -1,18 +1,11 @@
 <?php
 
-<<<<<<< HEAD
 declare(strict_types=1);
 
-=======
->>>>>>> 12c05b24a2 (**Remove unnecessary files and directories from the Setting module**)
 use Nwidart\Modules\Activators\FileActivator;
 use Nwidart\Modules\Providers\ConsoleServiceProvider;
 
 return [
-<<<<<<< HEAD
-=======
-
->>>>>>> 12c05b24a2 (**Remove unnecessary files and directories from the Setting module**)
     /*
     |--------------------------------------------------------------------------
     | Module Namespace
@@ -205,10 +198,6 @@ return [
         |
         */
         'translations' => false,
-<<<<<<< HEAD
-=======
-
->>>>>>> 12c05b24a2 (**Remove unnecessary files and directories from the Setting module**)
     ],
 
     /*
@@ -267,11 +256,7 @@ return [
     */
     'register' => [
         'translations' => true,
-<<<<<<< HEAD
         /*
-=======
-        /**
->>>>>>> 12c05b24a2 (**Remove unnecessary files and directories from the Setting module**)
          * load files on boot or register method
          */
         'files' => 'register',

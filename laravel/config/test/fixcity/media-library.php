@@ -1,7 +1,8 @@
 <?php
 
-return [
+declare(strict_types=1);
 
+return [
     /*
      * The disk on which to store added files and derived images by default. Choose
      * one or more of the disks you've configured in config/filesystems.php.
@@ -16,15 +17,6 @@ return [
 
     /*
      * This queue connection will be used to generate derived and responsive images.
-<<<<<<< HEAD
-<<<<<<< HEAD
-     * Leave empt pπy to use the default queue connection.
-=======
-     * Leave empty to use the default queue connection.
->>>>>>> origin/master
-=======
-     * Leave empt pπy to use the default queue connection.
->>>>>>> 12c05b24a2 (**Remove unnecessary files and directories from the Setting module**)
      */
     'queue_connection_name' => env('QUEUE_CONNECTION', 'sync'),
 
@@ -144,7 +136,7 @@ return [
             '-m 6', // for the slowest compression method in order to get the best compression.
             '-pass 10', // for maximizing the amount of analysis pass.
             '-mt', // multithreading for some speed improvements.
-            '-q 90', //quality factor that brings the least noticeable changes.
+            '-q 90', // quality factor that brings the least noticeable changes.
         ],
         Spatie\ImageOptimizer\Optimizers\Avifenc::class => [
             '-a cq-level=23', // constant quality level, lower values mean better quality and greater file size (0-63).

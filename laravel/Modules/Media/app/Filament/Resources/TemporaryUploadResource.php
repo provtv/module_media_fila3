@@ -4,12 +4,8 @@ declare(strict_types=1);
 
 namespace Modules\Media\Filament\Resources;
 
-use Filament\Resources\Pages\PageRegistration;
-use Modules\Media\Filament\Resources\TemporaryUploadResource\Pages\CreateTemporaryUpload;
 // use Modules\Media\Filament\Resources\TemporaryUploadResource\RelationManagers;
-use Modules\Media\Filament\Resources\TemporaryUploadResource\Pages\EditTemporaryUpload;
 // use Filament\Forms;
-use Modules\Media\Filament\Resources\TemporaryUploadResource\Pages\ListTemporaryUploads;
 use Modules\Media\Models\TemporaryUpload;
 use Modules\Xot\Filament\Resources\XotBaseResource;
 
@@ -20,7 +16,6 @@ class TemporaryUploadResource extends XotBaseResource
 {
     protected static ?string $model = TemporaryUpload::class;
 
-<<<<<<< HEAD
     protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
 
     public static function getFormSchema(): array
@@ -36,37 +31,6 @@ class TemporaryUploadResource extends XotBaseResource
                 ->maxLength(255),
             \Filament\Forms\Components\DateTimePicker::make('expires_at')
                 ->required(),
-        ];
-    }
-
-    /**
-     * @psalm-return array<never, never>
-     */
-    public static function getRelations(): array
-    {
-        return [
-        ];
-=======
-    public static function getFormSchema(): array
-    {
-        return
-                [
-                ]
-        ;
->>>>>>> 12c05b24a2 (**Remove unnecessary files and directories from the Setting module**)
-    }
-
-    /**
-     * @return PageRegistration[]
-     *
-     * @psalm-return array{index: PageRegistration, create: PageRegistration, edit: PageRegistration}
-     */
-    public static function getPages(): array
-    {
-        return [
-            'index' => ListTemporaryUploads::route('/'),
-            'create' => CreateTemporaryUpload::route('/create'),
-            'edit' => EditTemporaryUpload::route('/{record}/edit'),
         ];
     }
 }

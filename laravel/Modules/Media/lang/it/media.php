@@ -1,30 +1,21 @@
 <?php
 
-<<<<<<< HEAD
-return [
-=======
 declare(strict_types=1);
 
 return [
     // 'resources' => 'Risorse',
->>>>>>> 12c05b24a2 (**Remove unnecessary files and directories from the Setting module**)
     'pages' => 'Pagine',
     'widgets' => 'Widgets',
     'navigation' => [
         'name' => 'Media',
         'plural' => 'Media',
         'group' => [
-<<<<<<< HEAD
             'name' => 'Sistema',
             'description' => 'Gestione dei file multimediali',
         ],
         'label' => 'media',
         'sort' => 20,
         'icon' => 'media-main-animated',
-=======
-            'name' => '',
-        ],
->>>>>>> 12c05b24a2 (**Remove unnecessary files and directories from the Setting module**)
     ],
     'fields' => [
         'name' => 'Nome',

@@ -96,7 +96,3 @@ docs/cache/
 cache/
 .git-blame-ignore-revs
 .php-cs-fixer.cache
-<<<<<<< HEAD
-.php-cs-fixer.cache
-=======
->>>>>>> 12c05b24a2 (**Remove unnecessary files and directories from the Setting module**)
