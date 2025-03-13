@@ -2,6 +2,22 @@
 
 return [
     'ticket' => [
+        'title' => [
+            'label' => 'Titolo',
+            'placeholder' => 'Titolo',
+            'help' => 'Inserisci un titolo descrittivo',
+        ],
+        'type' => [
+            'label' => 'Tipo',
+            'placeholder' => 'Tipo di disservizio',
+        ],
+        'content' => [
+            'label' => 'Dettagli',
+            'placeholder' => 'Dettagli',
+            'helper_text' => 'Inserire al massimo 200 caratteri',
+        ],
+        'your-location' => 'La tua posizione',
+        'insert-images' => 'Immagini',
         'steps' => [
             'auth' => [
                 'label' => 'Autorizzazioni e condizioni',

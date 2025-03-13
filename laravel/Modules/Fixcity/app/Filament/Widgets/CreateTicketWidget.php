@@ -48,19 +48,19 @@ class CreateTicketWidget extends BaseWidget implements HasForms
         return [
             Wizard::make([
                 Step::make('step-1')
-                    ->label(__('fixcity::ticket.steps.auth.label'))
+                    ->label(__('fixcity::fixcity.ticket.steps.auth.label'))
                     ->icon('heroicon-o-shield-check')
-                    ->description(__('fixcity::ticket.steps.auth.description'))
+                    ->description(__('fixcity::fixcity.ticket.steps.auth.description'))
                     ->schema([
                         RichEditor::make('privacy_notice')
                             ->label('')
-                            ->default(__('fixcity::ticket.fields.privacy_notice.content'))
+                            ->default(__('fixcity::fixcity.ticket.fields.privacy_notice.content'))
                             ->disabled()
                             ->extraAttributes(['class' => 'border-0 shadow-none !p-0 !bg-transparent']),
 
                         Checkbox::make('accept_terms')
-                            ->label(__('fixcity::ticket.fields.accept_terms.label'))
-                            ->helperText(__('fixcity::ticket.fields.accept_terms.helper'))
+                            ->label(__('fixcity::fixcity.ticket.fields.accept_terms.label'))
+                            ->helperText(__('fixcity::fixcity.ticket.fields.accept_terms.helper'))
                             ->required()
                             ->default(false)
                             ->extraAttributes(['class' => 'text-green-500 text-lg checked:bg-green-500 checked:hover:bg-green-500 focus:ring-green-500'])
@@ -68,24 +68,24 @@ class CreateTicketWidget extends BaseWidget implements HasForms
                     ])
                     ->afterValidation(function ($state) {
                         if (! $state['accept_terms']) {
-                            $this->addError('data.accept_terms', __('fixcity::ticket.validation.accept_terms'));
+                            $this->addError('data.accept_terms', __('fixcity::fixcity.ticket.validation.accept_terms'));
                             $this->stop();
                         }
                     }),
 
                 Step::make('step-2')
-                    ->label(__('fixcity::ticket.steps.data.label'))
+                    ->label(__('fixcity::fixcity.ticket.steps.data.label'))
                     ->icon('heroicon-o-document-text')
-                    ->description(__('fixcity::ticket.steps.data.description'))
+                    ->description(__('fixcity::fixcity.ticket.steps.data.description'))
                     ->schema([
                         Placeholder::make('')
-                            ->content(new HtmlString('<h1 class="subtitle text-4xl font-bold mb-4">'.__('fixcity::ticket.fields.issue.label').'</h1>')),
+                            ->content(new HtmlString('<h1 class="subtitle text-4xl font-bold mb-4">'.__('fixcity::fixcity.ticket.fields.issue.label').'</h1>')),
                         ...TicketResource::getFormSchema(),
                     ]),
             ])
                 ->nextAction(
                     fn (Action $action) => $action
-                        ->label(__('fixcity::ticket.actions.next.label'))
+                        ->label(__('fixcity::fixcity.ticket.actions.next.label'))
                         ->icon('heroicon-m-arrow-right')
                         ->color('primary')
                         ->size('xl')
@@ -96,7 +96,7 @@ class CreateTicketWidget extends BaseWidget implements HasForms
                         type="submit"
                         class="fi-btn relative grid-flow-col items-center justify-center font-semibold outline-none transition duration-75 focus-visible:ring-2 rounded-lg fi-btn-size-md gap-1.5 px-8 py-4 text-md font-bold w-64 bg-white text-green-600 border-2 border-green-600 hover:bg-green-50"
                     >
-                        {{ __('fixcity::ticket.actions.save.label') }}
+                        {{ __('fixcity::fixcity.ticket.actions.save.label') }}
                     </button>
                 BLADE)))
                 ->columnSpanFull()

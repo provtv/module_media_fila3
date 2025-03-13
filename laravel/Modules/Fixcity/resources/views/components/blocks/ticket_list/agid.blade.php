@@ -301,7 +301,7 @@ new class extends Component
                     <h2 class="text-3xl font-bold lg:text-4xl">Fai una segnalazione</h2>
                     <p>Se vuoi aggiungere una segnalazione, puoi farlo dopo esserti autenticato con le tue credenziali SPID o CIE.</p>
                     <br />
-                    <a href="{{ route('ticket.create', ['lang'=>$lang]) }}" class="text-white btn btn-neutral">Segnala disservizio</a>
+                    <a href="{{ route('ticket.create') }}" class="text-white btn btn-neutral">Segnala disservizio</a>
                 </div>
             </div>
         </div>

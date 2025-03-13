@@ -31,7 +31,7 @@ class TicketResource extends Resource
                     // Ticket Name
                     Forms\Components\TextInput::make('name')
                         ->hiddenLabel()
-                        ->placeholder(__('ticket::ticket.title.placeholder').'*')
+                        ->placeholder(__('fixcity::fixcity.ticket.title.placeholder').'*')
                         ->columnSpanFull() // Occupa tutta la larghezza disponibile
                         ->required()
                         ->maxLength(255)
@@ -55,7 +55,7 @@ class TicketResource extends Resource
                     // Ticket Type
                     Forms\Components\Select::make('type')
                         ->hiddenLabel()
-                        ->placeholder(__('ticket::ticket.type.placeholder').'*')
+                        ->placeholder(__('fixcity::fixcity.ticket.type.placeholder').'*')
                         ->searchable()
                         ->options(TicketTypeEnum::class)
                         ->columnSpanFull(),
@@ -63,7 +63,7 @@ class TicketResource extends Resource
                     // Ticket Priority
                     Forms\Components\Select::make('priority')
                         ->hiddenLabel()
-                        ->placeholder(__('ticket::ticket.priorities.label'))
+                        ->placeholder(__('fixcity::fixcity.ticket.priorities.label'))
                         ->searchable()
                         ->options(TicketPriorityEnum::class)
                         ->default(TicketPriorityEnum::default())
@@ -78,10 +78,10 @@ class TicketResource extends Resource
 
                     Forms\Components\Textarea::make('content')
                         ->hiddenLabel()
-                        ->placeholder(__('ticket::ticket.content.placeholder').'**')
+                        ->placeholder(__('fixcity::fixcity.ticket.content.placeholder').'**')
                         ->rows(2)
                         ->cols(10)
-                        ->helperText(__('ticket::ticket.content.helper_text')),
+                        ->helperText(__('fixcity::fixcity.ticket.content.helper_text')),
 
                     // Hidden Latitude and Longitude
                     Forms\Components\TextInput::make('latitude')
@@ -108,7 +108,7 @@ class TicketResource extends Resource
                     // Map Section
                     // NOTA BENE, ASSICURATI DI ABILITARE LA LOCALIZZAZIONE NEL BROWSER
                     Map::make('location')
-                        ->label(__('ticket::ticket.your-location'))
+                        ->label(__('fixcity::fixcity.ticket.your-location'))
                         ->columnSpanFull() // Occupare l'intera larghezza disponibile
                         ->default([
                             'lat' => 40.4168,
@@ -151,7 +151,7 @@ class TicketResource extends Resource
                     //     ,
 
                     SpatieMediaLibraryFileUpload::make('images')
-                        ->label(__('ticket::ticket.insert-images'))
+                        ->label(__('fixcity::fixcity.ticket.insert-images'))
                         ->collection('ticket')
                         ->directory('ticket')
                         ->disk('uploads')
