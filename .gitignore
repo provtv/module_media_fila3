@@ -1,4 +1,35 @@
-# File system temporanei e di lock
+.DS_Store
+
+/vendor/
+node_modules/
+npm-debug.log
+yarn-error.log
+
+# Laravel 4 specific
+bootstrap/compiled.php
+app/storage/
+
+# Laravel 5 & Lumen specific
+public/storage
+public/hot
+
+# Laravel 5 & Lumen specific with changed public path
+public_html/storage
+public_html/hot
+
+public_html/assets
+public_html/build
+
+
+storage/*.key
+.env
+laravel/.env
+laravel/storage/*.key
+
+Homestead.yaml
+Homestead.json
+/.vagrant
+.phpunit.result.cache
 *.lock
 *.phar
 *.log
@@ -6,72 +37,61 @@
 *.old1
 *.old2
 *.old3
-**/*.Zone.Identifier
-*:Zone.Identifier
-.DS_Store
-*.exe
 
-# Cache e file temporanei
-/cache/
-cache/
-.cache
-*.cache
 .php-cs-fixer.cache
-build/
-tmp
-logs/
+logs
 error.log
-node_modules/
-vendor/
-storage/*.key
 
-# Laravel specific
-# Generati da Laravel
-bootstrap/compiled.php
-public/storage
-public/hot
-public_html/storage
-public_html/hot
-public_html/assets
-public_html/build
-storage/*
-laravel/storage/*.key
-laravel/.env
-laravel/database/migrations
-
-# Laravel media & build directories
+/laravel/database/migrations
+/public_html/media
 /laravel/storage/media-library
 /laravel/build
-/laravel/composer.phar
-/laravel/stubs/
-laravel/app/View/Components/vendor/
-
-# Laravel Homestead & Vagrant
-Homestead.yaml
-Homestead.json
-/.vagrant
-
-# IDEs e editori di testo
-.idea
-.vscode-server
-.vscode/launch.json
 .phpstorm.meta.php
 _ide_helper.php
 
-# NPM, Yarn, e ambiente Node
-node_modules
-npm-debug.log
-yarn-error.log
-/public_html/js/
+.gnupg/
+
+.idea
+.vscode-server
+.vscode/launch.json
+
+.cache
+.nodenv
+.phpenv
+.ssh
+/error_docs
+/logs
+vendor
+docker
+
+
+*.lock
+bashscripts
+*.lock
+
+.git-rewrite
+uploads
+
+
+laravel/stubs/
+laravel/composer.phar
+
+/public_html/css
+/public_html/js
+/public_html/deploy/config.php
+/public_html/storage
+public_html/modules
+public_html/js
 public_html/css/
 public_html/storage/
-public_html/modules
+public_html/themes
+/cache
+public_html/js/
 public_html/themes/
-
-# Sistema di versionamento git
-.git-rewrite
-.git-blame-ignore-revs
-
-# Altri
-.git-blame-ignore-revs
-uploads
+cache/
+laravel/.phive/
+tmp
+laravel/app/View/Components/vendor/
+public_html/themes/
+*.phar
+*.phar

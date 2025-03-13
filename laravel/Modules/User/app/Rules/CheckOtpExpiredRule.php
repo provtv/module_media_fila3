@@ -8,10 +8,17 @@ use Illuminate\Contracts\Validation\ValidationRule;
 use Illuminate\Support\Facades\Auth;
 use Modules\User\Datas\PasswordData;
 
+/**
+ * Regola di validazione per verificare se un codice OTP è scaduto.
+ */
 class CheckOtpExpiredRule implements ValidationRule
 {
     /**
      * Determina se la regola di validazione si applica.
+     *
+     * @param string $attribute L'attributo che viene validato
+     * @param string|int $value Il valore dell'attributo
+     * @param \Closure(string): void $fail La closure da chiamare in caso di fallimento
      */
     public function validate(string $attribute, mixed $value, \Closure $fail): void
     {
@@ -39,9 +46,9 @@ class CheckOtpExpiredRule implements ValidationRule
     /**
      * Ottiene il messaggio di errore da visualizzare.
      *
-     * @return string
+     * @return string Il messaggio di errore
      */
-    public function message()
+    public function message(): string
     {
         return __('user::otp.notifications.otp_expired.body');
     }

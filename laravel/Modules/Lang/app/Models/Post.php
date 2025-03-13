@@ -193,10 +193,7 @@ class Post extends Model
                     ->where($post_table.'.guid', '!=', $post_type)
                     ->orderBy($table.'.updated_at', 'desc')
                     ->with('post')
-<<<<<<< HEAD
-=======
                     ;
->>>>>>> 48d23c66280a765abed9abb4b7208b016bf97c2a
 
         return $rows;
     }
@@ -221,11 +218,6 @@ class Post extends Model
         }
 
         if (! empty($this->attributes['post_type'])) {
-<<<<<<< HEAD
-            $value = $this->attributes['post_type'].' '.$this->attributes['post_id'];
-        } else {
-            $value = $this->post_type.' '.$this->post_id;
-=======
             // Assicuriamoci che i valori siano stringhe prima della concatenazione
             $postType = isset($this->attributes['post_type']) && is_string($this->attributes['post_type']) 
                 ? $this->attributes['post_type'] : '';
@@ -237,7 +229,6 @@ class Post extends Model
             $postType = is_string($this->post_type) ? $this->post_type : '';
             $postId = is_scalar($this->post_id) ? (string)$this->post_id : '';
             $value = $postType . ' ' . $postId;
->>>>>>> 48d23c66280a765abed9abb4b7208b016bf97c2a
         }
 
         $this->title = $value;
@@ -257,16 +248,12 @@ class Post extends Model
         }
         $value = $this->title;
         if ('' === $value) {
-<<<<<<< HEAD
-            $value = $this->attributes['post_type'].' '.$this->attributes['post_id'];
-=======
             // Assicuriamoci che i valori siano stringhe prima della concatenazione
             $postType = isset($this->attributes['post_type']) && is_string($this->attributes['post_type']) 
                 ? $this->attributes['post_type'] : '';
             $postId = isset($this->attributes['post_id']) && is_scalar($this->attributes['post_id']) 
                 ? (string)$this->attributes['post_id'] : '';
             $value = $postType . ' ' . $postId;
->>>>>>> 48d23c66280a765abed9abb4b7208b016bf97c2a
         }
         if (null === $value) {
             $value = 'u-'.random_int(1, 1000);

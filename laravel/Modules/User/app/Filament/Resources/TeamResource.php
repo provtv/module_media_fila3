@@ -16,10 +16,16 @@ use Modules\Xot\Filament\Resources\XotBaseResource;
 class TeamResource extends XotBaseResource
 {
     
+    /**
+     * Get the model class name for this resource.
+     *
+     * @return class-string<\Illuminate\Database\Eloquent\Model>
+     */
     public static function getModel(): string
     {
         $xot = XotData::make();
 
+        /** @var class-string<\Illuminate\Database\Eloquent\Model> */
         return $xot->getTeamClass();
     }
 

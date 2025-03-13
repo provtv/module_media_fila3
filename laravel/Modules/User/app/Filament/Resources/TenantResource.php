@@ -35,10 +35,16 @@ class TenantResource extends XotBaseResource
 
     protected static ?string $navigationIcon = 'heroicon-o-user-group';
 
+    /**
+     * Get the model class name for this resource.
+     *
+     * @return class-string<\Illuminate\Database\Eloquent\Model>
+     */
     public static function getModel(): string
     {
         $xot = XotData::make();
 
+        /** @var class-string<\Illuminate\Database\Eloquent\Model> */
         return $xot->getTenantClass();
     }
 

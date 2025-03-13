@@ -21,20 +21,13 @@ while IFS= read -r line; do
         echo "----------------------------------------"
         echo "📂 Path: $current_path"
         echo "🔗 URL:  $current_url"
-        git filter-branch --subdirectory-filter "$current_path" -- --all
-        #git filter-repo --path "$current_path" --invert-paths
-        
+
         if [[ -d "$current_path" ]]; then
             echo "🔄 Tentativo di aggiornamento del subtree esistente..."
             if ! git subtree pull --prefix="$current_path" "$current_url" "$branch" --squash; then
                 echo "⚠️  Errore in git subtree pull, tentando con fetch + merge..."
                 git fetch "$current_url" "$branch"
-                if ! git merge -s subtree -Xsubtree="$current_path" FETCH_HEAD --allow-unrelated-histories; then
-                    echo "⚠️  Errore in git merge, tentando con git rm + git subtree add..."
-                    git rm -r --cached "$current_path" 
-                    git commit -am "Remove $current_path"
-                    git subtree add --prefix="$current_path" "$current_url" "$branch" --squash
-                fi
+                git merge -s subtree -Xsubtree="$current_path" FETCH_HEAD --allow-unrelated-histories
             fi
         else
             echo "➕ Aggiunta del subtree..."

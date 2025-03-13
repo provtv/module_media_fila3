@@ -41,6 +41,8 @@ trait HasTeams
 
     /**
      * Get the current team of the user's context.
+     * 
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo<\Modules\User\Contracts\TeamContract, static>
      */
     public function currentTeam(): BelongsTo
     {
@@ -86,6 +88,8 @@ trait HasTeams
 
     /**
      * Get all of the teams the user owns.
+     * 
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany<\Modules\User\Contracts\TeamContract>
      */
     public function ownedTeams(): HasMany
     {
@@ -97,6 +101,8 @@ trait HasTeams
 
     /**
      * Get all of the teams the user belongs to.
+     * 
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsToMany<\Modules\User\Contracts\TeamContract>
      */
     public function teams(): BelongsToMany
     {

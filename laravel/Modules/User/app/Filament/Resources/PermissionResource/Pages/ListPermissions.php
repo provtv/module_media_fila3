@@ -90,9 +90,14 @@ class ListPermissions extends XotBaseListRecords
                 ->action(
                     static function (Collection $collection, array $data): void {
                         foreach ($collection as $record) {
-                            Assert::isInstanceOf($record, \Modules\Xot\Datas\XotData::make()->getUserClass(), '['.__LINE__.']['.__CLASS__.']');
-                            $record->roles()->sync($data['role']);
-                            $record->save();
+                            // Verifichiamo che $record sia un'istanza di Model prima di procedere
+                            Assert::isInstanceOf($record, \Illuminate\Database\Eloquent\Model::class, '['.__LINE__.']['.__CLASS__.']');
+                            
+                            // Poi verifichiamo che il modello abbia il metodo roles() prima di chiamarlo
+                            if (method_exists($record, 'roles')) {
+                                $record->roles()->sync($data['role']);
+                                $record->save();
+                            }
                         }
                     }
                 )

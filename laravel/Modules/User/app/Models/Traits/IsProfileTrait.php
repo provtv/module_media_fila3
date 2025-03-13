@@ -23,11 +23,13 @@ trait IsProfileTrait
     use InteractsWithMedia;
 
     /**
-     * Undocumented function.
-     * return BelongsTo<UserContract>.
+     * Relazione con l'utente a cui appartiene il profilo.
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo<\Modules\Xot\Contracts\UserContract, static>
      */
     public function user(): BelongsTo
     {
+        /** @var class-string<\Illuminate\Database\Eloquent\Model> $userClass */
         $userClass = XotData::make()->getUserClass();
 
         return $this->belongsTo($userClass);
@@ -119,67 +121,80 @@ trait IsProfileTrait
         }
     }
 
+    /**
+     * Relazione con i dispositivi mobili associati al profilo.
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsToMany<\Modules\User\Models\Device>
+     */
     public function mobileDevices(): BelongsToMany
     {
-        return $this->devices();
-    }
-
-    public function devices(): BelongsToMany
-    {
-        return $this
-            ->belongsToManyX(
-                related: Device::class,
-                table: null,
-                foreignPivotKey: 'user_id',
-                relatedPivotKey: null,
-                parentKey: 'user_id',
-                relatedKey: null,
-                relation: null,
-            );
-    }
-
-    public function mobileDeviceUsers(): HasMany
-    {
-        return $this->deviceUsers();
-    }
-
-    public function deviceUsers(): HasMany
-    {
-        return $this->hasMany(
-            related: DeviceUser::class,
-            foreignKey: 'user_id',
-            localKey: 'user_id',
-        );
+        return $this->belongsToMany(Device::class, 'mobile_device_users', 'profile_id', 'device_id')
+            ->withPivot('token')
+            ->withTimestamps();
     }
 
     /**
-     * @return Collection<(int|string), mixed>
+     * Relazione con tutti i dispositivi associati al profilo.
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsToMany<\Modules\User\Models\Device>
+     */
+    public function devices(): BelongsToMany
+    {
+        return $this->belongsToMany(Device::class, 'device_users', 'profile_id', 'device_id')
+            ->withPivot('token')
+            ->withTimestamps();
+    }
+
+    /**
+     * Relazione con gli utenti di dispositivi mobili.
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany<\Modules\User\Models\DeviceUser>
+     */
+    public function mobileDeviceUsers(): HasMany
+    {
+        return $this->hasMany(DeviceUser::class, 'profile_id')->where('type', 'mobile');
+    }
+
+    /**
+     * Relazione con gli utenti di dispositivi generici.
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany<\Modules\User\Models\DeviceUser>
+     */
+    public function deviceUsers(): HasMany
+    {
+        return $this->hasMany(DeviceUser::class, 'profile_id');
+    }
+
+    /**
+     * Ottiene i token dei dispositivi mobili.
+     *
+     * @return \Illuminate\Support\Collection<int|string, string>
      */
     public function getMobileDeviceTokens(): Collection
     {
-        return $this
-            ->mobileDeviceUsers()
-            ->whereNotNull('push_notifications_token')
-            ->where('push_notifications_enabled', '=', true)
-            ->get()
-            ->pluck('push_notifications_token');
+        // PHPStan livello 9 richiede il controllo che il risultato sia del tipo corretto
+        $tokens = $this->mobileDeviceUsers()
+            ->pluck('token')
+            ->filter(fn ($value) => $value !== null && is_string($value));
+
+        /** @var \Illuminate\Support\Collection<int|string, string> */
+        return $tokens;
     }
 
     /**
-     * Get all of the teams the user belongs to.
+     * Relazione con i team a cui appartiene il profilo.
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsToMany<\Illuminate\Database\Eloquent\Model>
      */
     public function teams(): BelongsToMany
     {
-        $xot = XotData::make();
-        $teamClass = $xot->getTeamClass();
-
-        // $this->setConnection('mysql');
-        return $this->belongsToManyX($teamClass, null, 'user_id', 'team_id', 'user_id');
-        // ->as('membership')
+        return $this->belongsToMany(XotData::make()->getTeamClass());
     }
 
     /**
      * Get the user's user_name.
+     *
+     * @return \Illuminate\Database\Eloquent\Casts\Attribute<string|null, never>
      */
     protected function userName(): Attribute
     {
@@ -191,7 +206,9 @@ trait IsProfileTrait
     }
 
     /**
-     * Get the user's avatar.
+     * Get the user's avatar URL.
+     *
+     * @return \Illuminate\Database\Eloquent\Casts\Attribute<string, never>
      */
     protected function avatar(): Attribute
     {

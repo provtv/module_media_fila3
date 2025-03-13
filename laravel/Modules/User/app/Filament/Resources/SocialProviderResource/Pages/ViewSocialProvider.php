@@ -56,10 +56,5 @@ class ViewSocialProvider extends \Modules\Xot\Filament\Resources\Pages\XotBaseVi
         ];
     }
 
-    protected function getHeaderActions(): array
-    {
-        return [
-            Actions\EditAction::make(),
-        ];
-    }
+    
 }

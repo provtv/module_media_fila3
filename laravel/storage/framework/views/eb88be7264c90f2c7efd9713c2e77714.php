@@ -7,15 +7,9 @@
     
     <nav class="rating" wire:ignore.self>
       <ul>
-<<<<<<<< HEAD:laravel/storage/framework/views/eb88be7264c90f2c7efd9713c2e77714.php
         <?php for($i=1;$i<=5;$i++): ?>
         <li wire:click="update(<?php echo e($i); ?>)" <?php if($val==$i): ?>class="current"<?php endif; ?>><svg><use xlink:href="#star"></use></svg></li>
         <?php endfor; ?>
-========
-        @for ($i=1;$i<=5;$i++)
-        <li wire:click="update({{ $i }})" @if ($val==$i)class="current"@endif><svg><use xlink:href="#star"></use></svg></li>
-        @endfor
->>>>>>>> origin/dev:laravel/Modules/Xot/resources_old/views/livewire/rate/single.blade.php
       </ul>
       <div>
         <span><svg><use xlink:href="#star"></use></svg></span>
