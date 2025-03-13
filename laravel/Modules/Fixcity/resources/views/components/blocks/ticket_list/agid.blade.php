@@ -130,6 +130,11 @@ new class extends Component
         });
 
         $query = Ticket::query()
+            ->where(function ($q) {
+                $q->whereIn('status', TicketStatusEnum::canViewByAll())
+                    ->orWhere('created_by', authId())
+                    ->orWhere('updated_by', authId());
+            })
             ->select('id', 'name', 'slug', 'type', 'content', 'created_at', 'latitude', 'longitude')
             ->with('media')
             ->latest();
