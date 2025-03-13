@@ -51,7 +51,6 @@ use Webmozart\Assert\Assert;
  * @property \Illuminate\Database\Eloquent\Collection<int, \Modules\Job\Models\Result> $results
  * @property int|null $results_count
  * @property \Modules\Xot\Contracts\ProfileContract|null $updater
- *
  * @method static \Illuminate\Database\Eloquent\Builder<static>|Task newModelQuery()
  * @method static \Illuminate\Database\Eloquent\Builder<static>|Task newQuery()
  * @method static \Illuminate\Database\Eloquent\Builder<static>|Task query()
@@ -81,9 +80,7 @@ use Webmozart\Assert\Assert;
  * @method static \Illuminate\Database\Eloquent\Builder<static>|Task whereTimezone($value)
  * @method static \Illuminate\Database\Eloquent\Builder<static>|Task whereUpdatedAt($value)
  * @method static \Illuminate\Database\Eloquent\Builder<static>|Task whereUpdatedBy($value)
- *
  * @property-read \Modules\Broker\Models\Profile|null $creator
- *
  * @mixin \Eloquent
  */
 class Task extends BaseModel
