@@ -280,14 +280,12 @@ abstract class BaseUser extends Authenticatable implements HasName, HasTenants, 
     /**
      * Get the entity's notifications.
      *
-     * @return MorphMany<Notification, static|$this>
+     * @return \Illuminate\Database\Eloquent\Relations\MorphMany<DatabaseNotification, $this>
      */
-    public function notifications(): MorphMany
+    public function notifications()
     {
-        // @phpstan-ignore return.type
-        return $this->morphMany(Notification::class, 'notifiable');
+        return $this->morphMany(DatabaseNotification::class, 'notifiable')->latest();
     }
-
     /**
      * Get the user's latest authentication log.
      *
