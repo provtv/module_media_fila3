@@ -1,70 +1,4 @@
-<<<<<<< HEAD
-.git-rewrite
-.fuse_hidden*
-.fuse_hidden**.lock
-*.lock
-package-lock.json
-.php-cs-fixer.cache
-*.phar
-*.cache
-node_modules
-/node_modules
-vendor/
-.git-blame-ignore-revs
-.git-blame-ignore-revs
-node_modules
-vendor
-.php-cs-fixer.cache
-.git-blame-ignore-revs
-build/
-vendor/
-build/
-node_modules
-docs/cache/
-cache/
-.git-blame-ignore-revs
-.php-cs-fixer.cache
-*.exe
-**/*.Zone.Identifier
-*:Zone.Identifier
-*:Zone.Identifier
-.php-cs-fixer.cache
-*:Zone.Identifier
-.php-cs-fixer.cache
-**/*.Zone.Identifier
-=======
-.DS_Store
-
-/vendor/
-node_modules/
-npm-debug.log
-yarn-error.log
-
-# Laravel 4 specific
-bootstrap/compiled.php
-app/storage/
-
-# Laravel 5 & Lumen specific
-public/storage
-public/hot
-
-# Laravel 5 & Lumen specific with changed public path
-public_html/storage
-public_html/hot
-
-public_html/assets
-public_html/build
-
-
-storage/*.key
-.env
-laravel/.env
-laravel/storage/*.key
-
-Homestead.yaml
-Homestead.json
-/.vagrant
-.phpunit.result.cache
+# File system temporanei e di lock
 *.lock
 *.phar
 *.log
@@ -72,58 +6,70 @@ Homestead.json
 *.old1
 *.old2
 *.old3
+**/*.Zone.Identifier
+*:Zone.Identifier
+.DS_Store
+*.exe
 
+# Cache e file temporanei
+.cache
+*.cache
 .php-cs-fixer.cache
-logs
+build/
+tmp
+logs/
 error.log
+node_modules/
+vendor/
+storage/*.key
 
-/laravel/database/migrations
-/public_html/media
+# Laravel specific
+# Generati da Laravel
+bootstrap/compiled.php
+public/storage
+public/hot
+public_html/storage
+public_html/hot
+public_html/assets
+public_html/build
+storage/*
+laravel/storage/*.key
+laravel/.env
+laravel/database/migrations
+
+# Laravel media & build directories
 /laravel/storage/media-library
 /laravel/build
-.phpstorm.meta.php
-_ide_helper.php
+/laravel/composer.phar
+/laravel/stubs/
+laravel/app/View/Components/vendor/
 
-.gnupg/
+# Laravel Homestead & Vagrant
+Homestead.yaml
+Homestead.json
+/.vagrant
 
+# IDEs e editori di testo
 .idea
 .vscode-server
 .vscode/launch.json
+.phpstorm.meta.php
+_ide_helper.php
 
-.cache
-.nodenv
-.phpenv
-.ssh
-/error_docs
-/logs
-vendor
-docker
-
-
-*.lock
-
-.git-rewrite
-uploads
-
-
-laravel/stubs/
-laravel/composer.phar
-
-/public_html/css
-/public_html/js
-/public_html/deploy/config.php
-/public_html/storage
-public_html/modules
-public_html/js
+# NPM, Yarn, e ambiente Node
+node_modules
+npm-debug.log
+yarn-error.log
+/public_html/js/
 public_html/css/
 public_html/storage/
-public_html/themes
-/cache
-public_html/js/
+public_html/modules
 public_html/themes/
-cache/
-laravel/.phive/
-tmp
-laravel/app/View/Components/vendor/
-public_html/themes/
->>>>>>> origin/dev
+
+# Sistema di versionamento git
+.git-rewrite
+.git-blame-ignore-revs
+
+# Altri
+.git-blame-ignore-revs
+uploads
