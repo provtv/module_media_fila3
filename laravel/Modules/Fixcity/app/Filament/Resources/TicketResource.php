@@ -125,11 +125,12 @@ class TicketResource extends Resource
                         })
                         ->rules([new FilterCoordinatesInRadius])
                         ->liveLocation()
-                        ->showMarker(false) // https://github.com/dotswan/filament-map-picker/pull/51
+                        ->showMarker(true) // https://github.com/dotswan/filament-map-picker/pull/51
                         ->markerColor('#22c55eff')
                         ->showFullscreenControl()
                         ->showZoomControl()
                         ->draggable()
+                        ->clickable(true)
                         ->tilesUrl('https://tile.openstreetmap.de/{z}/{x}/{y}.png')
                         ->zoom(15)
                         ->detectRetina()
