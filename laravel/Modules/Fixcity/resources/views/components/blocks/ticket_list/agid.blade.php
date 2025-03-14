@@ -14,6 +14,9 @@ new class extends Component
 {
     use WithPagination;
 
+    public $locationSet = false;
+    public $userLatitude;
+    public $userLongitude;
     public $search = '';
     public $selectedCategories = [];
     public $selectedStatus = '';
@@ -48,6 +51,7 @@ new class extends Component
     {
         $this->userLatitude = $latitude;
         $this->userLongitude = $longitude;
+        $this->locationSet = true;
 
         $this->dispatch('updateMapCenter', $latitude, $longitude)
             ->to(\Modules\Fixcity\Filament\Widgets\TicketsMapWidget::class);
@@ -153,7 +157,9 @@ new class extends Component
             'categories' => $categories,
             'tickets' => $tickets,
             'hasMorePages' => $hasMorePages,
-            'filteredCount' => $this->filteredCount
+            'filteredCount' => $this->filteredCount,
+            'userLatitude' => $this->userLatitude,
+            'userLongitude' => $this->userLongitude,
         ];
     }
 }
@@ -226,9 +232,15 @@ new class extends Component
                 <div role="tablist" class="grid-cols-2 tabs tabs-bordered">
                     <input type="radio" name="my_tabs_1" role="tab" class="text-lg text-gray-950 border-0 rounded-none tab focus:!bg-transparent hover:!bg-transparent checked:bg-transparent focus:ring-0 focus:!border-emerald-800" aria-label="Mappa" checked="checked" />
                     <div role="tabpanel" class="py-8 space-y-6 tab-content">
+                        @if($locationSet)
                         @livewire(\Modules\Fixcity\Filament\Widgets\TicketsMapWidget::class, [
-                        'categoryFilter' => $selectedCategories
+                        'categoryFilter' => $selectedCategories,
+                        'latitude' => $userLatitude,
+                        'longitude' => $userLongitude,
                         ], key('map-' . implode('-', $selectedCategories)))
+                        @else
+                        <div class="text-center">Caricamento mappa...</div> <!-- Show loading message or spinner -->
+                        @endif
                     </div>
                     <input type="radio" name="my_tabs_1" role="tab" class="text-lg text-gray-950 border-0 rounded-none tab focus:!bg-transparent hover:!bg-transparent checked:bg-transparent focus:ring-0 focus:!border-emerald-800" aria-label="Elenco" />
                     <div role="tabpanel" class="py-8 space-y-4 tab-content">
@@ -371,6 +383,8 @@ new class extends Component
         window.addEventListener('set-user-location', function(event) {
             @this.call('setUserLocation', event.detail.latitude, event.detail.longitude);
         });
+
+
     });
 </script>
 @endvolt

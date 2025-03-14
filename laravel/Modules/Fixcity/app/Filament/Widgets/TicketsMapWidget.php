@@ -27,7 +27,7 @@ class TicketsMapWidget extends MapWidget
                 Card::make([
                     TextEntry::make('name')
                         ->label('Titolo')
-                        ->url(fn ($record) => route('ticket.view', ['slug' => $record->slug]))
+                        ->url(fn($record) => route('ticket.view', ['slug' => $record->slug]))
                         ->extraAttributes(['text-blue-600', 'hover:underline'])
                         ->openUrlInNewTab(),
                     TextEntry::make('type')->label('Tipologia di segnalazione'),
@@ -45,13 +45,13 @@ class TicketsMapWidget extends MapWidget
                 // Calculate the address if the ticket exists
                 if ($ticket) {
                     $ticket->media_urls = $ticket->media->isNotEmpty()
-                        ? $ticket->media->map(fn ($media) => $media->getFullUrl())->toArray()
+                        ? $ticket->media->map(fn($media) => $media->getFullUrl())->toArray()
                         : [asset('images/placeholder.jpg')];
 
                     return $ticket;
                 }
 
-                 // Return null if the ticket is not found
+                // Return null if the ticket is not found
             })
             ->modalSubmitAction(false);
     }
@@ -115,6 +115,37 @@ class TicketsMapWidget extends MapWidget
 
         $data = [];
 
+        if ($this->userLatitude && $this->userLongitude) {
+            $data[] = [
+                'location' => [
+                    'lat' => $this->userLatitude,
+                    'lng' => $this->userLongitude,
+                ],
+                'label' => '',
+                'id' => '',
+                'icon' => [
+                    'url' => url('images/user-location.svg'),
+                    'type' => 'svg',
+                    'scale' => [0, 0],
+                ],
+            ];
+        } else {
+            $data[] = [
+                'location' => [
+                    'lat' => 41.125278,
+                    'lng' => 16.866667,
+                ],
+                'label' => '',
+                'id' => '',
+                'icon' => [
+                    'url' => url('images/dealership.svg'),
+                    'type' => 'svg',
+                    'scale' => [0, 0],
+                ],
+            ];
+        }
+
+
         foreach ($locations as $location) {
             if ($location->latitude && $location->longitude) {
                 $data[] = [
@@ -167,8 +198,17 @@ class TicketsMapWidget extends MapWidget
         $this->rerender();
     }
 
-    public function mount()
-    {
-        parent::mount();
+    public function mount($latitude = null, $longitude = null)
+{
+    parent::mount();
+
+    // Assign the passed latitude and longitude to the reactive properties
+    if ($latitude !== null) {
+        $this->userLatitude = $latitude;
     }
+    
+    if ($longitude !== null) {
+        $this->userLongitude = $longitude;
+    }
+}
 }
