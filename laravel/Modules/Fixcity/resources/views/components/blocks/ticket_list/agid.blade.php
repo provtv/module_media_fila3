@@ -57,6 +57,16 @@ new class extends Component
             ->to(\Modules\Fixcity\Filament\Widgets\TicketsMapWidget::class);
     }
 
+    public function notSetUserLocation()
+    {
+        $this->userLatitude = 41.125278;
+        $this->userLongitude = 16.866667;
+        $this->locationSet = true;
+
+        $this->dispatch('updateMapCenter', $this->userLatitude, $this->userLongitude)
+            ->to(\Modules\Fixcity\Filament\Widgets\TicketsMapWidget::class);
+    }
+
 
     public function loadMore()
     {
@@ -240,6 +250,7 @@ new class extends Component
                         ], key('map-' . implode('-', $selectedCategories)))
                         @else
                         <div class="text-center">Caricamento mappa...</div> <!-- Show loading message or spinner -->
+                       
                         @endif
                     </div>
                     <input type="radio" name="my_tabs_1" role="tab" class="text-lg text-gray-950 border-0 rounded-none tab focus:!bg-transparent hover:!bg-transparent checked:bg-transparent focus:ring-0 focus:!border-emerald-800" aria-label="Elenco" />
@@ -374,14 +385,18 @@ new class extends Component
                             longitude: position.coords.longitude
                         }
                     }));
+                }, function(error) {
+                    window.dispatchEvent(new CustomEvent('not-set-user-location', {
+                    }));
                 });
-            } else {
-                console.error('Geolocation is not supported by this browser.');
             }
         });
 
         window.addEventListener('set-user-location', function(event) {
             @this.call('setUserLocation', event.detail.latitude, event.detail.longitude);
+        });
+        window.addEventListener('not-set-user-location', function(event) {
+            @this.call('notSetUserLocation');
         });
 
 
