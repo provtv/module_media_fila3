@@ -18,7 +18,7 @@ render(function (View $view, string $slug) {
     if ($ticket == null) {
         return view('pub_theme::404');
     }
-    dd($ticket);
+
     $status = TicketStatusEnum::from($ticket->getRawOriginal('status'));
     $medias = $ticket->getMedia('ticket');
 
