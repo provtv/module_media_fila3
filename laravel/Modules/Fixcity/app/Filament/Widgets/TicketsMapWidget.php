@@ -97,6 +97,10 @@ class TicketsMapWidget extends MapWidget
 
     protected function getData(): array
     {
+        $t = Ticket::find(9);
+        $t->latitude = 41.125278;
+        $t->longitude = 16.866667;
+        $t->save();
         $query = Ticket::query();
 
         // Apply category filter if any categories are selected
