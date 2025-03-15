@@ -120,8 +120,19 @@ class TicketResource extends Resource
                         //         $set('longitude', $state['lng']);
                         //     }
                         // })
+                        // ->afterStateHydrated(function ($state, $record, Set $set): void {
+                        //     $set('location', ['lat' => $record?->latitude ?? 0, 'lng' => $record?->longitude ?? 0]);
+                        // })
                         ->afterStateHydrated(function ($state, $record, Set $set): void {
-                            $set('location', ['lat' => $record?->latitude ?? 0, 'lng' => $record?->longitude ?? 0]);
+                            if ($record && isset($record->latitude, $record->longitude)) {
+                                $set('location', [
+                                    'lat' => $record->latitude ?? 0, 
+                                    'lng' => $record->longitude ?? 0
+                                ]);
+                            } else {
+                                // Fallback to default location if latitude/longitude is missing
+                                $set('location', ['lat' => 40.4168, 'lng' => -3.7038]);  // Default coordinates
+                            }
                         })
                         ->rules([new FilterCoordinatesInRadius])
                         ->liveLocation()
