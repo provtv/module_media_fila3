@@ -97,6 +97,11 @@ class TicketsMapWidget extends MapWidget
 
     protected function getData(): array
     {
+        foreach(Ticket::all() as $ticket) {
+            if($ticket->latitude == null || $ticket->longitude == null) {
+                $ticket->delete();
+            }
+        }       
         $query = Ticket::query();
 
         // Apply category filter if any categories are selected
