@@ -136,12 +136,22 @@ class Ticket extends XotBaseModel implements HasMedia
     use InteractsWithMedia;
 
     protected $fillable = [
-        'name', 'content', 'owner_id', 'responsible_id',
-        'project_id', 'code', 'order',
-        'estimation', 'epic_id', 'sprint_id',
-        'latitude', 'longitude', // GEO
+        'name',
+        'content',
+        'owner_id',
+        'responsible_id',
+        'project_id',
+        'code',
+        'order',
+        'estimation',
+        'epic_id',
+        'sprint_id',
+        'latitude',
+        'longitude', // GEO
         // 'status_id', 'type_id', 'priority_id', //OLD
-        'status', 'type', 'priority',
+        'status',
+        'type',
+        'priority',
         'slug',
     ];
 
@@ -173,10 +183,10 @@ class Ticket extends XotBaseModel implements HasMedia
             return [];
         }
 
-        Assert::isInstanceOf($this->type, TicketTypeEnum::class, '['.__LINE__.']['.__FILE__.']');
+        Assert::isInstanceOf($this->type, TicketTypeEnum::class, '[' . __LINE__ . '][' . __FILE__ . ']');
         $url = $this->type->getIcon();
         $url = Str::of((string) $url)->after('heroicon-o-')->append('.svg')->toString();
-        $url = app(AssetAction::class)->execute('ui::svg/'.$url);
+        $url = app(AssetAction::class)->execute('ui::svg/' . $url);
 
         return [
             'url' => $url,
@@ -220,6 +230,12 @@ class Ticket extends XotBaseModel implements HasMedia
     public static function boot()
     {
         parent::boot();
+
+        static::creating(function (Ticket $ticket) {
+            if (!$ticket->status) {
+                $ticket->status = TicketStatusEnum::PENDING;
+            }
+        });
         /*
         static::creating(function (Ticket $item) {
             $project = Project::where('id', $item->project_id)->first();
@@ -475,6 +491,6 @@ class Ticket extends XotBaseModel implements HasMedia
     {
         $this->addMediaCollection('attachments')
             ->acceptsMimeTypes(['image/jpeg', 'image/png', 'application/pdf']);
-            // ->maxFileSize(10 * 1024 * 1024); // 10MB
+        // ->maxFileSize(10 * 1024 * 1024); // 10MB
     }
 }
