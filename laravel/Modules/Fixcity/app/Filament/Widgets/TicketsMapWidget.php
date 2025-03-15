@@ -112,6 +112,7 @@ class TicketsMapWidget extends MapWidget
         // });
 
         $locations = $query->latest()->get();
+        dd($locations, authId());
 
         $data = [];
 
