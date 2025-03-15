@@ -126,14 +126,14 @@ class TicketResource extends Resource
                         // })
                         ->rules([new FilterCoordinatesInRadius])
                         
-                        ->showMarker(true) // https://github.com/dotswan/filament-map-picker/pull/51
+                        // ->showMarker(true) // https://github.com/dotswan/filament-map-picker/pull/51
                         ->markerColor('#22c55eff')
                         ->showFullscreenControl()
                         ->showZoomControl()
                         ->draggable()
                         ->clickable(true)
                         ->tilesUrl('https://tile.openstreetmap.de/{z}/{x}/{y}.png')
-                        ->zoom(15)
+                        ->zoom(8)
                         ->detectRetina()
                         ->showMyLocationButton()
                     // ->extraAttributes(['class' => 'max-w-full', 'style' => 'min-height: 300px; padding: 0; margin: 0;'])
