@@ -161,7 +161,7 @@ class TicketResource extends Resource
                         ->required()
                         ->maxFiles(5) // Limita il numero di file caricabili
                         ->maxSize(10240) // Imposta un limite massimo di 10MB per file
-                        // ->acceptedFileTypes(['image/png', 'image/jpeg', 'image/jpg']) // Accetta solo immagini
+                        ->acceptedFileTypes(['image/png', 'image/jpeg', 'image/jpg']) // Accetta solo immagini
                         ->columnSpanFull(),
 
                 ])
