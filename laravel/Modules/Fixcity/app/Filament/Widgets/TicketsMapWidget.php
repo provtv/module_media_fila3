@@ -112,7 +112,7 @@ class TicketsMapWidget extends MapWidget
         });
 
         $locations = $query->latest()->get()->toArray();
-
+dd($locations);
         $data = [];
 
         if ($this->userLatitude && $this->userLongitude) {
