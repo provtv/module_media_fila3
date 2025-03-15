@@ -105,11 +105,11 @@ class TicketsMapWidget extends MapWidget
         }
 
         // Then apply the status and user conditions
-        $query->where(function ($q) {
-            $q->whereIn('status', TicketStatusEnum::canViewByAll())
-                ->orWhere('created_by', authId())
-                ->orWhere('updated_by', authId());
-        });
+        // $query->where(function ($q) {
+        //     $q->whereIn('status', TicketStatusEnum::canViewByAll())
+        //         ->orWhere('created_by', authId())
+        //         ->orWhere('updated_by', authId());
+        // });
 
         $locations = $query->latest()->get();
 
