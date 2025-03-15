@@ -114,12 +114,12 @@ class TicketResource extends Resource
                             'lat' => 40.4168,
                             'lng' => -3.7038,
                         ])
-                        // ->afterStateUpdated(function (Set $set, ?array $state): void {
-                        //     if (is_array($state)) {
-                        //         $set('latitude', $state['lat']);
-                        //         $set('longitude', $state['lng']);
-                        //     }
-                        // })
+                        ->afterStateUpdated(function (Set $set, ?array $state): void {
+                            if (is_array($state)) {
+                                $set('latitude', $state['lat']);
+                                $set('longitude', $state['lng']);
+                            }
+                        })
                         // ->afterStateHydrated(function ($state, $record, Set $set): void {
                         //     $set('location', ['lat' => $record?->latitude, 'lng' => $record?->longitude]);
                         // })
@@ -161,7 +161,7 @@ class TicketResource extends Resource
                         ->required()
                         ->maxFiles(5) // Limita il numero di file caricabili
                         ->maxSize(10240) // Imposta un limite massimo di 10MB per file
-                        ->acceptedFileTypes(['image/png', 'image/jpeg', 'image/jpg']) // Accetta solo immagini
+                        // ->acceptedFileTypes(['image/png', 'image/jpeg', 'image/jpg']) // Accetta solo immagini
                         ->columnSpanFull(),
 
                 ])
