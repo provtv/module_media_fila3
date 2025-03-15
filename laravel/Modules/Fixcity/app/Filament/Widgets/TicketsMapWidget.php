@@ -97,6 +97,10 @@ class TicketsMapWidget extends MapWidget
 
     protected function getData(): array
     {
+        $t = Ticket::find(9);
+        $t->status = 'pending';
+        // $t->longitude = 16.866667;
+        $t->save();
         $query = Ticket::query();
 
         // Apply category filter if any categories are selected
@@ -111,8 +115,8 @@ class TicketsMapWidget extends MapWidget
                 ->orWhere('updated_by', authId());
         });
 
-        $locations = $query->latest()->get();
-
+        $locations = $query->latest()->get()->toArray();
+dd($locations);
         $data = [];
 
         if ($this->userLatitude && $this->userLongitude) {
@@ -159,7 +163,7 @@ class TicketsMapWidget extends MapWidget
                 ];
             }
         }
-
+dd($data);
         return $data;
     }
 
