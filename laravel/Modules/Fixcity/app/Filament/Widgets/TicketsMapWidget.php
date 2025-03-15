@@ -97,10 +97,6 @@ class TicketsMapWidget extends MapWidget
 
     protected function getData(): array
     {
-        $t = Ticket::find(11);
-        $t->latitude = 41.125278;
-        $t->longitude = 3.866667;
-        $t->save();
         $query = Ticket::query();
 
         // Apply category filter if any categories are selected
@@ -115,8 +111,8 @@ class TicketsMapWidget extends MapWidget
                 ->orWhere('updated_by', authId());
         });
 
-        $locations = $query->latest()->get()->toArray();
-dd($locations);
+        $locations = $query->latest()->get();
+
         $data = [];
 
         if ($this->userLatitude && $this->userLongitude) {
