@@ -97,9 +97,9 @@ class TicketsMapWidget extends MapWidget
 
     protected function getData(): array
     {
-        $t = Ticket::find(9);
-        $t->status = 'pending';
-        // $t->longitude = 16.866667;
+        $t = Ticket::find(11);
+        $t->latitude = 41.125278;
+        $t->longitude = 3.866667;
         $t->save();
         $query = Ticket::query();
 
