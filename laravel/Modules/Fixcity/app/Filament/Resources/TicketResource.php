@@ -114,15 +114,15 @@ class TicketResource extends Resource
                             'lat' => 40.4168,
                             'lng' => -3.7038,
                         ])
-                        ->afterStateUpdated(function (Set $set, ?array $state): void {
-                            if (is_array($state)) {
-                                $set('latitude', $state['lat']);
-                                $set('longitude', $state['lng']);
-                            }
-                        })
-                        // ->afterStateHydrated(function ($state, $record, Set $set): void {
-                        //     $set('location', ['lat' => $record?->latitude ?? 0, 'lng' => $record?->longitude ?? 0]);
+                        // ->afterStateUpdated(function (Set $set, ?array $state): void {
+                        //     if (is_array($state)) {
+                        //         $set('latitude', $state['lat']);
+                        //         $set('longitude', $state['lng']);
+                        //     }
                         // })
+                        ->afterStateHydrated(function ($state, $record, Set $set): void {
+                            $set('location', ['lat' => $record?->latitude ?? 0, 'lng' => $record?->longitude ?? 0]);
+                        })
                         ->rules([new FilterCoordinatesInRadius])
                         ->liveLocation()
                         ->showMarker(true) // https://github.com/dotswan/filament-map-picker/pull/51
