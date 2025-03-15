@@ -111,7 +111,7 @@ class TicketsMapWidget extends MapWidget
                 ->orWhere('updated_by', authId());
         });
 
-        $locations = $query->latest()->get()->toArray();
+        $locations = $query->latest()->get();
 
         $data = [];
 
