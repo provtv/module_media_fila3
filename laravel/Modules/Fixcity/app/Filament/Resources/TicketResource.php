@@ -84,26 +84,26 @@ class TicketResource extends Resource
                         ->helperText(__('fixcity::fixcity.ticket.content.helper_text')),
 
                     // Hidden Latitude and Longitude
-                    // Forms\Components\TextInput::make('latitude')
-                    //     ->hidden(
-                    //         function () {
-                    //             Assert::notNull(Filament::auth()->user());
-                    //             Assert::notNull(Filament::auth()->user()->profile);
+                    Forms\Components\TextInput::make('latitude')
+                        ->hidden(
+                            function () {
+                                Assert::notNull(Filament::auth()->user());
+                                Assert::notNull(Filament::auth()->user()->profile);
 
-                    //             return Filament::auth()->user()->profile->isSuperAdmin() ? false : true;
-                    //         }
-                    //     )
-                    //     ->readOnly(),
-                    // Forms\Components\TextInput::make('longitude')
-                    //     ->hidden(
-                    //         function () {
-                    //             Assert::notNull(Filament::auth()->user());
-                    //             Assert::notNull(Filament::auth()->user()->profile);
+                                return Filament::auth()->user()->profile->isSuperAdmin() ? false : true;
+                            }
+                        )
+                        ->readOnly(),
+                    Forms\Components\TextInput::make('longitude')
+                        ->hidden(
+                            function () {
+                                Assert::notNull(Filament::auth()->user());
+                                Assert::notNull(Filament::auth()->user()->profile);
 
-                    //             return Filament::auth()->user()->profile->isSuperAdmin() ? false : true;
-                    //         }
-                    //     )
-                    //     ->readOnly(),
+                                return Filament::auth()->user()->profile->isSuperAdmin() ? false : true;
+                            }
+                        )
+                        ->readOnly(),
 
                     // Map Section
                     // NOTA BENE, ASSICURATI DI ABILITARE LA LOCALIZZAZIONE NEL BROWSER
@@ -114,16 +114,16 @@ class TicketResource extends Resource
                             'lat' => 40.4168,
                             'lng' => -3.7038,
                         ])
-                        ->liveLocation()
-                        ->afterStateUpdated(function (Set $set, ?array $state): void {
-                            if (is_array($state)) {
-                                $set('latitude', $state['lat']);
-                                $set('longitude', $state['lng']);
-                            }
-                        })
-                        ->afterStateHydrated(function ($state, $record, Set $set): void {
-                            $set('location', ['lat' => $record?->latitude, 'lng' => $record?->longitude]);
-                        })
+                        ->liveLocation(true, true, 5000)
+                        // ->afterStateUpdated(function (Set $set, ?array $state): void {
+                        //     if (is_array($state)) {
+                        //         $set('latitude', $state['lat']);
+                        //         $set('longitude', $state['lng']);
+                        //     }
+                        // })
+                        // ->afterStateHydrated(function ($state, $record, Set $set): void {
+                        //     $set('location', ['lat' => $record?->latitude, 'lng' => $record?->longitude]);
+                        // })
                         ->rules([new FilterCoordinatesInRadius])
                         
                         ->showMarker(true) // https://github.com/dotswan/filament-map-picker/pull/51
