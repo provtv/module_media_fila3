@@ -121,7 +121,7 @@ class TicketResource extends Resource
                             }
                         })
                         ->afterStateHydrated(function ($state, $record, Set $set): void {
-                            $set('location', ['lat' => $state?->lat ?? 0, 'lng' => $state?->lng ?? 0]);
+                            $set('location', ['lat' => 40.4168, 'lng' => -3.7038]);
                         })
                         ->rules([new FilterCoordinatesInRadius])
                         ->liveLocation()
