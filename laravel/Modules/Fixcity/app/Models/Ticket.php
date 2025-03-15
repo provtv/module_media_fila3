@@ -474,7 +474,7 @@ class Ticket extends XotBaseModel implements HasMedia
     public function registerMediaCollections(): void
     {
         $this->addMediaCollection('attachments')
-            ->acceptsMimeTypes(['image/jpeg', 'image/png', 'application/pdf'])
-            ->maxFileSize(10 * 1024 * 1024); // 10MB
+            ->acceptsMimeTypes(['image/jpeg', 'image/png', 'application/pdf']);
+            // ->maxFileSize(10 * 1024 * 1024); // 10MB
     }
 }
