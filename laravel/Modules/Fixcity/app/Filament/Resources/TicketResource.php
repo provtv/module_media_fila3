@@ -114,25 +114,14 @@ class TicketResource extends Resource
                             'lat' => 40.4168,
                             'lng' => -3.7038,
                         ])
-                        // ->afterStateUpdated(function (Set $set, ?array $state): void {
-                        //     if (is_array($state)) {
-                        //         $set('latitude', $state['lat']);
-                        //         $set('longitude', $state['lng']);
-                        //     }
-                        // })
-                        // ->afterStateHydrated(function ($state, $record, Set $set): void {
-                        //     $set('location', ['lat' => $record?->latitude ?? 0, 'lng' => $record?->longitude ?? 0]);
-                        // })
-                        ->afterStateHydrated(function ($state, $record, Set $set): void {
-                            if ($record && isset($record->latitude, $record->longitude)) {
-                                $set('location', [
-                                    'lat' => $record->latitude ?? 0, 
-                                    'lng' => $record->longitude ?? 0
-                                ]);
-                            } else {
-                                // Fallback to default location if latitude/longitude is missing
-                                $set('location', ['lat' => 40.4168, 'lng' => -3.7038]);  // Default coordinates
+                        ->afterStateUpdated(function (Set $set, ?array $state): void {
+                            if (is_array($state)) {
+                                $set('latitude', $state['lat']);
+                                $set('longitude', $state['lng']);
                             }
+                        })
+                        ->afterStateHydrated(function ($state, $record, Set $set): void {
+                            $set('location', ['lat' => $state?->latitude ?? 0, 'lng' => $state?->longitude ?? 0]);
                         })
                         ->rules([new FilterCoordinatesInRadius])
                         ->liveLocation()
