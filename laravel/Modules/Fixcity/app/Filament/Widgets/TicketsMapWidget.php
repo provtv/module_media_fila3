@@ -159,7 +159,7 @@ class TicketsMapWidget extends MapWidget
                 ];
             }
         }
-dd($data);
+
         return $data;
     }
 
