@@ -114,26 +114,25 @@ class TicketResource extends Resource
                             'lat' => 40.4168,
                             'lng' => -3.7038,
                         ])
-                        ->liveLocation(true, true, 5000)
-                        // ->afterStateUpdated(function (Set $set, ?array $state): void {
-                        //     if (is_array($state)) {
-                        //         $set('latitude', $state['lat']);
-                        //         $set('longitude', $state['lng']);
-                        //     }
-                        // })
-                        // ->afterStateHydrated(function ($state, $record, Set $set): void {
-                        //     $set('location', ['lat' => $record?->latitude, 'lng' => $record?->longitude]);
-                        // })
+                        ->afterStateUpdated(function (Set $set, ?array $state): void {
+                            if (is_array($state)) {
+                                $set('latitude', $state['lat']);
+                                $set('longitude', $state['lng']);
+                            }
+                        })
+                        ->afterStateHydrated(function ($state, $record, Set $set): void {
+                            $set('location', ['lat' => $record?->latitude, 'lng' => $record?->longitude]);
+                        })
                         ->rules([new FilterCoordinatesInRadius])
-                        
-                        // ->showMarker(true) // https://github.com/dotswan/filament-map-picker/pull/51
+                        ->liveLocation()
+                        ->showMarker(true) // https://github.com/dotswan/filament-map-picker/pull/51
                         ->markerColor('#22c55eff')
                         ->showFullscreenControl()
                         ->showZoomControl()
                         ->draggable()
                         ->clickable(true)
                         ->tilesUrl('https://tile.openstreetmap.de/{z}/{x}/{y}.png')
-                        ->zoom(8)
+                        ->zoom(15)
                         ->detectRetina()
                         ->showMyLocationButton()
                     // ->extraAttributes(['class' => 'max-w-full', 'style' => 'min-height: 300px; padding: 0; margin: 0;'])
