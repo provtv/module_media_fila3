@@ -111,6 +111,7 @@ $res = [
             'strict' => false,
             'engine' => null,
         ],
+
         // 'orbit' => [
         //     'driver' => 'sqlite',
         //     // "database" => Orbit::getDatabasePath(),
@@ -130,6 +131,7 @@ $res = [
 ];
 
 $database_default = config('database.default');
+
 Arr::set($res, 'connections.user', Arr::get($res, 'connections.user_'.$database_default));
 
 return $res;

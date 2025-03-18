@@ -1,5 +1,6 @@
 <?php
 
+
 use Modules\Tenant\Services\TenantService;
 
 return [

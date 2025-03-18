@@ -28,6 +28,7 @@ parameters:
         - '#Static call to instance method Nwidart#'
         - '#is used zero times and is not analysed#'
         - "#^Unsafe usage of new static#"
+        - '#A facade root has not been set#'
         - identifier: missingType.generics
         - identifier: missingType.iterableValue
         - identifier: larastan.noEnvCallsOutsideOfConfig
