@@ -4,10 +4,10 @@ declare(strict_types=1);
 
 namespace Modules\Fixcity\Filament\Resources\TicketResource\Pages;
 
-use Modules\Fixcity\Filament\Resources\TicketResource;
-use Filament\Resources\Pages\ListRecords;
 use Filament\Actions;
+use Filament\Resources\Pages\ListRecords;
 use Filament\Tables;
+use Modules\Fixcity\Filament\Resources\TicketResource;
 
 class ListTickets extends ListRecords
 {

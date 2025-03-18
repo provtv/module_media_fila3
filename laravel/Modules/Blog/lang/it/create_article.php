@@ -1,9 +1,9 @@
-<?php return array (
-  'actions' => 
-  array (
-    'activeLocale' => 
-    array (
-      'label' => 'activeLocale',
-    ),
-  ),
-);
+<?php
+
+return [
+    'actions' => [
+        'activeLocale' => [
+            'label' => 'activeLocale',
+        ],
+    ],
+];

@@ -14,4 +14,4 @@ return [
     'events' => [
         'enabled' => true,
     ],
-]; 
+];

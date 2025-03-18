@@ -2,15 +2,18 @@
 
 declare(strict_types=1);
 
-return [
+use Illuminate\Support\Arr;
+use Modules\Tenant\Services\TenantService;
+
+$res = [
     'connections' => [
         'mysql' => [
             'driver' => 'mysql',
             'host' => env('DB_HOST', '127.0.0.1'),
             'port' => env('DB_PORT', '3306'),
-            'database' => env('DB_DATABASE', 'forge84'),
-            'username' => env('DB_USERNAME', 'forge_mysql_02'),
-            'password' => env('DB_PASSWORD', ''),
+            'database' => env('DB_DATABASE_FIXCITY', 'forge84'),
+            'username' => env('DB_USERNAME_FIXCITY', 'forge_mysql_25_1'),
+            'password' => env('DB_PASSWORD_FIXCITY', ''),
             // 'unix_socket' => '/Applications/MAMP/tmp/mysql/mysql.sock',
             'charset' => 'utf8mb4',
             'collation' => 'utf8mb4_unicode_ci',
@@ -19,22 +22,74 @@ return [
             'engine' => null,
         ],
 
-        'user' => [
+        'mariadb' => [
+            'driver' => 'mariadb',
+            'url' => env('DB_URL'),
+            'host' => env('DB_HOST', '127.0.0.1'),
+            'port' => env('DB_PORT', '3306'),
+            'database' => env('DB_DATABASE_FIXCITY', 'laravel'),
+            'username' => env('DB_USERNAME_FIXCITY', 'root'),
+            'password' => env('DB_PASSWORD_FIXCITY', ''),
+            'unix_socket' => env('DB_SOCKET', ''),
+            'charset' => env('DB_CHARSET', 'utf8mb4'),
+            // 'collation' => env('DB_COLLATION', 'utf8mb4_uca1400_ai_ci'),
+            'prefix' => '',
+            'prefix_indexes' => true,
+            'strict' => true,
+            'engine' => null,
+            'options' => extension_loaded('pdo_mysql') ? array_filter([
+                PDO::MYSQL_ATTR_SSL_CA => env('MYSQL_ATTR_SSL_CA'),
+            ]) : [],
+        ],
+        // ---------- NON COMMENTARE !!
+        'sqlite' => [
             'driver' => 'sqlite',
             'url' => env('DATABASE_URL'),
-            'database' => database_path(env('DB_DATABASE_USER', 'user').'.sqlite'),
+            'database' => database_path(env('DB_DATABASE_FIXCITY', 'database').'.sqlite'),
             'prefix' => '',
             'foreign_key_constraints' => env('DB_FOREIGN_KEYS', true),
         ],
+        // ---------- NON COMMENTARE !!
+        'user_sqlite' => [
+            'driver' => 'sqlite',
+            'url' => env('DATABASE_URL'),
+            'database' => database_path(env('DB_DATABASE_FIXCITY_USER', 'fixcity_user').'.sqlite'),
+            'prefix' => '',
+            'foreign_key_constraints' => env('DB_FOREIGN_KEYS', true),
+        ],
+
+        /*
+        'user' => [
+            'driver' => env('DB_CONNECTION', 'mysql'),
+            'host' => env('DB_HOST', '127.0.0.1'),
+            'port' => env('DB_PORT', '3306'),
+            // 'unix_socket' => '/Applications/MAMP/tmp/mysql/mysql.sock',
+            'database' => env('DB_DATABASE_FIXCITY_USER', 'forge86'),
+            'username' => env('DB_USERNAME_FIXCITY_USER', 'forge_user_02_1'),
+            'password' => env('DB_PASSWORD_FIXCITY_USER', ''),
+            'charset' => 'utf8mb4',
+            'collation' => 'utf8mb4_unicode_ci',
+            'prefix' => '',
+            'foreign_key_constraints' => env('DB_FOREIGN_KEYS', true),
+        ],
+
+        'user_sqlite' => [
+            'driver' => env('DB_CONNECTION', 'mysql'),
+            'url' => env('DATABASE_URL'),
+            'database' => database_path(env('DB_DATABASE_FIXCITY_USER', 'fixcity_user').'.sqlite'),
+            'prefix' => '',
+            'foreign_key_constraints' => env('DB_FOREIGN_KEYS', true),
+        ],
+        */
 
         'user_mysql' => [
             'driver' => env('DB_CONNECTION', 'mysql'),
             'host' => env('DB_HOST', '127.0.0.1'),
             'port' => env('DB_PORT', '3306'),
             // 'unix_socket' => '/Applications/MAMP/tmp/mysql/mysql.sock',
-            'database' => env('DB_DATABASE_USER', 'forge86'),
-            'username' => env('DB_USERNAME_USER', 'forge_user_02'),
-            'password' => env('DB_PASSWORD_USER', ''),
+            'database' => env('DB_DATABASE_FIXCITY_USER', 'forge86'),
+            'username' => env('DB_USERNAME_FIXCITY_USER', 'forge_user_03_1b'),
+            'password' => env('DB_PASSWORD_FIXCITY_USER', ''),
             'charset' => 'utf8mb4',
             'collation' => 'utf8mb4_unicode_ci',
             'prefix' => '',
@@ -42,117 +97,39 @@ return [
             'engine' => null,
         ],
 
-        'realestate' => [
+        'user_mariadb' => [
             'driver' => env('DB_CONNECTION', 'mysql'),
             'host' => env('DB_HOST', '127.0.0.1'),
             'port' => env('DB_PORT', '3306'),
             // 'unix_socket' => '/Applications/MAMP/tmp/mysql/mysql.sock',
-            'database' => env('DB_DATABASE_REALESTATE', 'forge86'),
-            'username' => env('DB_USERNAME_REALESTATE', 'forgeu287'),
-            'password' => env('DB_PASSWORD_REALESTATE', ''),
+            'database' => env('DB_DATABASE_FIXCITY_USER', 'forge86'),
+            'username' => env('DB_USERNAME_FIXCITY_USER', 'forge_user_02_1c'),
+            'password' => env('DB_PASSWORD_FIXCITY_USER', ''),
             'charset' => 'utf8mb4',
             'collation' => 'utf8mb4_unicode_ci',
             'prefix' => '',
             'strict' => false,
             'engine' => null,
         ],
-
-        'quaeris' => [
-            'driver' => env('DB_CONNECTION', 'mysql'),
-            'host' => env('DB_HOST', '127.0.0.1'),
-            'port' => env('DB_PORT', '3306'),
-            // 'unix_socket' => '/Applications/MAMP/tmp/mysql/mysql.sock',
-            'database' => env('DB_DATABASE_QUAERIS', 'forge26'),
-            'username' => env('DB_USERNAME_QUAERIS', 'forge27'),
-            'password' => env('DB_PASSWORD_QUAERIS', ''),
-            'charset' => 'utf8mb4',
-            'collation' => 'utf8mb4_unicode_ci',
-            'prefix' => '',
-            'strict' => false,
-            'engine' => null,
-        ],
-
-        'limesurvey' => [
-            'driver' => env('DB_CONNECTION', 'mysql'),
-            'host' => env('DB_HOST', '127.0.0.1'),
-            'port' => env('DB_PORT', '3306'),
-            // 'unix_socket' => '/Applications/MAMP/tmp/mysql/mysql.sock',
-            'database' => env('DB_DATABASE_LIMESURVEY', 'forge88'),
-            'username' => env('DB_USERNAME_LIMESURVEY', 'forge89'),
-            'password' => env('DB_PASSWORD_LIMESURVEY', ''),
-            'charset' => 'utf8mb4',
-            'collation' => 'utf8mb4_unicode_ci',
-            'prefix' => '',
-            'strict' => false,
-            'engine' => null,
-        ],
-
-        'sqlite' => [
-            'driver' => 'sqlite',
-            'url' => env('DATABASE_URL'),
-            'database' => env('DB_DATABASE', database_path('database.sqlite')),
-            'prefix' => '',
-            'foreign_key_constraints' => env('DB_FOREIGN_KEYS', true),
-        ],
-
-        'blog' => [
-            'driver' => env('DB_CONNECTION', 'mysql'),
-            'host' => env('DB_HOST', '127.0.0.1'),
-            'port' => env('DB_PORT', '3306'),
-            // 'unix_socket' => '/Applications/MAMP/tmp/mysql/mysql.sock',
-            'database' => env('DB_DATABASE_BLOG', 'forge86'),
-            'username' => env('DB_USERNAME_BLOG', 'forge_blog_02'),
-            'password' => env('DB_PASSWORD_BLOG', ''),
-            'charset' => 'utf8mb4',
-            'collation' => 'utf8mb4_unicode_ci',
-            'prefix' => '',
-            'strict' => false,
-            'engine' => null,
-        ],
-
-        'ticket' => [
-            'driver' => env('DB_CONNECTION', 'mysql'),
-            'host' => env('DB_HOST', '127.0.0.1'),
-            'port' => env('DB_PORT', '3306'),
-            // 'unix_socket' => '/Applications/MAMP/tmp/mysql/mysql.sock',
-            'database' => env('DB_DATABASE_TICKET', 'forge86'),
-            'username' => env('DB_USERNAME_TICKET', 'forgetick187'),
-            'password' => env('DB_PASSWORD_TICKET', ''),
-            'charset' => 'utf8mb4',
-            'collation' => 'utf8mb4_unicode_ci',
-            'prefix' => '',
-            'strict' => false,
-            'engine' => null,
-        ],
-
-        'shop' => [
-            'driver' => env('DB_CONNECTION', 'mysql'),
-            'host' => env('DB_HOST', '127.0.0.1'),
-            'port' => env('DB_PORT', '3306'),
-            // 'unix_socket' => '/Applications/MAMP/tmp/mysql/mysql.sock',
-            'database' => env('DB_DATABASE_SHOP', 'forge86'),
-            'username' => env('DB_USERNAME_SHOP', 'forgetick287'),
-            'password' => env('DB_PASSWORD_SHOP', ''),
-            'charset' => 'utf8mb4',
-            'collation' => 'utf8mb4_unicode_ci',
-            'prefix' => '',
-            'strict' => false,
-            'engine' => null,
-        ],
-
-        'booking' => [
-            'driver' => env('DB_CONNECTION', 'mysql'),
-            'host' => env('DB_HOST', '127.0.0.1'),
-            'port' => env('DB_PORT', '3306'),
-            // 'unix_socket' => '/Applications/MAMP/tmp/mysql/mysql.sock',
-            'database' => env('DB_DATABASE_BOOKING', 'forge86'),
-            'username' => env('DB_USERNAME_BOOKING', 'forge_booking_2'),
-            'password' => env('DB_PASSWORD_BOOKING', ''),
-            'charset' => 'utf8mb4',
-            'collation' => 'utf8mb4_unicode_ci',
-            'prefix' => '',
-            'strict' => false,
-            'engine' => null,
-        ],
-    ], // end connections
+        // 'orbit' => [
+        //     'driver' => 'sqlite',
+        //     // "database" => Orbit::getDatabasePath(),
+        //     // "database" => storage_path('framework/cache/orbit/orbit.sqlite'),
+        //     // "database" => config('orbit.paths.cache') . DIRECTORY_SEPARATOR . 'orbit.sqlite',
+        //     // "database" => '/var/www/html/_bases/base_siram_idoteca_fila3/laravel/config/local/idoteca/orbit.sqlite',
+        //     'database' => TenantService::filePath('orbit.sqlite'),
+        //     'foreign_key_constraints' => false,
+        // ],
+        // 'orbit_meta' => [
+        //     'driver' => 'sqlite',
+        //     // "database" => Orbit::getMetaDatabasePath(),
+        //     'database' => storage_path('framework/cache/orbit/orbit_meta.sqlite'),
+        //     'foreign_key_constraints' => false,
+        // ],
+    ],
 ];
+
+$database_default = config('database.default');
+Arr::set($res, 'connections.user', Arr::get($res, 'connections.user_'.$database_default));
+
+return $res;

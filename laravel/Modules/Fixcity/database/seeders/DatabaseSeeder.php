@@ -17,20 +17,20 @@ class DatabaseSeeder extends Seeder
                 'id' => 'strade',
                 'name' => 'Strade',
                 'description' => 'Problemi relativi a strade e marciapiedi',
-                'icon' => 'road'
+                'icon' => 'road',
             ],
             [
                 'id' => 'illuminazione',
                 'name' => 'Illuminazione',
                 'description' => 'Problemi di illuminazione pubblica',
-                'icon' => 'lightbulb'
+                'icon' => 'lightbulb',
             ],
             // ... altre categorie
         ]);
 
         // Reports
         $this->call([
-            ReportContentSeeder::class
+            ReportContentSeeder::class,
         ]);
     }
-} 
+}

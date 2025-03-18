@@ -14,7 +14,7 @@
                     "sub_title": null,
                     "method": "aaaa",
                     "limit": null,
-                    "view": "ticket::components.blocks.ticket_list.map"
+                    "view": "fixcity::components.blocks.ticket_list.map"
                 }
             }
         ]

@@ -30,4 +30,4 @@ class TicketOverview extends BaseWidget
                 ->color('success'),
         ];
     }
-} 
+}

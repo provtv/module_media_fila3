@@ -4,12 +4,12 @@ declare(strict_types=1);
 
 namespace Modules\Fixcity\View\Components\Blocks\TicketList;
 
-use Modules\Fixcity\View\Components\Blocks\TicketList\Agid as BaseAgid;
 use Illuminate\Support\Collection;
 use Illuminate\Support\Facades\DB;
+use Illuminate\View\Component;
 use Modules\Fixcity\Enums\ReportStatusEnum;
 
-class Agid extends BaseAgid
+class Agid extends Component
 {
     public function getReports(): Collection
     {
@@ -23,7 +23,7 @@ class Agid extends BaseAgid
                 'category',
                 'status',
                 'metadata',
-                'created_at'
+                'created_at',
             ])
             ->orderBy('created_at', 'desc')
             ->get()
@@ -37,7 +37,7 @@ class Agid extends BaseAgid
                     'category' => $report->category,
                     'status' => ReportStatusEnum::from($report->status),
                     'metadata' => json_decode($report->metadata, true),
-                    'created_at' => $report->created_at
+                    'created_at' => $report->created_at,
                 ];
             });
     }
@@ -49,7 +49,7 @@ class Agid extends BaseAgid
                 'id',
                 'name',
                 'description',
-                'icon'
+                'icon',
             ])
             ->get()
             ->mapWithKeys(function ($category) {
@@ -57,8 +57,8 @@ class Agid extends BaseAgid
                     $category->id => [
                         'name' => $category->name,
                         'description' => $category->description,
-                        'icon' => $category->icon
-                    ]
+                        'icon' => $category->icon,
+                    ],
                 ];
             });
     }
@@ -67,7 +67,7 @@ class Agid extends BaseAgid
     {
         return view('fixcity::components.blocks.ticket_list.agid', [
             'reports' => $this->getReports(),
-            'categories' => $this->getCategories()
+            'categories' => $this->getCategories(),
         ]);
     }
-} 
+}

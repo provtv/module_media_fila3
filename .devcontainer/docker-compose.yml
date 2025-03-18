@@ -1,36 +1,56 @@
-version: '3.8'
-
-services: 
-  app:
-    build:
-      context: .
-      dockerfile: Dockerfile
-
+services:
+  laravel-app:
+    container_name: laravel-app
+    build: 
+      context: ./
     volumes:
-      - ../..:/workspaces:cached
-
-    # Overrides default command so things don't shut down after the process ends.
-    command: sleep infinity
-
-    # Runs app on the same network as the database container, allows "forwardPorts" in devcontainer.json function.
-    network_mode: service:db
-
-    # Use "forwardPorts" in **devcontainer.json** to forward an app port locally. 
-    # (Adding the "ports" property to this file will not forward from a Codespace.)
+      - ../:/var/www/html
+      #- ./laravel/storage:/var/www/html/laravel/storage # Mount storage with explicit binding
+      #- ./public_html:/var/www/html/public_html # Map the public directory to the document root
+    ports:
+      - "9000:80"
+    environment:
+      # Set environment variables for the container
+      APP_ENV: local
+      APP_DEBUG: 'true'
+      APP_KEY: base64:your-app-key
+      DB_CONNECTION: mysql
+      DB_HOST: db
+      DB_PORT: 3306
+      DB_DATABASE_USERS: users_db
+      DB_DATABASE_GENERAL: general_db
+      DB_DATABASE_SURVEY: survey_db
+      DB_USERNAME: root
+      DB_PASSWORD: root
+    depends_on:
+      - db
+      - redis
 
   db:
-    image: mariadb:10.4
-    restart: unless-stopped
+    container_name: mariadb
+    image: mariadb:latest
     volumes:
-      - mariadb-data:/var/lib/mysql
+      - dbdata:/var/lib/mysql
     environment:
-      MYSQL_ROOT_PASSWORD: mariadb
-      MYSQL_DATABASE: mariadb
-      MYSQL_USER: mariadb
-      MYSQL_PASSWORD: mariadb
-
-    # Add "forwardPorts": ["3306"] to **devcontainer.json** to forward MariaDB locally.
-    # (Adding the "ports" property to this file will not forward from a Codespace.)
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: general_db # Default DB for initial setup
+    ports:
+      - "3307:3306"
+    networks:
+      - laravel-network
   
+  redis:
+    image: redis:latest
+    container_name: redis
+    ports:
+      - "6379:6379"
+
+  memcached:
+    image: memcached:latest
+
 volumes:
-  mariadb-data:
+  dbdata:
+
+networks:
+  laravel-network:
+    driver: bridge

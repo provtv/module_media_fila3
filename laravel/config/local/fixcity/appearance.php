@@ -28,7 +28,7 @@
     'background_color' => '#43bd39',
     'class' => NULL,
     'overlay_color' => NULL,
-    'overlay_opacity' => NULL,
+    
     'style' => NULL,
     'view' => 'fixcity::components.blocks.headernav.agid',
   ),

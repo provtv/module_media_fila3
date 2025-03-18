@@ -5,10 +5,9 @@ declare(strict_types=1);
 namespace Modules\Xot\Console\Commands;
 
 use Illuminate\Console\Command;
+use Webmozart\Assert\Assert;
 
 use function Safe\shell_exec;
-
-use Webmozart\Assert\Assert;
 
 class ImportMdbToMySQL extends Command
 {
@@ -59,19 +58,11 @@ class ImportMdbToMySQL extends Command
 
     /**
      * Esporta tutte le tabelle dal file .mdb in formato CSV.
-     * 
-     * @return string[] Array di nomi di tabelle esportate
      */
-    private function exportTablesToCSV(string $mdbFile): array
+    private function exportTablesToCSV(string $mdbFile): void
     {
         $tables = [];
         $tableList = shell_exec("mdb-tables $mdbFile");
-
-        // Verifica che tableList non sia null
-        if ($tableList === null) {
-            $this->error("Impossibile ottenere la lista delle tabelle da $mdbFile");
-            return $tables;
-        }
 
         // Esporta ogni tabella in un file CSV
         foreach (explode("\n", trim($tableList)) as $table) {
@@ -82,8 +73,6 @@ class ImportMdbToMySQL extends Command
             $csvFile = storage_path("app/{$table}.csv");
             shell_exec("mdb-export $mdbFile $table > $csvFile");
         }
-        
-        return $tables;
     }
 
     /**
@@ -112,12 +101,6 @@ class ImportMdbToMySQL extends Command
     private function importDataToMySQL(string $mdbFile, string $mysqlUser, string $mysqlPassword, string $mysqlDb): void
     {
         $tables = $this->exportTablesToCSV($mdbFile);
-
-        // Verifica che $tables non sia vuoto
-        if (empty($tables)) {
-            $this->error('Nessuna tabella da importare');
-            return;
-        }
 
         foreach ($tables as $table) {
             $csvFile = storage_path("app/{$table}.csv");

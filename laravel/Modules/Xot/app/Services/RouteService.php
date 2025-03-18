@@ -19,31 +19,29 @@ use Illuminate\Support\Str;
 class RouteService
 {
     /**
-     * Verifica se l'utente è in modalità amministrazione.
+     * Summary of inAdmin.
      *
-     * @param array<string,string> $params Parametri aggiuntivi
-     * @return bool True se l'utente è in modalità amministrazione, false altrimenti
+     * @param array<string,string> $params
      */
-    public static function inAdmin(array $params = []): bool
+    public static function inAdmin(array $params = []): mixed
     {
-        // Se il parametro in_admin è specificato, lo restituiamo direttamente
         if (isset($params['in_admin'])) {
-            // Convertiamo qualsiasi valore a booleano
-            return (bool) $params['in_admin'];
+            return $params['in_admin'];
         }
 
-        // Se il primo segmento dell'URL è 'admin', siamo in modalità amministrazione
+        // dddx(ThemeService::__getStatic('in_admin'));
+        /* Cannot call method get() on mixed
+        if (null !== config()->get('in_admin')) {
+            return config()->get('in_admin');
+        }
+        */
         if ('admin' === Request::segment(1)) {
             return true;
         }
 
-        // Verifichiamo un caso speciale per le richieste Livewire
         $segments = Request::segments();
-        
-        // Se abbiamo almeno un segmento, è 'livewire' e la sessione 'in_admin' è true
-        return (is_countable($segments) ? \count($segments) : 0) > 0 && 
-               'livewire' === $segments[0] && 
-               session('in_admin', false) === true;
+
+        return (is_countable($segments) ? \count($segments) : 0) > 0 && 'livewire' === $segments[0] && true === session('in_admin');
     }
 
     /**

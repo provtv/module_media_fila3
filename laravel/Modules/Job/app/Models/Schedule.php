@@ -226,33 +226,20 @@ class Schedule extends BaseModel
 
     /**
      * Safely evaluate function strings (avoiding eval).
-     *
-     * @param string $functionString Il nome della funzione da valutare
-     * @return string|null Il risultato della funzione o null se la funzione non è consentita
-     * 
-     * @throws \InvalidArgumentException Se viene passato un argomento non valido
      */
-    private function evaluateFunction(string $functionString): ?string
+    private function evaluateFunction(string $functionString): mixed
     {
         // Define a list of allowed functions or implement custom evaluation logic.
         $allowedFunctions = ['strtolower', 'strtoupper']; // Example allowed functions
 
-        if (in_array($functionString, $allowedFunctions, true)) {
-            // Chiamiamo la funzione in modo sicuro
-            try {
-                if ($functionString === 'strtolower') {
-                    return strtolower('TEST_STRING');
-                }
-                if ($functionString === 'strtoupper') {
-                    return strtoupper('test_string');
-                }
-            } catch (\Exception $e) {
-                // Log error or handle exception
-                return null;
+        if (in_array($functionString, $allowedFunctions)) {
+            if (! is_callable($functionString)) {
+                throw new \Exception('['.__LINE__.']['.__CLASS__.']');
             }
+
+            return call_user_func($functionString);
         }
-        
-        // Funzione non consentita
-        return null;
+
+        throw new \RuntimeException("Invalid function: {$functionString}");
     }
 }

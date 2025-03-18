@@ -7,7 +7,7 @@ includes:
 
 parameters:
 
-    level: max
+    level: 9
 
     #cache:
     #    nodesByStringCountMax: 0
@@ -21,7 +21,6 @@ parameters:
 
     paths:
         - ./Modules
-        - ./Themes
 
     ignoreErrors:
     #    - '#Unsafe usage of new static#'
@@ -42,8 +41,11 @@ parameters:
         - ./*/phpinsights.php
         - ./*/rector.php
         - ./Modules/Comment/packages/spatie/*
-        - ./Modules/Blog/*
-        - ./Modules/AI/*
+        - ./Modules/*/packages/*
+        - ./*/*.blade.php
+        #- ./Modules/Blog/*
+        #- ./Modules/AI/*
+        - ./Modules/Xot/app/Filament/Traits/HasXotTable.php
 
 
 

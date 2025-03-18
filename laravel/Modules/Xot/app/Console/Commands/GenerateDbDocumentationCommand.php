@@ -153,35 +153,29 @@ Tabella `{$tableName}` nel database.
 MARKDOWN;
 
         foreach ($columns as $columnName => $column) {
-            $type = isset($column['type']) ? (string)$column['type'] : '';
-            $nullable = isset($column['nullable']) && $column['nullable'] ? 'Sì' : 'No';
-            $default = isset($column['default']) ? (string)$column['default'] : 'NULL';
-            $extra = isset($column['extra']) ? (string)$column['extra'] : '';
-            $comment = isset($column['comment']) ? (string)$column['comment'] : '';
+            $type = $column['type'];
+            $nullable = $column['nullable'] ? 'Sì' : 'No';
+            $default = $column['default'] ?? 'NULL';
+            $extra = $column['extra'] ?? '';
+            $comment = $column['comment'] ?? '';
             
-            $columnNameSafe = is_string($columnName) ? $columnName : '';
-            $content .= "| {$columnNameSafe} | {$type} | {$nullable} | {$default} | {$extra} | {$comment} |\n";
+            $content .= "| {$columnName} | {$type} | {$nullable} | {$default} | {$extra} | {$comment} |\n";
         }
 
-        if (is_array($indexes) && !empty($indexes)) {
+        if (!empty($indexes) && count($indexes) > 0) {
             $content .= "\n## Indici\n\n";
             $content .= "| Nome | Colonne | Unico |\n";
             $content .= "|------|---------|-------|\n";
 
             foreach ($indexes as $indexName => $index) {
-                if (!is_array($index)) {
-                    continue;
-                }
                 if ($indexName === 'PRIMARY') {
                     continue;
                 }
                 
-                $columnsArray = isset($index['columns']) && is_array($index['columns']) ? $index['columns'] : [];
-                $columns = implode(', ', $columnsArray);
-                $unique = isset($index['unique']) && $index['unique'] ? 'Sì' : 'No';
-                $indexNameSafe = is_string($indexName) ? $indexName : '';
+                $columns = implode(', ', $index['columns']);
+                $unique = $index['unique'] ? 'Sì' : 'No';
                 
-                $content .= "| {$indexNameSafe} | {$columns} | {$unique} |\n";
+                $content .= "| {$indexName} | {$columns} | {$unique} |\n";
             }
         }
 

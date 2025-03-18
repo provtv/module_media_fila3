@@ -4,9 +4,9 @@ declare(strict_types=1);
 
 namespace Modules\Fixcity\Filament\Resources\TicketResource\Pages;
 
-use Modules\Fixcity\Filament\Resources\TicketResource;
 use Filament\Actions;
 use Filament\Resources\Pages\EditRecord;
+use Modules\Fixcity\Filament\Resources\TicketResource;
 
 class EditTicket extends EditRecord
 {

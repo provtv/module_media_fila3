@@ -138,10 +138,14 @@ class VideoStream
         fseek($this->stream, $this->start);
         while (! feof($this->stream) && $this->start <= $this->end) {
             $bytesToRead = min($this->bufferSize, $this->end - $this->start + 1);
-            $data = fread($this->stream, $bytesToRead);
-            echo $data;
-            flush();
-            $this->start += $bytesToRead;
+            if ($bytesToRead > 0) {
+                $data = fread($this->stream, $bytesToRead);
+                echo $data;
+                flush();
+                $this->start += $bytesToRead;
+            } else {
+                break; // Evita loop infiniti se $bytesToRead <= 0
+            }
         }
     }
 

@@ -14,12 +14,12 @@ use Webmozart\Assert\Assert;
 /**
  * Modules\Cms\Models\Module.
  *
- * @property int                  $id
- * @property string|null          $name
+ * @property int $id
+ * @property string|null $name
  * @property ProfileContract|null $creator
  * @property ProfileContract|null $updater
  *
- * @method static ModuleFactory                                factory($count = null, $state = [])
+ * @method static ModuleFactory factory($count = null, $state = [])
  * @method static \Illuminate\Database\Eloquent\Builder|Module newModelQuery()
  * @method static \Illuminate\Database\Eloquent\Builder|Module newQuery()
  * @method static \Illuminate\Database\Eloquent\Builder|Module query()

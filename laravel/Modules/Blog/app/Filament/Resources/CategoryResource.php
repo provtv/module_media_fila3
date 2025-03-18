@@ -6,7 +6,6 @@ namespace Modules\Blog\Filament\Resources;
 
 use Filament\Forms;
 use Filament\Forms\Components\SpatieMediaLibraryFileUpload;
-use Filament\Forms\Form;
 use Filament\Resources\Concerns\Translatable;
 use Illuminate\Support\Str;
 use Modules\Blog\Filament\Resources\CategoryResource\Pages;
@@ -71,12 +70,6 @@ class CategoryResource extends XotBaseResource
             // ->layout(\Guava\FilamentIconPicker\Layout::ON_TOP)
             ,
         ];
-    }
-
-    public static function form(Form $form): Form
-    {
-        return $form
-            ->schema(static::getFormFields());
     }
 
     public static function getPages(): array

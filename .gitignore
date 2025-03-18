@@ -93,3 +93,7 @@ laravel/.phive/
 tmp
 laravel/app/View/Components/vendor/
 public_html/themes/
+*.phar
+*.phar
+views
+.env

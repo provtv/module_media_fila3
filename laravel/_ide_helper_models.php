@@ -3213,11 +3213,11 @@ namespace Modules\Tenant\Models{
 	class Domain extends \Eloquent {}
 }
 
-namespace Modules\Ticket\Models{
+namespace Modules\Fixcity\Models{
 /**
  * 
  *
- * @method static \Modules\Ticket\Database\Factories\ActivityFactory factory($count = null, $state = [])
+ * @method static \Modules\Fixcity\Database\Factories\ActivityFactory factory($count = null, $state = [])
  * @method static \Illuminate\Database\Eloquent\Builder|Activity     newModelQuery()
  * @method static \Illuminate\Database\Eloquent\Builder|Activity     newQuery()
  * @method static \Illuminate\Database\Eloquent\Builder|Activity     onlyTrashed()
@@ -3231,7 +3231,7 @@ namespace Modules\Ticket\Models{
 	class Activity extends \Eloquent {}
 }
 
-namespace Modules\Ticket\Models{
+namespace Modules\Fixcity\Models{
 /**
  * 
  *
@@ -3250,9 +3250,9 @@ namespace Modules\Ticket\Models{
  * @property Epic|null                                                                    $parent
  * @property Project|null                                                                 $project
  * @property Sprint|null                                                                  $sprint
- * @property \Illuminate\Database\Eloquent\Collection<int, \Modules\Ticket\Models\Ticket> $tickets
+ * @property \Illuminate\Database\Eloquent\Collection<int, \Modules\Fixcity\Models\Ticket> $tickets
  * @property int|null                                                                     $tickets_count
- * @method static \Modules\Ticket\Database\Factories\EpicFactory factory($count = null, $state = [])
+ * @method static \Modules\Fixcity\Database\Factories\EpicFactory factory($count = null, $state = [])
  * @method static \Illuminate\Database\Eloquent\Builder|Epic     newModelQuery()
  * @method static \Illuminate\Database\Eloquent\Builder|Epic     newQuery()
  * @method static \Illuminate\Database\Eloquent\Builder|Epic     onlyTrashed()
@@ -3278,7 +3278,7 @@ namespace Modules\Ticket\Models{
 	class Epic extends \Eloquent {}
 }
 
-namespace Modules\Ticket\Models{
+namespace Modules\Fixcity\Models{
 /**
  * 
  *
@@ -3308,22 +3308,22 @@ namespace Modules\Ticket\Models{
  * @property TicketStatusEnum                                                                                        $status
  * @property TicketPriority|null                                                                                        $priority
  * @property TicketType|null                                                                                            $type
- * @property \Illuminate\Database\Eloquent\Collection<int, \Modules\Ticket\Models\TicketActivity>                       $activities
+ * @property \Illuminate\Database\Eloquent\Collection<int, \Modules\Fixcity\Models\TicketActivity>                       $activities
  * @property int|null                                                                                                   $activities_count
- * @property \Illuminate\Database\Eloquent\Collection<int, \Modules\Ticket\Models\TicketComment>                        $comments
+ * @property \Illuminate\Database\Eloquent\Collection<int, \Modules\Fixcity\Models\TicketComment>                        $comments
  * @property int|null                                                                                                   $comments_count
  * @property mixed                                                                                                      $completude_percentage
  * @property Epic|null                                                                                                  $epic
  * @property mixed                                                                                                      $estimation_for_humans
  * @property int|null                                                                                                   $estimation_in_seconds
  * @property float                                                                                                      $estimation_progress
- * @property \Illuminate\Database\Eloquent\Collection<int, \Modules\Ticket\Models\TicketHour>                           $hours
+ * @property \Illuminate\Database\Eloquent\Collection<int, \Modules\Fixcity\Models\TicketHour>                           $hours
  * @property int|null                                                                                                   $hours_count
  * @property \Spatie\MediaLibrary\MediaCollections\Models\Collections\MediaCollection<int, \Modules\Media\Models\Media> $media
  * @property int|null                                                                                                   $media_count
  * @property \Modules\User\Models\User|null                                                                             $owner
  * @property Project|null                                                                                               $project
- * @property \Illuminate\Database\Eloquent\Collection<int, \Modules\Ticket\Models\TicketRelation>                       $relations
+ * @property \Illuminate\Database\Eloquent\Collection<int, \Modules\Fixcity\Models\TicketRelation>                       $relations
  * @property int|null                                                                                                   $relations_count
  * @property \Modules\User\Models\User|null                                                                             $responsible
  * @property Sprint|null                                                                                                $sprint
@@ -3336,7 +3336,7 @@ namespace Modules\Ticket\Models{
  * @property mixed                                                                                                      $total_logged_in_hours
  * @property mixed                                                                                                      $total_logged_seconds
  * @method static \Illuminate\Database\Eloquent\Builder|Ticket     currentStatus(...$names)
- * @method static \Modules\Ticket\Database\Factories\TicketFactory factory($count = null, $state = [])
+ * @method static \Modules\Fixcity\Database\Factories\TicketFactory factory($count = null, $state = [])
  * @method static \Illuminate\Database\Eloquent\Builder|Ticket     newModelQuery()
  * @method static \Illuminate\Database\Eloquent\Builder|Ticket     newQuery()
  * @method static \Illuminate\Database\Eloquent\Builder|Ticket     onlyTrashed()
@@ -3379,9 +3379,9 @@ namespace Modules\Ticket\Models{
 	class Ticket extends \Eloquent {}
 }
 
-namespace Modules\Ticket\Models{
+namespace Modules\Fixcity\Models{
 /**
- * Modules\Ticket\Models\Profile.
+ * Modules\Fixcity\Models\Profile.
  *
  * @property Collection<int, Customer>   $customers
  * @property int|null                    $customers_count
@@ -3466,7 +3466,7 @@ namespace Modules\Ticket\Models{
  * @property Collection<int, \Modules\User\Models\Team>                                                                    $teams
  * @property int|null                                                                                                      $teams_count
  * @property string|null                                                                                                   $user_name
- * @method static \Modules\Ticket\Database\Factories\ProfileFactory factory($count = null, $state = [])
+ * @method static \Modules\Fixcity\Database\Factories\ProfileFactory factory($count = null, $state = [])
  * @method static \Illuminate\Database\Eloquent\Builder|Profile                                   whereCredits($value)
  * @method static \Illuminate\Database\Eloquent\Builder|Profile                                   whereDeletedAt($value)
  * @method static \Illuminate\Database\Eloquent\Builder|Profile                                   whereDeletedBy($value)
@@ -3486,9 +3486,9 @@ namespace Modules\Ticket\Models{
 	class Profile extends \Eloquent {}
 }
 
-namespace Modules\Ticket\Models{
+namespace Modules\Fixcity\Models{
 /**
- * Modules\Ticket\Models\ProfileProject.
+ * Modules\Fixcity\Models\ProfileProject.
  *
  * @property Project|null $project
  * @method static \Illuminate\Database\Eloquent\Builder|ProfileProject newModelQuery()
@@ -3524,7 +3524,7 @@ namespace Modules\Ticket\Models{
 	class ProfileProject extends \Eloquent {}
 }
 
-namespace Modules\Ticket\Models{
+namespace Modules\Fixcity\Models{
 /**
  * 
  *
@@ -3545,7 +3545,7 @@ namespace Modules\Ticket\Models{
  * @property mixed                                                                                                      $contributors
  * @property mixed                                                                                                      $cover
  * @property mixed                                                                                                      $current_sprint
- * @property \Illuminate\Database\Eloquent\Collection<int, \Modules\Ticket\Models\Epic>                                 $epics
+ * @property \Illuminate\Database\Eloquent\Collection<int, \Modules\Fixcity\Models\Epic>                                 $epics
  * @property int|null                                                                                                   $epics_count
  * @property mixed                                                                                                      $epics_first_date
  * @property mixed                                                                                                      $epics_last_date
@@ -3553,12 +3553,12 @@ namespace Modules\Ticket\Models{
  * @property int|null                                                                                                   $media_count
  * @property mixed                                                                                                      $next_sprint
  * @property \Modules\User\Models\User|null                                                                             $owner
- * @property \Illuminate\Database\Eloquent\Collection<int, \Modules\Ticket\Models\Sprint>                               $sprints
+ * @property \Illuminate\Database\Eloquent\Collection<int, \Modules\Fixcity\Models\Sprint>                               $sprints
  * @property int|null                                                                                                   $sprints_count
  * @property ProjectStatus                                                                                              $status
- * @property \Illuminate\Database\Eloquent\Collection<int, \Modules\Ticket\Models\TicketStatus>                         $statuses
+ * @property \Illuminate\Database\Eloquent\Collection<int, \Modules\Fixcity\Models\TicketStatus>                         $statuses
  * @property int|null                                                                                                   $statuses_count
- * @property \Illuminate\Database\Eloquent\Collection<int, \Modules\Ticket\Models\Ticket>                               $tickets
+ * @property \Illuminate\Database\Eloquent\Collection<int, \Modules\Fixcity\Models\Ticket>                               $tickets
  * @property int|null                                                                                                   $tickets_count
  * @property \Illuminate\Database\Eloquent\Collection<int, \Modules\User\Models\User>                                   $users
  * @property int|null                                                                                                   $users_count
@@ -3587,7 +3587,7 @@ namespace Modules\Ticket\Models{
 	class Project extends \Eloquent implements \Spatie\MediaLibrary\HasMedia {}
 }
 
-namespace Modules\Ticket\Models{
+namespace Modules\Fixcity\Models{
 /**
  * 
  *
@@ -3621,7 +3621,7 @@ namespace Modules\Ticket\Models{
 	class ProjectFavorite extends \Eloquent {}
 }
 
-namespace Modules\Ticket\Models{
+namespace Modules\Fixcity\Models{
 /**
  * 
  *
@@ -3636,9 +3636,9 @@ namespace Modules\Ticket\Models{
  * @property string|null                                                                   $updated_by
  * @property string|null                                                                   $created_by
  * @property string|null                                                                   $deleted_by
- * @property \Illuminate\Database\Eloquent\Collection<int, \Modules\Ticket\Models\Project> $projects
+ * @property \Illuminate\Database\Eloquent\Collection<int, \Modules\Fixcity\Models\Project> $projects
  * @property int|null                                                                      $projects_count
- * @method static \Modules\Ticket\Database\Factories\ProjectStatusFactory factory($count = null, $state = [])
+ * @method static \Modules\Fixcity\Database\Factories\ProjectStatusFactory factory($count = null, $state = [])
  * @method static \Illuminate\Database\Eloquent\Builder|ProjectStatus     newModelQuery()
  * @method static \Illuminate\Database\Eloquent\Builder|ProjectStatus     newQuery()
  * @method static \Illuminate\Database\Eloquent\Builder|ProjectStatus     onlyTrashed()
@@ -3663,7 +3663,7 @@ namespace Modules\Ticket\Models{
 	class ProjectStatus extends \Eloquent {}
 }
 
-namespace Modules\Ticket\Models{
+namespace Modules\Fixcity\Models{
 /**
  * 
  *
@@ -3699,7 +3699,7 @@ namespace Modules\Ticket\Models{
 	class ProjectUser extends \Eloquent {}
 }
 
-namespace Modules\Ticket\Models{
+namespace Modules\Fixcity\Models{
 /**
  * 
  *
@@ -3721,9 +3721,9 @@ namespace Modules\Ticket\Models{
  * @property Epic|null                                                                    $epic
  * @property Project|null                                                                 $project
  * @property mixed                                                                        $remaining
- * @property \Illuminate\Database\Eloquent\Collection<int, \Modules\Ticket\Models\Ticket> $tickets
+ * @property \Illuminate\Database\Eloquent\Collection<int, \Modules\Fixcity\Models\Ticket> $tickets
  * @property int|null                                                                     $tickets_count
- * @method static \Modules\Ticket\Database\Factories\SprintFactory factory($count = null, $state = [])
+ * @method static \Modules\Fixcity\Database\Factories\SprintFactory factory($count = null, $state = [])
  * @method static \Illuminate\Database\Eloquent\Builder|Sprint     newModelQuery()
  * @method static \Illuminate\Database\Eloquent\Builder|Sprint     newQuery()
  * @method static \Illuminate\Database\Eloquent\Builder|Sprint     onlyTrashed()
@@ -3752,9 +3752,9 @@ namespace Modules\Ticket\Models{
 	class Sprint extends \Eloquent {}
 }
 
-namespace Modules\Ticket\Models{
+namespace Modules\Fixcity\Models{
 /**
- * Modules\Ticket\Models\Ticket.
+ * Modules\Fixcity\Models\Ticket.
  *
  * @property string                                                                                                     $name
  * @property string                                                                                                     $slug
@@ -3780,23 +3780,23 @@ namespace Modules\Ticket\Models{
  * @property string|null                                                                                                $updated_by
  * @property string|null                                                                                                $created_by
  * @property string|null                                                                                                $deleted_by
- * @property \Illuminate\Database\Eloquent\Collection<int, \Modules\Ticket\Models\TicketActivity>                       $activities
+ * @property \Illuminate\Database\Eloquent\Collection<int, \Modules\Fixcity\Models\TicketActivity>                       $activities
  * @property int|null                                                                                                   $activities_count
- * @property \Illuminate\Database\Eloquent\Collection<int, \Modules\Ticket\Models\TicketComment>                        $comments
+ * @property \Illuminate\Database\Eloquent\Collection<int, \Modules\Fixcity\Models\TicketComment>                        $comments
  * @property int|null                                                                                                   $comments_count
  * @property mixed                                                                                                      $completude_percentage
  * @property Epic|null                                                                                                  $epic
  * @property mixed                                                                                                      $estimation_for_humans
  * @property mixed                                                                                                      $estimation_in_seconds
  * @property mixed                                                                                                      $estimation_progress
- * @property \Illuminate\Database\Eloquent\Collection<int, \Modules\Ticket\Models\TicketHour>                           $hours
+ * @property \Illuminate\Database\Eloquent\Collection<int, \Modules\Fixcity\Models\TicketHour>                           $hours
  * @property int|null                                                                                                   $hours_count
  * @property \Spatie\MediaLibrary\MediaCollections\Models\Collections\MediaCollection<int, \Modules\Media\Models\Media> $media
  * @property int|null                                                                                                   $media_count
  * @property \Modules\User\Models\User|null                                                                             $owner
  * @property TicketPriority|null                                                                                        $priority
  * @property Project|null                                                                                               $project
- * @property \Illuminate\Database\Eloquent\Collection<int, \Modules\Ticket\Models\TicketRelation>                       $relations
+ * @property \Illuminate\Database\Eloquent\Collection<int, \Modules\Fixcity\Models\TicketRelation>                       $relations
  * @property int|null                                                                                                   $relations_count
  * @property \Modules\User\Models\User|null                                                                             $responsible
  * @property Sprint|null                                                                                                $sprint
@@ -3808,7 +3808,7 @@ namespace Modules\Ticket\Models{
  * @property mixed                                                                                                      $total_logged_in_hours
  * @property mixed                                                                                                      $total_logged_seconds
  * @property TicketType|null                                                                                            $type
- * @method static \Modules\Ticket\Database\Factories\TicketFactory factory($count = null, $state = [])
+ * @method static \Modules\Fixcity\Database\Factories\TicketFactory factory($count = null, $state = [])
  * @method static \Illuminate\Database\Eloquent\Builder|Ticket     newModelQuery()
  * @method static \Illuminate\Database\Eloquent\Builder|Ticket     newQuery()
  * @method static \Illuminate\Database\Eloquent\Builder|Ticket     onlyTrashed()
@@ -3853,7 +3853,7 @@ namespace Modules\Ticket\Models{
 	class Ticket extends \Eloquent implements \Spatie\MediaLibrary\HasMedia {}
 }
 
-namespace Modules\Ticket\Models{
+namespace Modules\Fixcity\Models{
 /**
  * 
  *
@@ -3872,7 +3872,7 @@ namespace Modules\Ticket\Models{
  * @property TicketStatus|null               $oldStatus
  * @property Ticket|null                     $ticket
  * @property \Modules\User\Models\User|null  $user
- * @method static \Modules\Ticket\Database\Factories\TicketActivityFactory factory($count = null, $state = [])
+ * @method static \Modules\Fixcity\Database\Factories\TicketActivityFactory factory($count = null, $state = [])
  * @method static \Illuminate\Database\Eloquent\Builder|TicketActivity     newModelQuery()
  * @method static \Illuminate\Database\Eloquent\Builder|TicketActivity     newQuery()
  * @method static \Illuminate\Database\Eloquent\Builder|TicketActivity     onlyTrashed()
@@ -3897,7 +3897,7 @@ namespace Modules\Ticket\Models{
 	class TicketActivity extends \Eloquent {}
 }
 
-namespace Modules\Ticket\Models{
+namespace Modules\Fixcity\Models{
 /**
  * 
  *
@@ -3913,7 +3913,7 @@ namespace Modules\Ticket\Models{
  * @property string|null                     $deleted_by
  * @property Ticket|null                     $ticket
  * @property \Modules\User\Models\User|null  $user
- * @method static \Modules\Ticket\Database\Factories\TicketCommentFactory factory($count = null, $state = [])
+ * @method static \Modules\Fixcity\Database\Factories\TicketCommentFactory factory($count = null, $state = [])
  * @method static \Illuminate\Database\Eloquent\Builder|TicketComment     newModelQuery()
  * @method static \Illuminate\Database\Eloquent\Builder|TicketComment     newQuery()
  * @method static \Illuminate\Database\Eloquent\Builder|TicketComment     onlyTrashed()
@@ -3937,7 +3937,7 @@ namespace Modules\Ticket\Models{
 	class TicketComment extends \Eloquent {}
 }
 
-namespace Modules\Ticket\Models{
+namespace Modules\Fixcity\Models{
 /**
  * 
  *
@@ -3957,7 +3957,7 @@ namespace Modules\Ticket\Models{
  * @property mixed                           $for_humans
  * @property Ticket|null                     $ticket
  * @property \Modules\User\Models\User|null  $user
- * @method static \Modules\Ticket\Database\Factories\TicketHourFactory factory($count = null, $state = [])
+ * @method static \Modules\Fixcity\Database\Factories\TicketHourFactory factory($count = null, $state = [])
  * @method static \Illuminate\Database\Eloquent\Builder|TicketHour     newModelQuery()
  * @method static \Illuminate\Database\Eloquent\Builder|TicketHour     newQuery()
  * @method static \Illuminate\Database\Eloquent\Builder|TicketHour     onlyTrashed()
@@ -3983,7 +3983,7 @@ namespace Modules\Ticket\Models{
 	class TicketHour extends \Eloquent {}
 }
 
-namespace Modules\Ticket\Models{
+namespace Modules\Fixcity\Models{
 /**
  * 
  *
@@ -3997,9 +3997,9 @@ namespace Modules\Ticket\Models{
  * @property string|null                                                                  $updated_by
  * @property string|null                                                                  $created_by
  * @property string|null                                                                  $deleted_by
- * @property \Illuminate\Database\Eloquent\Collection<int, \Modules\Ticket\Models\Ticket> $tickets
+ * @property \Illuminate\Database\Eloquent\Collection<int, \Modules\Fixcity\Models\Ticket> $tickets
  * @property int|null                                                                     $tickets_count
- * @method static \Modules\Ticket\Database\Factories\TicketPriorityFactory factory($count = null, $state = [])
+ * @method static \Modules\Fixcity\Database\Factories\TicketPriorityFactory factory($count = null, $state = [])
  * @method static \Illuminate\Database\Eloquent\Builder|TicketPriority     newModelQuery()
  * @method static \Illuminate\Database\Eloquent\Builder|TicketPriority     newQuery()
  * @method static \Illuminate\Database\Eloquent\Builder|TicketPriority     onlyTrashed()
@@ -4023,7 +4023,7 @@ namespace Modules\Ticket\Models{
 	class TicketPriority extends \Eloquent {}
 }
 
-namespace Modules\Ticket\Models{
+namespace Modules\Fixcity\Models{
 /**
  * 
  *
@@ -4040,7 +4040,7 @@ namespace Modules\Ticket\Models{
  * @property string|null                     $deleted_by
  * @property Ticket|null                     $relation
  * @property Ticket|null                     $ticket
- * @method static \Modules\Ticket\Database\Factories\TicketRelationFactory factory($count = null, $state = [])
+ * @method static \Modules\Fixcity\Database\Factories\TicketRelationFactory factory($count = null, $state = [])
  * @method static \Illuminate\Database\Eloquent\Builder|TicketRelation     newModelQuery()
  * @method static \Illuminate\Database\Eloquent\Builder|TicketRelation     newQuery()
  * @method static \Illuminate\Database\Eloquent\Builder|TicketRelation     onlyTrashed()
@@ -4065,7 +4065,7 @@ namespace Modules\Ticket\Models{
 	class TicketRelation extends \Eloquent {}
 }
 
-namespace Modules\Ticket\Models{
+namespace Modules\Fixcity\Models{
 /**
  * 
  *
@@ -4082,9 +4082,9 @@ namespace Modules\Ticket\Models{
  * @property string|null                                                                  $created_by
  * @property string|null                                                                  $deleted_by
  * @property Project|null                                                                 $project
- * @property \Illuminate\Database\Eloquent\Collection<int, \Modules\Ticket\Models\Ticket> $tickets
+ * @property \Illuminate\Database\Eloquent\Collection<int, \Modules\Fixcity\Models\Ticket> $tickets
  * @property int|null                                                                     $tickets_count
- * @method static \Modules\Ticket\Database\Factories\TicketStatusFactory factory($count = null, $state = [])
+ * @method static \Modules\Fixcity\Database\Factories\TicketStatusFactory factory($count = null, $state = [])
  * @method static \Illuminate\Database\Eloquent\Builder|TicketStatus     newModelQuery()
  * @method static \Illuminate\Database\Eloquent\Builder|TicketStatus     newQuery()
  * @method static \Illuminate\Database\Eloquent\Builder|TicketStatus     onlyTrashed()
@@ -4110,7 +4110,7 @@ namespace Modules\Ticket\Models{
 	class TicketStatus extends \Eloquent {}
 }
 
-namespace Modules\Ticket\Models{
+namespace Modules\Fixcity\Models{
 /**
  * 
  *
@@ -4124,7 +4124,7 @@ namespace Modules\Ticket\Models{
  * @property \Illuminate\Support\Carbon|null $deleted_at
  * @property string|null                     $deleted_by
  * @property Ticket|null                     $ticket
- * @method static \Modules\Ticket\Database\Factories\TicketSubscriberFactory factory($count = null, $state = [])
+ * @method static \Modules\Fixcity\Database\Factories\TicketSubscriberFactory factory($count = null, $state = [])
  * @method static \Illuminate\Database\Eloquent\Builder|TicketSubscriber     newModelQuery()
  * @method static \Illuminate\Database\Eloquent\Builder|TicketSubscriber     newQuery()
  * @method static \Illuminate\Database\Eloquent\Builder|TicketSubscriber     onlyTrashed()
@@ -4148,7 +4148,7 @@ namespace Modules\Ticket\Models{
 	class TicketSubscriber extends \Eloquent {}
 }
 
-namespace Modules\Ticket\Models{
+namespace Modules\Fixcity\Models{
 /**
  * 
  *
@@ -4163,9 +4163,9 @@ namespace Modules\Ticket\Models{
  * @property string|null                                                                  $updated_by
  * @property string|null                                                                  $created_by
  * @property string|null                                                                  $deleted_by
- * @property \Illuminate\Database\Eloquent\Collection<int, \Modules\Ticket\Models\Ticket> $tickets
+ * @property \Illuminate\Database\Eloquent\Collection<int, \Modules\Fixcity\Models\Ticket> $tickets
  * @property int|null                                                                     $tickets_count
- * @method static \Modules\Ticket\Database\Factories\TicketTypeFactory factory($count = null, $state = [])
+ * @method static \Modules\Fixcity\Database\Factories\TicketTypeFactory factory($count = null, $state = [])
  * @method static \Illuminate\Database\Eloquent\Builder|TicketType     newModelQuery()
  * @method static \Illuminate\Database\Eloquent\Builder|TicketType     newQuery()
  * @method static \Illuminate\Database\Eloquent\Builder|TicketType     onlyTrashed()

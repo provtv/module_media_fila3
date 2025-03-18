@@ -1,17 +1,15 @@
-<?php return array (
-  'fields' => 
-  array (
-    'status' => 
-    array (
-      'label' => 'status',
-    ),
-    'reason' => 
-    array (
-      'label' => 'reason',
-    ),
-    'changeStatus' => 
-    array (
-      'label' => 'changeStatus',
-    ),
-  ),
-);
+<?php
+
+return [
+    'fields' => [
+        'status' => [
+            'label' => 'status',
+        ],
+        'reason' => [
+            'label' => 'reason',
+        ],
+        'changeStatus' => [
+            'label' => 'changeStatus',
+        ],
+    ],
+];

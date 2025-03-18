@@ -1,21 +1,18 @@
-<?php return array (
-  'fields' => 
-  array (
-    'menu' => 
-    array (
-      'label' => 'menu',
-    ),
-    'title' => 
-    array (
-      'label' => 'title',
-    ),
-    'type' => 
-    array (
-      'label' => 'type',
-    ),
-    'layout' => 
-    array (
-      'label' => 'layout',
-    ),
-  ),
-);
+<?php
+
+return [
+    'fields' => [
+        'menu' => [
+            'label' => 'menu',
+        ],
+        'title' => [
+            'label' => 'title',
+        ],
+        'type' => [
+            'label' => 'type',
+        ],
+        'layout' => [
+            'label' => 'layout',
+        ],
+    ],
+];

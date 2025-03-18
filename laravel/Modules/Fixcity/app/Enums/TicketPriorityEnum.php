@@ -1,4 +1,5 @@
 <?php
+
 /**
  * ---.
  */
@@ -81,7 +82,7 @@ enum TicketPriorityEnum: string implements HasColor, HasIcon, HasLabel
 
     public function getColorClass(): string
     {
-        return match($this) {
+        return match ($this) {
             self::LOW => 'badge-info',
             self::MEDIUM => 'badge-warning',
             self::HIGH => 'badge-danger',
@@ -92,7 +93,7 @@ enum TicketPriorityEnum: string implements HasColor, HasIcon, HasLabel
 
     public function label(): string
     {
-        return match($this) {
+        return match ($this) {
             self::LOW => trans('fixcity::ticket.fields.priority.options.low'),
             self::MEDIUM => trans('fixcity::ticket.fields.priority.options.medium'),
             self::HIGH => trans('fixcity::ticket.fields.priority.options.high'),

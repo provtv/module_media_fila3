@@ -7,11 +7,10 @@ namespace Modules\Blog\Actions\Banner;
 use Carbon\Carbon;
 use Modules\Blog\Models\Banner;
 use Modules\Blog\Models\Category;
-
-use function Safe\json_decode;
-
 use Spatie\QueueableAction\QueueableAction;
 use Webmozart\Assert\Assert;
+
+use function Safe\json_decode;
 
 class ImportBannerFromByJsonTextAction
 {
@@ -69,7 +68,7 @@ class ImportBannerFromByJsonTextAction
 
     public function execute1(array $data): void
     {
-        $banner = new Banner();
+        $banner = new Banner;
 
         if (isset($data['start_date'])) {
             $banner->start_date = Carbon::parse($data['start_date']);

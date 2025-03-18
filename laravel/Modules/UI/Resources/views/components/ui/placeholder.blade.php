@@ -9,4 +9,4 @@
         <rect stroke="none" fill="url(#pattern-b55d3ce5-d478-4029-95b9-44c415d04f63)" width="100%" height="100%"></rect>
         </svg>
     </div>
-</div>
+</div><?php /**PATH /var/www/html/_bases/base_fixcity_fila3/laravel/Modules/UI/resources/views/components/ui/placeholder.blade.php ENDPATH**/ ?>

@@ -6,7 +6,6 @@ namespace Modules\Cms\Filament\Resources;
 
 use Filament\Forms;
 use Filament\Forms\Components\SpatieMediaLibraryFileUpload;
-use Filament\Forms\Form;
 use Filament\Tables;
 use Filament\Tables\Table;
 use Illuminate\Support\HtmlString;
@@ -95,11 +94,6 @@ class MenuResource extends \Modules\Xot\Filament\Resources\XotBaseResource
                 ])
                 ->columnSpanFull(),
         ];
-    }
-
-    public static function form(Form $form): Form
-    {
-        return $form->schema(static::getFormSchema());
     }
 
     // public static function table(Table $table): Table

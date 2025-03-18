@@ -8,11 +8,15 @@ use Carbon\Carbon;
 use Illuminate\Support\Facades\Http;
 use Illuminate\Support\Facades\Cache;
 use Illuminate\Support\Facades\Log;
+use Modules\Fixcity\Enums\TicketStatusEnum;
 
 new class extends Component
 {
     use WithPagination;
 
+    public $locationSet = false;
+    public $userLatitude;
+    public $userLongitude;
     public $search = '';
     public $selectedCategories = [];
     public $selectedStatus = '';
@@ -33,9 +37,36 @@ new class extends Component
     public function mount()
     {
         $this->resolvedTicketsCount = Ticket::query()
+            ->where(function ($q) {
+                $q->whereIn('status', TicketStatusEnum::canViewByAll())
+                    ->orWhere('created_by', authId())
+                    ->orWhere('updated_by', authId());
+            })
             ->where('created_at', '>=', Carbon::now()->subMonths(12))
             ->count();
+        $this->dispatch('get-user-location');
     }
+
+    public function setUserLocation($latitude, $longitude)
+    {
+        $this->userLatitude = $latitude;
+        $this->userLongitude = $longitude;
+        $this->locationSet = true;
+
+        $this->dispatch('updateMapCenter', $latitude, $longitude)
+            ->to(\Modules\Fixcity\Filament\Widgets\TicketsMapWidget::class);
+    }
+
+    public function notSetUserLocation()
+    {
+        $this->userLatitude = 41.125278;
+        $this->userLongitude = 16.866667;
+        $this->locationSet = true;
+
+        $this->dispatch('updateMapCenter', $this->userLatitude, $this->userLongitude)
+            ->to(\Modules\Fixcity\Filament\Widgets\TicketsMapWidget::class);
+    }
+
 
     public function loadMore()
     {
@@ -97,6 +128,11 @@ new class extends Component
     {
         $categories = collect(TicketTypeEnum::cases())->map(function ($type) {
             $count = Ticket::where('type', $type->value)
+                ->where(function ($q) {
+                    $q->whereIn('status', TicketStatusEnum::canViewByAll())
+                        ->orWhere('created_by', authId())
+                        ->orWhere('updated_by', authId());
+                })
                 ->where('created_at', '>=', Carbon::now()->subMonths(12))
                 ->count();
 
@@ -108,7 +144,12 @@ new class extends Component
         });
 
         $query = Ticket::query()
-            ->select('id', 'name', 'type', 'content', 'created_at', 'latitude', 'longitude')
+            ->where(function ($q) {
+                $q->whereIn('status', TicketStatusEnum::canViewByAll())
+                    ->orWhere('created_by', authId())
+                    ->orWhere('updated_by', authId());
+            })
+            ->select('id', 'name', 'slug', 'type', 'content', 'created_at', 'latitude', 'longitude')
             ->with('media')
             ->latest();
 
@@ -126,7 +167,9 @@ new class extends Component
             'categories' => $categories,
             'tickets' => $tickets,
             'hasMorePages' => $hasMorePages,
-            'filteredCount' => $this->filteredCount
+            'filteredCount' => $this->filteredCount,
+            'userLatitude' => $this->userLatitude,
+            'userLongitude' => $this->userLongitude,
         ];
     }
 }
@@ -199,19 +242,28 @@ new class extends Component
                 <div role="tablist" class="grid-cols-2 tabs tabs-bordered">
                     <input type="radio" name="my_tabs_1" role="tab" class="text-lg text-gray-950 border-0 rounded-none tab focus:!bg-transparent hover:!bg-transparent checked:bg-transparent focus:ring-0 focus:!border-emerald-800" aria-label="Mappa" checked="checked" />
                     <div role="tabpanel" class="py-8 space-y-6 tab-content">
+                        @if($locationSet)
                         @livewire(\Modules\Fixcity\Filament\Widgets\TicketsMapWidget::class, [
-                        'categoryFilter' => $selectedCategories
+                        'categoryFilter' => $selectedCategories,
+                        'latitude' => $userLatitude,
+                        'longitude' => $userLongitude,
                         ], key('map-' . implode('-', $selectedCategories)))
+                        @else
+                        <div class="text-center">Caricamento mappa...</div> <!-- Show loading message or spinner -->
+                       
+                        @endif
                     </div>
                     <input type="radio" name="my_tabs_1" role="tab" class="text-lg text-gray-950 border-0 rounded-none tab focus:!bg-transparent hover:!bg-transparent checked:bg-transparent focus:ring-0 focus:!border-emerald-800" aria-label="Elenco" />
                     <div role="tabpanel" class="py-8 space-y-4 tab-content">
                         @foreach($tickets as $ticket)
                         <x-filament::section>
                             <div class="space-y-4">
-                                <h3 class="text-xl font-bold">{{ $ticket->name }}</h3>
+                                <a target="_blank" href="{{ route('ticket.view', ['slug' => $ticket->slug]) }}">
+                                    <h3 class="text-xl font-bold">{{ $ticket->name }}</h3>
+                                </a>
                                 <div class="space-y-2">
                                     <p>Tipologia di segnalazione</p>
-                                    <p><strong>{{ $ticket->type?->getLabel() ?? 'Non specificato' }}</strong></p>
+                                    <p><strong>{{ $ticket->type?->getLabel() }}</strong></p>
                                 </div>
                                 @if(in_array($ticket->id, $expandedTickets))
                                 <div class="space-y-4">
@@ -272,7 +324,7 @@ new class extends Component
                     <h2 class="text-3xl font-bold lg:text-4xl">Fai una segnalazione</h2>
                     <p>Se vuoi aggiungere una segnalazione, puoi farlo dopo esserti autenticato con le tue credenziali SPID o CIE.</p>
                     <br />
-                    <a href="{{ route('ticket.create', ['lang'=>$lang]) }}" class="text-white btn btn-neutral">Segnala disservizio</a>
+                    <a href="{{ route('ticket.create') }}" class="text-white btn btn-neutral">Segnala disservizio</a>
                 </div>
             </div>
         </div>
@@ -322,4 +374,32 @@ new class extends Component
         </section>
     </div>
 </div>
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        window.addEventListener('get-user-location', function() {
+            if (navigator.geolocation) {
+                navigator.geolocation.getCurrentPosition(function(position) {
+                    window.dispatchEvent(new CustomEvent('set-user-location', {
+                        detail: {
+                            latitude: position.coords.latitude,
+                            longitude: position.coords.longitude
+                        }
+                    }));
+                }, function(error) {
+                    window.dispatchEvent(new CustomEvent('not-set-user-location', {
+                    }));
+                });
+            }
+        });
+
+        window.addEventListener('set-user-location', function(event) {
+            @this.call('setUserLocation', event.detail.latitude, event.detail.longitude);
+        });
+        window.addEventListener('not-set-user-location', function(event) {
+            @this.call('notSetUserLocation');
+        });
+
+
+    });
+</script>
 @endvolt

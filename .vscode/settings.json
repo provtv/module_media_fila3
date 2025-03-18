@@ -33,5 +33,13 @@
     		"**/.git/objects/**": true,
     		"**/.git/subtree-cache/**": true,
     		"**/node_modules/*/**": true
-  		}
+		},
+		"[json]": {
+			"editor.defaultFormatter": "vscode.json-language-features"
+		},
+		"sshfs.configs": [
+			{
+				"name": "fixcity.eu"
+			}
+		]
 }

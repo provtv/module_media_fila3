@@ -18,7 +18,7 @@ class ReportContentSeeder extends Seeder
             'address' => 'Via Solferino 24, Milano',
             'location' => ['lat' => 45.4781, 'lng' => 9.1875],
             'status' => ReportStatusEnum::PENDING->value,
-            'priority' => 'alta'
+            'priority' => 'alta',
         ],
         [
             'title' => 'Panchina danneggiata al parco',
@@ -27,7 +27,7 @@ class ReportContentSeeder extends Seeder
             'address' => 'Parco Sempione, Milano',
             'location' => ['lat' => 45.4725, 'lng' => 9.1779],
             'status' => 'verified',
-            'priority' => 'media'
+            'priority' => 'media',
         ],
         [
             'title' => 'Lampione non funzionante',
@@ -36,7 +36,7 @@ class ReportContentSeeder extends Seeder
             'address' => 'Via Dante 15, Milano',
             'location' => ['lat' => 45.4647, 'lng' => 9.1866],
             'status' => 'in_progress',
-            'priority' => 'media'
+            'priority' => 'media',
         ],
         [
             'title' => 'Cestino rifiuti stracolmo',
@@ -45,7 +45,7 @@ class ReportContentSeeder extends Seeder
             'address' => 'Corso Buenos Aires 45, Milano',
             'location' => ['lat' => 45.4781, 'lng' => 9.2107],
             'status' => 'pending',
-            'priority' => 'bassa'
+            'priority' => 'bassa',
         ],
         [
             'title' => 'Albero pericolante',
@@ -54,8 +54,8 @@ class ReportContentSeeder extends Seeder
             'address' => 'Viale Monza 12, Milano',
             'location' => ['lat' => 45.4897, 'lng' => 9.2175],
             'status' => 'verified',
-            'priority' => 'alta'
-        ]
+            'priority' => 'alta',
+        ],
     ];
 
     public function run(): void
@@ -70,11 +70,11 @@ class ReportContentSeeder extends Seeder
                 'status' => $report['status'],
                 'metadata' => json_encode([
                     'priority' => $report['priority'],
-                    'created_at' => now()->subDays(rand(1, 30))->format('Y-m-d H:i:s')
+                    'created_at' => now()->subDays(rand(1, 30))->format('Y-m-d H:i:s'),
                 ]),
                 'created_at' => now(),
-                'updated_at' => now()
+                'updated_at' => now(),
             ]);
         }
     }
-} 
+}

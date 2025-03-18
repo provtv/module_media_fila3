@@ -4,9 +4,9 @@ declare(strict_types=1);
 
 namespace Modules\Fixcity\Database\Seeders;
 
-use Webmozart\Assert\Assert;
 use Illuminate\Database\Seeder;
 use Modules\Fixcity\Models\Activity;
+use Webmozart\Assert\Assert;
 
 class ActivitySeeder extends Seeder
 {
