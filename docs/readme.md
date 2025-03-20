@@ -1,158 +1,106 @@
-<<<<<<< HEAD
-<<<<<<< HEAD
-# Modulo UI
+# Modulo Xot
 
 ## Panoramica
-Il modulo UI fornisce componenti e layout standardizzati per l'interfaccia utente dell'applicazione, basati su Filament.
+Il modulo Xot fornisce le funzionalità base e le utilities utilizzate da tutti gli altri moduli dell'applicazione.
 
-## Componenti
+## Componenti Principali
 
-### Forms
-- CustomSelect: Select avanzato con ricerca e precaricamento
-- MoneyInput: Input per valori monetari con formattazione automatica
-- DateRangePicker: Selezione intervalli di date
-- FileUpload: Upload file con preview e validazione
+### XotBaseResource
+Classe base per tutte le risorse Filament. Gestisce:
+- Navigazione automatica
+- Traduzioni
+- Permessi base
+- Configurazioni comuni
 
-### Tables
-- CustomDataTable: Tabella dati avanzata con ordinamento e filtri
-- StatusBadge: Badge per stati con colori e icone
-- ActionButtons: Pulsanti azione standardizzati
-- FilterDropdown: Dropdown per filtri avanzati
+### XotBasePage
+Classe base per tutte le pagine Filament. Fornisce:
+- Layout standard
+- Gestione permessi
+- Integrazione con il sistema di traduzioni
+- Funzionalità comuni
 
-### Charts
-- LineChart: Grafico a linee per trend temporali
-- PieChart: Grafico a torta per distribuzioni
-- BarChart: Grafico a barre per confronti
-- StatsOverview: Widget per statistiche generali
+### XotBaseModel
+Modello base con funzionalità comuni:
+- Soft delete
+- Timestamp automatici
+- Relazioni standard
+- Metodi utility
 
-## Layout
-- AdminLayout: Layout principale amministrazione
-- AuthLayout: Layout per pagine di autenticazione
-- PrintLayout: Layout per stampe e PDF
+## Servizi
 
-## Temi e Stili
-- Variabili CSS personalizzate
-- Tema light/dark
-- Responsive design
-- Accessibilità
+### LangService
+Gestisce le traduzioni dell'applicazione:
+- Caricamento automatico
+- Fallback configurabile
+- Cache delle traduzioni
+- Supporto per più lingue
 
-## Integrazione Filament
-- Personalizzazione tema Filament
-- Componenti custom
-- Plugin e widget
-- Form builder esteso
+### PermissionService
+Gestisce i permessi dell'applicazione:
+- Controllo accessi
+- Ruoli e capacità
+- Cache dei permessi
+- Integrazione con Gate
+
+## Traits
+
+### HasPermissions
+Trait per la gestione dei permessi nei modelli:
+- Verifica permessi
+- Assegnazione ruoli
+- Sincronizzazione permessi
+
+### HasTranslations
+Trait per la gestione delle traduzioni nei modelli:
+- Campi traducibili
+- Fallback automatico
+- Cache delle traduzioni
+
+## Configurazione
+Il modulo è configurabile tramite:
+- `config/xot.php`
+- Environment variables
+- Service providers
 
 ## Best Practices
-1. Utilizzare i componenti standard
-2. Mantenere consistenza visiva
-3. Seguire le linee guida di accessibilità
-4. Documentare nuovi componenti
-5. Testare su diversi dispositivi
+1. Estendere sempre le classi base appropriate
+2. Utilizzare i traits forniti
+3. Seguire le convenzioni di naming
+4. Mantenere la documentazione aggiornata
 
-## Dipendenze
-- TailwindCSS
-- Alpine.js
-- Filament
-- Livewire 
-=======
-=======
->>>>>>> ecd8d46956 (Squashed 'laravel/Modules/Gdpr/' content from commit d30cea3b2)
-# Jigsaw Docs Starter Template
+## Directory Principali
+- `Abstracts/`: Classi base e interfacce
+- `Helpers/`: Utility globali
+- `Http/`: Middleware e controller base
+- `config/`: Configurazioni condivise
 
-This is a starter template for creating a beautiful, customizable documentation site for your project with minimal effort. You’ll only have to change a few settings and you’re ready to go.
+## Funzionalità Chiave
+1. **Helper Globali**
+   - Manipolazione stringhe/array
+   - Utility date e tempi
+   - Helper database
+   - Funzioni sicurezza
 
-[View a preview of the docs template.](http://jigsaw-docs-template.tighten.co/)
+2. **Astrazioni Base**
+   - Interfacce comuni
+   - Classi base per modelli/controller
+   - Trait riutilizzabili
 
-## Installation
+3. **Quality Assurance**
+   - PHP Insights
+   - PHPStan
+   - PHPMD
+   - Psalm
+   - Rector
+   - PHP CS Fixer
 
-After installing Jigsaw, run the following command from your project directory:
+## Utilizzo
+1. Estendere le classi base per nuovi modelli/controller
+2. Utilizzare gli helper per funzionalità comuni
+3. Seguire gli standard di codice definiti
 
-```bash
-./vendor/bin/jigsaw init docs
-```
-
-This starter template includes samples of common page types, and comes pre-configured with:
-
-- A fully responsive navigation bar
-- A sidebar navigation menu
-- [Tailwind CSS](https://tailwindcss.com/), a utility CSS framework that allows you to customize your design without touching a line of CSS
-- [Purgecss](https://www.purgecss.com/) to remove unused selectors from your CSS, resulting in smaller CSS files
-- Syntax highlighting using [highlight.js](https://highlightjs.org/)
-- A script that automatically generates a `sitemap.xml` file
-- A search bar powered by [Algolia DocSearch](https://community.algolia.com/docsearch/), and instructions on how to get started with their free indexing service
-- A custom 404 page
-
----
-
-![Docs starter template screenshot](https://user-images.githubusercontent.com/357312/50345478-40170c00-04fd-11e9-856c-ad46d1ac45cb.png)
-
----
-
-### Configuring your new site
-
-As with all Jigsaw sites, configuration settings can be found in `config.php`; you can update the variables in that file with settings specific to your project. You can also add new configuration variables there to use across your site; take a look at the [Jigsaw documentation](http://jigsaw.tighten.co/docs/site-variables/) to learn more.
-
-```php
-// config.php
-return [
-    'baseUrl' => 'https://my-awesome-jigsaw-site.com/',
-    'production' => false,
-    'siteName' => 'My Site',
-    'siteDescription' => 'Give your documentation a boost with Jigsaw.',
-    'docsearchApiKey' => '',
-    'docsearchIndexName' => '',
-    'navigation' => require_once('navigation.php'),
-];
-```
-
-> Tip: This configuration file is also where you’ll define any "collections" (for example, a collection of the contributors to your site, or a collection of blog posts). Check out the official [Jigsaw documentation](https://jigsaw.tighten.co/docs/collections/) to learn more.
-
----
-
-### Adding Content
-
-You can write your content using a [variety of file types](http://jigsaw.tighten.co/docs/content-other-file-types/). By default, this starter template expects your content to be located in the `source/docs` folder. If you change this, be sure to update the URL references in `navigation.php`.
-
-The first section of each content page contains a YAML header that specifies how it should be rendered. The `title` attribute is used to dynamically generate HTML `title` and OpenGraph tags for each page. The `extends` attribute defines which parent Blade layout this content file will render with (e.g. `_layouts.documentation` will render with `source/_layouts/documentation.blade.php`), and the `section` attribute defines the Blade "section" that expects this content to be placed into it.
-
-```yaml
----
-title: Navigation
-description: Building a navigation menu for your site
-extends: _layouts.documentation
-section: content
----
-```
-
-[Read more about Jigsaw layouts.](https://jigsaw.tighten.co/docs/content-blade/)
-
----
-
-### Adding Assets
-
-Any assets that need to be compiled (such as JavaScript, Less, or Sass files) can be added to the `source/_assets/` directory, and Laravel Mix will process them when running `npm run dev` or `npm run prod`. The processed assets will be stored in `/source/assets/build/` (note there is no underscore on this second `assets` directory).
-
-Then, when Jigsaw builds your site, the entire `/source/assets/` directory containing your built files (and any other directories containing static assets, such as images or fonts, that you choose to store there) will be copied to the destination build folders (`build_local`, on your local machine).
-
-Files that don't require processing (such as images and fonts) can be added directly to `/source/assets/`.
-
-[Read more about compiling assets in Jigsaw using Laravel Mix.](http://jigsaw.tighten.co/docs/compiling-assets/)
-
----
-
-## Building Your Site
-
-Now that you’ve edited your configuration variables and know how to customize your styles and content, let’s build the site.
-
-```bash
-# build static files with Jigsaw
-./vendor/bin/jigsaw build
-
-# compile assets with Laravel Mix
-# options: dev, prod
-npm run dev
-```
-<<<<<<< HEAD
->>>>>>> a27ba4e75b (Squashed 'laravel/Modules/Activity/' content from commit 05cc09d7b)
-=======
->>>>>>> ecd8d46956 (Squashed 'laravel/Modules/Gdpr/' content from commit d30cea3b2)
+## Documentazione Dettagliata
+- `/docs/filament/`: Integrazione Filament
+- `/docs/model/`: Gestione modelli
+- `/docs/service/`: Servizi disponibili
+- `/docs/activity/`: Sistema di logging 
