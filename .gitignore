@@ -6,17 +6,21 @@
 *.lock
 *.log
 *.tmp
+*.old
+*.old1
+*.old2
+*.old3
+*.Zone.Identifier
 
 # Dependency directories
 /vendor/
-/node_modules/
+node_modules/
 
 # Dependency logs and cache
 npm-debug.log
 *.log
 *.cache
 *.phar
-*.lock
 package-lock.json
 yarn-error.log
 
@@ -39,10 +43,6 @@ storage/*.key
 laravel/.env
 laravel/storage/*.key
 
-# Laravel with changed public path
-public_html/storage
-public_html/hot
-
 # Homestead specific files
 Homestead.yaml
 Homestead.json
@@ -60,14 +60,9 @@ Homestead.json
 
 # Documentation and temporary files
 /docs/
-*.phar
 *.stackdump
-*.old
-*.old1
-*.old2
-*.old3
 
-# Ignored directories
+# Ignored directories and files
 /laravel/database/migrations
 /laravel/storage/media-library
 /laravel/build
@@ -76,25 +71,21 @@ Homestead.json
 /psalm.xml.dist
 /testbench.yaml
 
-# IDEs
+# IDEs and editor-specific files
 /.idea
 /.vscode
-/.phpstorm.meta.php
+/.vscode-server
+.phpstorm.meta.php
 _ide_helper.php
-.git-rewrite
-*.lock
-
-# Temporary files
-*.Zone.Identifier
 
 # Miscellaneous ignored files
 /uploads
-/vendor/
-/node_modules/
-/public_html/js/
-/public_html/css/
-/public_html/deploy/config.php
-/public_html/storage/
 public_html/modules
 public_html/themes
-.cache
+public_html/js/
+public_html/css/
+public_html/deploy/config.php
+/cache
+/tmp
+laravel/.phive/
+laravel/app/View/Components/vendor/

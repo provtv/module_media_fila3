@@ -18,18 +18,6 @@
                     "view": "fixcity::components.blocks.ticket_list.agid"
                 }
             }
-        ],
-        "en": [
-            {
-                "type": "ticket_list",
-                "data": {
-                    "title": "aaa111",
-                    "sub_title": "sss",
-                    "method": "ttt",
-                    "limit": null,
-                    "_tpl": "map"
-                }
-            }
         ]
     },
     "sidebar_blocks": {

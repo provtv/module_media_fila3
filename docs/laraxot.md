@@ -1,4 +1,6 @@
 <<<<<<< HEAD
+=======
+<<<<<<< HEAD
 <<<<<<< HEAD
 # Laraxot Framework
 
@@ -5166,6 +5168,7 @@ return [
 >>>>>>> origin/dev
 =======
 >>>>>>> e62e17c257 (up)
+>>>>>>> master
 # Laraxot Framework
 
 ## Panoramica
@@ -5225,10 +5228,14 @@ use Modules\Xot\Filament\Resources\XotBaseResource;
 class UserResource extends XotBaseResource
 {
 <<<<<<< HEAD
+    protected function getListTableColumns(): array
+=======
+<<<<<<< HEAD
     public function getListTableColumns(): array
 =======
     protected function getListTableColumns(): array
 >>>>>>> e62e17c257 (up)
+>>>>>>> master
     {
         return [
             // definizione delle colonne
@@ -5479,6 +5486,8 @@ $query = sprintf('%s.%s', (string)$table, (string)$column);
 
 ## PHPStan Analisi Moduli
 <<<<<<< HEAD
+=======
+<<<<<<< HEAD
 
 ### Validazione a Livello 7
 
@@ -5523,13 +5532,17 @@ Il file di configurazione principale (`phpstan.neon`) è già impostato per il l
 - **Gdpr**: Validato a livello 7
 - **User**: Validato a livello 7
 =======
+>>>>>>> master
 Risultati dell'ultima analisi per modulo:
 - **Xot**: Risolti tutti gli errori critici
 - **Fixcity**: In fase di ottimizzazione
 - **Media**: Nessun errore critico
 - **UI**: Ottimizzato per PHPStan level 8
 - **Tenant**: Risolti problemi di tipizzazione
+<<<<<<< HEAD
+=======
 >>>>>>> e62e17c257 (up)
+>>>>>>> master
 
 ## Ottimizzazioni Recenti
 
@@ -5584,10 +5597,14 @@ abstract class XotBaseListRecords extends FilamentListRecords
 ```php
 // ERRATO: Array numerico
 <<<<<<< HEAD
+protected function getListTableColumns(): array
+=======
+<<<<<<< HEAD
 public function getListTableColumns(): array
 =======
 protected function getListTableColumns(): array
 >>>>>>> e62e17c257 (up)
+>>>>>>> master
 {
     return [
         TextColumn::make('name'),
@@ -7628,6 +7645,8 @@ In Laraxot, non si estendono mai direttamente le classi Filament. Invece, si uti
 ```php
 // ❌ ERRATO
 use Filament\Resources\Resource;
+<<<<<<< HEAD
+=======
 <<<<<<< HEAD
 class MyResource extends \Modules\Xot\Filament\Resources\XotBaseResource
 
@@ -10331,6 +10350,7 @@ In Laraxot, non si estendono mai direttamente le classi Filament. Invece, si uti
 use Filament\Resources\Resource;
 =======
 >>>>>>> e62e17c257 (up)
+>>>>>>> master
 class MyResource extends Resource
 
 // ✅ CORRETTO
@@ -10542,10 +10562,14 @@ protected function getTableBulkActions(): array
 
 // ✅ CORRETTO: Metodi di XotBaseListRecords
 <<<<<<< HEAD
+protected function getListTableColumns(): array
+=======
+<<<<<<< HEAD
 public function getListTableColumns(): array
 =======
 protected function getListTableColumns(): array
 >>>>>>> e62e17c257 (up)
+>>>>>>> master
 protected function getListTableFilters(): array
 protected function getListTableActions(): array
 protected function getListTableBulkActions(): array
@@ -10556,10 +10580,14 @@ protected function getListTableBulkActions(): array
 class ListTickets extends XotBaseListRecords
 {
 <<<<<<< HEAD
+    protected function getListTableColumns(): array
+=======
+<<<<<<< HEAD
     public function getListTableColumns(): array
 =======
     protected function getListTableColumns(): array
 >>>>>>> e62e17c257 (up)
+>>>>>>> master
     {
         return [
             TextColumn::make('id')->sortable(),
@@ -10587,10 +10615,14 @@ class ListTickets extends XotBaseListRecords
  * @return array<int, Column>
  */
 <<<<<<< HEAD
+protected function getListTableColumns(): array
+=======
+<<<<<<< HEAD
 public function getListTableColumns(): array
 =======
 protected function getListTableColumns(): array
 >>>>>>> e62e17c257 (up)
+>>>>>>> master
 
 /**
  * Get the table filters for the list view.
@@ -10623,10 +10655,14 @@ protected function getListTableBulkActions(): array
    ```php
    // ✅ CORRETTO: Usa sempre il prefisso "List"
 <<<<<<< HEAD
+   protected function getListTableColumns(): array
+=======
+<<<<<<< HEAD
    public function getListTableColumns(): array
 =======
    protected function getListTableColumns(): array
 >>>>>>> e62e17c257 (up)
+>>>>>>> master
    
    // ❌ ERRATO: Non usare i metodi standard di Filament
    protected function getTableColumns(): array
@@ -10638,10 +10674,14 @@ protected function getListTableBulkActions(): array
     * @return array<int, Column>
     */
 <<<<<<< HEAD
+   protected function getListTableColumns(): array
+=======
+<<<<<<< HEAD
    public function getListTableColumns(): array
 =======
    protected function getListTableColumns(): array
 >>>>>>> e62e17c257 (up)
+>>>>>>> master
    {
        return [
            TextColumn::make('id')->sortable(),
@@ -10657,10 +10697,14 @@ protected function getListTableBulkActions(): array
     * @return array<int, \Filament\Tables\Columns\Column>
     */
 <<<<<<< HEAD
+   protected function getListTableColumns(): array
+=======
+<<<<<<< HEAD
    public function getListTableColumns(): array
 =======
    protected function getListTableColumns(): array
 >>>>>>> e62e17c257 (up)
+>>>>>>> master
    ```
 
 ## Note Importanti
@@ -10818,10 +10862,14 @@ Quando si estende una classe base, i metodi sovrascritti devono mantenere lo ste
 ```php
 // ❌ ERRATO: Livello di accesso più restrittivo
 <<<<<<< HEAD
+protected function getListTableColumns(): array
+=======
+<<<<<<< HEAD
 public function getListTableColumns(): array
 =======
 protected function getListTableColumns(): array
 >>>>>>> e62e17c257 (up)
+>>>>>>> master
 
 // ✅ CORRETTO: Stesso livello di accesso della classe padre
 public function getListTableColumns(): array
@@ -10842,10 +10890,14 @@ class ListTickets extends XotBaseListRecords
 
     // ❌ ERRATO: protected è più restrittivo
 <<<<<<< HEAD
+    protected function getListTableColumns(): array
+=======
+<<<<<<< HEAD
     public function getListTableColumns(): array
 =======
     protected function getListTableColumns(): array
 >>>>>>> e62e17c257 (up)
+>>>>>>> master
     {
         // ...
     }
@@ -10863,10 +10915,14 @@ public function getListTableColumns(): array
 class MyListRecords extends XotBaseListRecords
 {
 <<<<<<< HEAD
+    protected function getListTableColumns(): array  // Errore!
+=======
+<<<<<<< HEAD
     public function getListTableColumns(): array  // Errore!
 =======
     protected function getListTableColumns(): array  // Errore!
 >>>>>>> e62e17c257 (up)
+>>>>>>> master
     {
         // ...
     }
@@ -11470,6 +11526,9 @@ Modules/
   - Title section
   - Content area
   - Feedback section
+<<<<<<< HEAD
+  - Contact section 
+=======
 <<<<<<< HEAD
   - Contact section 
 
@@ -12398,3 +12457,4 @@ class ClientMapWidget extends Widget
 =======
   - Contact section 
 >>>>>>> e62e17c257 (up)
+>>>>>>> master

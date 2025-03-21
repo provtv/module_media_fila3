@@ -9,9 +9,11 @@
     "Chart": true,
     "Lang": true,
     "Job": true,
+    "Seo": true,
+    "AI": true,
     "Limesurvey": true,
     "Activity": true,
-    "Geo":true,
+    "Geo": true,
     "User": true,
     "Setting": true,
     "BarberShop": true,
@@ -24,5 +26,8 @@
     "Media": true,
     "Predict": true,
     "Shop": true,
-    "Ticket": true
+    "Ticket": true,
+    "Rating": true,
+    "Fixcity": true,
+    "Comment": true
 }
