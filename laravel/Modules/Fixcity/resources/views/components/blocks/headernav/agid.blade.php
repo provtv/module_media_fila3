@@ -6,6 +6,7 @@
 			</div>
 			<div class="flex-none">
 				<ul class="px-1 menu menu-horizontal">
+					<livewire:dark-mode-switcher />
 					<livewire:lang.switcher />
 					{{-- <li>
 						<details>

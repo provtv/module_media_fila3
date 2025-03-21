@@ -63,7 +63,7 @@ render(function (View $view, string $slug) {
 
     <div class="container w-full md:w-1/2 mx-auto mt-4 px-2">
         <div class="pb-6">
-            <h1 class="text-3xl md:text-6xl font-bold">Segnalazione disservizio</h1>
+            <h1 class="text-3xl md:text-6xl font-bold dark:text-white">Segnalazione disservizio</h1>
         </div>
 
         <div class="bg-gray-100 border-l-4 border-yellow-500 p-4">
@@ -72,7 +72,7 @@ render(function (View $view, string $slug) {
         </div>
 
         <div class="py-4">
-            <h1 class="text-2xl md:text-4xl font-bold">Segnalazione</h1>
+            <h1 class="text-2xl md:text-4xl font-bold dark:text-white">Segnalazione</h1>
         </div>
 
         <div class="bg-gray-100 p-4 rounded-lg shadow-md">
@@ -123,7 +123,7 @@ render(function (View $view, string $slug) {
         </div>
 
         <div class="py-4">
-            <h1 class="text-2xl md:text-4xl font-bold">Dati Generali</h1>
+            <h1 class="text-2xl md:text-4xl font-bold dark:text-white">Dati Generali</h1>
         </div>
 
         <div class="bg-gray-100 p-4 rounded-lg shadow-md">
