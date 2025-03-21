@@ -6,6 +6,7 @@ namespace Modules\UI\Providers;
 
 use Illuminate\Foundation\AliasLoader;
 use Illuminate\Support\Facades\Blade;
+use Livewire\Livewire;
 use Modules\UI\Services\UIService;
 use Modules\Xot\Providers\XotBaseServiceProvider;
 
@@ -34,6 +35,7 @@ class UIServiceProvider extends XotBaseServiceProvider
 
         // $components_path = realpath(__DIR__.'/../resources/views/components');
         Blade::anonymousComponentPath($components_path);
+        Livewire::component('dark-mode-switcher', \Modules\Ui\Http\Livewire\DarkModeSwitcher::class);
     }
 
     public function register(): void

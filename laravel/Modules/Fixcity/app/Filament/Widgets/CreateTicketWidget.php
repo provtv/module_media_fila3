@@ -79,7 +79,7 @@ class CreateTicketWidget extends BaseWidget implements HasForms
                     ->description(__('fixcity::fixcity.ticket.steps.data.description'))
                     ->schema([
                         Placeholder::make('')
-                            ->content(new HtmlString('<h1 class="subtitle text-4xl font-bold mb-4">'.__('fixcity::fixcity.ticket.fields.issue.label').'</h1>')),
+                            ->content(new HtmlString('<h1 class="subtitle text-4xl font-bold mb-4 dark:text-white">'.__('fixcity::fixcity.ticket.fields.issue.label').'</h1>')),
                         ...TicketResource::getFormSchema(),
                     ]),
             ])

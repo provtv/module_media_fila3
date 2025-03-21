@@ -30,7 +30,7 @@ class TicketsMapWidget extends MapWidget
                         ->url(fn($record) => route('ticket.view', ['slug' => $record->slug]))
                         ->extraAttributes(['text-blue-600', 'hover:underline'])
                         ->openUrlInNewTab(),
-                    TextEntry::make('type')->label('Tipologia di segnalazione'),
+                    TextEntry::make('type')->label('Tipologia di segnalazione')->extraAttributes(['class' => 'dark:text-white']),
                     TextEntry::make('content')->label('Dettaglio'),
                     ImageEntry::make('media_urls')
                         ->label('Immagini')
