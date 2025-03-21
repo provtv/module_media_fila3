@@ -69,6 +69,21 @@ sync_module() {
     if [[ -d "$path" ]]; then
         log "🔄 Aggiornamento subtree esistente..."
         
+        # Merge delle modifiche remote nel modulo
+        log "🔄 Merge delle modifiche remote nel modulo..."
+        if ! git merge --no-ff "origin/$current_branch" --no-edit; then
+            log "⚠️ Merge fallito per $path a causa di conflitti. Risoluzione dei conflitti manuale necessaria."
+            # Gestione dei conflitti manuali
+            return 1
+        fi
+        
+        log "✅ Merge completato per $path."
+    fi
+
+    # Se la cartella esiste, aggiorna il subtree
+    if [[ -d "$path" ]]; then
+        log "🔄 Aggiornamento subtree esistente..."
+        
         # Crea un branch temporaneo per preservare lo stato attuale del subtree
         local backup_branch="backup-${path//\//-}"
         log "🔒 Creazione backup branch: $backup_branch"
