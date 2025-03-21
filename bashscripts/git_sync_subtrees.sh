@@ -93,37 +93,31 @@ sync_module() {
             log "⚠️ Pull fallito per $path a causa di conflitti. Tentativo di risoluzione avanzata..."
             
             # Approccio più sofisticato per gestire i conflitti
-            # 1. Rimuovi il subtree dalla cache (non dal disco)
-            git rm -r --cached "$path"
-            git commit -am "Rimozione temporanea di $path per gestione conflitti" || true
+            # 1. Esegui un merge manuale del branch remoto senza rimuovere il subtree dalla cache
+            log "🔄 Risoluzione dei conflitti con merge..."
+            git fetch "$url" "$current_branch"  # Fetch del branch remoto
+            git checkout -b "temp-merge-branch"  # Crea un branch temporaneo per risolvere il conflitto
             
-            # 2. Aggiungi nuovamente il subtree dal remote
-            if git subtree add --prefix="$path" "$url" "$current_branch" --squash -m "Re-add remote subtree $path"; then
-                log "✅ Subtree remote aggiunto con successo."
+            # Prova a fare un merge tra il branch locale e quello remoto
+            if git merge --no-ff "remotes/$url/$current_branch" -m "Merge remote changes for $path"; then
+                log "✅ Merge completato con successo."
                 
-                # 3. Merge delle modifiche locali dal backup branch
-                log "🔄 Merge delle modifiche locali dal backup branch..."
-                if git cherry-pick -n $(git rev-list --max-count=1 $backup_branch); then
-                    # Commit del merge risolto
-                    git commit -am "Merge delle modifiche locali in $path" || true
-                    log "✅ Modifiche locali applicate con successo."
+                # Se il merge è riuscito, applica le modifiche
+                git commit -am "Merge delle modifiche locali in $path"
+                
+                # Push delle modifiche al repository remoto
+                if git push "$url" "temp-merge-branch:$current_branch"; then
+                    log "✅ Push completato dopo il merge."
                 else
-                    log "⚠️ Conflitti durante il merge delle modifiche locali. Necessaria risoluzione manuale."
-                    # Qui potremmo implementare una logica più avanzata per la risoluzione dei conflitti
-                    # ma potrebbe richiedere intervento manuale
-                    git cherry-pick --abort
-                    log "⚠️ Modifiche locali non applicate automaticamente. Controlla il backup branch: $backup_branch"
+                    log "❌ Impossibile completare il push dopo il merge."
                 fi
+                
+                # Pulisci il branch temporaneo
+                git checkout "$current_branch"
+                git branch -D "temp-merge-branch" 2>/dev/null || true
             else
-                log "❌ Impossibile riaggiungere il subtree $path."
-                
-                # Ripristino dallo stash se necessario
-                if [[ "$has_local_changes" = true ]]; then
-                    log "🔄 Ripristino delle modifiche locali dallo stash..."
-                    git stash pop
-                fi
-                
-                return 1
+                log "⚠️ Conflitto durante il merge. Richiesta risoluzione manuale."
+                # Puoi gestire i conflitti manualmente e chiedere all'utente di risolverli
             fi
         fi
     else
