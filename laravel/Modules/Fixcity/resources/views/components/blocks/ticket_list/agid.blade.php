@@ -343,32 +343,32 @@ new class extends Component
             </div>
         </section>
     </div>
-    <div class="py-12 !my-0 bg-gray-50 px-4">
-        <section class="max-w-screen-md p-6 px-4 mx-auto space-y-4 bg-white rounded-lg lg:p-12">
-            <h4 class="text-2xl font-bold">Contatta il comune</h4>
+    <div class="py-12 !my-0 bg-gray-50 px-4 dark:bg-black">
+        <section class="max-w-screen-md p-6 px-4 mx-auto space-y-4 bg-white rounded-lg lg:p-12 dark:bg-black">
+            <h4 class="text-2xl font-bold dark:text-white">Contatta il comune</h4>
             <ul class="space-y-2">
                 <li>
                     <a href="" class="flex items-center space-x-2 text-emerald-700">
                         <x-heroicon-o-link class="size-5" />
-                        <div>Leggi le domande frequenti</div>
+                        <div class="dark:text-white">Leggi le domande frequenti</div>
                     </a>
                 </li>
                 <li>
                     <a href="" class="flex items-center space-x-2 text-emerald-700">
                         <x-heroicon-o-link class="size-5" />
-                        <div>Richiedi assistenza</div>
+                        <div class="dark:text-white">Richiedi assistenza</div>
                     </a>
                 </li>
                 <li>
                     <a href="" class="flex items-center space-x-2 text-emerald-700">
                         <x-heroicon-o-link class="size-5" />
-                        <div>Chiama il numero verde 05 0505</div>
+                        <div class="dark:text-white">Chiama il numero verde 05 0505</div>
                     </a>
                 </li>
                 <li>
                     <a href="" class="flex items-center space-x-2 text-emerald-700">
                         <x-heroicon-o-link class="size-5" />
-                        <div>Prenota appuntamento</div>
+                        <div class="dark:text-white">Prenota appuntamento</div>
                     </a>
                 </li>
             </ul>
