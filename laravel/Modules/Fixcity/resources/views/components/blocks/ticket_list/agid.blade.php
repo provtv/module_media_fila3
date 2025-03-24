@@ -343,32 +343,54 @@ new class extends Component
             </div>
         </section>
     </div>
+<<<<<<< HEAD
     <div class="py-12 !my-0 bg-gray-50 px-4">
         <section class="max-w-screen-md p-6 px-4 mx-auto space-y-4 bg-white rounded-lg lg:p-12">
             <h4 class="text-2xl font-bold">Contatta il comune</h4>
+=======
+    <div class="py-12 !my-0 bg-gray-50 px-4 dark:bg-black">
+        <section class="max-w-screen-md p-6 px-4 mx-auto space-y-4 bg-white rounded-lg lg:p-12 dark:bg-black">
+            <h4 class="text-2xl font-bold dark:text-white">Contatta il comune</h4>
+>>>>>>> origin/dev
             <ul class="space-y-2">
                 <li>
                     <a href="" class="flex items-center space-x-2 text-emerald-700">
                         <x-heroicon-o-link class="size-5" />
+<<<<<<< HEAD
                         <div>Leggi le domande frequenti</div>
+=======
+                        <div class="dark:text-white">Leggi le domande frequenti</div>
+>>>>>>> origin/dev
                     </a>
                 </li>
                 <li>
                     <a href="" class="flex items-center space-x-2 text-emerald-700">
                         <x-heroicon-o-link class="size-5" />
+<<<<<<< HEAD
                         <div>Richiedi assistenza</div>
+=======
+                        <div class="dark:text-white">Richiedi assistenza</div>
+>>>>>>> origin/dev
                     </a>
                 </li>
                 <li>
                     <a href="" class="flex items-center space-x-2 text-emerald-700">
                         <x-heroicon-o-link class="size-5" />
+<<<<<<< HEAD
                         <div>Chiama il numero verde 05 0505</div>
+=======
+                        <div class="dark:text-white">Chiama il numero verde 05 0505</div>
+>>>>>>> origin/dev
                     </a>
                 </li>
                 <li>
                     <a href="" class="flex items-center space-x-2 text-emerald-700">
                         <x-heroicon-o-link class="size-5" />
+<<<<<<< HEAD
                         <div>Prenota appuntamento</div>
+=======
+                        <div class="dark:text-white">Prenota appuntamento</div>
+>>>>>>> origin/dev
                     </a>
                 </li>
             </ul>

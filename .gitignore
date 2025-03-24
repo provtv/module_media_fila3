@@ -80,6 +80,7 @@ _ide_helper.php
 
 # Miscellaneous ignored files
 /uploads
+<<<<<<< HEAD
 .gnupg/
 
 .idea
@@ -109,6 +110,8 @@ laravel/composer.phar
 /public_html/js
 /public_html/deploy/config.php
 /public_html/storage
+=======
+>>>>>>> origin/dev
 public_html/modules
 public_html/themes
 public_html/js/
@@ -118,8 +121,11 @@ public_html/deploy/config.php
 /tmp
 laravel/.phive/
 laravel/app/View/Components/vendor/
+<<<<<<< HEAD
 public_html/themes/
 *.phar
 *.phar
 public_html/uploads/
 laravel/storage/views/*
+=======
+>>>>>>> origin/dev
