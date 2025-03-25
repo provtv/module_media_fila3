@@ -1,0 +1,2 @@
+<div <?php echo e($attributes); ?>><?php echo $toHtml($slot); ?></div>
+<?php /**PATH /var/www/html/_bases/base_fixcity_fila3/laravel/vendor/spatie/laravel-markdown/resources/views/markdown.blade.php ENDPATH**/ ?>
