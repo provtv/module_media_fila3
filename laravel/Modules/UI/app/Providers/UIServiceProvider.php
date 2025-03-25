@@ -35,10 +35,6 @@ class UIServiceProvider extends XotBaseServiceProvider
 
         // $components_path = realpath(__DIR__.'/../resources/views/components');
         Blade::anonymousComponentPath($components_path);
-<<<<<<< HEAD
-        Livewire::component('dark-mode-switcher', \Modules\Ui\Http\Livewire\DarkModeSwitcher::class);
-=======
->>>>>>> origin/dev
     }
 
     public function register(): void
