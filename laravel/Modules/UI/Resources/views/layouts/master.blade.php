@@ -6,8 +6,13 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>Module UI</title>
 
+<<<<<<< HEAD
         {{-- Laravel Vite - CSS File --}}
         {{-- {{ module_vite('build-ui', 'resources/assets/sass/app.scss') }} --}}
+=======
+       {{-- Laravel Vite - CSS File --}}
+       {{-- {{ module_vite('build-ui', 'resources/assets/sass/app.scss') }} --}}
+>>>>>>> origin/dev
 
     </head>
     <body>
@@ -17,4 +22,3 @@
         {{-- {{ module_vite('build-ui', 'resources/assets/js/app.js') }} --}}
     </body>
 </html>
-<?php /**PATH /var/www/html/_bases/base_fixcity_fila3/laravel/Modules/AI/resources/views/layouts/master.blade.php ENDPATH**/ ?>
