@@ -46,6 +46,10 @@ use Webmozart\Assert\Assert;
  * @property string|null $deleted_by
  * @property \Modules\Xot\Contracts\ProfileContract|null $creator
  * @property \Modules\Xot\Contracts\ProfileContract|null $updater
+<<<<<<< HEAD
+=======
+ *
+>>>>>>> origin/dev
  * @method static \Illuminate\Database\Eloquent\Builder|Schedule active()
  * @method static \Modules\Job\Database\Factories\ScheduleFactory factory($count = null, $state = [])
  * @method static \Illuminate\Database\Eloquent\Builder|Schedule inactive()
@@ -82,6 +86,10 @@ use Webmozart\Assert\Assert;
  * @method static \Illuminate\Database\Eloquent\Builder|Schedule whereWithoutOverlapping($value)
  * @method static \Illuminate\Database\Eloquent\Builder|Schedule withTrashed()
  * @method static \Illuminate\Database\Eloquent\Builder|Schedule withoutTrashed()
+<<<<<<< HEAD
+=======
+ *
+>>>>>>> origin/dev
  * @mixin \Eloquent
  */
 class Schedule extends BaseModel
@@ -226,6 +234,7 @@ class Schedule extends BaseModel
 
     /**
      * Safely evaluate function strings (avoiding eval).
+<<<<<<< HEAD
      *
      * @param string $functionString Il nome della funzione da valutare
      * @return string|null Il risultato della funzione o null se la funzione non è consentita
@@ -233,10 +242,15 @@ class Schedule extends BaseModel
      * @throws \InvalidArgumentException Se viene passato un argomento non valido
      */
     private function evaluateFunction(string $functionString): ?string
+=======
+     */
+    private function evaluateFunction(string $functionString): mixed
+>>>>>>> origin/dev
     {
         // Define a list of allowed functions or implement custom evaluation logic.
         $allowedFunctions = ['strtolower', 'strtoupper']; // Example allowed functions
 
+<<<<<<< HEAD
         if (in_array($functionString, $allowedFunctions, true)) {
             // Chiamiamo la funzione in modo sicuro
             try {
@@ -254,5 +268,16 @@ class Schedule extends BaseModel
         
         // Funzione non consentita
         return null;
+=======
+        if (in_array($functionString, $allowedFunctions)) {
+            if (! is_callable($functionString)) {
+                throw new \Exception('['.__LINE__.']['.__CLASS__.']');
+            }
+
+            return call_user_func($functionString);
+        }
+
+        throw new \RuntimeException("Invalid function: {$functionString}");
+>>>>>>> origin/dev
     }
 }
