@@ -16,31 +16,24 @@ class ExportXlsByCollection
 {
     use QueueableAction;
 
-    /**
-     * Esporta una collezione in Excel.
-     *
-     * @param Collection $collection La collezione da esportare
-     * @param string $filename Nome del file Excel
-     * @param string|null $transKey Chiave di traduzione per i campi
-     * @param array<int, string> $fields Campi da includere nell'export
-     * 
-     * @return BinaryFileResponse
-     */
     public function execute(
         Collection $collection,
         string $filename = 'test.xlsx',
         ?string $transKey = null,
         array $fields = [],
     ): BinaryFileResponse {
+<<<<<<< HEAD
+=======
         // Assicuriamo che $fields sia un array di stringhe
         $stringFields = array_map(function (string|int|float|bool $field): string {
             return (string) $field;
         }, array_values($fields));
 
+>>>>>>> a528a79c1f5eb99872c3ebdad8dee7df5dc14df2
         $export = new CollectionExport(
             collection: $collection,
             transKey: $transKey,
-            fields: $stringFields
+            fields: $fields
         );
 
         return Excel::download($export, $filename);

@@ -19,16 +19,6 @@ class ExportXlsStreamByLazyCollection
 {
     use QueueableAction;
 
-    /**
-     * Esporta una LazyCollection in un file CSV streamed.
-     *
-     * @param LazyCollection $data I dati da esportare
-     * @param string $filename Nome del file CSV
-     * @param string|null $transKey Chiave di traduzione per le intestazioni
-     * @param array<string>|null $fields Campi da includere nell'export
-     * 
-     * @return StreamedResponse
-     */
     public function execute(
         LazyCollection $data,
         string $filename = 'test.csv',
@@ -43,6 +33,19 @@ class ExportXlsStreamByLazyCollection
         return response()->stream(
             static function () use ($data, $head): void {
                 $file = fopen('php://output', 'w+');
+<<<<<<< HEAD
+                fputcsv($file, $head);
+
+                foreach ($data as $key => $value) {
+                    // if(!method_exists($value,'toArray')){
+                    //    throw new \Exception('WIP['.__LINE__.']['.class_basename($this).']');
+                    // }
+                    /** @phpstan-ignore method.nonObject */
+                    $data = $value->toArray();
+
+                    fputcsv($file, $data);
+                }
+=======
 
                 // Assicuriamo che le intestazioni siano stringhe
                 $headStrings = array_map(function ($item) {
@@ -77,9 +80,12 @@ class ExportXlsStreamByLazyCollection
                 }
 
                 // Aggiungiamo righe vuote alla fine
+>>>>>>> a528a79c1f5eb99872c3ebdad8dee7df5dc14df2
                 $blanks = ["\t", "\t", "\t", "\t"];
                 fputcsv($file, $blanks);
+                $blanks = ["\t", "\t", "\t", "\t"];
                 fputcsv($file, $blanks);
+                $blanks = ["\t", "\t", "\t", "\t"];
                 fputcsv($file, $blanks);
 
                 fclose($file);
@@ -89,16 +95,15 @@ class ExportXlsStreamByLazyCollection
         );
     }
 
-    /**
-     * Ottiene le intestazioni per l'export.
-     *
-     * @param LazyCollection $data I dati da cui estrarre le intestazioni
-     * @param string|null $transKey Chiave di traduzione per le intestazioni
-     * 
-     * @return array<string>
-     */
     public function headings(LazyCollection $data, ?string $transKey = null): array
     {
+<<<<<<< HEAD
+        /**
+         * @var array
+         */
+        $head = $data->first();
+        $headings = collect($head)->keys();
+=======
         $first = $data->first();
         if (!is_array($first) && (!is_object($first) || !method_exists($first, 'toArray'))) {
             return []; // Ritorna intestazioni vuote se non c'è un primo elemento valido
@@ -112,6 +117,7 @@ class ExportXlsStreamByLazyCollection
          */
         $headings = collect($headArray)->keys();
 
+>>>>>>> a528a79c1f5eb99872c3ebdad8dee7df5dc14df2
         if (null !== $transKey) {
             $headings = $headings->map(
                 static function (string $item) use ($transKey) {
@@ -133,7 +139,11 @@ class ExportXlsStreamByLazyCollection
             );
         }
 
+<<<<<<< HEAD
+        return $headings->toArray();
+=======
         /** @var array<string> */
         return $headings->map(fn($item) => strval($item))->toArray();
+>>>>>>> a528a79c1f5eb99872c3ebdad8dee7df5dc14df2
     }
 }

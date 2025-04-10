@@ -14,15 +14,6 @@ class AssetAction
 {
     use QueueableAction;
 
-    /**
-     * Gestisce i percorsi degli asset, copiandoli nella directory pubblica se necessario.
-     *
-     * @param string $path Il percorso dell'asset
-     * 
-     * @return string Il percorso pubblico dell'asset
-     * 
-     * @throws \Exception Se il file sorgente non esiste o non può essere copiato
-     */
     public function execute(string $path): string
     {
         $xot = XotData::make();
@@ -52,16 +43,11 @@ class AssetAction
         }
 
         if (\in_array($ns, ['pub_theme', 'adm_theme'], false)) {
-            // Assicuriamoci che $theme sia una stringa
             $theme = $xot->{$ns};
-            Assert::string($theme, 'Il tema deve essere una stringa');
-            
-            // Costruiamo i percorsi
-            $themeResourcePath = 'Themes/'.$theme.'/resources/'.$ns_after;
-            $filename_from = app(FixPathAction::class)->execute(base_path($themeResourcePath));
-            
-            $themeAssetPath = 'themes/'.$theme.'/'.$ns_after;
-            $asset = $themeAssetPath;
+
+            $filename_from = app(FixPathAction::class)->execute(base_path('Themes/'.$theme.'/resources/'.$ns_after));
+            // $filename_from = Str::replace('/resources//', '/resources/', $filename_from);
+            $asset = 'themes/'.$theme.'/'.$ns_after;
             $filename_to = app(FixPathAction::class)->execute(public_path($asset));
             $asset = Str::replace(url(''), '', asset($asset));
 

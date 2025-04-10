@@ -28,8 +28,11 @@ class GetViewByClassAction
 
         $mapped = Arr::map($after, function (string $value, int $key) use ($after) {
             if ($key > 0 && isset($after[$key - 1])) {
-                /** @var mixed $prevValue */
                 $prevValue = $after[$key - 1];
+<<<<<<< HEAD
+                // Assicuriamoci che prevValue sia una stringa per PHPStan
+                $prevValueStr = is_string($prevValue) ? $prevValue : (string)$prevValue;
+=======
                 
                 // Gestione sicura delle conversioni di tipo per PHPStan level 10
                 $prevValueStr = '';
@@ -44,22 +47,22 @@ class GetViewByClassAction
                    $prevValueStr = strval( $prevValue);
                 }
                 
+>>>>>>> a528a79c1f5eb99872c3ebdad8dee7df5dc14df2
                 $singular = Str::of($prevValueStr)->singular()->toString();
                 if (Str::endsWith($value, $singular)) {
                     $value = Str::of($value)->beforeLast($singular)->toString();
                 }
             }
-            
             return Str::of($value)->slug()->toString();
         });
 
         $implode = implode('.', $mapped);
         $view = $module_low.'::'.$implode.$suffix;
-        
         if (!view()->exists($view)) {
             throw new \Exception('View not found: '.$view);
         }
 
         return $view;
+
     }
 }

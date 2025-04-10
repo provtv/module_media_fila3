@@ -4,16 +4,15 @@ declare(strict_types=1);
 
 namespace Modules\Xot\Models;
 
-use Sushi\Sushi;
-use Webmozart\Assert\Assert;
-use InvalidArgumentException;
+use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Schema;
-use Illuminate\Database\Eloquent\Model;
+use InvalidArgumentException;
+use Sushi\Sushi;
 
 /**
  * Represents a table in the INFORMATION_SCHEMA.TABLES.
- *
+ * 
  * Provides metadata and statistics about database tables.
  *
  * @property string|null $TABLE_CATALOG
@@ -310,7 +309,7 @@ class InformationSchemaTable extends Model
         if ($rows === null) {
             return 0;
         }
-        Assert::numeric($rows);
+
         return (int) $rows;
     }
 
@@ -352,4 +351,4 @@ class InformationSchemaTable extends Model
         DB::connection('mysql')
             ->statement("ANALYZE TABLE `{$database}`.`{$tableName}`");
     }
-}
+} 

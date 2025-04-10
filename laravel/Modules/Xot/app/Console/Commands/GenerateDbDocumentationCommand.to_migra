@@ -160,6 +160,13 @@ Tabella `{$tableName}` nel database.
 MARKDOWN;
 
         foreach ($columns as $columnName => $column) {
+<<<<<<< HEAD:laravel/Modules/Xot/app/Console/Commands/GenerateDbDocumentationCommand.php
+            $type = $column['type'];
+            $nullable = $column['nullable'] ? 'Sì' : 'No';
+            $default = $column['default'] ?? 'NULL';
+            $extra = $column['extra'] ?? '';
+            $comment = $column['comment'] ?? '';
+=======
             $type = '';
             if (isset($column['type']) && (is_string($column['type']) || is_numeric($column['type']))) {
                 $type = is_string($column) ? $column : (string) $column['type'];
@@ -181,30 +188,25 @@ MARKDOWN;
             if (isset($column['comment']) && (is_string($column['comment']) || is_numeric($column['comment']))) {
                 $comment = is_string($column) ? $column : (string) $column['comment'];
             }
+>>>>>>> a528a79c1f5eb99872c3ebdad8dee7df5dc14df2:laravel/Modules/Xot/app/Console/Commands/GenerateDbDocumentationCommand.to_migra
             
-            $columnNameSafe = is_string($columnName) ? $columnName : '';
-            $content .= "| {$columnNameSafe} | {$type} | {$nullable} | {$default} | {$extra} | {$comment} |\n";
+            $content .= "| {$columnName} | {$type} | {$nullable} | {$default} | {$extra} | {$comment} |\n";
         }
 
-        if (is_array($indexes) && !empty($indexes)) {
+        if (!empty($indexes) && count($indexes) > 0) {
             $content .= "\n## Indici\n\n";
             $content .= "| Nome | Colonne | Unico |\n";
             $content .= "|------|---------|-------|\n";
 
             foreach ($indexes as $indexName => $index) {
-                if (!is_array($index)) {
-                    continue;
-                }
                 if ($indexName === 'PRIMARY') {
                     continue;
                 }
                 
-                $columnsArray = isset($index['columns']) && is_array($index['columns']) ? $index['columns'] : [];
-                $columns = implode(', ', $columnsArray);
-                $unique = isset($index['unique']) && $index['unique'] ? 'Sì' : 'No';
-                $indexNameSafe = is_string($indexName) ? $indexName : '';
+                $columns = implode(', ', $index['columns']);
+                $unique = $index['unique'] ? 'Sì' : 'No';
                 
-                $content .= "| {$indexNameSafe} | {$columns} | {$unique} |\n";
+                $content .= "| {$indexName} | {$columns} | {$unique} |\n";
             }
         }
 
