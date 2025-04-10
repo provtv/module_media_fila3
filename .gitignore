@@ -83,7 +83,6 @@ testbench.yaml
 /.vscode-server
 .phpstorm.meta.php
 _ide_helper.php
-<<<<<<< HEAD
 
 # Miscellaneous ignored files
 /uploads
@@ -92,20 +91,17 @@ _ide_helper.php
 .vscode-server
 .vscode/launch.json
 .cache
-=======
 .vscode/launch.json
 
 # Miscellaneous ignored files
 uploads
 .gnupg/
->>>>>>> origin/dev
 .nodenv
 .phpenv
 .ssh
 /error_docs
 /logs
 docker
-<<<<<<< HEAD
 *.lock
 .git-rewrite
 uploads
@@ -124,6 +120,4 @@ laravel/app/View/Components/vendor/
 *.phar
 public_html/uploads/
 laravel/storage/views/*
-=======
 views
->>>>>>> origin/dev
