@@ -11,6 +11,10 @@ prima di entrare in ssh in un server remoto in cui usiamo git collegato via ssh
 eval "$(ssh-agent -s)" && ssh-add
 ssh-add -L
 
+
+eval "$(ssh-agent -s)"
+ssh-add ~/.ssh/id_rsa
+
 -------------
 per cercare un testo dentro i file
 grep -Ril "text-to-find-here" .
@@ -28,5 +32,14 @@ git config --global --add --bool push.autoSetupRemote true
 ignore file mode chmod change
 git config core.fileMode false
 
+sudo update-alternatives --config php
+
+
 -------------
+find . -type f -name "*:Zone.Identifier" -exec rm -f {} \;
+find . -type f -name "*:Zone.Identifier" -exec rm -f {} +
+
+
+
+sudo update-alternatives --config php
 
