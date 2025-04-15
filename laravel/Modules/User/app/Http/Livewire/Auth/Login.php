@@ -16,6 +16,8 @@ use Livewire\Component;
 use Modules\Xot\Actions\File\ViewCopyAction;
 
 /**
+ * Componente Livewire per la gestione del login.
+ *
  * @property ComponentContainer $form
  */
 class Login extends Component implements HasForms
@@ -23,25 +25,44 @@ class Login extends Component implements HasForms
     use InteractsWithForms;
 
     /**
-     * @var array<string, mixed>
+     * Regole di validazione.
+     *
+     * @var array<string, array<string|object>>
      */
-    protected $rules = [
+    protected array $rules = [
         'email' => ['required', 'email'],
         'password' => ['required'],
         'remember' => ['boolean'],
     ];
 
+    /**
+     * Email dell'utente.
+     */
     public string $email = '';
 
+    /**
+     * Password dell'utente.
+     */
     public string $password = '';
 
+    /**
+     * Flag per ricordare l'utente.
+     */
     public bool $remember = false;
 
+    /**
+     * Inizializza il componente.
+     */
     public function mount(): void
     {
         $this->form = $this->form();
     }
 
+    /**
+     * Definisce lo schema del form.
+     *
+     * @return array<TextInput|Checkbox>
+     */
     protected function getFormSchema(): array
     {
         return [
@@ -64,6 +85,9 @@ class Login extends Component implements HasForms
         ];
     }
 
+    /**
+     * Crea il form.
+     */
     public function form(): Form
     {
         return $this->makeForm()
@@ -71,17 +95,18 @@ class Login extends Component implements HasForms
     }
 
     /**
-     * Execute the action.
+     * Esegue l'autenticazione dell'utente.
      *
      * @return RedirectResponse|void
      */
     public function authenticate()
     {
+        /** @var array{email: string, password: string, remember?: bool} $data */
         $data = $this->validate();
 
         // Estrai remember dal data array e assicurati che sia un booleano
         $remember = $data['remember'] ?? false;
-        // Converto esplicitamente a bool per PHPStan livello 9
+        // Converto esplicitamente a bool per PHPStan livello 10
         $remember = (bool) $remember;
         unset($data['remember']);
 
@@ -94,6 +119,11 @@ class Login extends Component implements HasForms
         $this->addError('email', __('Le credenziali fornite non sono corrette.'));
     }
 
+    /**
+     * Renderizza il componente.
+     *
+     * @return \Illuminate\Contracts\View\View|\Illuminate\Contracts\View\Factory
+     */
     public function render(): \Illuminate\Contracts\View\View|\Illuminate\Contracts\View\Factory
     {
         app(ViewCopyAction::class)->execute('user::livewire.auth.login', 'pub_theme::livewire.auth.login');
@@ -105,7 +135,8 @@ class Login extends Component implements HasForms
          */
         $view = 'pub_theme::livewire.auth.login';
 
-        return view($view)
-            ->extends('pub_theme::layouts.auth');
+        return view($view, [
+            'layout' => 'pub_theme::layouts.auth'
+        ]);
     }
 }

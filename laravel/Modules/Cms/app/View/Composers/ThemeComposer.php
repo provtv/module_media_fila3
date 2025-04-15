@@ -29,19 +29,19 @@ class ThemeComposer
 
     public function getMenuUrl(array $menu): string
     {
-        if ($menu === []) {
+        if ([] === $menu) {
             return '#';
         }
         $lang = app()->getLocale();
-        if ($menu['type'] === 'internal') {
+        if ('internal' === $menu['type']) {
             return route('page_slug.view', ['lang' => $lang, 'slug' => $menu['url']]);
         }
-        if ($menu['type'] === 'external') {
+        if ('external' === $menu['type']) {
             Assert::string($url = $menu['url']);
 
             return $url;
         }
-        if ($menu['type'] === 'route_name') {
+        if ('route_name' === $menu['type']) {
             Assert::string($url = $menu['url']);
 
             return route($url, ['lang' => $lang]);
@@ -53,8 +53,9 @@ class ThemeComposer
     public function showPageContent(string $slug): Renderable
     {
         Assert::isInstanceOf($page = Page::firstOrCreate(['slug' => $slug], ['title' => $slug, 'content_blocks' => []]), Page::class, '['.__LINE__.']['.__FILE__.']');
-        // $page = Page::firstOrCreate(['slug' => $slug], ['content_blocks' => []]);
+
         $blocks = $page->content_blocks;
+
         if (! is_array($blocks)) {
             $blocks = [];
         }
@@ -77,11 +78,12 @@ class ThemeComposer
     {
         Assert::isInstanceOf($page = PageContent::firstOrCreate(['slug' => $slug], ['blocks' => []]), PageContent::class, '['.__LINE__.']['.__FILE__.']');
 
-        if (! is_array($page->blocks)) {
+        $blocks = $page->blocks;
+        if (! is_array($blocks)) {
             return view('ui::empty');
         }
 
-        $page = new \Modules\UI\View\Components\Render\Blocks(blocks: $page->blocks, model: $page);
+        $page = new \Modules\UI\View\Components\Render\Blocks(blocks: $blocks, model: $page);
 
         return $page->render();
     }

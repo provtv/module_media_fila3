@@ -16,24 +16,31 @@ class ExportXlsByCollection
 {
     use QueueableAction;
 
+    /**
+     * Esporta una collezione in Excel.
+     *
+     * @param Collection $collection La collezione da esportare
+     * @param string $filename Nome del file Excel
+     * @param string|null $transKey Chiave di traduzione per i campi
+     * @param array<int, string> $fields Campi da includere nell'export
+     * 
+     * @return BinaryFileResponse
+     */
     public function execute(
         Collection $collection,
         string $filename = 'test.xlsx',
         ?string $transKey = null,
         array $fields = [],
     ): BinaryFileResponse {
-<<<<<<< HEAD
-=======
         // Assicuriamo che $fields sia un array di stringhe
         $stringFields = array_map(function (string|int|float|bool $field): string {
             return (string) $field;
         }, array_values($fields));
 
->>>>>>> a528a79c1f5eb99872c3ebdad8dee7df5dc14df2
         $export = new CollectionExport(
             collection: $collection,
             transKey: $transKey,
-            fields: $fields
+            fields: $stringFields
         );
 
         return Excel::download($export, $filename);
@@ -76,10 +83,23 @@ class ExportXlsByCollection
     }
 
     /**
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> origin/dev
      * Scrive le righe nel foglio di lavoro.
      *
      * @param \PhpOffice\PhpSpreadsheet\Worksheet\Worksheet $sheet Il foglio di lavoro
      * @param \Illuminate\Support\Collection $rows I dati da scrivere
+<<<<<<< HEAD
+=======
+=======
+     * Scrive le righe di dati nel foglio Excel.
+     *
+     * @param \PhpOffice\PhpSpreadsheet\Worksheet\Worksheet $sheet Il foglio Excel
+     * @param Collection $rows Le righe di dati da scrivere
+>>>>>>> origin/dev
+>>>>>>> origin/dev
      * @param array<string> $fields I campi da utilizzare per le colonne
      */
     protected function writeRows(\PhpOffice\PhpSpreadsheet\Worksheet\Worksheet $sheet, Collection $rows, array $fields): void
@@ -87,6 +107,10 @@ class ExportXlsByCollection
         $row = 2;
         foreach ($rows as $data) {
             foreach ($fields as $col => $field) {
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> origin/dev
                 $value = '';
 
                 // Verifica che $data supporti il metodo get
@@ -98,6 +122,12 @@ class ExportXlsByCollection
                     $value = $data->{$field} ?? '';
                 }
 
+<<<<<<< HEAD
+=======
+=======
+                $value = $data->get($field) ?? '';
+>>>>>>> origin/dev
+>>>>>>> origin/dev
                 $sheet->setCellValueByColumnAndRow($col + 1, $row, $value);
             }
             $row++;
