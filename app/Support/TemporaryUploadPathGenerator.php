@@ -13,35 +13,74 @@ use Webmozart\Assert\Assert;
 // implements PathGenerator
 class TemporaryUploadPathGenerator
 {
+<<<<<<< HEAD
     /**
      * @param \Modules\Media\Models\Media $media
      */
+=======
+<<<<<<< HEAD
+    /**
+     * @param \Modules\Media\Models\Media $media
+     */
+=======
+>>>>>>> origin/dev
+>>>>>>> origin/dev
     public function getPath($media): string
     {
         return $this->getBasePath($media).'/'.md5($media->id . $media->uuid . 'original').'/';
     }
 
+<<<<<<< HEAD
     /**
      * @param \Modules\Media\Models\Media $media
      */
+=======
+<<<<<<< HEAD
+    /**
+     * @param \Modules\Media\Models\Media $media
+     */
+=======
+>>>>>>> origin/dev
+>>>>>>> origin/dev
     public function getPathForConversions($media): string
     {
         return $this->getBasePath($media).'/'.md5($media->id . $media->uuid . 'conversion');
     }
 
+<<<<<<< HEAD
     /**
      * @param \Modules\Media\Models\Media $media
      */
+=======
+<<<<<<< HEAD
+    /**
+     * @param \Modules\Media\Models\Media $media
+     */
+=======
+>>>>>>> origin/dev
+>>>>>>> origin/dev
     public function getPathForResponsiveImages($media): string
     {
         return $this->getBasePath($media).'/'.md5($media->id . $media->uuid . 'responsive');
     }
 
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> origin/dev
     /**
      * Get a unique base path for the given media.
      *
      * @param \Modules\Media\Models\Media $media
      */
+<<<<<<< HEAD
+=======
+=======
+    /*
+    * Get a unique base path for the given media.
+    */
+>>>>>>> origin/dev
+>>>>>>> origin/dev
     protected function getBasePath($media): string
     {
         Assert::string($id = $media->getKey());
