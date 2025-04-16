@@ -21,7 +21,13 @@ echo "🚀 Avvio sincronizzazione: $PWD → $DEST_PATH"
 echo "🧹 Pulizia file temporanei..."
 find . -type f -name "*:Zone.Identifier" -delete
 
-# 📦 Creazione dell'archivio tar.gz con massima compressione
+# 📦 Creazione dell'archivio tar.gz con esclusioni
 echo "📝 Creazione dell'archivio: $TEMP_PATH"
 tar -czf "$TEMP_PATH" --exclude='.git' --exclude='build' --exclude='cache' --exclude='storage' \
-    --exclude='venv' --exclude='node_modules' --exclude='v
+    --exclude='venv' --exclude='node_modules' --exclude='vendor' .
+
+# 📂 Copia dell’archivio sul disco
+echo "📁 Copia dell’archivio su: $DEST_PATH"
+cp "$TEMP_PATH" "$DEST_PATH" || { echo "❌ Errore durante la copia"; exit 1; }
+
+echo "✅ Sincronizzazione completata con successo!"
