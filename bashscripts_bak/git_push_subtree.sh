@@ -13,6 +13,21 @@ LOCAL_PATH_bak="$LOCAL_PATH"_bak
 REMOTE_REPO="$2"
 REMOTE_BRANCH=$(git symbolic-ref --short HEAD 2>/dev/null || echo "main")
 TEMP_BRANCH=$(basename "$LOCAL_PATH")-temp
+<<<<<<< HEAD
+=======
+
+
+echo "  📁 Path: $LOCAL_PATH"
+echo "  🌐 URL: $REMOTE_REPO"
+echo "  🌐 Branch: $REMOTE_BRANCH"
+echo "  🌐 Temporary branch: $TEMP_BRANCH"
+
+# Simple error handling function
+die() {
+    echo "$1" >&2
+    exit 1
+}
+>>>>>>> ff4c007402201d3713e40099aa57f0182328939d
 
 
 echo "  📁 Path: $LOCAL_PATH"
@@ -41,6 +56,7 @@ push_subtree() {
 
     if(! git subtree push -P "$LOCAL_PATH" "$REMOTE_REPO" "$REMOTE_BRANCH")
     then
+<<<<<<< HEAD
         log "❌ Failed to push subtree $LOCAL_PATH to $REMOTE_REPO"
         if(! git push  "$REMOTE_REPO" $(git subtree split --prefix="$LOCAL_PATH"):"$REMOTE_BRANCH")
         then
@@ -51,6 +67,12 @@ push_subtree() {
             git subtree merge --prefix="$LOCAL_PATH" "$TEMP_BRANCH" || echo "❌ Failed to merge subtree"
             # Pulisci il branch temporaneo
             git branch -D "$TEMP_BRANCH" || echo "❌ Failed to delete temporary branch $TEMP_BRANCH"
+=======
+        log "Failed to push subtree $LOCAL_PATH to $REMOTE_REPO"
+        if(! git push  "$REMOTE_REPO" $(git subtree split --prefix="$LOCAL_PATH"):"$REMOTE_BRANCH")
+        then
+            log "Failed split  to push subtree $LOCAL_PATH to $REMOTE_REPO"
+>>>>>>> ff4c007402201d3713e40099aa57f0182328939d
     #        # First, split the subtree to a temporary branch
         #    git subtree split --prefix="$LOCAL_PATH" --rejoin -b "$TEMP_BRANCH"
 
@@ -68,7 +90,11 @@ push_subtree() {
             #git subtree add --prefix="$LOCAL_PATH" "$REMOTE_REPO" "$REMOTE_BRANCH" --squash
              # Sincronizza i file dalla cartella di backup
             #rsync -avz "$LOCAL_PATH_bak/" "$LOCAL_PATH" || die "Failed to sync files"
+<<<<<<< HEAD
 
+=======
+        
+>>>>>>> ff4c007402201d3713e40099aa57f0182328939d
             # Rimuovi la cartella di backup
             #rm -rf "$LOCAL_PATH_bak" || die "Failed to remove backup folder"
             # Commit delle modifiche

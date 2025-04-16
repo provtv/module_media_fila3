@@ -25,4 +25,16 @@
 - Common issues
 - Debug procedures
 - Error logging
-- Performance bottlenecks 
+- Performance bottlenecks
+
+# Manutenzione del Sistema
+
+## Git Management
+
+La gestione del codice sorgente utilizza git con una struttura basata su subtree. Per i dettagli completi sulla gestione git, vedere la [documentazione degli script git](../bashscripts/docs/git_scripts.md).
+
+### Configurazione Git
+La configurazione git è centralizzata attraverso la funzione `git_config_setup` che garantisce consistenza in tutto il progetto.
+
+### Backup e Sicurezza
+Prima di operazioni critiche, viene eseguito un backup automatico su disco esterno. 

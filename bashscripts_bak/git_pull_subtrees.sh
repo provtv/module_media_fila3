@@ -11,6 +11,7 @@ me=$( readlink -f -- "$0")
 script_dir=$(dirname "$me")
 ORG="$1"
 
+# Esegui backup se richiesto
 backup_disk
 
 # Configurazione git

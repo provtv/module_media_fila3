@@ -43,12 +43,11 @@ find . -type f -name "*:Zone.Identifier" -exec rm -f {} +
 
 sudo update-alternatives --config php
 
-<<<<<<< HEAD
 ----
 cd <dir>
 git init
 git checkout -b dev
-git remote add origin git@github.com:provtv/module_user_fila3.git
+git remote add origin <repo>
 git fetch --all
 git add -A
 git commit -am .
@@ -57,7 +56,6 @@ git add -A
 git commit -am .
 git push -u origin dev
 rm -rf .git
-=======
 
 
 
@@ -78,4 +76,3 @@ SOLUZIONE: > sudo chmod 777 -R .
 
 
         
->>>>>>> origin/dev

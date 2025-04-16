@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # 🚀 Toolkit di Automazione Git
 
 [![GitHub](https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white)](https://github.com)
@@ -74,10 +75,10 @@ bashscripts/
 
 Per informazioni dettagliate su ogni script, consulta la documentazione specifica:
 
-- [Roadmap del Progetto](../roadmap.md)
-- [Documentazione del Progetto](../project.md)
-- [Fasi della Roadmap](../roadmap/)
-- [README in Inglese](../../README.md)
+- [Roadmap del Progetto](docs/roadmap.md)
+- [Documentazione del Progetto](docs/project.md)
+- [Fasi della Roadmap](docs/roadmap/)
+- [Documentazione in Italiano](docs/it/README.md)
 
 ## ⚠️ Avvertenze
 
@@ -98,3 +99,5 @@ Questo progetto è distribuito sotto la licenza MIT. Vedi il file `LICENSE` per 
 <div align="center">
   <sub>Built with ❤️ by the development team</sub>
 </div> 
+=======
+>>>>>>> ff4c007402201d3713e40099aa57f0182328939d

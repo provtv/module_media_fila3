@@ -2,9 +2,12 @@
 
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 <<<<<<< HEAD
 >>>>>>> origin/dev
+=======
+>>>>>>> ff4c007402201d3713e40099aa57f0182328939d
 source ./bashscripts/lib/custom.sh
 # Includi lo script di parsing
 source ./bashscripts/lib/parse_gitmodules_ini.sh
@@ -26,6 +29,7 @@ for ((i=0; i<total; i++)); do
     script="$script_dir/git_sync_subtree.sh"
     chmod +x "$script"
     sed -i -e 's/\r$//' "$script"
+<<<<<<< HEAD
     
     # Chiamata esterna allo script di sincronizzazione
     log "🔄 Push modulo: $path"
@@ -111,3 +115,12 @@ sed -i -e 's/\r$//' "$me"
 log "✅ Sincronizzazione completata con history ottimizzata!"
 >>>>>>> origin/dev
 >>>>>>> origin/dev
+=======
+    
+    # Chiamata esterna allo script di sincronizzazione
+    log "🔄 Push modulo: $path"
+    if ! "$script" "$path" "$url" ; then
+        log "⚠️ Push fallita per $path."
+    fi
+done
+>>>>>>> ff4c007402201d3713e40099aa57f0182328939d
