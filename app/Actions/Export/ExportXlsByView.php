@@ -34,7 +34,21 @@ class ExportXlsByView
         $stringFields = null;
         if (is_array($fields)) {
             $stringFields = array_map(function ($field) {
+<<<<<<< HEAD
+<<<<<<< HEAD
                 return strval($field);
+=======
+<<<<<<< HEAD
+                return strval($field);
+=======
+                return is_string($field) ? $field : (string) $field;
+>>>>>>> origin/dev
+=======
+                return is_string($field) ? $field : (string) $field;
+=======
+                return strval($field);
+>>>>>>> origin/dev
+>>>>>>> origin/dev
             }, array_values($fields));
         }
 

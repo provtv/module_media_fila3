@@ -43,15 +43,47 @@ class AutoLabelAction
         // @phpstan-ignore function.alreadyNarrowedType
         if (method_exists($component, 'getStatePath')) {
             $statePath = $component->getStatePath();
+<<<<<<< HEAD
+<<<<<<< HEAD
             return $statePath;
+=======
+<<<<<<< HEAD
+            return $statePath;
+=======
+            return is_string($statePath) ? $statePath : (string) $statePath;
+>>>>>>> origin/dev
+=======
+            return is_string($statePath) ? $statePath : (string) $statePath;
+=======
+            return $statePath;
+>>>>>>> origin/dev
+>>>>>>> origin/dev
         }
 
         // Fallback a reflection per altri casi
         $reflectionClass = new \ReflectionClass($component);
         if ($reflectionClass->hasProperty('name') && $reflectionClass->getProperty('name')->isPublic()) {
             $property = $reflectionClass->getProperty('name');
+<<<<<<< HEAD
+<<<<<<< HEAD
             Assert::string($value = $property->getValue($component));
             return $value;
+=======
+<<<<<<< HEAD
+            Assert::string($value = $property->getValue($component));
+            return $value;
+=======
+            $value = $property->getValue($component);
+            return is_string($value) ? $value : (string) $value;
+>>>>>>> origin/dev
+=======
+            $value = $property->getValue($component);
+            return is_string($value) ? $value : (string) $value;
+=======
+            Assert::string($value = $property->getValue($component));
+            return $value;
+>>>>>>> origin/dev
+>>>>>>> origin/dev
         }
 
         // Ultima risorsa: ritorniamo il nome della classe
@@ -68,7 +100,20 @@ class AutoLabelAction
     public function execute(Field|Component $component): Field|Component
     {
         Assert::isInstanceOf($component, Field::class, 'Il componente deve essere un\'istanza di Field o Component');
+<<<<<<< HEAD
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
 
+=======
+        
+>>>>>>> origin/dev
+=======
+        
+=======
+
+>>>>>>> origin/dev
+>>>>>>> origin/dev
         $backtrace = debug_backtrace(DEBUG_BACKTRACE_PROVIDE_OBJECT, 6);
 
         // Otteniamo il valore dalla backtrace
@@ -79,6 +124,11 @@ class AutoLabelAction
             // Se non riusciamo a ottenere la classe dal backtrace, usiamo la classe del componente
             $class = get_class($component);
         }
+<<<<<<< HEAD
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> origin/dev
 
         if (is_object($class)) {
             $class = get_class($class);
@@ -91,6 +141,41 @@ class AutoLabelAction
         $transKeyAction = app(GetTransKeyAction::class);
         Assert::isCallable([$transKeyAction, 'execute'], 'GetTransKeyAction::execute deve essere chiamabile');
 
+<<<<<<< HEAD
+=======
+=======
+=======
+>>>>>>> origin/dev
+        
+        // Assicuriamo che $class sia una stringa
+        if (!is_string($class)) {
+            $class = is_object($class) ? get_class($class) : is_string($class) ? $class : (string) $class;
+        }
+
+        Assert::stringNotEmpty($class, 'La classe deve essere una stringa non vuota');
+        
+        // Otteniamo la chiave di traduzione
+        $transKeyAction = app(GetTransKeyAction::class);
+        Assert::isCallable([$transKeyAction, 'execute'], 'GetTransKeyAction::execute deve essere chiamabile');
+        
+<<<<<<< HEAD
+>>>>>>> origin/dev
+=======
+=======
+
+        if (is_object($class)) {
+            $class = get_class($class);
+        }
+
+        // Assicuriamo che $class sia una stringa
+        Assert::stringNotEmpty($class, 'La classe deve essere una stringa non vuota');
+
+        // Otteniamo la chiave di traduzione
+        $transKeyAction = app(GetTransKeyAction::class);
+        Assert::isCallable([$transKeyAction, 'execute'], 'GetTransKeyAction::execute deve essere chiamabile');
+
+>>>>>>> origin/dev
+>>>>>>> origin/dev
         $trans_key = $transKeyAction->execute($class);
         Assert::stringNotEmpty($trans_key, 'La chiave di traduzione non può essere vuota');
 
@@ -99,18 +184,66 @@ class AutoLabelAction
         Assert::stringNotEmpty($componentName, 'Il nome del componente non può essere vuoto');
 
         // Costruiamo la chiave per l'etichetta
+<<<<<<< HEAD
+<<<<<<< HEAD
         $label_key = $trans_key . '.fields.' . $componentName . '.label';
         $label = trans($label_key);
 
+=======
+<<<<<<< HEAD
+        $label_key = $trans_key . '.fields.' . $componentName . '.label';
+        $label = trans($label_key);
+
+=======
+        $label_key = $trans_key.'.fields.'.$componentName.'.label';
+        $label = trans($label_key);
+        
+>>>>>>> origin/dev
+=======
+        $label_key = $trans_key.'.fields.'.$componentName.'.label';
+        $label = trans($label_key);
+        
+=======
+        $label_key = $trans_key . '.fields.' . $componentName . '.label';
+        $label = trans($label_key);
+
+>>>>>>> origin/dev
+>>>>>>> origin/dev
         if (is_string($label)) {
             if ($label_key === $label) {
                 // Se la traduzione non esiste, creiamone una utilizzando il nome del componente
                 $label_value = $componentName;
+<<<<<<< HEAD
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> origin/dev
 
                 // Proviamo a ottenere una traduzione più breve
                 $label_key1 = $trans_key . '.fields.' . $componentName;
                 $label1 = trans($label_key1);
 
+<<<<<<< HEAD
+=======
+=======
+=======
+>>>>>>> origin/dev
+                
+                // Proviamo a ottenere una traduzione più breve
+                $label_key1 = $trans_key.'.fields.'.$componentName;
+                $label1 = trans($label_key1);
+                
+<<<<<<< HEAD
+>>>>>>> origin/dev
+=======
+=======
+
+                // Proviamo a ottenere una traduzione più breve
+                $label_key1 = $trans_key . '.fields.' . $componentName;
+                $label1 = trans($label_key1);
+
+>>>>>>> origin/dev
+>>>>>>> origin/dev
                 if ($label_key1 !== $label1 && is_string($label1)) {
                     $label_value = $label1;
                 }
@@ -118,10 +251,34 @@ class AutoLabelAction
                 // Salviamo la traduzione
                 $saveTransAction = app(SaveTransAction::class);
                 Assert::isCallable([$saveTransAction, 'execute'], 'SaveTransAction::execute deve essere chiamabile');
+<<<<<<< HEAD
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> origin/dev
 
                 $saveTransAction->execute($label_key, $label_value);
             }
 
+<<<<<<< HEAD
+=======
+=======
+=======
+>>>>>>> origin/dev
+                
+                $saveTransAction->execute($label_key, $label_value);
+            }
+            
+<<<<<<< HEAD
+>>>>>>> origin/dev
+=======
+=======
+
+                $saveTransAction->execute($label_key, $label_value);
+            }
+
+>>>>>>> origin/dev
+>>>>>>> origin/dev
             // Applichiamo l'etichetta al componente
             // Field ha sempre un metodo label(), quindi possiamo chiamarlo direttamente
             $component->label($label);

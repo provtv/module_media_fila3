@@ -14,7 +14,19 @@ use Filament\Tables\Columns\TextColumn;
 use Filament\Tables\Filters\BaseFilter;
 use Illuminate\Database\Eloquent\Model;
 use Filament\Notifications\Notification;
+<<<<<<< HEAD
+<<<<<<< HEAD
 use Filament\Tables\Actions\Action;
+=======
+<<<<<<< HEAD
+use Filament\Tables\Actions\Action;
+=======
+>>>>>>> origin/dev
+=======
+=======
+use Filament\Tables\Actions\Action;
+>>>>>>> origin/dev
+>>>>>>> origin/dev
 use Filament\Tables\Actions\ActionGroup;
 use Filament\Tables\Enums\FiltersLayout;
 use Filament\Tables\Columns\Layout\Stack;
@@ -286,11 +298,53 @@ trait HasXotTable
     /**
      * Get table actions.
      *
+<<<<<<< HEAD
+<<<<<<< HEAD
      * @return array<string, Tables\Actions\Action|Tables\Actions\ActionGroup>
+=======
+<<<<<<< HEAD
+     * @return array<string, Tables\Actions\Action|Tables\Actions\ActionGroup>
+=======
+     * @return array<string, Action|ActionGroup>
+>>>>>>> origin/dev
+=======
+     * @return array<string, Action|ActionGroup>
+=======
+     * @return array<string, Tables\Actions\Action|Tables\Actions\ActionGroup>
+>>>>>>> origin/dev
+>>>>>>> origin/dev
      */
     public function getTableActions(): array
     {
         $actions = [];
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+        $resource = $this->getResource();
+        
+        if (method_exists($resource, 'canView')) {
+            $actions['view'] = Tables\Actions\ViewAction::make()
+                ->iconButton()
+                ->tooltip(__('user::actions.view'))
+                ->visible(fn (Model $record): bool => $resource::canView($record));
+        }
+
+        if (method_exists($resource, 'canEdit')) {
+            $actions['edit'] = Tables\Actions\EditAction::make()
+                ->iconButton()
+                ->tooltip(__('user::actions.edit'))
+                ->visible(fn (Model $record): bool => $resource::canEdit($record));
+        }
+        
+        if (method_exists($resource, 'canDelete')) {
+            $actions['delete'] = Tables\Actions\DeleteAction::make()
+                ->iconButton()
+                ->tooltip(__('user::actions.delete'))
+                ->visible(fn (Model $record): bool => $resource::canDelete($record));
+        }
+        
+=======
+>>>>>>> origin/dev
 
         if ($this->shouldShowViewAction()) {
             $actions['view'] = Tables\Actions\ViewAction::make()
@@ -308,6 +362,10 @@ trait HasXotTable
             ->iconButton()
             ->tooltip(__('user::actions.delete'));
 
+<<<<<<< HEAD
+=======
+>>>>>>> origin/dev
+>>>>>>> origin/dev
         if ($this->shouldShowReplicateAction()) {
             $actions['replicate'] = Tables\Actions\ReplicateAction::make()
                 ->iconButton()

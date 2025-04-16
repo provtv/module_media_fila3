@@ -264,6 +264,14 @@ class InformationSchemaTable extends Model
      */
     public static function getModelCount(string $modelClass): int
     {
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+        return 0;
+        
+=======
+>>>>>>> origin/dev
+>>>>>>> origin/dev
         if (! class_exists($modelClass)) {
             throw new InvalidArgumentException("Model class [$modelClass] does not exist");
         }
