@@ -1,6 +1,5 @@
 #!/bin/bash
 
-
 source ./bashscripts/lib/custom.sh
 # Includi lo script di parsing
 source ./bashscripts/lib/parse_gitmodules_ini.sh
@@ -12,13 +11,11 @@ me=$( readlink -f -- "$0")
 script_dir=$(dirname "$me")
 ORG="$1"
 
-if ! ./bashscripts/sync_to_disk.sh d ; then
-    log "⚠️ backup fallito"
-    exit 1
-fi
+# Esegui backup se richiesto
+backup_disk
 
-git config core.ignorecase false
-git config core.fileMode false
+# Configurazione git
+git_config_setup
 
 total=${submodules_array["total"]}
 for ((i=0; i<total; i++)); do
@@ -26,7 +23,13 @@ for ((i=0; i<total; i++)); do
     url=${submodules_array["url_${i}"]}
     # Applica riscrittura URL se ORG è passato
     if [ -n "$ORG" ]; then
-        url=$(rewrite_url "$url" "$ORG")
+        url_org=$(rewrite_url "$url" "$ORG")
+        script="$script_dir/git_push_subtree_org.sh" 
+        chmod +x "$script"
+        sed -i -e 's/\r$//' "$script"
+        if ! "$script" "$path" "$url_org" "$BRANCH" ; then
+            log "⚠️ Push ORG fallita per $path."
+        fi
     fi
     echo "---------"
     echo "Submodule $i  📁 Path: $path  🌐 URL: $url"
