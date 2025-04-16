@@ -18,6 +18,7 @@ echo "  📁 Path: $LOCAL_PATH"
 echo "  🌐 URL: $REMOTE_REPO"
 echo "  🌿 Branch: $BRANCH"
 echo "  🌿 Temporary branch: $TEMP_BRANCH"
+echo "  💾 Backup Disk: $DISK_LETTER"
 
 # Verifica se il path esiste
 if [ ! -e "$LOCAL_PATH" ]; then
@@ -70,6 +71,7 @@ pull_subtree() {
         fi
     fi
 
+    # Manutenzione avanzata repository
     git rebase --rebase-merges --strategy subtree "$BRANCH" --autosquash
 }
 

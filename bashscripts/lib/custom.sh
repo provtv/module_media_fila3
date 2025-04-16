@@ -42,3 +42,39 @@ rewrite_url() {
         echo "git@github.com:${org}/${repo_name}"
     fi
 }
+
+# Git maintenance
+git_maintenance() {
+    log "Eseguo manutenzione del repository git..."
+    
+    # Pulizia e ottimizzazione
+    git gc --aggressive --prune=now
+    git reflog expire --expire=now --all
+    
+    # Rimozione branch remoti non più esistenti
+    git remote prune origin
+    
+    # Pulizia dei file non tracciati
+    git clean -fd
+    
+    # Verifica integrità repository
+    git fsck --full --strict
+
+    # Ottimizzazione specifica per subtree
+    #log "Ottimizzazione subtree..."
+    #git filter-branch --prune-empty --subdirectory-filter "$LOCAL_PATH" "$BRANCH" || true
+    #git for-each-ref --format="%(refname)" refs/original/ | xargs -n 1 git update-ref -d
+}
+
+
+backup_disk() {
+    # Richiesta interattiva della lettera del disco
+    read -p "📀 Inserisci la lettera del disco per il backup [d]: " DISK_LETTER
+    DISK_LETTER=${DISK_LETTER:-"d"}  # Se non specificato, usa 'd' come default
+    # Backup to disk
+    if ! ./bashscripts/sync_to_disk.sh "$DISK_LETTER" ; then
+        handle_error "Failed to sync to disk $DISK_LETTER"
+    fi
+
+    
+}

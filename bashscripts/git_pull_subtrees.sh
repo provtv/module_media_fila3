@@ -1,6 +1,5 @@
 #!/bin/bash
 
-
 source ./bashscripts/lib/custom.sh
 # Includi lo script di parsing
 source ./bashscripts/lib/parse_gitmodules_ini.sh
@@ -12,11 +11,9 @@ me=$( readlink -f -- "$0")
 script_dir=$(dirname "$me")
 ORG="$1"
 
-if ! ./bashscripts/sync_to_disk.sh d ; then
-    log "⚠️ backup fallito"
-    exit 1
-fi
+backup_disk
 
+# Configurazione git
 git config core.ignorecase false
 git config core.fileMode false
 
