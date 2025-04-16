@@ -76,5 +76,17 @@ backup_disk() {
         handle_error "Failed to sync to disk $DISK_LETTER"
     fi
 
-    
+    echo "  💾 Backup Disk: $DISK_LETTER"
+}
+
+# Funzione per configurare le impostazioni git
+git_config_setup() {
+    log "🔧 Configurazione git di base..."
+    git config core.ignorecase false        # Gestione case-sensitive dei file
+    git config core.fileMode false          # Ignora i permessi dei file
+    git config core.autocrlf false          # Non convertire automaticamente i line endings
+    git config core.eol lf                  # Usa LF come line ending di default
+    git config core.symlinks false          # Gestione symlinks disabilitata per Windows
+    git config core.longpaths true          # Supporto per path lunghi su Windows
+    log "✅ Configurazione git completata"
 }

@@ -14,8 +14,7 @@ ORG="$1"
 backup_disk
 
 # Configurazione git
-git config core.ignorecase false
-git config core.fileMode false
+git_config_setup
 
 total=${submodules_array["total"]}
 for ((i=0; i<total; i++)); do
