@@ -84,6 +84,9 @@ class ModuleService
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/dev
                 
 =======
 <<<<<<< HEAD
@@ -91,10 +94,13 @@ class ModuleService
 =======
                 // dddx(['name' => $name, 'name1' => $file->getFilenameWithoutExtension()]);
 >>>>>>> origin/dev
+<<<<<<< HEAD
 =======
                 // dddx(['name' => $name, 'name1' => $file->getFilenameWithoutExtension()]);
 =======
                 
+>>>>>>> origin/dev
+=======
 >>>>>>> origin/dev
 >>>>>>> origin/dev
                 /**
@@ -103,6 +109,7 @@ class ModuleService
                 $class = $ns.'\\'.$name;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 <<<<<<< HEAD
 >>>>>>> origin/dev
@@ -111,6 +118,11 @@ class ModuleService
                     continue;
                 }
 =======
+>>>>>>> origin/dev
+=======
+=======
+<<<<<<< HEAD
+>>>>>>> origin/dev
 >>>>>>> origin/dev
                 //Strict comparison using === between stdClass and null will always evaluate to false.
 
@@ -119,11 +131,17 @@ class ModuleService
                 //}
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/dev
 =======
 =======
                 if ($tmp === null) {
                     continue;
                 }
+>>>>>>> origin/dev
+<<<<<<< HEAD
+=======
 >>>>>>> origin/dev
 =======
 >>>>>>> origin/dev

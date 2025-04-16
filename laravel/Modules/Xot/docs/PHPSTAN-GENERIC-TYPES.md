@@ -45,6 +45,7 @@ public function comments(): HasMany
 public function tags(): BelongsToMany
 {
 <<<<<<< HEAD
+<<<<<<< HEAD
     return $this->belongsToMany(Tag::class);
 =======
 <<<<<<< HEAD
@@ -52,6 +53,9 @@ public function tags(): BelongsToMany
 =======
     return $this->belongsToMany(Tag::class);
 >>>>>>> origin/dev
+>>>>>>> origin/dev
+=======
+    return $this->belongsToMany(Tag::class);
 >>>>>>> origin/dev
 }
 ```

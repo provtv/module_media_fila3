@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace Modules\Xot\Filament\Widgets;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 <<<<<<< HEAD
 use Filament\Forms;
@@ -19,20 +20,26 @@ use Filament\Widgets\Concerns\InteractsWithPageFilters;
 use Filament\Actions\Action;
 =======
 >>>>>>> origin/dev
+=======
+>>>>>>> origin/dev
 use Filament\Widgets\Widget as FilamentWidget;
 use Illuminate\Support\Facades\Cache;
 use Filament\Widgets\WidgetConfiguration;
 use Filament\Widgets\Concerns\InteractsWithPageFilters;
 use Modules\Xot\Actions\View\GetViewByClassAction;
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> origin/dev
+>>>>>>> origin/dev
+=======
 >>>>>>> origin/dev
 
 /**
  * @property bool $shouldRender
  *
  */
+<<<<<<< HEAD
 <<<<<<< HEAD
 =======
 <<<<<<< HEAD
@@ -47,14 +54,19 @@ abstract class XotBaseWidget extends FilamentWidget implements HasForms
     protected int|string|array $columnSpan = 'full';
 =======
 >>>>>>> origin/dev
+=======
+>>>>>>> origin/dev
 abstract class XotBaseWidget extends FilamentWidget
 {
     use InteractsWithPageFilters;
     public string $title = '';
     public string $icon = '';
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> origin/dev
+>>>>>>> origin/dev
+=======
 >>>>>>> origin/dev
     /**
      * The view that should be rendered for the widget.
@@ -66,6 +78,7 @@ abstract class XotBaseWidget extends FilamentWidget
      * @var view-string
      */
     protected static string $view;
+<<<<<<< HEAD
 <<<<<<< HEAD
 
 
@@ -84,10 +97,15 @@ abstract class XotBaseWidget extends FilamentWidget
 
 >>>>>>> origin/dev
 >>>>>>> origin/dev
+=======
+
+
+>>>>>>> origin/dev
     public function __construct()
     {
         //parent::__construct();//Cannot call constructor
         $view = app(GetViewByClassAction::class)->execute(static::class);
+<<<<<<< HEAD
 <<<<<<< HEAD
         static::$view = $view;
 =======
@@ -124,6 +142,9 @@ abstract class XotBaseWidget extends FilamentWidget
 =======
         static::$view = $view;
 >>>>>>> origin/dev
+>>>>>>> origin/dev
+=======
+        static::$view = $view;
 >>>>>>> origin/dev
 
     }

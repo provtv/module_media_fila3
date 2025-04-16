@@ -8,6 +8,7 @@ use Illuminate\Console\Command;
 use Illuminate\Support\Facades\File;
 use Illuminate\Support\Str;
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 =======
 use Safe\Exceptions\DatetimeException;
@@ -22,6 +23,9 @@ use function Safe\preg_replace;
  * Class GenerateModelsFromSchemaCommand.
  */
 >>>>>>> origin/dev
+=======
+
+>>>>>>> origin/dev
 class GenerateModelsFromSchemaCommand extends Command
 {
     /**
@@ -30,13 +34,19 @@ class GenerateModelsFromSchemaCommand extends Command
      * @var string
      */
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/dev
     protected $signature = 'xot:generate-models-from-schema 
                             {schema_file : Percorso del file schema JSON} 
                             {namespace : Namespace dei modelli (es. Modules\\Brain\\Models)} 
                             {model_path : Percorso dove salvare i modelli} 
                             {migration_path? : Percorso dove salvare le migrazioni}';
+<<<<<<< HEAD
 =======
     protected $signature = 'db:models:generate {--schema=database/schema.json} {--output=app/Models} {--namespace=App\\Models}';
+>>>>>>> origin/dev
+=======
 >>>>>>> origin/dev
 
     /**
@@ -45,9 +55,13 @@ class GenerateModelsFromSchemaCommand extends Command
      * @var string
      */
 <<<<<<< HEAD
+<<<<<<< HEAD
     protected $description = 'Genera modelli Laravel dalle informazioni dello schema del database';
 =======
     protected $description = 'Generate Eloquent models from database schema';
+>>>>>>> origin/dev
+=======
+    protected $description = 'Genera modelli Laravel dalle informazioni dello schema del database';
 >>>>>>> origin/dev
 
     /**
@@ -90,6 +104,9 @@ class GenerateModelsFromSchemaCommand extends Command
     /**
      * Esegui il comando console.
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/dev
      */
     public function handle(): int
     {
@@ -243,6 +260,7 @@ class GenerateModelsFromSchemaCommand extends Command
         ));
 
         $relationshipImports = $this->getRelationshipImports($relationships);
+<<<<<<< HEAD
 =======
      *
      * @throws JsonException
@@ -420,6 +438,8 @@ class GenerateModelsFromSchemaCommand extends Command
             $relationsStr .= $this->getRelationMethod($methodName, $relation);
         }
 >>>>>>> origin/dev
+=======
+>>>>>>> origin/dev
 
         return <<<PHP
 <?php
@@ -431,6 +451,9 @@ namespace {$namespace};
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/dev
 use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Database\Eloquent\Relations\HasOne;
 {$relationshipImports}
@@ -486,6 +509,7 @@ class {$modelName} extends Model
 
     {$relationshipsStr}
 }
+<<<<<<< HEAD
 =======
 
 /**
@@ -508,11 +532,16 @@ class {$modelName} extends Model
 }
 
 >>>>>>> origin/dev
+=======
+>>>>>>> origin/dev
 PHP;
     }
 
     /**
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/dev
      * Genera il contenuto del file della migrazione.
      */
     protected function generateMigrationContent(
@@ -802,6 +831,7 @@ PHP;
     protected function getModelName(string $tableName): string
     {
         return Str::studly(Str::singular($tableName));
+<<<<<<< HEAD
 =======
      * Get the relation method template.
      *
@@ -826,6 +856,8 @@ PHP;
     protected function getCurrentDate(): string
     {
         return date('Y-m-d H:i:s');
+>>>>>>> origin/dev
+=======
 >>>>>>> origin/dev
     }
 }

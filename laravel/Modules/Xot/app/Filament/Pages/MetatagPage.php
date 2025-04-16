@@ -22,15 +22,21 @@ use Modules\Xot\Filament\Traits\NavigationLabelTrait;
 use Webmozart\Assert\Assert;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/dev
 use Filament\Support\Colors\Color;
 =======
 <<<<<<< HEAD
 use Filament\Support\Colors\Color;
 =======
 >>>>>>> origin/dev
+<<<<<<< HEAD
 =======
 =======
 use Filament\Support\Colors\Color;
+>>>>>>> origin/dev
+=======
 >>>>>>> origin/dev
 >>>>>>> origin/dev
 
@@ -97,6 +103,7 @@ class MetatagPage extends Page implements HasForms
                             Select::make('key')
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 <<<<<<< HEAD
 >>>>>>> origin/dev
@@ -116,6 +123,11 @@ class MetatagPage extends Page implements HasForms
                         ])
                     // ->keyValueArray(true) // Store as key-value pairs in the 'colors' array
 =======
+>>>>>>> origin/dev
+=======
+=======
+<<<<<<< HEAD
+>>>>>>> origin/dev
 >>>>>>> origin/dev
                                 ->label('Chiave')
                                 ->required()
@@ -134,6 +146,9 @@ class MetatagPage extends Page implements HasForms
                         ])
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/dev
 =======
 =======
 
@@ -150,6 +165,9 @@ class MetatagPage extends Page implements HasForms
                                 ->required(), // e.g., '#0071b0'
                         ])
                     // ->keyValueArray(true) // Store as key-value pairs in the 'colors' array
+>>>>>>> origin/dev
+<<<<<<< HEAD
+=======
 >>>>>>> origin/dev
 =======
 >>>>>>> origin/dev
@@ -177,13 +195,19 @@ class MetatagPage extends Page implements HasForms
             Action::make('save')
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/dev
 =======
 <<<<<<< HEAD
 =======
 
 >>>>>>> origin/dev
+<<<<<<< HEAD
 =======
 
+=======
+>>>>>>> origin/dev
 =======
 >>>>>>> origin/dev
 >>>>>>> origin/dev

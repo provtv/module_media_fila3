@@ -42,13 +42,19 @@ use Illuminate\Support\Carbon;
  * @method array     treeSons()
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/dev
 =======
 <<<<<<< HEAD
 =======
  * @method int       treeSonsCount()
 >>>>>>> origin/dev
+<<<<<<< HEAD
 =======
  * @method int       treeSonsCount()
+=======
+>>>>>>> origin/dev
 =======
 >>>>>>> origin/dev
 >>>>>>> origin/dev
@@ -61,6 +67,9 @@ use Illuminate\Support\Carbon;
  */
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/dev
 interface ModelWithAuthorContract {}
 =======
 <<<<<<< HEAD
@@ -70,11 +79,14 @@ interface ModelWithAuthorContract
 {
 }
 >>>>>>> origin/dev
+<<<<<<< HEAD
 =======
 interface ModelWithAuthorContract
 {
 }
 =======
 interface ModelWithAuthorContract {}
+>>>>>>> origin/dev
+=======
 >>>>>>> origin/dev
 >>>>>>> origin/dev

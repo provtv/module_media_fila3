@@ -15,6 +15,7 @@ class AssetPathAction
     {
         [$ns,$file] = explode('::', $asset);
 <<<<<<< HEAD
+<<<<<<< HEAD
         $module_path = Module::getModulePath($ns).'Resources';
 =======
 <<<<<<< HEAD
@@ -22,6 +23,9 @@ class AssetPathAction
 =======
         $module_path = Module::getModulePath($ns).'Resources';
 >>>>>>> origin/dev
+>>>>>>> origin/dev
+=======
+        $module_path = Module::getModulePath($ns).'Resources';
 >>>>>>> origin/dev
 
         return $module_path.'/'.$file;

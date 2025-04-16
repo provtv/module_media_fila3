@@ -28,6 +28,9 @@ use Illuminate\Support\Facades\URL;
 use Illuminate\Support\Facades\View;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/dev
 use Modules\Xot\Exceptions\Handlers\HandlerDecorator;
 use Modules\Xot\Exceptions\Handlers\HandlersRepository;
 use Modules\Xot\Exceptions\Formatters\WebhookErrorFormatter;
@@ -41,6 +44,7 @@ use Modules\Xot\Exceptions\Formatters\WebhookErrorFormatter;
 use Modules\Xot\Exceptions\Handlers\HandlerDecorator;
 use Modules\Xot\Exceptions\Handlers\HandlersRepository;
 >>>>>>> origin/dev
+<<<<<<< HEAD
 =======
 use Modules\Xot\Exceptions\Formatters\WebhookErrorFormatter;
 use Modules\Xot\Exceptions\Handlers\HandlerDecorator;
@@ -49,6 +53,8 @@ use Modules\Xot\Exceptions\Handlers\HandlersRepository;
 use Modules\Xot\Exceptions\Handlers\HandlerDecorator;
 use Modules\Xot\Exceptions\Handlers\HandlersRepository;
 use Modules\Xot\Exceptions\Formatters\WebhookErrorFormatter;
+>>>>>>> origin/dev
+=======
 >>>>>>> origin/dev
 >>>>>>> origin/dev
 use Modules\Xot\View\Composers\XotComposer;
@@ -76,6 +82,9 @@ class XotServiceProvider extends XotBaseServiceProvider
         $this->registerEvents();
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/dev
         //$this->registerExceptionHandler(); // guardare come fa sentry
 =======
 <<<<<<< HEAD
@@ -83,10 +92,13 @@ class XotServiceProvider extends XotBaseServiceProvider
 =======
         $this->registerExceptionHandler();
 >>>>>>> origin/dev
+<<<<<<< HEAD
 =======
         $this->registerExceptionHandler();
 =======
         //$this->registerExceptionHandler(); // guardare come fa sentry
+>>>>>>> origin/dev
+=======
 >>>>>>> origin/dev
 >>>>>>> origin/dev
         $this->registerTimezone();
@@ -99,6 +111,9 @@ class XotServiceProvider extends XotBaseServiceProvider
         $this->registerConfig();
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/dev
         //$this->registerExceptionHandlersRepository();
         //$this->extendExceptionHandler();
 =======
@@ -109,12 +124,15 @@ class XotServiceProvider extends XotBaseServiceProvider
         $this->registerExceptionHandlersRepository();
         $this->extendExceptionHandler();
 >>>>>>> origin/dev
+<<<<<<< HEAD
 =======
         $this->registerExceptionHandlersRepository();
         $this->extendExceptionHandler();
 =======
         //$this->registerExceptionHandlersRepository();
         //$this->extendExceptionHandler();
+>>>>>>> origin/dev
+=======
 >>>>>>> origin/dev
 >>>>>>> origin/dev
         $this->registerCommands();
@@ -143,6 +161,9 @@ class XotServiceProvider extends XotBaseServiceProvider
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/dev
 =======
 <<<<<<< HEAD
 >>>>>>> origin/dev
@@ -173,6 +194,9 @@ class XotServiceProvider extends XotBaseServiceProvider
 <<<<<<< HEAD
 =======
 =======
+<<<<<<< HEAD
+=======
+>>>>>>> origin/dev
 =======
 >>>>>>> origin/dev
     /**
@@ -215,6 +239,7 @@ class XotServiceProvider extends XotBaseServiceProvider
         */
     }
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> origin/dev
 =======
 =======
@@ -242,6 +267,8 @@ class XotServiceProvider extends XotBaseServiceProvider
         }
     }
         */
+=======
+>>>>>>> origin/dev
 >>>>>>> origin/dev
 >>>>>>> origin/dev
 
@@ -282,6 +309,9 @@ class XotServiceProvider extends XotBaseServiceProvider
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/dev
     /*
      * Register the custom exception handlers repository.
      -- guardare come fa sentry
@@ -295,6 +325,7 @@ class XotServiceProvider extends XotBaseServiceProvider
      * Register the custom exception handlers repository.
      */
 >>>>>>> origin/dev
+<<<<<<< HEAD
 =======
     /**
      * Register the custom exception handlers repository.
@@ -303,6 +334,8 @@ class XotServiceProvider extends XotBaseServiceProvider
     /*
      * Register the custom exception handlers repository.
      -- guardare come fa sentry
+>>>>>>> origin/dev
+=======
 >>>>>>> origin/dev
 >>>>>>> origin/dev
     private function registerExceptionHandlersRepository(): void
@@ -311,6 +344,9 @@ class XotServiceProvider extends XotBaseServiceProvider
     }
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/dev
 =======
 <<<<<<< HEAD
 >>>>>>> origin/dev
@@ -323,6 +359,9 @@ class XotServiceProvider extends XotBaseServiceProvider
 <<<<<<< HEAD
 =======
 =======
+<<<<<<< HEAD
+=======
+>>>>>>> origin/dev
 =======
 >>>>>>> origin/dev
 
@@ -332,6 +371,7 @@ class XotServiceProvider extends XotBaseServiceProvider
      * @see https://github.com/cerbero90/exception-handler/blob/master/src/Providers/ExceptionHandlerServiceProvider.php
      */
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> origin/dev
 =======
 =======
@@ -341,6 +381,8 @@ class XotServiceProvider extends XotBaseServiceProvider
      *
      * @see https://github.com/cerbero90/exception-handler/blob/master/src/Providers/ExceptionHandlerServiceProvider.php
      -- guardare come fa sentry
+=======
+>>>>>>> origin/dev
 >>>>>>> origin/dev
 >>>>>>> origin/dev
     private function extendExceptionHandler(): void
@@ -354,6 +396,9 @@ class XotServiceProvider extends XotBaseServiceProvider
     }
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/dev
     */
 =======
 <<<<<<< HEAD
@@ -361,10 +406,13 @@ class XotServiceProvider extends XotBaseServiceProvider
 =======
 
 >>>>>>> origin/dev
+<<<<<<< HEAD
 =======
 
 =======
     */
+>>>>>>> origin/dev
+=======
 >>>>>>> origin/dev
 >>>>>>> origin/dev
     private function redirectSSL(): void

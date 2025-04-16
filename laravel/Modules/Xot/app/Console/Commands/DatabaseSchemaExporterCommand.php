@@ -8,8 +8,11 @@ use Illuminate\Console\Command;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\File;
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 use function Safe\json_encode;
+>>>>>>> origin/dev
+=======
 >>>>>>> origin/dev
 
 class DatabaseSchemaExporterCommand extends Command
@@ -89,6 +92,9 @@ class DatabaseSchemaExporterCommand extends Command
         // Salva i dati in un file JSON
         $filename = "{$outputDir}/{$databaseName}_schema.json";
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/dev
         try {
             $jsonContent = \Safe\json_encode($databaseSchema, JSON_PRETTY_PRINT);
             File::put($filename, $jsonContent);
@@ -97,10 +103,13 @@ class DatabaseSchemaExporterCommand extends Command
             $this->error("Errore nell'encoding JSON dello schema: " . $e->getMessage());
             return Command::FAILURE;
         }
+<<<<<<< HEAD
 =======
         File::put($filename, json_encode($databaseSchema, JSON_PRETTY_PRINT));
 
         $this->info("Schema del database esportato con successo in: {$filename}");
+>>>>>>> origin/dev
+=======
 >>>>>>> origin/dev
 
         return 0;

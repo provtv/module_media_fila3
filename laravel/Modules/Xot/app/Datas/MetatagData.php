@@ -6,6 +6,7 @@ namespace Modules\Xot\Datas;
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 <<<<<<< HEAD
 >>>>>>> origin/dev
@@ -21,6 +22,11 @@ use Modules\Xot\Actions\File\AssetAction;
 /**
  * Class MetatagData
 =======
+>>>>>>> origin/dev
+=======
+=======
+<<<<<<< HEAD
+>>>>>>> origin/dev
 >>>>>>> origin/dev
 use Livewire\Wireable;
 use Illuminate\Support\Arr;
@@ -67,6 +73,9 @@ use Spatie\LaravelData\Concerns\WireableData;
  * @property array<string, array{key?: string, color: string, hex?: string}> $colors
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/dev
 =======
 =======
 use Filament\Support\Colors\Color;
@@ -80,6 +89,9 @@ use Modules\Xot\Actions\File\AssetAction;
 /**
  * Class MetatagData
 >>>>>>> origin/dev
+<<<<<<< HEAD
+=======
+>>>>>>> origin/dev
 =======
 >>>>>>> origin/dev
 >>>>>>> origin/dev
@@ -88,6 +100,7 @@ class MetatagData extends Data implements Wireable
 {
     use WireableData;
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 =======
@@ -125,6 +138,11 @@ class MetatagData extends Data implements Wireable
     public string $color_banner = '';
     public string $favicon = '/favicon.ico';
 =======
+>>>>>>> origin/dev
+=======
+=======
+<<<<<<< HEAD
+>>>>>>> origin/dev
 >>>>>>> origin/dev
     /** @var string */
     public string $title = '';
@@ -221,6 +239,9 @@ class MetatagData extends Data implements Wireable
      */
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/dev
 =======
 =======
     public string $title = '';
@@ -254,6 +275,9 @@ class MetatagData extends Data implements Wireable
     public string $color_banner = '';
     public string $favicon = '/favicon.ico';
 >>>>>>> origin/dev
+<<<<<<< HEAD
+=======
+>>>>>>> origin/dev
 =======
 >>>>>>> origin/dev
 >>>>>>> origin/dev
@@ -268,6 +292,9 @@ class MetatagData extends Data implements Wireable
      * Creates or returns the singleton instance.
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/dev
      *
      * @return self
 =======
@@ -276,10 +303,13 @@ class MetatagData extends Data implements Wireable
      * @return self
 =======
 >>>>>>> origin/dev
+<<<<<<< HEAD
 =======
 =======
      *
      * @return self
+>>>>>>> origin/dev
+=======
 >>>>>>> origin/dev
 >>>>>>> origin/dev
      */
@@ -296,6 +326,7 @@ class MetatagData extends Data implements Wireable
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 <<<<<<< HEAD
 >>>>>>> origin/dev
@@ -306,6 +337,11 @@ class MetatagData extends Data implements Wireable
             return asset(app(AssetAction::class)->execute($this->logo_header));
         } catch (\Exception $e) {
 =======
+>>>>>>> origin/dev
+=======
+=======
+<<<<<<< HEAD
+>>>>>>> origin/dev
 >>>>>>> origin/dev
     /**
      * Get the header logo URL.
@@ -321,6 +357,9 @@ class MetatagData extends Data implements Wireable
         } catch (\Throwable $e) {
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/dev
 =======
 =======
     public function getLogoHeader(): string
@@ -329,6 +368,9 @@ class MetatagData extends Data implements Wireable
             return asset(app(AssetAction::class)->execute($this->logo_header));
         } catch (\Exception $e) {
 >>>>>>> origin/dev
+<<<<<<< HEAD
+=======
+>>>>>>> origin/dev
 =======
 >>>>>>> origin/dev
 >>>>>>> origin/dev
@@ -336,6 +378,7 @@ class MetatagData extends Data implements Wireable
         }
     }
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 =======
@@ -348,6 +391,11 @@ class MetatagData extends Data implements Wireable
             return asset(app(AssetAction::class)->execute($this->logo_header_dark));
         } catch (\Exception $e) {
 =======
+>>>>>>> origin/dev
+=======
+=======
+<<<<<<< HEAD
+>>>>>>> origin/dev
 >>>>>>> origin/dev
     /**
      * Get the dark header logo URL.
@@ -363,6 +411,9 @@ class MetatagData extends Data implements Wireable
         } catch (\Throwable $e) {
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/dev
 =======
 =======
     public function getLogoHeaderDark(): string
@@ -370,6 +421,9 @@ class MetatagData extends Data implements Wireable
         try {
             return asset(app(AssetAction::class)->execute($this->logo_header_dark));
         } catch (\Exception $e) {
+>>>>>>> origin/dev
+<<<<<<< HEAD
+=======
 >>>>>>> origin/dev
 =======
 >>>>>>> origin/dev
@@ -382,8 +436,11 @@ class MetatagData extends Data implements Wireable
 =======
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> origin/dev
 =======
+=======
+>>>>>>> origin/dev
 >>>>>>> origin/dev
     /**
      * Get the logo height.
@@ -392,10 +449,16 @@ class MetatagData extends Data implements Wireable
      */
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 =======
 >>>>>>> origin/dev
 =======
+>>>>>>> origin/dev
+=======
+=======
+=======
+>>>>>>> origin/dev
 >>>>>>> origin/dev
 >>>>>>> origin/dev
     public function getLogoHeight(): string
@@ -403,6 +466,7 @@ class MetatagData extends Data implements Wireable
         return $this->logo_height;
     }
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 =======
@@ -415,6 +479,11 @@ class MetatagData extends Data implements Wireable
             return app(AssetAction::class)->execute($this->favicon);
         } catch (\Exception $e) {
 =======
+>>>>>>> origin/dev
+=======
+=======
+<<<<<<< HEAD
+>>>>>>> origin/dev
 >>>>>>> origin/dev
     /**
      * Get the favicon URL.
@@ -430,6 +499,9 @@ class MetatagData extends Data implements Wireable
         } catch (\Throwable $e) {
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/dev
 =======
 =======
     public function getFavicon(): string
@@ -437,6 +509,9 @@ class MetatagData extends Data implements Wireable
         try {
             return app(AssetAction::class)->execute($this->favicon);
         } catch (\Exception $e) {
+>>>>>>> origin/dev
+<<<<<<< HEAD
+=======
 >>>>>>> origin/dev
 =======
 >>>>>>> origin/dev
@@ -448,6 +523,9 @@ class MetatagData extends Data implements Wireable
     /**
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/dev
      * Get the default Filament colors configuration.
      *
      * @return array<string, array<int, string>>
@@ -459,12 +537,15 @@ class MetatagData extends Data implements Wireable
 =======
      * @return array<string, string>
 >>>>>>> origin/dev
+<<<<<<< HEAD
 =======
      * @return array<string, string>
 =======
      * Get the default Filament colors configuration.
      *
      * @return array<string, array<int, string>>
+>>>>>>> origin/dev
+=======
 >>>>>>> origin/dev
 >>>>>>> origin/dev
      */
@@ -473,6 +554,9 @@ class MetatagData extends Data implements Wireable
         return [
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/dev
 =======
 <<<<<<< HEAD
 >>>>>>> origin/dev
@@ -485,6 +569,9 @@ class MetatagData extends Data implements Wireable
 <<<<<<< HEAD
 =======
 =======
+<<<<<<< HEAD
+=======
+>>>>>>> origin/dev
 =======
 >>>>>>> origin/dev
             'danger' => 'danger',
@@ -494,6 +581,7 @@ class MetatagData extends Data implements Wireable
             'success' => 'success',
             'warning' => 'warning',
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> origin/dev
 =======
 =======
@@ -503,6 +591,8 @@ class MetatagData extends Data implements Wireable
             'primary' => Color::Amber,
             'success' => Color::Green,
             'warning' => Color::Amber,
+=======
+>>>>>>> origin/dev
 >>>>>>> origin/dev
 >>>>>>> origin/dev
         ];
@@ -511,6 +601,9 @@ class MetatagData extends Data implements Wireable
     /**
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/dev
      * Get the colors array with proper type handling.
      *
      * @return array<string, array<int, string>>
@@ -520,6 +613,9 @@ class MetatagData extends Data implements Wireable
      *
      * @return array<string, array<int, string>>
 =======
+<<<<<<< HEAD
+=======
+>>>>>>> origin/dev
 =======
 >>>>>>> origin/dev
      * @return array<string, string>
@@ -533,12 +629,15 @@ class MetatagData extends Data implements Wireable
     /**
      * @return array<string, string>
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> origin/dev
 =======
 =======
      * Get the colors array with proper type handling.
      *
      * @return array<string, array<int, string>>
+=======
+>>>>>>> origin/dev
 >>>>>>> origin/dev
 >>>>>>> origin/dev
      */
@@ -547,6 +646,9 @@ class MetatagData extends Data implements Wireable
         if (empty($this->colors)) {
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/dev
 =======
 <<<<<<< HEAD
 >>>>>>> origin/dev
@@ -571,6 +673,9 @@ class MetatagData extends Data implements Wireable
 <<<<<<< HEAD
 =======
 =======
+<<<<<<< HEAD
+=======
+>>>>>>> origin/dev
 =======
 >>>>>>> origin/dev
             return $this->getFilamentColors();
@@ -594,6 +699,7 @@ class MetatagData extends Data implements Wireable
                     'custom' !== $colorValue => Arr::get(Color::all(), $colorValue, ''),
                     default => '',
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> origin/dev
 =======
 =======
@@ -615,6 +721,8 @@ class MetatagData extends Data implements Wireable
                     isset(Color::all()[$item['color']]) 
                         => Color::all()[$item['color']],
                     default => Color::Gray,
+=======
+>>>>>>> origin/dev
 >>>>>>> origin/dev
 >>>>>>> origin/dev
                 };
@@ -624,6 +732,9 @@ class MetatagData extends Data implements Wireable
         );
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/dev
         
 =======
 <<<<<<< HEAD
@@ -631,10 +742,13 @@ class MetatagData extends Data implements Wireable
 =======
 
 >>>>>>> origin/dev
+<<<<<<< HEAD
 =======
 
 =======
         
+>>>>>>> origin/dev
+=======
 >>>>>>> origin/dev
 >>>>>>> origin/dev
         return $mapped;

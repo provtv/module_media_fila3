@@ -33,6 +33,9 @@ Un errore particolarmente frequente riguarda le Actions. La convenzione corretta
 - ✅ **CORRETTO**: `namespace Modules\Xot\Actions;`
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/dev
 - ❌ **ERRATO**: `namespace Modules\Xot\Actions;`
 =======
 <<<<<<< HEAD
@@ -40,10 +43,13 @@ Un errore particolarmente frequente riguarda le Actions. La convenzione corretta
 =======
 - ❌ **ERRATO**: `namespace Modules\Xot\app\Actions;`
 >>>>>>> origin/dev
+<<<<<<< HEAD
 =======
 - ❌ **ERRATO**: `namespace Modules\Xot\app\Actions;`
 =======
 - ❌ **ERRATO**: `namespace Modules\Xot\Actions;`
+>>>>>>> origin/dev
+=======
 >>>>>>> origin/dev
 >>>>>>> origin/dev
 
@@ -53,6 +59,9 @@ Questo errore causa spesso problemi di PHPStan come:
 ```
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/dev
 Class 'Modules\Xot\Actions\MyAction' not found.
 =======
 <<<<<<< HEAD
@@ -60,10 +69,13 @@ Class 'Modules\Xot\Actions\MyAction' not found.
 =======
 Class 'Modules\Xot\app\Actions\MyAction' not found.
 >>>>>>> origin/dev
+<<<<<<< HEAD
 =======
 Class 'Modules\Xot\app\Actions\MyAction' not found.
 =======
 Class 'Modules\Xot\Actions\MyAction' not found.
+>>>>>>> origin/dev
+=======
 >>>>>>> origin/dev
 >>>>>>> origin/dev
 ```

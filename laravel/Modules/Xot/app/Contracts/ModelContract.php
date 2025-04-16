@@ -44,13 +44,19 @@ use Illuminate\Support\Carbon;
  * @method array     treeSons()
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/dev
 =======
 <<<<<<< HEAD
 =======
  * @method int       treeSonsCount()
 >>>>>>> origin/dev
+<<<<<<< HEAD
 =======
  * @method int       treeSonsCount()
+=======
+>>>>>>> origin/dev
 =======
 >>>>>>> origin/dev
 >>>>>>> origin/dev

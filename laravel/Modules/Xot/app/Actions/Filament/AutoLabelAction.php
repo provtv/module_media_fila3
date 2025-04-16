@@ -45,6 +45,9 @@ class AutoLabelAction
             $statePath = $component->getStatePath();
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/dev
             return $statePath;
 =======
 <<<<<<< HEAD
@@ -52,10 +55,13 @@ class AutoLabelAction
 =======
             return is_string($statePath) ? $statePath : (string) $statePath;
 >>>>>>> origin/dev
+<<<<<<< HEAD
 =======
             return is_string($statePath) ? $statePath : (string) $statePath;
 =======
             return $statePath;
+>>>>>>> origin/dev
+=======
 >>>>>>> origin/dev
 >>>>>>> origin/dev
         }
@@ -66,6 +72,9 @@ class AutoLabelAction
             $property = $reflectionClass->getProperty('name');
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/dev
             Assert::string($value = $property->getValue($component));
             return $value;
 =======
@@ -76,12 +85,15 @@ class AutoLabelAction
             $value = $property->getValue($component);
             return is_string($value) ? $value : (string) $value;
 >>>>>>> origin/dev
+<<<<<<< HEAD
 =======
             $value = $property->getValue($component);
             return is_string($value) ? $value : (string) $value;
 =======
             Assert::string($value = $property->getValue($component));
             return $value;
+>>>>>>> origin/dev
+=======
 >>>>>>> origin/dev
 >>>>>>> origin/dev
         }
@@ -102,16 +114,22 @@ class AutoLabelAction
         Assert::isInstanceOf($component, Field::class, 'Il componente deve essere un\'istanza di Field o Component');
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/dev
 =======
 <<<<<<< HEAD
 
 =======
         
 >>>>>>> origin/dev
+<<<<<<< HEAD
 =======
         
 =======
 
+>>>>>>> origin/dev
+=======
 >>>>>>> origin/dev
 >>>>>>> origin/dev
         $backtrace = debug_backtrace(DEBUG_BACKTRACE_PROVIDE_OBJECT, 6);
@@ -126,6 +144,9 @@ class AutoLabelAction
         }
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/dev
 =======
 <<<<<<< HEAD
 >>>>>>> origin/dev
@@ -144,6 +165,9 @@ class AutoLabelAction
 <<<<<<< HEAD
 =======
 =======
+<<<<<<< HEAD
+=======
+>>>>>>> origin/dev
 =======
 >>>>>>> origin/dev
         
@@ -159,6 +183,7 @@ class AutoLabelAction
         Assert::isCallable([$transKeyAction, 'execute'], 'GetTransKeyAction::execute deve essere chiamabile');
         
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> origin/dev
 =======
 =======
@@ -174,6 +199,8 @@ class AutoLabelAction
         $transKeyAction = app(GetTransKeyAction::class);
         Assert::isCallable([$transKeyAction, 'execute'], 'GetTransKeyAction::execute deve essere chiamabile');
 
+=======
+>>>>>>> origin/dev
 >>>>>>> origin/dev
 >>>>>>> origin/dev
         $trans_key = $transKeyAction->execute($class);
@@ -186,6 +213,9 @@ class AutoLabelAction
         // Costruiamo la chiave per l'etichetta
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/dev
         $label_key = $trans_key . '.fields.' . $componentName . '.label';
         $label = trans($label_key);
 
@@ -199,6 +229,7 @@ class AutoLabelAction
         $label = trans($label_key);
         
 >>>>>>> origin/dev
+<<<<<<< HEAD
 =======
         $label_key = $trans_key.'.fields.'.$componentName.'.label';
         $label = trans($label_key);
@@ -207,6 +238,8 @@ class AutoLabelAction
         $label_key = $trans_key . '.fields.' . $componentName . '.label';
         $label = trans($label_key);
 
+>>>>>>> origin/dev
+=======
 >>>>>>> origin/dev
 >>>>>>> origin/dev
         if (is_string($label)) {
@@ -215,6 +248,9 @@ class AutoLabelAction
                 $label_value = $componentName;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/dev
 =======
 <<<<<<< HEAD
 >>>>>>> origin/dev
@@ -226,6 +262,9 @@ class AutoLabelAction
 <<<<<<< HEAD
 =======
 =======
+<<<<<<< HEAD
+=======
+>>>>>>> origin/dev
 =======
 >>>>>>> origin/dev
                 
@@ -234,6 +273,7 @@ class AutoLabelAction
                 $label1 = trans($label_key1);
                 
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> origin/dev
 =======
 =======
@@ -242,6 +282,8 @@ class AutoLabelAction
                 $label_key1 = $trans_key . '.fields.' . $componentName;
                 $label1 = trans($label_key1);
 
+=======
+>>>>>>> origin/dev
 >>>>>>> origin/dev
 >>>>>>> origin/dev
                 if ($label_key1 !== $label1 && is_string($label1)) {
@@ -253,6 +295,9 @@ class AutoLabelAction
                 Assert::isCallable([$saveTransAction, 'execute'], 'SaveTransAction::execute deve essere chiamabile');
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/dev
 =======
 <<<<<<< HEAD
 >>>>>>> origin/dev
@@ -263,6 +308,9 @@ class AutoLabelAction
 <<<<<<< HEAD
 =======
 =======
+<<<<<<< HEAD
+=======
+>>>>>>> origin/dev
 =======
 >>>>>>> origin/dev
                 
@@ -270,6 +318,7 @@ class AutoLabelAction
             }
             
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> origin/dev
 =======
 =======
@@ -277,6 +326,8 @@ class AutoLabelAction
                 $saveTransAction->execute($label_key, $label_value);
             }
 
+=======
+>>>>>>> origin/dev
 >>>>>>> origin/dev
 >>>>>>> origin/dev
             // Applichiamo l'etichetta al componente

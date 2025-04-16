@@ -66,12 +66,16 @@ return [
                     'created_at' => 'Created At',
                     'status' => 'Status',
 <<<<<<< HEAD
+<<<<<<< HEAD
                     'customer_id' => 'Customer Id',
 =======
 <<<<<<< HEAD
 =======
                     'customer_id' => 'Customer Id',
 >>>>>>> origin/dev
+>>>>>>> origin/dev
+=======
+                    'customer_id' => 'Customer Id',
 >>>>>>> origin/dev
                     'total_price' => 'Total Price',
                 ],

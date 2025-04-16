@@ -151,6 +151,9 @@ class RouteDynService
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/dev
         Assert::string($v['controller'] = $v['name']);
 =======
 <<<<<<< HEAD
@@ -158,10 +161,13 @@ class RouteDynService
 =======
         Assert::nullOrString($v['controller'] = $v['name']);
 >>>>>>> origin/dev
+<<<<<<< HEAD
 =======
         Assert::nullOrString($v['controller'] = $v['name']);
 =======
         Assert::string($v['controller'] = $v['name']);
+>>>>>>> origin/dev
+=======
 >>>>>>> origin/dev
 >>>>>>> origin/dev
         $v['controller'] = str_replace(['/', '{', '}'], ['_', '', ''], $v['controller']);
@@ -175,6 +181,9 @@ class RouteDynService
     {
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/dev
         Assert::string($name= $v['name']);
         //return mb_strtolower(is_string($v) ? $v : (string) $v['name);
         return $name;
@@ -187,6 +196,7 @@ class RouteDynService
         Assert::nullOrString($v['name']);
         return mb_strtolower(is_string($v) ? $v : (string) $v['name']);
 >>>>>>> origin/dev
+<<<<<<< HEAD
 =======
         Assert::nullOrString($v['name']);
         return mb_strtolower(is_string($v) ? $v : (string) $v['name']);
@@ -194,6 +204,8 @@ class RouteDynService
         Assert::string($name= $v['name']);
         //return mb_strtolower(is_string($v) ? $v : (string) $v['name);
         return $name;
+>>>>>>> origin/dev
+=======
 >>>>>>> origin/dev
 >>>>>>> origin/dev
     }
@@ -257,6 +269,7 @@ class RouteDynService
         }
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 <<<<<<< HEAD
 >>>>>>> origin/dev
@@ -266,6 +279,11 @@ class RouteDynService
         $controller = self::getController($v, $namespace);
         $name = mb_strtolower(is_string($v) ? $v : (string) $v['name']);
 =======
+>>>>>>> origin/dev
+=======
+=======
+<<<<<<< HEAD
+>>>>>>> origin/dev
 >>>>>>> origin/dev
         Assert::string($name= $v['name']);
         $opts = self::getResourceOpts($v, $namespace);
@@ -274,12 +292,18 @@ class RouteDynService
         
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/dev
 =======
 =======
         Assert::string($v['name']);
         $opts = self::getResourceOpts($v, $namespace);
         $controller = self::getController($v, $namespace);
         $name = mb_strtolower(is_string($v) ? $v : (string) $v['name']);
+>>>>>>> origin/dev
+<<<<<<< HEAD
+=======
 >>>>>>> origin/dev
 =======
 >>>>>>> origin/dev

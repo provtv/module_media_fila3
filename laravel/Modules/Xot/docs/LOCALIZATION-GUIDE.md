@@ -173,6 +173,9 @@ protected $middlewareGroups = [
 ```php
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/dev
 namespace Modules\Xot\Enums;
 =======
 <<<<<<< HEAD
@@ -180,10 +183,13 @@ namespace Modules\Xot\Enums;
 =======
 namespace Modules\Xot\app\Enums;
 >>>>>>> origin/dev
+<<<<<<< HEAD
 =======
 namespace Modules\Xot\app\Enums;
 =======
 namespace Modules\Xot\Enums;
+>>>>>>> origin/dev
+=======
 >>>>>>> origin/dev
 >>>>>>> origin/dev
 

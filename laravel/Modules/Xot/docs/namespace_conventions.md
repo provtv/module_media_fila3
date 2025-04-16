@@ -18,6 +18,9 @@ namespace Modules\Tenant\Repositories;
 ```php
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/dev
 namespace Modules\Xot\Console\Commands;
 =======
 <<<<<<< HEAD
@@ -25,10 +28,13 @@ namespace Modules\Xot\Console\Commands;
 =======
 namespace Modules\Xot\app\Console\Commands;
 >>>>>>> origin/dev
+<<<<<<< HEAD
 =======
 namespace Modules\Xot\app\Console\Commands;
 =======
 namespace Modules\Xot\Console\Commands;
+>>>>>>> origin/dev
+=======
 >>>>>>> origin/dev
 >>>>>>> origin/dev
 namespace Modules\Broker\app\Models;

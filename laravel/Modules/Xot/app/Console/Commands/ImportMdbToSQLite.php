@@ -1,4 +1,7 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/dev
     /**
      * Estrae le tabelle dal file .mdb e le converte in file CSV.
      */
@@ -13,6 +16,7 @@
             return $tables;
         }
         
+<<<<<<< HEAD
 =======
 <?php
 
@@ -85,6 +89,8 @@ class ImportMdbToSQLite extends Command
         $tableList = shell_exec("mdb-tables $mdbFile");
 
 >>>>>>> origin/dev
+=======
+>>>>>>> origin/dev
         // Esporta ogni tabella in un file CSV
         foreach (explode("\n", trim($tableList)) as $table) {
             if (empty($table)) {
@@ -94,6 +100,7 @@ class ImportMdbToSQLite extends Command
             $csvFile = storage_path("app/{$table}.csv");
             shell_exec("mdb-export $mdbFile $table > $csvFile");
         }
+<<<<<<< HEAD
 <<<<<<< HEAD
         
         return $tables;
@@ -142,4 +149,9 @@ class ImportMdbToSQLite extends Command
         }
     }
 }
+>>>>>>> origin/dev
+=======
+        
+        return $tables;
+    } 
 >>>>>>> origin/dev

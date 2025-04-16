@@ -6,16 +6,22 @@ namespace Modules\Xot\Console\Commands;
 
 use Illuminate\Console\Command;
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/dev
 use Webmozart\Assert\Assert;
 
 use function Safe\shell_exec;
 
+<<<<<<< HEAD
 =======
 
 use function Safe\shell_exec;
 
 use Webmozart\Assert\Assert;
 
+>>>>>>> origin/dev
+=======
 >>>>>>> origin/dev
 class ImportMdbToMySQL extends Command
 {

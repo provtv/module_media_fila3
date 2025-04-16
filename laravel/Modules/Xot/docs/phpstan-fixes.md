@@ -211,9 +211,13 @@ public function execute(Model $model, array $data): array
 3. **Azioni e Validazione**
    ```php
 <<<<<<< HEAD
+<<<<<<< HEAD
    public function getTableActions(): array
 =======
    protected function getTableActions(): array
+>>>>>>> origin/dev
+=======
+   public function getTableActions(): array
 >>>>>>> origin/dev
    {
        return [
@@ -251,6 +255,9 @@ Best Practices:
 - Mantenere la coerenza nella struttura dei form tra i vari RelationManager
 - Validare i dati utilizzando le regole di validazione di Laravel
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/dev
 - Documentare le personalizzazioni nel codice 
 
 ## Problema: File Helper.php mancante
@@ -311,7 +318,11 @@ Il file `TenantService.php` fa riferimento alla classe `Modules\Tenant\Actions\G
 2. Creare il file `GetTenantNameAction.php` con l'implementazione appropriata
 3. Assicurarsi che il namespace sia corretto (`Modules\Tenant\Actions`)
 
+<<<<<<< HEAD
 Questo permette a phpstan di trovare correttamente il file durante l'analisi statica del codice. 
 =======
 - Documentare le personalizzazioni nel codice 
+>>>>>>> origin/dev
+=======
+Questo permette a phpstan di trovare correttamente il file durante l'analisi statica del codice. 
 >>>>>>> origin/dev

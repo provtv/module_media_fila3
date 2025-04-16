@@ -56,9 +56,13 @@ class SearchStringInDatabaseCommand extends Command
 
     /**
 <<<<<<< HEAD
+<<<<<<< HEAD
      * @param \Illuminate\Support\Collection<int, \stdClass> $results
 =======
      * @param \Illuminate\Support\Collection<int, object> $results
+>>>>>>> origin/dev
+=======
+     * @param \Illuminate\Support\Collection<int, \stdClass> $results
 >>>>>>> origin/dev
      *
      * @return array<int, array{string, string}>

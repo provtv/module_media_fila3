@@ -36,6 +36,9 @@ final class GetFieldnamesByTablenameAction
         // Validate database connection
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/dev
 =======
 <<<<<<< HEAD
 >>>>>>> origin/dev
@@ -49,6 +52,9 @@ final class GetFieldnamesByTablenameAction
 <<<<<<< HEAD
 =======
 =======
+<<<<<<< HEAD
+=======
+>>>>>>> origin/dev
 =======
 >>>>>>> origin/dev
         if (! $this->isValidConnection(is_string($connectionName) ? $connectionName : (string) $connectionName)) {
@@ -59,6 +65,7 @@ final class GetFieldnamesByTablenameAction
         if (! Schema::connection(is_string($connectionName) ? $connectionName : (string) $connectionName)->hasTable($table)) {
             throw new \InvalidArgumentException(sprintf('Table "%s" does not exist in connection "%s".', $table, is_string($connectionName) ? $connectionName : (string) $connectionName));
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> origin/dev
 =======
 =======
@@ -69,6 +76,8 @@ final class GetFieldnamesByTablenameAction
         // Check if table exists in the database
         if (! Schema::connection($connectionName)->hasTable($table)) {
             throw new \InvalidArgumentException(sprintf('Table "%s" does not exist in connection "%s".', $table,  $connectionName));
+=======
+>>>>>>> origin/dev
 >>>>>>> origin/dev
 >>>>>>> origin/dev
         }

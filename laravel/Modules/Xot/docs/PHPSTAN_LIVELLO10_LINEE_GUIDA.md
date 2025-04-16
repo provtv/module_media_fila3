@@ -104,12 +104,18 @@ private $fileHandle = null;
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 <<<<<<< HEAD
 >>>>>>> origin/dev
 =======
 ### 4. Pattern per Controller
 =======
+>>>>>>> origin/dev
+=======
+=======
+<<<<<<< HEAD
+>>>>>>> origin/dev
 >>>>>>> origin/dev
 ### 4. Gestione delle API Fluenti di Librerie Esterne
 
@@ -160,10 +166,16 @@ Questo pattern è stato applicato con successo nei file `ConvertVideoByMediaConv
 ### 5. Pattern per Controller
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/dev
 ### 4. Pattern per Controller
 =======
 =======
 ### 4. Pattern per Controller
+>>>>>>> origin/dev
+<<<<<<< HEAD
+=======
 >>>>>>> origin/dev
 =======
 >>>>>>> origin/dev
@@ -180,6 +192,9 @@ public function show(string $id): \Illuminate\View\View|\Illuminate\Http\Redirec
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/dev
 ### 6. Gestione delle Proprietà Dinamiche
 ### 5. Gestione delle Proprietà Dinamiche
 =======
@@ -188,10 +203,13 @@ public function show(string $id): \Illuminate\View\View|\Illuminate\Http\Redirec
 =======
 ### 5. Gestione delle Proprietà Dinamiche
 >>>>>>> origin/dev
+<<<<<<< HEAD
 =======
 ### 5. Gestione delle Proprietà Dinamiche
 =======
 ### 6. Gestione delle Proprietà Dinamiche
+>>>>>>> origin/dev
+=======
 >>>>>>> origin/dev
 >>>>>>> origin/dev
 
@@ -211,6 +229,9 @@ class User extends Model
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/dev
 ### 7. Conversione Sicura da `mixed` a Tipi Scalari
 ### 6. Conversione Sicura da `mixed` a Tipi Scalari
 =======
@@ -219,10 +240,13 @@ class User extends Model
 =======
 ### 6. Conversione Sicura da `mixed` a Tipi Scalari
 >>>>>>> origin/dev
+<<<<<<< HEAD
 =======
 ### 6. Conversione Sicura da `mixed` a Tipi Scalari
 =======
 ### 7. Conversione Sicura da `mixed` a Tipi Scalari
+>>>>>>> origin/dev
+=======
 >>>>>>> origin/dev
 >>>>>>> origin/dev
 
@@ -268,6 +292,9 @@ if ($value !== null) {
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/dev
 ### 8. Gestione Sicura di Array con Chiavi Miste
 ### 7. Gestione Sicura di Array con Chiavi Miste
 =======
@@ -276,10 +303,13 @@ if ($value !== null) {
 =======
 ### 7. Gestione Sicura di Array con Chiavi Miste
 >>>>>>> origin/dev
+<<<<<<< HEAD
 =======
 ### 7. Gestione Sicura di Array con Chiavi Miste
 =======
 ### 8. Gestione Sicura di Array con Chiavi Miste
+>>>>>>> origin/dev
+=======
 >>>>>>> origin/dev
 >>>>>>> origin/dev
 
@@ -300,6 +330,9 @@ foreach ($componentsWithMixedKeys as $key => $component) {
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/dev
 ### 9. Tipi Unione con Null
 ### 8. Tipi Unione con Null
 =======
@@ -308,10 +341,13 @@ foreach ($componentsWithMixedKeys as $key => $component) {
 =======
 ### 8. Tipi Unione con Null
 >>>>>>> origin/dev
+<<<<<<< HEAD
 =======
 ### 8. Tipi Unione con Null
 =======
 ### 9. Tipi Unione con Null
+>>>>>>> origin/dev
+=======
 >>>>>>> origin/dev
 >>>>>>> origin/dev
 
@@ -326,6 +362,9 @@ public function findById(?int $id): ?User
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/dev
 ### 10. Parametri Variabili (Variadic)
 ### 9. Parametri Variabili (Variadic)
 =======
@@ -334,10 +373,13 @@ public function findById(?int $id): ?User
 =======
 ### 9. Parametri Variabili (Variadic)
 >>>>>>> origin/dev
+<<<<<<< HEAD
 =======
 ### 9. Parametri Variabili (Variadic)
 =======
 ### 10. Parametri Variabili (Variadic)
+>>>>>>> origin/dev
+=======
 >>>>>>> origin/dev
 >>>>>>> origin/dev
 
@@ -356,6 +398,9 @@ public function buildPath(string ...$segments): string
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/dev
 ### 11. Callback e Closure
 ### 10. Callback e Closure
 =======
@@ -364,10 +409,13 @@ public function buildPath(string ...$segments): string
 =======
 ### 10. Callback e Closure
 >>>>>>> origin/dev
+<<<<<<< HEAD
 =======
 ### 10. Callback e Closure
 =======
 ### 11. Callback e Closure
+>>>>>>> origin/dev
+=======
 >>>>>>> origin/dev
 >>>>>>> origin/dev
 
@@ -603,6 +651,9 @@ Uno degli errori più frequenti riguarda il namespace delle Actions:
 - ✅ **CORRETTO**: `namespace Modules\Xot\Actions;`
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/dev
 - ❌ **ERRATO**: `namespace Modules\Xot\Actions;`
 - ❌ **ERRATO**: `namespace Modules\Xot\app\Actions;`
 =======
@@ -611,10 +662,13 @@ Uno degli errori più frequenti riguarda il namespace delle Actions:
 =======
 - ❌ **ERRATO**: `namespace Modules\Xot\app\Actions;`
 >>>>>>> origin/dev
+<<<<<<< HEAD
 =======
 - ❌ **ERRATO**: `namespace Modules\Xot\app\Actions;`
 =======
 - ❌ **ERRATO**: `namespace Modules\Xot\Actions;`
+>>>>>>> origin/dev
+=======
 >>>>>>> origin/dev
 >>>>>>> origin/dev
 
@@ -624,6 +678,9 @@ Gli errori PHPStan relativi a questo problema sono spesso del tipo:
 ```
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/dev
 Class 'Modules\Xot\Actions\MyAction' not found.
 Class 'Modules\Xot\app\Actions\MyAction' not found.
 =======
@@ -632,10 +689,13 @@ Class 'Modules\Xot\Actions\MyAction' not found.
 =======
 Class 'Modules\Xot\app\Actions\MyAction' not found.
 >>>>>>> origin/dev
+<<<<<<< HEAD
 =======
 Class 'Modules\Xot\app\Actions\MyAction' not found.
 =======
 Class 'Modules\Xot\Actions\MyAction' not found.
+>>>>>>> origin/dev
+=======
 >>>>>>> origin/dev
 >>>>>>> origin/dev
 ```
@@ -661,6 +721,9 @@ namespace Modules\Xot\Console\Commands;
 // ERRATO
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/dev
 =======
 <<<<<<< HEAD
 >>>>>>> origin/dev
@@ -670,6 +733,9 @@ namespace Modules\Xot\Console\Commands;
 Errori PHPStan come `Class Modules\Xot\Console\Commands\DatabaseSchemaExportCommand not found` indicano che è necessario rimuovere il segmento `app` dal namespace.
 <<<<<<< HEAD
 =======
+=======
+>>>>>>> origin/dev
+<<<<<<< HEAD
 =======
 >>>>>>> origin/dev
 =======
@@ -680,6 +746,7 @@ namespace Modules\Xot\app\Console\Commands;
 Errori PHPStan come `Class Modules\Xot\app\Console\Commands\DatabaseSchemaExportCommand not found` indicano che è necessario rimuovere il segmento `app` dal namespace.
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> origin/dev
 =======
@@ -688,5 +755,9 @@ namespace Modules\Xot\Console\Commands;
 ```
 
 Errori PHPStan come `Class Modules\Xot\Console\Commands\DatabaseSchemaExportCommand not found` indicano che è necessario rimuovere il segmento `app` dal namespace.
+>>>>>>> origin/dev
+=======
+=======
+>>>>>>> origin/dev
 >>>>>>> origin/dev
 >>>>>>> origin/dev

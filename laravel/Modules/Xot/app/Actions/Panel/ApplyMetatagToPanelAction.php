@@ -20,6 +20,9 @@ class ApplyMetatagToPanelAction
             return $panel
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/dev
                 // @phpstan-ignore argument.type
                 ->colors($metatag->getColors())
 =======
@@ -29,11 +32,14 @@ class ApplyMetatagToPanelAction
 =======
                 //->colors($metatag->getColors())
 >>>>>>> origin/dev
+<<<<<<< HEAD
 =======
                 //->colors($metatag->getColors())
 =======
                 // @phpstan-ignore argument.type
                 ->colors($metatag->getColors())
+>>>>>>> origin/dev
+=======
 >>>>>>> origin/dev
 >>>>>>> origin/dev
                 ->brandLogo($metatag->getLogoHeader())

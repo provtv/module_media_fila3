@@ -19,6 +19,9 @@ class MorphToOneAction
     {
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/dev
         //if ($relationDTO === null) {
         //    return;
         //}
@@ -32,6 +35,7 @@ class MorphToOneAction
             return;
         }
 >>>>>>> origin/dev
+<<<<<<< HEAD
 =======
         if ($relationDTO === null) {
             return;
@@ -40,6 +44,8 @@ class MorphToOneAction
         //if ($relationDTO === null) {
         //    return;
         //}
+>>>>>>> origin/dev
+=======
 >>>>>>> origin/dev
 >>>>>>> origin/dev
 
@@ -51,6 +57,9 @@ class MorphToOneAction
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/dev
         //if ($rows !== null) {
         $rows->create($relationDTO->data);
         //}
@@ -64,6 +73,7 @@ class MorphToOneAction
             $rows->create($relationDTO->data);
         }
 >>>>>>> origin/dev
+<<<<<<< HEAD
 =======
         if ($rows !== null) {
             $rows->create($relationDTO->data);
@@ -72,6 +82,8 @@ class MorphToOneAction
         //if ($rows !== null) {
         $rows->create($relationDTO->data);
         //}
+>>>>>>> origin/dev
+=======
 >>>>>>> origin/dev
 >>>>>>> origin/dev
         // } else {

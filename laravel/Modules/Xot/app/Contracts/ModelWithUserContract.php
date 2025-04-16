@@ -40,13 +40,19 @@ use Illuminate\Support\Carbon;
  * @method array     treeSons()
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/dev
 =======
 <<<<<<< HEAD
 =======
  * @method int       treeSonsCount()
 >>>>>>> origin/dev
+<<<<<<< HEAD
 =======
  * @method int       treeSonsCount()
+=======
+>>>>>>> origin/dev
 =======
 >>>>>>> origin/dev
 >>>>>>> origin/dev
@@ -59,6 +65,9 @@ use Illuminate\Support\Carbon;
  */
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/dev
 interface ModelWithUserContract {}
 =======
 <<<<<<< HEAD
@@ -68,11 +77,14 @@ interface ModelWithUserContract
 {
 }
 >>>>>>> origin/dev
+<<<<<<< HEAD
 =======
 interface ModelWithUserContract
 {
 }
 =======
 interface ModelWithUserContract {}
+>>>>>>> origin/dev
+=======
 >>>>>>> origin/dev
 >>>>>>> origin/dev

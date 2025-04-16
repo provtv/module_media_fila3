@@ -46,13 +46,19 @@ use Spatie\ModelStatus\Status;
  * @method array     treeSons()
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/dev
 =======
 <<<<<<< HEAD
 =======
  * @method int       treeSonsCount()
 >>>>>>> origin/dev
+<<<<<<< HEAD
 =======
  * @method int       treeSonsCount()
+=======
+>>>>>>> origin/dev
 =======
 >>>>>>> origin/dev
 >>>>>>> origin/dev
@@ -65,6 +71,9 @@ use Spatie\ModelStatus\Status;
  */
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/dev
 interface ModelWithPosContract {}
 =======
 <<<<<<< HEAD
@@ -74,11 +83,14 @@ interface ModelWithPosContract
 {
 }
 >>>>>>> origin/dev
+<<<<<<< HEAD
 =======
 interface ModelWithPosContract
 {
 }
 =======
 interface ModelWithPosContract {}
+>>>>>>> origin/dev
+=======
 >>>>>>> origin/dev
 >>>>>>> origin/dev

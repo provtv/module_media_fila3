@@ -35,6 +35,9 @@ class MainDashboard extends Dashboard
         if (1 === $modules->count()) {
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/dev
             Assert::notNull($module_first = $modules->first(), '['.__LINE__.']['.class_basename($this).']');
             $panel_name = $module_first->name;
 =======
@@ -45,12 +48,15 @@ class MainDashboard extends Dashboard
             Assert::notNull($modules->first(), '['.__LINE__.']['.class_basename($this).']');
             $panel_name = $modules->first()?->name;
 >>>>>>> origin/dev
+<<<<<<< HEAD
 =======
             Assert::notNull($modules->first(), '['.__LINE__.']['.class_basename($this).']');
             $panel_name = $modules->first()?->name;
 =======
             Assert::notNull($module_first = $modules->first(), '['.__LINE__.']['.class_basename($this).']');
             $panel_name = $module_first->name;
+>>>>>>> origin/dev
+=======
 >>>>>>> origin/dev
 >>>>>>> origin/dev
             $module_name = Str::before($panel_name, '::admin');

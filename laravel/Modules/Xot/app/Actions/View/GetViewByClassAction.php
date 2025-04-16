@@ -42,6 +42,9 @@ class GetViewByClassAction
                     // Cast sicuro per valori scalari (int, float, bool)
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/dev
                    // $prevValueStr = is_string($prevValue) ? $prevValue : (string) $prevValue;
                    $prevValueStr = strval( $prevValue);
 =======
@@ -51,11 +54,14 @@ class GetViewByClassAction
 =======
                     $prevValueStr = is_string($prevValue) ? $prevValue : (string) $prevValue;
 >>>>>>> origin/dev
+<<<<<<< HEAD
 =======
                     $prevValueStr = is_string($prevValue) ? $prevValue : (string) $prevValue;
 =======
                    // $prevValueStr = is_string($prevValue) ? $prevValue : (string) $prevValue;
                    $prevValueStr = strval( $prevValue);
+>>>>>>> origin/dev
+=======
 >>>>>>> origin/dev
 >>>>>>> origin/dev
                 }

@@ -1,6 +1,9 @@
 <?php
 
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/dev
 namespace Modules\Xot\Console\Commands;
 
 use Illuminate\Console\Command;
@@ -272,6 +275,7 @@ class DatabaseSchemaExportCommand extends Command
 
         $this->newLine();
         $this->info("File JSON generato correttamente. Puoi usarlo per creare modelli, migrazioni, factories e seeder.");
+<<<<<<< HEAD
 =======
 declare(strict_types=1);
 
@@ -454,6 +458,8 @@ class DatabaseSchemaExportCommand extends Command
         }
 
         return $basePath . '/' . $filename;
+>>>>>>> origin/dev
+=======
 >>>>>>> origin/dev
     }
 }

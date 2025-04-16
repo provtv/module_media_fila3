@@ -33,6 +33,9 @@ class ExportXlsByLazyCollection
         $stringFields = array_map(function ($field) {
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/dev
             return strval($field);
 =======
 <<<<<<< HEAD
@@ -40,10 +43,13 @@ class ExportXlsByLazyCollection
 =======
             return is_string($field) ? $field : (string) $field;
 >>>>>>> origin/dev
+<<<<<<< HEAD
 =======
             return is_string($field) ? $field : (string) $field;
 =======
             return strval($field);
+>>>>>>> origin/dev
+=======
 >>>>>>> origin/dev
 >>>>>>> origin/dev
         }, array_values($fields));

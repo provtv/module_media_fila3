@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace Modules\Xot\View\Composers;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 <<<<<<< HEAD
 use Illuminate\View\View;
@@ -19,6 +20,8 @@ use Modules\Xot\Actions\File\AssetPathAction;
 use Nwidart\Modules\Laravel\Module as LaravelModule;
 =======
 >>>>>>> origin/dev
+=======
+>>>>>>> origin/dev
 use Illuminate\Support\Arr;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Str;
@@ -29,8 +32,11 @@ use Nwidart\Modules\Facades\Module;
 use Nwidart\Modules\Laravel\Module as LaravelModule;
 use Webmozart\Assert\Assert;
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> origin/dev
+>>>>>>> origin/dev
+=======
 >>>>>>> origin/dev
 
 /**
@@ -98,6 +104,7 @@ class XotComposer
     }
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 <<<<<<< HEAD
     public function path(string $str): string
@@ -107,6 +114,8 @@ class XotComposer
 
 =======
 >>>>>>> origin/dev
+>>>>>>> origin/dev
+=======
 >>>>>>> origin/dev
     public function metatag(string $str): string|bool|null
     {

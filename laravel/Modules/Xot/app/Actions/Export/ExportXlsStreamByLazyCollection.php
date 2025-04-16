@@ -38,6 +38,9 @@ class ExportXlsStreamByLazyCollection
         $headers = [
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/dev
             'Content-Disposition' => 'attachment; filename=' . $filename,
 =======
 <<<<<<< HEAD
@@ -45,10 +48,13 @@ class ExportXlsStreamByLazyCollection
 =======
             'Content-Disposition' => 'attachment; filename='.$filename,
 >>>>>>> origin/dev
+<<<<<<< HEAD
 =======
             'Content-Disposition' => 'attachment; filename='.$filename,
 =======
             'Content-Disposition' => 'attachment; filename=' . $filename,
+>>>>>>> origin/dev
+=======
 >>>>>>> origin/dev
 >>>>>>> origin/dev
         ];
@@ -59,6 +65,7 @@ class ExportXlsStreamByLazyCollection
                 $file = fopen('php://output', 'w+');
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 <<<<<<< HEAD
 >>>>>>> origin/dev
@@ -70,6 +77,11 @@ class ExportXlsStreamByLazyCollection
                 }, $head);
                 
 =======
+>>>>>>> origin/dev
+=======
+=======
+<<<<<<< HEAD
+>>>>>>> origin/dev
 >>>>>>> origin/dev
 
                 // Assicuriamo che le intestazioni siano stringhe
@@ -80,6 +92,9 @@ class ExportXlsStreamByLazyCollection
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/dev
 =======
 =======
                 
@@ -88,6 +103,9 @@ class ExportXlsStreamByLazyCollection
                     return is_string($item) ? $item : (string) $item;
                 }, $head);
                 
+>>>>>>> origin/dev
+<<<<<<< HEAD
+=======
 >>>>>>> origin/dev
 =======
 >>>>>>> origin/dev
@@ -108,16 +126,22 @@ class ExportXlsStreamByLazyCollection
                     }
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/dev
 =======
 <<<<<<< HEAD
 
 =======
                     
 >>>>>>> origin/dev
+<<<<<<< HEAD
 =======
                     
 =======
 
+>>>>>>> origin/dev
+=======
 >>>>>>> origin/dev
 >>>>>>> origin/dev
                     // Convertiamo tutti i valori in stringhe o null
@@ -129,6 +153,9 @@ class ExportXlsStreamByLazyCollection
                     }, $rowData);
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/dev
 =======
 <<<<<<< HEAD
 >>>>>>> origin/dev
@@ -139,6 +166,9 @@ class ExportXlsStreamByLazyCollection
 <<<<<<< HEAD
 =======
 =======
+<<<<<<< HEAD
+=======
+>>>>>>> origin/dev
 =======
 >>>>>>> origin/dev
                     
@@ -146,6 +176,7 @@ class ExportXlsStreamByLazyCollection
                 }
                 
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> origin/dev
 =======
 =======
@@ -153,6 +184,8 @@ class ExportXlsStreamByLazyCollection
                     fputcsv($file, $safeRowData);
                 }
 
+=======
+>>>>>>> origin/dev
 >>>>>>> origin/dev
 >>>>>>> origin/dev
                 // Aggiungiamo righe vuote alla fine
@@ -184,6 +217,9 @@ class ExportXlsStreamByLazyCollection
         }
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/dev
 
         $headArray = is_array($first) ? $first : $first->toArray();
 
@@ -197,6 +233,7 @@ class ExportXlsStreamByLazyCollection
         $headArray = is_array($first) ? $first : $first->toArray();
         
 >>>>>>> origin/dev
+<<<<<<< HEAD
 =======
         
         $headArray = is_array($first) ? $first : $first->toArray();
@@ -205,6 +242,8 @@ class ExportXlsStreamByLazyCollection
 
         $headArray = is_array($first) ? $first : $first->toArray();
 
+>>>>>>> origin/dev
+=======
 >>>>>>> origin/dev
 >>>>>>> origin/dev
         /** 
@@ -214,6 +253,9 @@ class ExportXlsStreamByLazyCollection
         $headings = collect($headArray)->keys();
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/dev
 =======
 <<<<<<< HEAD
 >>>>>>> origin/dev
@@ -225,6 +267,9 @@ class ExportXlsStreamByLazyCollection
 <<<<<<< HEAD
 =======
 =======
+<<<<<<< HEAD
+=======
+>>>>>>> origin/dev
 =======
 >>>>>>> origin/dev
         
@@ -233,6 +278,7 @@ class ExportXlsStreamByLazyCollection
                 static function (string $item) use ($transKey) {
                     $key = $transKey.'.fields.'.$item;
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> origin/dev
 =======
 =======
@@ -241,6 +287,8 @@ class ExportXlsStreamByLazyCollection
             $headings = $headings->map(
                 static function (string $item) use ($transKey) {
                     $key = $transKey . '.fields.' . $item;
+=======
+>>>>>>> origin/dev
 >>>>>>> origin/dev
 >>>>>>> origin/dev
                     $trans = trans($key);
@@ -250,6 +298,9 @@ class ExportXlsStreamByLazyCollection
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/dev
                     Assert::string($item1 = Str::replace('.', '_', $item), '[' . __LINE__ . '][' . __CLASS__ . ']');
                     $key = $transKey . '.fields.' . $item1;
 =======
@@ -260,12 +311,15 @@ class ExportXlsStreamByLazyCollection
                     Assert::string($item1 = Str::replace('.', '_', $item), '['.__LINE__.']['.__CLASS__.']');
                     $key = $transKey.'.fields.'.$item1;
 >>>>>>> origin/dev
+<<<<<<< HEAD
 =======
                     Assert::string($item1 = Str::replace('.', '_', $item), '['.__LINE__.']['.__CLASS__.']');
                     $key = $transKey.'.fields.'.$item1;
 =======
                     Assert::string($item1 = Str::replace('.', '_', $item), '[' . __LINE__ . '][' . __CLASS__ . ']');
                     $key = $transKey . '.fields.' . $item1;
+>>>>>>> origin/dev
+=======
 >>>>>>> origin/dev
 >>>>>>> origin/dev
                     $trans = trans($key);
@@ -281,6 +335,9 @@ class ExportXlsStreamByLazyCollection
         /** @var array<string> */
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/dev
         return $headings->map(fn($item) => strval($item))->toArray();
 =======
 <<<<<<< HEAD
@@ -288,10 +345,13 @@ class ExportXlsStreamByLazyCollection
 =======
         return $headings->map(fn ($item) => is_string($item) ? $item : (string) $item)->toArray();
 >>>>>>> origin/dev
+<<<<<<< HEAD
 =======
         return $headings->map(fn ($item) => is_string($item) ? $item : (string) $item)->toArray();
 =======
         return $headings->map(fn($item) => strval($item))->toArray();
+>>>>>>> origin/dev
+=======
 >>>>>>> origin/dev
 >>>>>>> origin/dev
     }

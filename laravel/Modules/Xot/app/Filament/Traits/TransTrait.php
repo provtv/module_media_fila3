@@ -27,6 +27,9 @@ trait TransTrait
             if ($exceptionIfNotExist && $res === $tmp) {
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/dev
                 throw new \Exception('[' . __LINE__ . '][' . class_basename(__CLASS__) . ']');
 =======
 <<<<<<< HEAD
@@ -34,10 +37,13 @@ trait TransTrait
 =======
                 throw new \Exception('['.__LINE__.']['.class_basename(__CLASS__).']');
 >>>>>>> origin/dev
+<<<<<<< HEAD
 =======
                 throw new \Exception('['.__LINE__.']['.class_basename(__CLASS__).']');
 =======
                 throw new \Exception('[' . __LINE__ . '][' . class_basename(__CLASS__) . ']');
+>>>>>>> origin/dev
+=======
 >>>>>>> origin/dev
 >>>>>>> origin/dev
             }
@@ -54,6 +60,9 @@ trait TransTrait
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/dev
         return 'fix:' . $tmp;
 =======
 <<<<<<< HEAD
@@ -61,10 +70,13 @@ trait TransTrait
 =======
         return 'fix:'.$tmp;
 >>>>>>> origin/dev
+<<<<<<< HEAD
 =======
         return 'fix:'.$tmp;
 =======
         return 'fix:' . $tmp;
+>>>>>>> origin/dev
+=======
 >>>>>>> origin/dev
 >>>>>>> origin/dev
     }
@@ -79,6 +91,9 @@ trait TransTrait
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/dev
         $key = $transKey . '.' . $key;
 =======
 <<<<<<< HEAD
@@ -86,10 +101,13 @@ trait TransTrait
 =======
         $key = $transKey.'.'.$key;
 >>>>>>> origin/dev
+<<<<<<< HEAD
 =======
         $key = $transKey.'.'.$key;
 =======
         $key = $transKey . '.' . $key;
+>>>>>>> origin/dev
+=======
 >>>>>>> origin/dev
 >>>>>>> origin/dev
         $key = Str::of($key)->replace('.cluster.pages.', '.')->toString();
@@ -111,6 +129,9 @@ trait TransTrait
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/dev
         $key = $transKey . '.' . $key;
 =======
 <<<<<<< HEAD
@@ -118,10 +139,13 @@ trait TransTrait
 =======
         $key = $transKey.'.'.$key;
 >>>>>>> origin/dev
+<<<<<<< HEAD
 =======
         $key = $transKey.'.'.$key;
 =======
         $key = $transKey . '.' . $key;
+>>>>>>> origin/dev
+=======
 >>>>>>> origin/dev
 >>>>>>> origin/dev
         $key = Str::of($key)->replace('.cluster.pages.', '.')->toString();
@@ -134,6 +158,7 @@ trait TransTrait
     public static function transFunc(string $func, bool $exceptionIfNotExist = false): string
     {
         $key = static::getKeyTransFunc($func);
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 =======
@@ -155,6 +180,11 @@ trait TransTrait
             $group = Str::of($key)->before('.')->toString();
             $item = Str::of($key)->after($group.'.')->toString();
 =======
+>>>>>>> origin/dev
+=======
+=======
+<<<<<<< HEAD
+>>>>>>> origin/dev
 >>>>>>> origin/dev
         /** @var string|array<int|string,mixed>|null */
         $trans = null;
@@ -173,6 +203,9 @@ trait TransTrait
             $item = Str::of($key)->after($group . '.')->toString();
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/dev
 =======
 =======
         
@@ -190,6 +223,9 @@ trait TransTrait
             $group = Str::of($key)->before('.')->toString();
             $item = Str::of($key)->after($group.'.')->toString();
 >>>>>>> origin/dev
+<<<<<<< HEAD
+=======
+>>>>>>> origin/dev
 =======
 >>>>>>> origin/dev
 >>>>>>> origin/dev
@@ -202,11 +238,17 @@ trait TransTrait
 =======
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 =======
 >>>>>>> origin/dev
 =======
 
+>>>>>>> origin/dev
+=======
+
+=======
+>>>>>>> origin/dev
 >>>>>>> origin/dev
 >>>>>>> origin/dev
         if (is_numeric($trans)) {
@@ -215,6 +257,9 @@ trait TransTrait
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/dev
 =======
 <<<<<<< HEAD
 =======
@@ -222,10 +267,13 @@ trait TransTrait
         //    return 'fix:'.$key;
         // }
 >>>>>>> origin/dev
+<<<<<<< HEAD
 =======
         // if (! is_string($trans) && ! is_numeric($trans) && ! is_array($trans)) {
         //    return 'fix:'.$key;
         // }
+=======
+>>>>>>> origin/dev
 =======
 >>>>>>> origin/dev
 >>>>>>> origin/dev
@@ -238,6 +286,9 @@ trait TransTrait
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/dev
         if (is_string($trans)) {
 =======
 <<<<<<< HEAD
@@ -245,10 +296,13 @@ trait TransTrait
 =======
         if (is_string($trans) /* || is_numeric($trans) */) {
 >>>>>>> origin/dev
+<<<<<<< HEAD
 =======
         if (is_string($trans) /* || is_numeric($trans) */) {
 =======
         if (is_string($trans)) {
+>>>>>>> origin/dev
+=======
 >>>>>>> origin/dev
 >>>>>>> origin/dev
             if ($trans === $key) {
@@ -266,6 +320,9 @@ trait TransTrait
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/dev
         if ($trans === null) {
 =======
 <<<<<<< HEAD
@@ -273,10 +330,13 @@ trait TransTrait
 =======
         if (is_null($trans)) {
 >>>>>>> origin/dev
+<<<<<<< HEAD
 =======
         if (is_null($trans)) {
 =======
         if ($trans === null) {
+>>>>>>> origin/dev
+=======
 >>>>>>> origin/dev
 >>>>>>> origin/dev
             $newTrans = Str::of($key)
@@ -290,11 +350,17 @@ trait TransTrait
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/dev
         return 'fix:' . $key;
 =======
 <<<<<<< HEAD
         return 'fix:' . $key;
 =======
+<<<<<<< HEAD
+=======
+>>>>>>> origin/dev
 =======
 >>>>>>> origin/dev
         // $first = current($trans);
@@ -304,10 +370,13 @@ trait TransTrait
 
         return 'fix:'.$key;
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> origin/dev
 =======
 =======
         return 'fix:' . $key;
+=======
+>>>>>>> origin/dev
 >>>>>>> origin/dev
 >>>>>>> origin/dev
     }

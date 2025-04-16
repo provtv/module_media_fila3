@@ -30,6 +30,9 @@ class GetAllModelsByModuleNameAction
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/dev
         $mod_path = $mod->getPath() . '/Models';
 =======
 <<<<<<< HEAD
@@ -37,10 +40,13 @@ class GetAllModelsByModuleNameAction
 =======
         $mod_path = $mod->getPath().'/Models';
 >>>>>>> origin/dev
+<<<<<<< HEAD
 =======
         $mod_path = $mod->getPath().'/Models';
 =======
         $mod_path = $mod->getPath() . '/Models';
+>>>>>>> origin/dev
+=======
 >>>>>>> origin/dev
 >>>>>>> origin/dev
         $mod_path = str_replace(['\\', '/'], [\DIRECTORY_SEPARATOR, \DIRECTORY_SEPARATOR], $mod_path);
@@ -49,6 +55,9 @@ class GetAllModelsByModuleNameAction
         $data = [];
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/dev
         $ns = 'Modules\\' . $mod->getName() . '\\Models';
 =======
 <<<<<<< HEAD
@@ -56,10 +65,13 @@ class GetAllModelsByModuleNameAction
 =======
         $ns = 'Modules\\'.$mod->getName().'\\Models';
 >>>>>>> origin/dev
+<<<<<<< HEAD
 =======
         $ns = 'Modules\\'.$mod->getName().'\\Models';
 =======
         $ns = 'Modules\\' . $mod->getName() . '\\Models';
+>>>>>>> origin/dev
+=======
 >>>>>>> origin/dev
 >>>>>>> origin/dev
         // con la barra davanti non va il search ?
@@ -76,6 +88,9 @@ class GetAllModelsByModuleNameAction
                  */
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/dev
 =======
 <<<<<<< HEAD
 >>>>>>> origin/dev
@@ -88,6 +103,9 @@ class GetAllModelsByModuleNameAction
 <<<<<<< HEAD
 =======
 =======
+<<<<<<< HEAD
+=======
+>>>>>>> origin/dev
 =======
 >>>>>>> origin/dev
                 $class = $ns.'\\'.$name;
@@ -97,6 +115,7 @@ class GetAllModelsByModuleNameAction
                     $tmp->name = $name;
                 }
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> origin/dev
 =======
 =======
@@ -106,6 +125,8 @@ class GetAllModelsByModuleNameAction
                 $name = Str::snake($name);
                 $tmp->name = $name;
                 //}
+=======
+>>>>>>> origin/dev
 >>>>>>> origin/dev
 >>>>>>> origin/dev
                 // 434    Parameter #1 $argument of class ReflectionClass constructor expects class-string<T of object>|T of object, string given.

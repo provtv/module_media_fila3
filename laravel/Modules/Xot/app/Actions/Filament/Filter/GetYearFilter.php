@@ -20,6 +20,9 @@ class GetYearFilter
         for ($curr = $from; $curr <= $to; ++$curr) {
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/dev
             $currStr = (string) $curr;
             $opts[$currStr] = $currStr;
 =======
@@ -29,11 +32,14 @@ class GetYearFilter
 =======
             $opts[is_string($curr) ? $curr : (string) $curr] = is_string($curr) ? $curr : (string) $curr;
 >>>>>>> origin/dev
+<<<<<<< HEAD
 =======
             $opts[is_string($curr) ? $curr : (string) $curr] = is_string($curr) ? $curr : (string) $curr;
 =======
             $currStr = (string) $curr;
             $opts[$currStr] = $currStr;
+>>>>>>> origin/dev
+=======
 >>>>>>> origin/dev
 >>>>>>> origin/dev
         }

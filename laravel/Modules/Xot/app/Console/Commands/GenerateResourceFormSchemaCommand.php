@@ -6,6 +6,9 @@ namespace Modules\Xot\Console\Commands;
 
 use Illuminate\Console\Command;
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/dev
 use Illuminate\Support\Str;
 use Modules\Xot\Services\FileService;
 use Webmozart\Assert\Assert;
@@ -47,6 +50,7 @@ class GenerateResourceFormSchemaCommand extends Command
         $this->info('Schema generato con successo!');
 
         return Command::SUCCESS;
+<<<<<<< HEAD
 =======
 use Illuminate\Support\Facades\File;
 use Safe\Exceptions\FilesystemException;
@@ -167,6 +171,8 @@ class GenerateResourceFormSchemaCommand extends Command
     }
 
 PHP;
+>>>>>>> origin/dev
+=======
 >>>>>>> origin/dev
     }
 }

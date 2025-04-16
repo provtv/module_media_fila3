@@ -9,6 +9,7 @@ declare(strict_types=1);
 namespace Modules\Xot\Datas;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 <<<<<<< HEAD
 use Illuminate\Support\Str;
@@ -26,6 +27,8 @@ use Symfony\Component\HttpFoundation\BinaryFileResponse;
 
 =======
 >>>>>>> origin/dev
+=======
+>>>>>>> origin/dev
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Str;
@@ -34,8 +37,11 @@ use Spipu\Html2Pdf\Html2Pdf;
 use Symfony\Component\HttpFoundation\BinaryFileResponse;
 use Webmozart\Assert\Assert;
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> origin/dev
+>>>>>>> origin/dev
+=======
 >>>>>>> origin/dev
 
 /**
@@ -81,6 +87,7 @@ class PdfData extends Data
 
     // public static function make(Model $model = null, string $html = null): self
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 <<<<<<< HEAD
 
@@ -91,6 +98,8 @@ class PdfData extends Data
 
 =======
 >>>>>>> origin/dev
+>>>>>>> origin/dev
+=======
 >>>>>>> origin/dev
     public static function make(): self
     {
@@ -113,6 +122,7 @@ class PdfData extends Data
 
     public function fromHtml(string $html): self
     {
+<<<<<<< HEAD
 <<<<<<< HEAD
         $html2pdf = new Html2Pdf($this->orientation, $this->format, $this->lang);
         $html2pdf->writeHTML($html);
@@ -145,6 +155,11 @@ class PdfData extends Data
         $html2pdf->output($this->getPath(), $this->dest);
 >>>>>>> origin/dev
 >>>>>>> origin/dev
+=======
+        $html2pdf = new Html2Pdf($this->orientation, $this->format, $this->lang);
+        $html2pdf->writeHTML($html);
+        $html2pdf->output($this->getPath(), $this->dest);
+>>>>>>> origin/dev
 
         return $this;
     }
@@ -175,6 +190,7 @@ class PdfData extends Data
         return $res;
     }
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 <<<<<<< HEAD
 
@@ -192,5 +208,7 @@ class PdfData extends Data
     }
 =======
 >>>>>>> origin/dev
+>>>>>>> origin/dev
+=======
 >>>>>>> origin/dev
 }

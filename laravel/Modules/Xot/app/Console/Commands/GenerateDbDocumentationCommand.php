@@ -6,14 +6,18 @@ namespace Modules\Xot\Console\Commands;
 
 use Illuminate\Console\Command;
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 <<<<<<< HEAD
+>>>>>>> origin/dev
+=======
 >>>>>>> origin/dev
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\File;
 use InvalidArgumentException;
 use Symfony\Component\Console\Helper\TableSeparator;
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 =======
 =======
@@ -27,6 +31,8 @@ use function Safe\json_encode;
  */
 >>>>>>> origin/dev
 >>>>>>> origin/dev
+=======
+>>>>>>> origin/dev
 class GenerateDbDocumentationCommand extends Command
 {
     /**
@@ -34,6 +40,7 @@ class GenerateDbDocumentationCommand extends Command
      *
      * @var string
      */
+<<<<<<< HEAD
 <<<<<<< HEAD
     protected $signature = 'xot:generate-db-documentation {schema_file : Percorso del file schema JSON} {output_dir? : Directory di output per i file markdown}';
 =======
@@ -43,6 +50,9 @@ class GenerateDbDocumentationCommand extends Command
     protected $signature = 'db:docs:generate {--schema=database/schema.json} {--output=docs/database.md}';
 >>>>>>> origin/dev
 >>>>>>> origin/dev
+=======
+    protected $signature = 'xot:generate-db-documentation {schema_file : Percorso del file schema JSON} {output_dir? : Directory di output per i file markdown}';
+>>>>>>> origin/dev
 
     /**
      * La descrizione del comando console.
@@ -50,8 +60,11 @@ class GenerateDbDocumentationCommand extends Command
      * @var string
      */
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 <<<<<<< HEAD
+>>>>>>> origin/dev
+=======
 >>>>>>> origin/dev
     protected $description = 'Genera documentazione in formato Markdown per lo schema del database';
 
@@ -334,6 +347,7 @@ MARKDOWN;
         return $tableRelationships;
     }
 <<<<<<< HEAD
+<<<<<<< HEAD
 } 
 =======
 } 
@@ -482,4 +496,7 @@ MARKDOWN;
     }
 }
 >>>>>>> origin/dev
+>>>>>>> origin/dev
+=======
+} 
 >>>>>>> origin/dev

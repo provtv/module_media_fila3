@@ -21,6 +21,9 @@ namespace Modules\Xot\Console\Commands;
 ```php
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/dev
 namespace Modules\Xot\Console\Commands;
 namespace Modules\Xot\app\Console\Commands;
 =======
@@ -29,10 +32,13 @@ namespace Modules\Xot\Console\Commands;
 =======
 namespace Modules\Xot\app\Console\Commands;
 >>>>>>> origin/dev
+<<<<<<< HEAD
 =======
 namespace Modules\Xot\app\Console\Commands;
 =======
 namespace Modules\Xot\Console\Commands;
+>>>>>>> origin/dev
+=======
 >>>>>>> origin/dev
 >>>>>>> origin/dev
 ```

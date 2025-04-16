@@ -1,9 +1,12 @@
 <?php
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 declare(strict_types=1);
 
+>>>>>>> origin/dev
+=======
 >>>>>>> origin/dev
 namespace App\Console\Commands;
 
@@ -48,9 +51,13 @@ class DatabaseSchemaExporterCommand extends Command
 
         // Ora puoi utilizzare $tables come preferisci
 <<<<<<< HEAD
+<<<<<<< HEAD
         $this->info('Tabelle trovate: ' . implode(', ', $tables));
 =======
         $this->info('Tabelle trovate: '.implode(', ', $tables));
+>>>>>>> origin/dev
+=======
+        $this->info('Tabelle trovate: ' . implode(', ', $tables));
 >>>>>>> origin/dev
 
         return 0;
@@ -65,12 +72,16 @@ class DatabaseSchemaExporterCommand extends Command
         $tables = DB::connection($connection)
             ->select('SHOW TABLES');
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/dev
         
         $databaseName = config("database.connections.{$connection}.database");
         
         // Il risultato contiene un array di oggetti con una proprietà del tipo Tables_in_{database}
         $tableKey = "Tables_in_{$databaseName}";
         
+<<<<<<< HEAD
 =======
 
         $databaseName = config("database.connections.{$connection}.database");
@@ -79,12 +90,18 @@ class DatabaseSchemaExporterCommand extends Command
         $tableKey = "Tables_in_{$databaseName}";
 
 >>>>>>> origin/dev
+=======
+>>>>>>> origin/dev
         return array_map(function ($table) use ($tableKey) {
             return $table->$tableKey;
         }, $tables);
     }
 <<<<<<< HEAD
+<<<<<<< HEAD
 } 
 =======
 }
+>>>>>>> origin/dev
+=======
+} 
 >>>>>>> origin/dev

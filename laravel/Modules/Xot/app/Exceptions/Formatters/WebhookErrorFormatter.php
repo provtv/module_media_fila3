@@ -10,6 +10,7 @@ class WebhookErrorFormatter
 {
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 <<<<<<< HEAD
 >>>>>>> origin/dev
@@ -19,6 +20,11 @@ class WebhookErrorFormatter
     }
 
 =======
+>>>>>>> origin/dev
+=======
+=======
+<<<<<<< HEAD
+>>>>>>> origin/dev
 >>>>>>> origin/dev
     public function __construct(
         private \Throwable $exception
@@ -29,12 +35,18 @@ class WebhookErrorFormatter
      */
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/dev
 =======
 =======
     public function __construct(private readonly \Throwable $exception)
     {
     }
 
+>>>>>>> origin/dev
+<<<<<<< HEAD
+=======
 >>>>>>> origin/dev
 =======
 >>>>>>> origin/dev
@@ -49,8 +61,11 @@ class WebhookErrorFormatter
 =======
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> origin/dev
 =======
+=======
+>>>>>>> origin/dev
 >>>>>>> origin/dev
             'message' => $this->exception->getMessage(),
             'file' => $this->exception->getFile(),
@@ -58,10 +73,16 @@ class WebhookErrorFormatter
             'trace' => $this->exception->getTraceAsString(),
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 =======
 >>>>>>> origin/dev
 =======
+>>>>>>> origin/dev
+=======
+=======
+=======
+>>>>>>> origin/dev
 >>>>>>> origin/dev
 >>>>>>> origin/dev
             'exception' => sprintf(

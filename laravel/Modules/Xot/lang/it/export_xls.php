@@ -1,6 +1,7 @@
 <?php
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 <<<<<<< HEAD
 return array (
@@ -18,6 +19,8 @@ return array (
 );
 =======
 >>>>>>> origin/dev
+=======
+>>>>>>> origin/dev
 declare(strict_types=1);
 
 return [
@@ -28,6 +31,9 @@ return [
     ],
 ];
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> origin/dev
+>>>>>>> origin/dev
+=======
 >>>>>>> origin/dev

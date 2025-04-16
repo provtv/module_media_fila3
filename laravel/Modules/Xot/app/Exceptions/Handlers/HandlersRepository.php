@@ -30,6 +30,7 @@ class HandlersRepository
     public function addReporter(callable $reporter): int
     {
 <<<<<<< HEAD
+<<<<<<< HEAD
         array_unshift($this->reporters, $reporter);
         return count($this->reporters);
 =======
@@ -40,6 +41,10 @@ class HandlersRepository
         return array_unshift($this->reporters, $reporter);
 >>>>>>> origin/dev
 >>>>>>> origin/dev
+=======
+        array_unshift($this->reporters, $reporter);
+        return count($this->reporters);
+>>>>>>> origin/dev
     }
 
     /**
@@ -47,6 +52,7 @@ class HandlersRepository
      */
     public function addRenderer(callable $renderer): int
     {
+<<<<<<< HEAD
 <<<<<<< HEAD
         array_unshift($this->renderers, $renderer);
         return count($this->renderers);
@@ -58,6 +64,10 @@ class HandlersRepository
         return array_unshift($this->renderers, $renderer);
 >>>>>>> origin/dev
 >>>>>>> origin/dev
+=======
+        array_unshift($this->renderers, $renderer);
+        return count($this->renderers);
+>>>>>>> origin/dev
     }
 
     /**
@@ -65,6 +75,7 @@ class HandlersRepository
      */
     public function addConsoleRenderer(callable $renderer): int
     {
+<<<<<<< HEAD
 <<<<<<< HEAD
         array_unshift($this->consoleRenderers, $renderer);
         return count($this->consoleRenderers);
@@ -75,6 +86,10 @@ class HandlersRepository
 =======
         return array_unshift($this->consoleRenderers, $renderer);
 >>>>>>> origin/dev
+>>>>>>> origin/dev
+=======
+        array_unshift($this->consoleRenderers, $renderer);
+        return count($this->consoleRenderers);
 >>>>>>> origin/dev
     }
 
@@ -120,8 +135,11 @@ class HandlersRepository
         }
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 <<<<<<< HEAD
+>>>>>>> origin/dev
+=======
 >>>>>>> origin/dev
         $params = $reflection->getParameters();
         if (empty($params)) {
@@ -139,6 +157,7 @@ class HandlersRepository
 
         return is_a($e, $type->getName(), true);
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 =======
         if (! $params = $reflection->getParameters()) {
@@ -147,6 +166,8 @@ class HandlersRepository
 
         return $params[0]->getClass() instanceof \ReflectionClass ? $params[0]->getClass()->isInstance($e) : true;
 >>>>>>> origin/dev
+>>>>>>> origin/dev
+=======
 >>>>>>> origin/dev
     }
 }

@@ -16,15 +16,21 @@ use Illuminate\Database\Eloquent\Model;
 use Filament\Notifications\Notification;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/dev
 use Filament\Tables\Actions\Action;
 =======
 <<<<<<< HEAD
 use Filament\Tables\Actions\Action;
 =======
 >>>>>>> origin/dev
+<<<<<<< HEAD
 =======
 =======
 use Filament\Tables\Actions\Action;
+>>>>>>> origin/dev
+=======
 >>>>>>> origin/dev
 >>>>>>> origin/dev
 use Filament\Tables\Actions\ActionGroup;
@@ -300,6 +306,9 @@ trait HasXotTable
      *
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/dev
      * @return array<string, Tables\Actions\Action|Tables\Actions\ActionGroup>
 =======
 <<<<<<< HEAD
@@ -307,16 +316,20 @@ trait HasXotTable
 =======
      * @return array<string, Action|ActionGroup>
 >>>>>>> origin/dev
+<<<<<<< HEAD
 =======
      * @return array<string, Action|ActionGroup>
 =======
      * @return array<string, Tables\Actions\Action|Tables\Actions\ActionGroup>
+>>>>>>> origin/dev
+=======
 >>>>>>> origin/dev
 >>>>>>> origin/dev
      */
     public function getTableActions(): array
     {
         $actions = [];
+<<<<<<< HEAD
 <<<<<<< HEAD
 =======
 <<<<<<< HEAD
@@ -345,6 +358,8 @@ trait HasXotTable
         
 =======
 >>>>>>> origin/dev
+=======
+>>>>>>> origin/dev
 
         if ($this->shouldShowViewAction()) {
             $actions['view'] = Tables\Actions\ViewAction::make()
@@ -363,8 +378,11 @@ trait HasXotTable
             ->tooltip(__('user::actions.delete'));
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> origin/dev
+>>>>>>> origin/dev
+=======
 >>>>>>> origin/dev
         if ($this->shouldShowReplicateAction()) {
             $actions['replicate'] = Tables\Actions\ReplicateAction::make()

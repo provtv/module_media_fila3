@@ -21,6 +21,7 @@ class HandlerDecorator implements ExceptionHandler
     public function __call(string $name, array $parameters): mixed
     {
 <<<<<<< HEAD
+<<<<<<< HEAD
         return call_user_func_array([$this->defaultHandler, $name], $parameters);
 =======
 <<<<<<< HEAD
@@ -31,6 +32,9 @@ class HandlerDecorator implements ExceptionHandler
 
         return \call_user_func_array($callable, $parameters);
 >>>>>>> origin/dev
+>>>>>>> origin/dev
+=======
+        return call_user_func_array([$this->defaultHandler, $name], $parameters);
 >>>>>>> origin/dev
     }
 
