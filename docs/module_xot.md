@@ -78,9 +78,6 @@ composer format        # Formatta il codice
 5. Seguire i principi SOLID
 6. Utilizzare i type-safe di thecodingmachine/safe
 7. Implementare health checks
-8. Utilizzare sempre i metodi getter appropriati invece di accedere direttamente alle proprietà
-9. Seguire le convenzioni di naming per mantenere la coerenza del codice
-10. Documentare tutti i cambiamenti nei file appropriati nella cartella docs
 
 ## Troubleshooting
 ### Problemi Comuni
@@ -99,11 +96,6 @@ composer format        # Formatta il codice
    - Controllare i service provider
    - Eseguire `composer dump-autoload`
 
-4. **Errori PHPStan**
-   - Consultare [Correzioni PHPStan](modules/xot/phpstan_fixes.md)
-   - Eseguire l'analisi locale con `./vendor/bin/phpstan analyse`
-   - Verificare i test unitari dopo le correzioni
-
 ## Development Tools
 - Laravel Debugbar
 - Laravel IDE Helper
@@ -114,22 +106,3 @@ composer format        # Formatta il codice
 
 ## Changelog
 Le modifiche vengono tracciate nel repository GitHub. 
-
-## Analisi Statica e Qualità del Codice
-### PHPStan
-- [Stato Correzioni PHPStan](modules/xot/phpstan_fixes.md)
-- Livello corrente: 7
-- Obiettivo: Risoluzione completa degli errori di livello 7
-
-### Best Practices di Correzione
-1. Ogni correzione deve essere documentata
-2. Test unitari obbligatori per le modifiche
-3. Mantenere la retrocompatibilità
-4. Seguire le convenzioni di tipo di PHP 8.2+ 
-
-## Collegamenti bidirezionali
-- [Documentazione PHPStan](modules/xot/phpstan_fixes.md)
-- [Regole PHPStan](modules/xot/phpstan_rules.md)
-- [Traits del modulo](modules/xot/traits.md)
-- [Contratti](modules/xot/contracts.md)
-- [Servizi](modules/xot/services.md) 
