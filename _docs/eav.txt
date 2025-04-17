@@ -23,5 +23,3 @@ https://learn.userfrosting.com/recipes/extending-the-user-model
 
 
 
-https://github.com/yemenpoint/filament-custom-fields
-

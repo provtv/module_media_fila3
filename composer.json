@@ -1,38 +1,83 @@
 {
-    "name": "fixcity/user-module",
-    "description": "Modulo User per FixCity",
-    "type": "laravel-module",
-    "require": {
-        "php": "^8.1",
-        "laravel/framework": "^10.0",
-        "spatie/laravel-permission": "^5.0",
-        "laravel/sanctum": "^3.0",
-        "thecodingmachine/safe": "^2.0"
-    },
-    "require-dev": {
-        "phpstan/phpstan": "^2.1",
-        "phpstan/phpstan-deprecation-rules": "^1.0",
-        "phpstan/phpstan-phpunit": "^1.0",
-        "phpstan/phpstan-strict-rules": "^1.0",
-        "thecodingmachine/phpstan-safe-rule": "^1.0"
-    },
-    "autoload": {
-        "psr-4": {
-            "Modules\\User\\": "laravel/Modules/User/app/"
-        },
-        "files": [
-            "laravel/Modules/User/app/helpers.php"
-        ]
-    },
+    "name": "laraxot/module_user_fila3",
+    "description": "user module for user management",
+    "keywords": [
+        "laraxot",
+        "laravel",
+        "filament",
+        "module_user",
+        "Laravel",
+        "User module",
+        "Users",
+        "Users management",
+        "Xot"
+    ],
+    "homepage": "https://github.com/laraxot/module_user_fila3",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Marco Sottana",
+            "email": "marco.sottana@gmail.com"
+        }
+    ],
     "extra": {
         "laravel": {
             "providers": [
-                "Modules\\User\\Providers\\UserServiceProvider"
-            ]
+                "Livewire\\LivewireServiceProvider",
+                "Modules\\User\\Providers\\UserServiceProvider",
+                "Modules\\User\\Providers\\Filament\\AdminPanelProvider"
+            ],
+            "aliases": {}
         }
     },
+    "autoload": {
+        "psr-4": {
+            "Modules\\User\\": "app/",
+            "Modules\\User\\Database\\Factories\\": "database/factories/",
+            "Modules\\User\\Database\\Seeders\\": "database/seeders/"
+        }
+    },
+    "require": {
+        "flowframe/laravel-trend": "*",
+        "jenssegers/agent": "*",
+        "laravel/passport": "*",
+        "socialiteproviders/auth0": "*",
+        "spatie/laravel-personal-data-export": "*"
+    },
+    "require-dev": {},
+    "repositories": [
+        {
+            "type": "path",
+            "url": "../Xot"
+        },
+        {
+            "type": "path",
+            "url": "../Tenant"
+        },
+        {
+            "type": "path",
+            "url": "../UI"
+        }
+    ],
+    "scripts": {
+        "post-autoload-dump1": [
+            "@php vendor/bin/testbench package:discover --ansi"
+        ],
+        "post-update-cmd": [
+            "Illuminate\\Foundation\\ComposerScripts::postUpdate"
+        ],
+        "analyse": "vendor/bin/phpstan analyse",
+        "test": "./vendor/bin/pest --no-coverage",
+        "test-coverage": "vendor/bin/pest --coverage-html coverage",
+        "format": "vendor/bin/php-cs-fixer fix --allow-risky=yes"
+    },
     "config": {
-        "sort-packages": true
+        "sort-packages": true,
+        "allow-plugins": {
+            "pestphp/pest-plugin": true,
+            "dealerdirect/phpcodesniffer-composer-installer": true,
+            "wikimedia/composer-merge-plugin": true
+        }
     },
     "minimum-stability": "dev",
     "prefer-stable": true
