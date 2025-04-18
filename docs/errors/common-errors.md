@@ -13,7 +13,6 @@ La documentazione di questi errori ha lo scopo di fornire una guida rapida per l
 3. [Errore: Classe Model non istanziabile](#errore-classe-model-non-istanziabile)
 4. [Errore: Namespace non trovato](#errore-namespace-non-trovato)
 5. [Errore: Modello non trovato](#errore-modello-non-trovato)
-6. [Errore: Undefined array key "class"](#errore-undefined-array-key-class)
 
 ---
 
@@ -166,31 +165,6 @@ Class "App\Models\NomeModello" not found
 1. Verificare la posizione corretta del modello e il suo namespace.
 2. Utilizzare il comando `php artisan make:model` per creare il modello se non esiste.
 3. Controllare il nome della classe per assicurarsi che sia corretto.
-
----
-
-## Errore: Undefined array key "class"
-
-### Descrizione
-Si verifica quando si accede al progetto tramite URL locale (es. predict.local) e appare un errore "Undefined array key 'class'" nel file LaravelModulesServiceProvider.php.
-
-**Esempio di errore:**
-```
-ErrorException
-Undefined array key "class"
-```
-
-### Cause possibili
-1. Incompatibilità tra le dipendenze nel composer.lock
-2. Cache delle dipendenze non aggiornata
-3. Conflitti tra versioni dei pacchetti
-
-### Soluzione
-1. Eliminare il file composer.lock
-2. Eseguire il comando `composer update -W` per aggiornare tutte le dipendenze
-3. Se necessario, pulire la cache di Laravel con `php artisan cache:clear`
-
-**Nota**: L'opzione `-W` (o `--with-all-dependencies`) forza Composer ad aggiornare anche le dipendenze indirette, risolvendo potenziali conflitti di versione.
 
 ---
 
