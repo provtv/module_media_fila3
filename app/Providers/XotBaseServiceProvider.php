@@ -150,7 +150,6 @@ abstract class XotBaseServiceProvider extends ServiceProvider
     protected function registerConfig(): void
     {
         try {
-<<<<<<< HEAD
             $configPath = app(GetModulePathByGeneratorAction::class)->execute($this->name, 'config');
 
 
@@ -159,22 +158,6 @@ abstract class XotBaseServiceProvider extends ServiceProvider
                 $configPath => config_path($this->nameLower.'.php'),
             ], 'config');
             */
-=======
-            Assert::string($relativePath = config('modules.paths.generator.config.path'));
-            $configPath = module_path($this->name, $relativePath);
-            if (! is_string($configPath)) {
-                return;
-            }
-
-            if (! file_exists($configPath)) {
-                return;
-            }
-
-            $this->publishes([
-                $configPath => config_path($this->nameLower.'.php'),
-            ], 'config');
-
->>>>>>> origin/dev
             $this->mergeConfigFrom($configPath, $this->nameLower);
         } catch (\Exception $e) {
             // Ignore missing configuration
@@ -184,7 +167,6 @@ abstract class XotBaseServiceProvider extends ServiceProvider
 
     public function registerBladeComponents(): void
     {
-<<<<<<< HEAD
 
         $componentsViewPath = app(GetModulePathByGeneratorAction::class)->execute($this->name, 'component-view');
 
@@ -192,8 +174,6 @@ abstract class XotBaseServiceProvider extends ServiceProvider
         Blade::anonymousComponentPath($componentsViewPath);
 
 
-=======
->>>>>>> origin/dev
         $componentClassPath = app(GetModulePathByGeneratorAction::class)->execute($this->name, 'component-class');
 
         $namespace = $this->module_ns.'\View\Components';

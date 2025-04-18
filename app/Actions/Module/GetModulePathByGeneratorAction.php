@@ -5,10 +5,7 @@ declare(strict_types=1);
 namespace Modules\Xot\Actions\Module;
 
 use Webmozart\Assert\Assert;
-<<<<<<< HEAD
 use Illuminate\Support\Facades\File;
-=======
->>>>>>> origin/dev
 
 class GetModulePathByGeneratorAction
 {
@@ -19,7 +16,6 @@ class GetModulePathByGeneratorAction
         $res = module_path($moduleName, $relativePath);
         Assert::string($res);
 
-<<<<<<< HEAD
             Assert::directory($res,'The path '.$res.' is not a directory ['.$moduleName.']['.$generatorPath.']');
 
             //File::makeDirectory($res, 0755, true, true);
@@ -29,8 +25,6 @@ class GetModulePathByGeneratorAction
             return;
         }
         */
-=======
->>>>>>> origin/dev
         return $res;
     }
 }
