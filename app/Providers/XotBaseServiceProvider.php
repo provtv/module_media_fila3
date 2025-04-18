@@ -167,11 +167,14 @@ abstract class XotBaseServiceProvider extends ServiceProvider
 
     public function registerBladeComponents(): void
     {
-
-        $componentsViewPath = app(GetModulePathByGeneratorAction::class)->execute($this->name, 'component-view');
-
+        try{
+            $componentsViewPath = app(GetModulePathByGeneratorAction::class)->execute($this->name, 'component-view');
+            Blade::anonymousComponentPath($componentsViewPath);
+        } catch (\Exception $e) {
+            //return;
+        }
         // $components_path = realpath(__DIR__.'/../resources/views/components');
-        Blade::anonymousComponentPath($componentsViewPath);
+
 
 
         $componentClassPath = app(GetModulePathByGeneratorAction::class)->execute($this->name, 'component-class');
