@@ -37,11 +37,8 @@ I conflitti erano il risultato di un merge incompleto tra il branch `HEAD` e `or
 In `GetFieldnamesByTablenameAction.php`, c'erano conflitti relativi alla gestione dei tipi di parametri:
 
 ```php
-<<<<<<< HEAD
 if (! $this->isValidConnection($connectionName)) {
-=======
 if (! $this->isValidConnection(is_string($connectionName) ? $connectionName : (string) $connectionName)) {
->>>>>>> origin/dev
 ```
 
 #### 2. Conflitti nelle Annotazioni PHPDoc
@@ -49,12 +46,9 @@ if (! $this->isValidConnection(is_string($connectionName) ? $connectionName : (s
 In `TemporaryUploadPathGenerator.php`, c'erano conflitti nelle annotazioni PHPDoc dei metodi:
 
 ```php
-<<<<<<< HEAD
 /**
  * @param \Modules\Media\Models\Media $media
  */
-=======
->>>>>>> origin/dev
 ```
 
 #### 3. Conflitti nell'Implementazione dei Metodi
@@ -62,12 +56,9 @@ In `TemporaryUploadPathGenerator.php`, c'erano conflitti nelle annotazioni PHPDo
 In `ApplyMetatagToPanelAction.php`, c'erano conflitti nell'implementazione del metodo `execute`:
 
 ```php
-<<<<<<< HEAD
 // @phpstan-ignore argument.type
 ->colors($metatag->getColors())
-=======
 //->colors($metatag->getColors())
->>>>>>> origin/dev
 ```
 
 #### 4. Conflitti nella Gestione delle Eccezioni
@@ -75,15 +66,12 @@ In `ApplyMetatagToPanelAction.php`, c'erano conflitti nell'implementazione del m
 In `SaveJsonArrayAction.php`, c'erano conflitti nella gestione delle condizioni di errore:
 
 ```php
-<<<<<<< HEAD
 //if ($content === false) {
 //    return false;
 //}
-=======
 if ($content === false) {
     return false;
 }
->>>>>>> origin/dev
 ```
 
 #### 5. Conflitti nelle API Fluenti
