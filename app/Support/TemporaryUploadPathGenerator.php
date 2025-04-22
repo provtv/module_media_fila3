@@ -17,6 +17,7 @@ class TemporaryUploadPathGenerator
     /**
      * @param \Modules\Media\Models\Media $media
      */
+<<<<<<< HEAD
 =======
 <<<<<<< HEAD
     /**
@@ -25,12 +26,15 @@ class TemporaryUploadPathGenerator
 =======
 >>>>>>> origin/dev
 >>>>>>> origin/dev
+=======
+>>>>>>> 2f7c4db (.)
     public function getPath($media): string
     {
         return $this->getBasePath($media).'/'.md5($media->id . $media->uuid . 'original').'/';
     }
 
 <<<<<<< HEAD
+<<<<<<< HEAD
     /**
      * @param \Modules\Media\Models\Media $media
      */
@@ -42,12 +46,18 @@ class TemporaryUploadPathGenerator
 =======
 >>>>>>> origin/dev
 >>>>>>> origin/dev
+=======
+    /**
+     * @param \Modules\Media\Models\Media $media
+     */
+>>>>>>> 2f7c4db (.)
     public function getPathForConversions($media): string
     {
         return $this->getBasePath($media).'/'.md5($media->id . $media->uuid . 'conversion');
     }
 
 <<<<<<< HEAD
+<<<<<<< HEAD
     /**
      * @param \Modules\Media\Models\Media $media
      */
@@ -59,20 +69,29 @@ class TemporaryUploadPathGenerator
 =======
 >>>>>>> origin/dev
 >>>>>>> origin/dev
+=======
+    /**
+     * @param \Modules\Media\Models\Media $media
+     */
+>>>>>>> 2f7c4db (.)
     public function getPathForResponsiveImages($media): string
     {
         return $this->getBasePath($media).'/'.md5($media->id . $media->uuid . 'responsive');
     }
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 <<<<<<< HEAD
 >>>>>>> origin/dev
+=======
+>>>>>>> 2f7c4db (.)
     /**
      * Get a unique base path for the given media.
      *
      * @param \Modules\Media\Models\Media $media
      */
+<<<<<<< HEAD
 <<<<<<< HEAD
 =======
 =======
@@ -81,11 +100,47 @@ class TemporaryUploadPathGenerator
     */
 >>>>>>> origin/dev
 >>>>>>> origin/dev
+=======
+>>>>>>> 2f7c4db (.)
     protected function getBasePath($media): string
     {
         Assert::string($id = $media->getKey());
         $key = md5($media->uuid . $id);
 
         return "tmp/{$key}";
+<<<<<<< HEAD
+=======
+=======
+    public function getPath(Media $media): string
+    {
+        return $this->getBasePath($media).'/'.md5($media->id.$media->uuid.'original').'/';
+    }
+
+    public function getPathForConversions(Media $media): string
+    {
+        return $this->getBasePath($media).'/'.md5($media->id.$media->uuid.'conversion');
+    }
+
+    public function getPathForResponsiveImages(Media $media): string
+    {
+        return $this->getBasePath($media).'/'.md5($media->id.$media->uuid.'responsive');
+    }
+
+    /*
+    * Get a unique base path for the given media.
+    */
+    protected function getBasePath(Media $media): string
+    {
+        Assert::string($prefix = config('media-library.prefix', ''));
+        Assert::string($id = $media->getKey());
+        $key = md5($media->uuid.$id);
+
+        if ($prefix !== '') {
+            return $prefix.'/'.$key;
+        }
+
+        return $key;
+>>>>>>> 184c6ec (.)
+>>>>>>> 2f7c4db (.)
     }
 }

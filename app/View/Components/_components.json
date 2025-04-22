@@ -1,1 +1,17 @@
+<<<<<<< HEAD
 []
+=======
+<<<<<<< HEAD
+[
+    {
+        "name": "video-player",
+        "class": "VideoPlayer",
+        "module": null,
+        "path": null,
+        "ns": "Modules\\Media\\View\\Components\\VideoPlayer"
+    }
+]
+=======
+[]
+>>>>>>> 184c6ec (.)
+>>>>>>> 2f7c4db (.)
