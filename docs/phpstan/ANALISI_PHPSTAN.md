@@ -1,4 +1,4 @@
-# Analisi PHPStan - Modulo Media
+# Analisi PHPStan e Correzioni al Modulo Media
 
 ## Perché questa analisi
 Il modulo Media gestisce l'upload, la manipolazione e la distribuzione di file multimediali. Un'analisi statica approfondita è cruciale per garantire la gestione sicura e efficiente dei file.
@@ -191,4 +191,59 @@ Il modulo Media gestisce l'upload, la manipolazione e la distribuzione di file m
 ## Collegamenti Correlati
 - [Documentazione Generale PHPStan](/docs/phpstan/INDEX.md)
 - [Best Practices Media](../INDEX.md#best-practices)
-- [Gestione Errori](/docs/errors/README.md) 
+- [Gestione Errori](/docs/errors/README.md)
+
+## Conflitti di Merge Risolti
+
+### VideoStream.php
+- Rimosso conflitto di merge nel file `app/Services/VideoStream.php`
+- Sostituito l'uso di `$filesystem->mimeType($path)` che causava errori con un metodo alternativo che usa l'estensione del file per determinare il MIME type
+- Aggiunta una mappa delle estensioni di file ai MIME type più comuni per video
+- Migliorata la formattazione del codice seguendo gli standard di Laravel
+- Rimossa la duplicazione del controllo del MIME type come stringa
+
+### MediaResource.php
+- Risolto conflitto di merge nel file `app/Filament/Resources/MediaResource.php`
+- Mantenuta la versione con chiavi per i componenti del form
+- Aggiunta icona di navigazione
+- Preservati tutti i docblocks che documentano il codice
+
+### ViewMedia.php
+- Risolto conflitto di merge nel file `app/Filament/Resources/MediaResource/Pages/ViewMedia.php`
+- Scelto l'approccio con chiavi per i componenti (media_viewer, entry_conversions)
+- Utilizzato il percorso corretto per i file: `$record->path.'/'.$record->file_name`
+- Mantenuta la documentazione dei metodi con docblocks
+
+### VideoEntry.php
+- Risolto conflitto di merge nel file `app/Filament/Infolists/VideoEntry.php`
+- Ripulito il codice rimuovendo spazi vuoti non necessari
+- Mantenuto l'approccio più completo per la gestione dei tipi e le conversioni di stringa
+- Preservati i docblocks informativi per i metodi principali
+- Rimosse le duplicazioni nel codice
+
+### MediaConvertResource.php
+- Risolto errore di struttura nel file `app/Filament/Resources/MediaConvertResource.php`
+- Corretta la posizione dell'attributo `$navigationIcon` rispetto ai docblocks
+- Uniti correttamente tutti i componenti del form
+
+## Correzioni di PHPStan Livello 9
+
+### Problemi Risolti
+- Fixed: Undefined method 'mimeType' error in VideoStream.php
+- Resolved merge conflicts in multiple files
+- Added better type checking and null safety
+
+### Miglioramenti Generali
+- Migliorate le docstring per i parametri e i tipi di ritorno
+- Aggiunto controllo del tipo per variabili chiave
+- Evitati possibili loop infiniti nel metodo streamContent con una migliore gestione dei byte da leggere
+
+## Risorse per Ulteriori Miglioramenti
+
+### Gestione MIME Type
+Una delle sfide principali è stata la determinazione corretta dei MIME type. Attualmente, le implementazioni variano tra:
+- Uso dell'estensione del file per derivare il MIME type (utilizzato in VideoStream)
+- Uso di funzioni come `mime_content_type()` o librerie specializzate
+- Uso dell'approccio di Laravel con `Storage::mimeType()`
+
+Per standardizzare questo comportamento, si consiglia di creare una classe/servizio dedicato per la determinazione dei MIME type che possa essere utilizzato in tutto il modulo. 

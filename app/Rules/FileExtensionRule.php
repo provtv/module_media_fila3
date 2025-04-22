@@ -22,11 +22,7 @@ class FileExtensionRule implements Rule
     }
 
     /**
-<<<<<<< HEAD
-     * @param  string $attribute
-=======
      * @param  string  $attribute
->>>>>>> 184c6ec (.)
      * @param  UploadedFile  $value
      */
     public function passes($attribute, $value): bool

@@ -45,10 +45,6 @@ return [
     },
 
     'children' => fn ($page, $docs): array =>
-<<<<<<< HEAD
         // return $docs->where('parent_id', $page->);
-=======
-        // return $docs->where('parent_id', $page->id);
->>>>>>> 184c6ec (.)
         [],
 ];

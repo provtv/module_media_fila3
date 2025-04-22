@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 [
     {
         "name": "video-player",
@@ -8,6 +7,3 @@
         "ns": "Modules\\Media\\View\\Components\\VideoPlayer"
     }
 ]
-=======
-[]
->>>>>>> 184c6ec (.)

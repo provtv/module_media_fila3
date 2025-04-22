@@ -13,61 +13,41 @@ use Webmozart\Assert\Assert;
 // implements PathGenerator
 class TemporaryUploadPathGenerator
 {
-<<<<<<< HEAD
     /**
-     * @param \Modules\Media\Models\Media $media
-     */
-    public function getPath($media): string
-    {
-        return $this->getBasePath($media).'/'.md5($media->id . $media->uuid . 'original').'/';
-    }
-
-    /**
-     * @param \Modules\Media\Models\Media $media
-     */
-    public function getPathForConversions($media): string
-    {
-        return $this->getBasePath($media).'/'.md5($media->id . $media->uuid . 'conversion');
-    }
-
-    /**
-     * @param \Modules\Media\Models\Media $media
-     */
-    public function getPathForResponsiveImages($media): string
-    {
-        return $this->getBasePath($media).'/'.md5($media->id . $media->uuid . 'responsive');
-    }
-
-    /**
-     * Get a unique base path for the given media.
+     * Genera il percorso di storage per i file originali.
      *
-     * @param \Modules\Media\Models\Media $media
+     * @param \Modules\Media\Models\Media $media Il modello media per cui generare il percorso
      */
-    protected function getBasePath($media): string
-    {
-        Assert::string($id = $media->getKey());
-        $key = md5($media->uuid . $id);
-
-        return "tmp/{$key}";
-=======
     public function getPath(Media $media): string
     {
         return $this->getBasePath($media).'/'.md5($media->id.$media->uuid.'original').'/';
     }
 
+    /**
+     * Genera il percorso di storage per le conversioni.
+     *
+     * @param \Modules\Media\Models\Media $media Il modello media per cui generare il percorso
+     */
     public function getPathForConversions(Media $media): string
     {
         return $this->getBasePath($media).'/'.md5($media->id.$media->uuid.'conversion');
     }
 
+    /**
+     * Genera il percorso di storage per le immagini responsive.
+     *
+     * @param \Modules\Media\Models\Media $media Il modello media per cui generare il percorso
+     */
     public function getPathForResponsiveImages(Media $media): string
     {
         return $this->getBasePath($media).'/'.md5($media->id.$media->uuid.'responsive');
     }
 
-    /*
-    * Get a unique base path for the given media.
-    */
+    /**
+     * Ottiene un percorso base univoco per il media dato.
+     *
+     * @param \Modules\Media\Models\Media $media Il modello media per cui generare il percorso base
+     */
     protected function getBasePath(Media $media): string
     {
         Assert::string($prefix = config('media-library.prefix', ''));
@@ -79,6 +59,5 @@ class TemporaryUploadPathGenerator
         }
 
         return $key;
->>>>>>> 184c6ec (.)
     }
 }
