@@ -33,11 +33,8 @@ class ExportXlsByView
         // Se $fields non è null, assicuriamo che sia un array di stringhe
         $stringFields = null;
         if (is_array($fields)) {
-            $stringFields = array_map(function ($field) {
-
-                return strval($field);
-
->>>>>>> origin/dev
+            $stringFields = array_map(function (string|int|float|bool $field): string {
+                return (string) $field;
             }, array_values($fields));
         }
 

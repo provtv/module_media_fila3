@@ -41,10 +41,8 @@ class GetViewByClassAction
                 } elseif (is_scalar($prevValue)) {
                     // Cast sicuro per valori scalari (int, float, bool)
 
-                   // $prevValueStr = is_string($prevValue) ? $prevValue : (string) $prevValue;
-                   $prevValueStr = strval( $prevValue);
-
->>>>>>> origin/dev
+                   // Utilizziamo il cast esplicito con controllo di tipo per PHPStan Level 9
+                   $prevValueStr = is_scalar($prevValue) ? (string) $prevValue : '';
                 }
                 
                 $singular = Str::of($prevValueStr)->singular()->toString();

@@ -31,53 +31,13 @@ namespace Modules\Rating\App\Console\Commands;
 Un errore particolarmente frequente riguarda le Actions. La convenzione corretta è la seguente:
 
 - ✅ **CORRETTO**: `namespace Modules\Xot\Actions;`
-<<<<<<< HEAD
-
-- ❌ **ERRATO**: `namespace Modules\Xot\Actions;`
-
-
-- ❌ **ERRATO**: `namespace Modules\Xot\Actions;`
-
 - ❌ **ERRATO**: `namespace Modules\Xot\app\Actions;`
-
-
-=======
-<<<<<<< HEAD
-- ❌ **ERRATO**: `namespace Modules\Xot\Actions;`
-=======
-<<<<<<< HEAD
-- ❌ **ERRATO**: `namespace Modules\Xot\Actions;`
-=======
-- ❌ **ERRATO**: `namespace Modules\Xot\app\Actions;`
->>>>>>> origin/dev
->>>>>>> origin/dev
->>>>>>> origin/dev
 
 Anche se il file si trova nel percorso fisico `Modules/Xot/app/Actions/`, il namespace non deve mai includere il segmento `app`.
 
 Questo errore causa spesso problemi di PHPStan come:
 ```
-<<<<<<< HEAD
-
-Class 'Modules\Xot\Actions\MyAction' not found.
-
-
-Class 'Modules\Xot\Actions\MyAction' not found.
-
 Class 'Modules\Xot\app\Actions\MyAction' not found.
-
-
-=======
-<<<<<<< HEAD
-Class 'Modules\Xot\Actions\MyAction' not found.
-=======
-<<<<<<< HEAD
-Class 'Modules\Xot\Actions\MyAction' not found.
-=======
-Class 'Modules\Xot\app\Actions\MyAction' not found.
->>>>>>> origin/dev
->>>>>>> origin/dev
->>>>>>> origin/dev
 ```
 
 La correzione è sempre la stessa: rimuovere il segmento `app` dal namespace.
@@ -195,28 +155,6 @@ class RatingServiceProvider extends XotBaseServiceProvider
 }
 ```
 
-### Route Service Providers
-
-```php
-<?php
-
-declare(strict_types=1);
-
-namespace Modules\Rating\Providers;
-
-use Modules\Xot\Providers\XotBaseRouteServiceProvider;
-
-class RouteServiceProvider extends XotBaseRouteServiceProvider 
-{
-    protected string $moduleNamespace = 'Modules\Rating\Http\Controllers';
-    protected string $module_dir = __DIR__;
-    protected string $module_ns = __NAMESPACE__;
-    public string $name = 'Rating';
-    
-    // Implementazione
-}
-```
-
 ## Corrispondenza tra Struttura delle Directory e Namespace
 
 | Directory fisica                             | Namespace corretto                   |
@@ -258,58 +196,45 @@ use Modules\User\Models\User;
 use Modules\Rating\Models\Rating as RatingModel;
 ```
 
-## Namespace in composer.json
+## Test di Validazione Namespace
 
-Quando si definisce l'autoloading in `composer.json`, assicurarsi che la mappatura rifletta questa convenzione:
+Per verificare la correttezza dei namespace, utilizzare il seguente test Pest:
 
-```json
-"autoload": {
-    "psr-4": {
-        "Modules\\Rating\\": "Modules/Rating/app/"
+```php
+test('verifica correttezza namespace', function () {
+    $basePath = base_path('Modules');
+    $modules = array_filter(scandir($basePath), fn($item) => 
+        is_dir($basePath . '/' . $item) && !in_array($item, ['.', '..'])
+    );
+    
+    $errors = [];
+    
+    foreach ($modules as $module) {
+        $appPath = $basePath . '/' . $module . '/app';
+        if (!is_dir($appPath)) continue;
+        
+        $iterator = new RecursiveIteratorIterator(
+            new RecursiveDirectoryIterator($appPath)
+        );
+        
+        foreach ($iterator as $file) {
+            if ($file->isFile() && $file->getExtension() === 'php') {
+                $content = file_get_contents($file->getRealPath());
+                if (preg_match('/namespace\s+[^;]+;/', $content, $matches)) {
+                    $namespace = $matches[0];
+                    if (strpos($namespace, '\app\\') !== false) {
+                        $errors[] = sprintf(
+                            'File %s contiene namespace non valido: %s',
+                            $file->getRealPath(),
+                            $namespace
+                        );
+                    }
+                }
+            }
+        }
     }
-}
-```
-
-## Risoluzione dei Problemi PHPStan con i Namespace
-
-I problemi PHPStan relativi ai namespace possono essere identificati da messaggi come:
-
-```
-Class Modules\Rating\App\Models\Rating not found.
-```
-
-La soluzione è sempre correggere il namespace rimuovendo il segmento `App`:
-
-```php
-// Da
-namespace Modules\Rating\App\Models;
-
-// A
-namespace Modules\Rating\Models;
-```
-
-Per i comandi console, un errore comune è:
-
-```
-Class Modules\Rating\App\Console\Commands\RatingCommand not found.
-```
-
-La correzione è:
-
-```php
-// Da
-namespace Modules\Rating\App\Console\Commands;
-
-// A
-namespace Modules\Rating\Console\Commands;
-```
-
-## Vantaggi di questa Convenzione
-
-1. **Coerenza**: Uniformità in tutto il codebase
-2. **Compatibilità PHPStan**: Evita errori di classe non trovata
-3. **Semplicità**: Namespace più brevi e leggibili
-4. **Riflettività**: Il namespace riflette la struttura logica del modulo, non la sua struttura fisica
-5. **Standard Laravel**: Allineato alle convenzioni di Laravel
-
-Seguire queste convenzioni di namespace aiuterà a mantenere un codebase coerente e a evitare errori comuni durante l'analisi statica del codice con PHPStan. 
+    
+    expect($errors)
+        ->withContext("I seguenti file contengono namespace non validi:\n" . implode("\n", $errors))
+        ->toBeEmpty();
+}); 
