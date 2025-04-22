@@ -6,6 +6,7 @@ namespace Modules\Media\Services;
 
 use Exception;
 use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Str;
 use Webmozart\Assert\Assert;
 
 use function is_string;
@@ -35,8 +36,26 @@ class VideoStream
     private $stream = null; // File stream resource
 
     /**
+     * Mappa delle estensioni di file ai loro MIME type.
+     *
+     * @var array<string, string>
+     */
+    private array $mimeTypes = [
+        'mp4' => 'video/mp4',
+        'webm' => 'video/webm',
+        'ogg' => 'video/ogg',
+        'mov' => 'video/quicktime',
+        'avi' => 'video/x-msvideo',
+        'wmv' => 'video/x-ms-wmv',
+        'flv' => 'video/x-flv',
+        '3gp' => 'video/3gpp',
+        'mkv' => 'video/x-matroska',
+    ];
+
+    /**
      * Initialize the video stream.
      *
+<<<<<<< HEAD
 <<<<<<< HEAD
      * @param  string $disk  The disk storage name
      * @param  string $path  The path to the video file
@@ -49,6 +68,10 @@ class VideoStream
      * @param  string  $path  The path to the video file
 >>>>>>> 184c6ec (.)
 >>>>>>> 2f7c4db (.)
+=======
+     * @param  string  $disk  The disk storage name
+     * @param  string  $path  The path to the video file
+>>>>>>> fa4eb21 (.)
      *
      * @throws Exception If the file does not exist or other errors
      */
@@ -56,6 +79,7 @@ class VideoStream
     {
         $filesystem = Storage::disk($disk);
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 =======
 <<<<<<< HEAD
@@ -71,18 +95,28 @@ class VideoStream
 <<<<<<< HEAD
 =======
 =======
+=======
+>>>>>>> fa4eb21 (.)
         if (! $filesystem->exists($path)) {
             throw new Exception("File does not exist at path: {$path}");
         }
 
+<<<<<<< HEAD
         Assert::string($mime = $filesystem->mimeType($path));
 >>>>>>> 184c6ec (.)
 >>>>>>> 2f7c4db (.)
+=======
+        // Determina il MIME type in base all'estensione del file
+        $extension = strtolower(pathinfo($path, PATHINFO_EXTENSION));
+        $mime = $this->mimeTypes[$extension] ?? 'application/octet-stream';
+
+>>>>>>> fa4eb21 (.)
         $this->stream = $filesystem->readStream($path);
         $this->mime = $mime;
         $this->fileModifiedTime = $filesystem->lastModified($path);
         $this->size = $filesystem->size($path);
 
+<<<<<<< HEAD
 <<<<<<< HEAD
         if (!is_string($this->mime)) {
 =======
@@ -92,6 +126,9 @@ class VideoStream
         if (! is_string($this->mime)) {
 >>>>>>> 184c6ec (.)
 >>>>>>> 2f7c4db (.)
+=======
+        if (! is_string($this->mime)) {
+>>>>>>> fa4eb21 (.)
             throw new Exception('Unable to determine MIME type.');
         }
     }
@@ -113,6 +150,7 @@ class VideoStream
     {
         ob_end_clean(); // Clean any previous output
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 <<<<<<< HEAD
 >>>>>>> 2f7c4db (.)
@@ -123,12 +161,17 @@ class VideoStream
 <<<<<<< HEAD
 =======
 =======
+=======
+>>>>>>> fa4eb21 (.)
         header('Content-Type: '.$this->mime);
         header('Cache-Control: max-age=2592000, public'); // 30 days cache
         header('Expires: '.gmdate('D, d M Y H:i:s', time() + 2592000).' GMT'); // 30 days in the future
         header('Last-Modified: '.gmdate('D, d M Y H:i:s', $this->fileModifiedTime).' GMT');
+<<<<<<< HEAD
 >>>>>>> 184c6ec (.)
 >>>>>>> 2f7c4db (.)
+=======
+>>>>>>> fa4eb21 (.)
 
         $this->end = $this->size - 1;
         header('Accept-Ranges: bytes');
@@ -138,6 +181,7 @@ class VideoStream
             $this->processRangeHeader($rangeHeader);
         } else {
 <<<<<<< HEAD
+<<<<<<< HEAD
             header('Content-Length: ' . $this->size);
 =======
 <<<<<<< HEAD
@@ -146,6 +190,9 @@ class VideoStream
             header('Content-Length: '.$this->size);
 >>>>>>> 184c6ec (.)
 >>>>>>> 2f7c4db (.)
+=======
+            header('Content-Length: '.$this->size);
+>>>>>>> fa4eb21 (.)
         }
     }
 
@@ -178,6 +225,7 @@ class VideoStream
         $length = $this->end - $this->start + 1;
         header('HTTP/1.1 206 Partial Content');
 <<<<<<< HEAD
+<<<<<<< HEAD
         header('Content-Length: ' . $length);
 =======
 <<<<<<< HEAD
@@ -186,6 +234,9 @@ class VideoStream
         header('Content-Length: '.$length);
 >>>>>>> 184c6ec (.)
 >>>>>>> 2f7c4db (.)
+=======
+        header('Content-Length: '.$length);
+>>>>>>> fa4eb21 (.)
         header(sprintf('Content-Range: bytes %d-%d/%d', $this->start, $this->end, $this->size));
     }
 

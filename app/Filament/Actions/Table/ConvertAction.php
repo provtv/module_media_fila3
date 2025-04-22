@@ -19,8 +19,8 @@ class ConvertAction extends Action
     {
         parent::setUp();
         $this->translateLabel()
-<<<<<<< HEAD
 
+<<<<<<< HEAD
 =======
 <<<<<<< HEAD
 
@@ -28,6 +28,8 @@ class ConvertAction extends Action
             
 >>>>>>> 184c6ec (.)
 >>>>>>> 2f7c4db (.)
+=======
+>>>>>>> fa4eb21 (.)
             ->tooltip('convert')
             ->openUrlInNewTab()
             // ->icon('heroicon-o-cloud-arrow-down')

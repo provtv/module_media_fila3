@@ -6,14 +6,16 @@ namespace Modules\Media\Actions\Image;
 
 use Illuminate\Support\Arr;
 use Modules\UI\Actions\Icon\GetAllIconsAction;
-<<<<<<< HEAD
 use Webmozart\Assert\Assert;
+<<<<<<< HEAD
 =======
 <<<<<<< HEAD
 use Webmozart\Assert\Assert;
 =======
 >>>>>>> 184c6ec (.)
 >>>>>>> 2f7c4db (.)
+=======
+>>>>>>> fa4eb21 (.)
 
 /**
  * Verifica l'esistenza di un SVG registrato utilizzando BladeUI Icons.
@@ -25,8 +27,8 @@ class SvgExistsAction
     /**
      * Verifica se l'SVG esiste nei set di icone registrati.
      *
-<<<<<<< HEAD
      * @param  string $svgName  Il nome dell'SVG da verificare (es: 'heroicon-o-user')
+<<<<<<< HEAD
 =======
 <<<<<<< HEAD
      * @param  string $svgName  Il nome dell'SVG da verificare (es: 'heroicon-o-user')
@@ -34,6 +36,8 @@ class SvgExistsAction
      * @param  string  $svgName  Il nome dell'SVG da verificare (es: 'heroicon-o-user')
 >>>>>>> 184c6ec (.)
 >>>>>>> 2f7c4db (.)
+=======
+>>>>>>> fa4eb21 (.)
      * @return bool True se l'SVG esiste, false altrimenti
      */
     public function execute(string $svgName): bool
@@ -44,22 +48,26 @@ class SvgExistsAction
 
         $packs = app(GetAllIconsAction::class)->execute();
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 <<<<<<< HEAD
 >>>>>>> 2f7c4db (.)
+=======
+>>>>>>> fa4eb21 (.)
         Assert::isArray($packs, 'Il risultato di GetAllIconsAction deve essere un array');
-        
+
         foreach ($packs as $pack) {
             Assert::isArray($pack, 'Ogni pacchetto deve essere un array');
             Assert::keyExists($pack, 'icons', 'Il pacchetto deve contenere la chiave icons');
-            
+
             $icons = $pack['icons'];
             Assert::isIterable($icons, 'icons deve essere un array o un oggetto iterabile');
-            
+
             foreach ($icons as $icon) {
                 if ($svgName === $icon) {
                     return true;
                 }
+<<<<<<< HEAD
 <<<<<<< HEAD
 =======
 =======
@@ -72,6 +80,8 @@ class SvgExistsAction
                 return true;
 >>>>>>> 184c6ec (.)
 >>>>>>> 2f7c4db (.)
+=======
+>>>>>>> fa4eb21 (.)
             }
         }
 

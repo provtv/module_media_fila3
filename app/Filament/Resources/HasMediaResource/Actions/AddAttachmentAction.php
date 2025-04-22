@@ -44,6 +44,7 @@ class AddAttachmentAction extends Action
 
     /**
 <<<<<<< HEAD
+<<<<<<< HEAD
      * @return array<int, Radio|TextInput|BaseFileUpload|FileUpload>
 =======
 <<<<<<< HEAD
@@ -52,6 +53,9 @@ class AddAttachmentAction extends Action
      * @return (Radio|TextInput|BaseFileUpload|FileUpload)[]
 >>>>>>> 184c6ec (.)
 >>>>>>> 2f7c4db (.)
+=======
+     * @return (Radio|TextInput|BaseFileUpload|FileUpload)[]
+>>>>>>> fa4eb21 (.)
      */
     public static function getFormSchema(bool $asset = true): array
     {

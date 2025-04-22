@@ -30,6 +30,7 @@ class Merge
     public function execute(array $filenames, string $filenameOut): void
     {
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 <<<<<<< HEAD
 >>>>>>> 2f7c4db (.)
@@ -43,6 +44,8 @@ class Merge
 <<<<<<< HEAD
 =======
 =======
+=======
+>>>>>>> fa4eb21 (.)
         $width = 0;
         $height = 0;
         $imgs = [];
@@ -55,12 +58,16 @@ class Merge
             $img = $manager->read(public_path($filename));
 
             $imgs[] = $img;
+<<<<<<< HEAD
 >>>>>>> 184c6ec (.)
 >>>>>>> 2f7c4db (.)
+=======
+>>>>>>> fa4eb21 (.)
             $width += $img->width();
             $height = max($height, $img->height());
         }
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 =======
 <<<<<<< HEAD
@@ -76,6 +83,8 @@ class Merge
 <<<<<<< HEAD
 =======
 =======
+=======
+>>>>>>> fa4eb21 (.)
         if (! is_numeric($height)) {
             throw new \Exception('['.__LINE__.']['.class_basename(self::class).']');
         }
@@ -89,8 +98,11 @@ class Merge
         foreach ($imgs as $img) {
             // $img_canvas->insert($img, 'top-left ', $delta, 0);
             $img_canvas->place($img, 'top-left ', $delta, 0);
+<<<<<<< HEAD
 >>>>>>> 184c6ec (.)
 >>>>>>> 2f7c4db (.)
+=======
+>>>>>>> fa4eb21 (.)
             $delta += $img->width();
         }
 

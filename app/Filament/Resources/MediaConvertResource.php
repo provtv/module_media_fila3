@@ -15,12 +15,18 @@ class MediaConvertResource extends XotBaseResource
     protected static ?string $model = MediaConvert::class;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 <<<<<<< HEAD
 >>>>>>> 2f7c4db (.)
+=======
+>>>>>>> fa4eb21 (.)
     /**
-     * @return array<string, \Filament\Forms\Components\Component>
+     * Restituisce lo schema del form per la risorsa MediaConvert.
+     * Restituisce un array di componenti Filament.
+     * @return array<int, \Filament\Forms\Components\Component>
      */
+<<<<<<< HEAD
     public static function getFormSchema(): array
     {
         return [
@@ -28,14 +34,19 @@ class MediaConvertResource extends XotBaseResource
 <<<<<<< HEAD
 =======
 =======
+=======
+>>>>>>> fa4eb21 (.)
     protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
 
     public static function getFormSchema(): array
     {
         return [
             Radio::make('format')
+<<<<<<< HEAD
 >>>>>>> 184c6ec (.)
 >>>>>>> 2f7c4db (.)
+=======
+>>>>>>> fa4eb21 (.)
                 ->options([
                     'webm' => 'webm',
                     // 'webm02' => 'webm02',
@@ -43,6 +54,7 @@ class MediaConvertResource extends XotBaseResource
                 ->inline()
                 ->inlineLabel(false),
             // -----------------------------------
+<<<<<<< HEAD
 <<<<<<< HEAD
             'codec_video' => Radio::make('codec_video')
 =======
@@ -52,12 +64,16 @@ class MediaConvertResource extends XotBaseResource
             Radio::make('codec_video')
 >>>>>>> 184c6ec (.)
 >>>>>>> 2f7c4db (.)
+=======
+            Radio::make('codec_video')
+>>>>>>> fa4eb21 (.)
                 ->options([
                     'libvpx-vp9' => 'libvpx-vp9',
                     'libvpx-vp8' => 'libvpx-vp8',
                 ])
                 ->inline()
                 ->inlineLabel(false),
+<<<<<<< HEAD
 <<<<<<< HEAD
             'codec_audio' => Radio::make('codec_audio')
 =======
@@ -67,12 +83,16 @@ class MediaConvertResource extends XotBaseResource
             Radio::make('codec_audio')
 >>>>>>> 184c6ec (.)
 >>>>>>> 2f7c4db (.)
+=======
+            Radio::make('codec_audio')
+>>>>>>> fa4eb21 (.)
                 ->options([
                     'copy' => 'copy',
                     'libvorbis' => 'libvorbis',
                 ])
                 ->inline()
                 ->inlineLabel(false),
+<<<<<<< HEAD
 <<<<<<< HEAD
             'preset' => Radio::make('preset')
 =======
@@ -82,12 +102,16 @@ class MediaConvertResource extends XotBaseResource
             Radio::make('preset')
 >>>>>>> 184c6ec (.)
 >>>>>>> 2f7c4db (.)
+=======
+            Radio::make('preset')
+>>>>>>> fa4eb21 (.)
                 ->options([
                     'fast' => 'fast',
                     'ultrafast' => 'ultrafast',
                 ])
                 ->inline()
                 ->inlineLabel(false),
+<<<<<<< HEAD
 <<<<<<< HEAD
 =======
 <<<<<<< HEAD
@@ -100,13 +124,18 @@ class MediaConvertResource extends XotBaseResource
 <<<<<<< HEAD
 =======
 =======
+=======
+>>>>>>> fa4eb21 (.)
             TextInput::make('bitrate'),
             TextInput::make('width')->numeric(),
             TextInput::make('height')->numeric(),
             TextInput::make('threads'),
             TextInput::make('speed'),
+<<<<<<< HEAD
 >>>>>>> 184c6ec (.)
 >>>>>>> 2f7c4db (.)
+=======
+>>>>>>> fa4eb21 (.)
         ];
     }
 

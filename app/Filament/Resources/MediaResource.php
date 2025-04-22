@@ -17,6 +17,7 @@ class MediaResource extends XotBaseResource
     protected static ?string $model = Media::class;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 <<<<<<< HEAD
 >>>>>>> 2f7c4db (.)
@@ -30,19 +31,25 @@ class MediaResource extends XotBaseResource
 <<<<<<< HEAD
 =======
 =======
+=======
+>>>>>>> fa4eb21 (.)
     protected static ?string $navigationIcon = 'fas-photo-film';
 
     public static function getFormSchema(): array
     {
         return [
             FileUpload::make('file')
+<<<<<<< HEAD
 >>>>>>> 184c6ec (.)
 >>>>>>> 2f7c4db (.)
+=======
+>>>>>>> fa4eb21 (.)
                 ->hint(static::trans('fields.file_hint'))
                 ->storeFileNamesIn('original_file_name')
                 ->visibility('private')
                 ->required()
                 ->columnSpanFull(),
+<<<<<<< HEAD
 <<<<<<< HEAD
             'attachment_type' => Radio::make('attachment_type'),
             'name' => TextInput::make('name')
@@ -55,6 +62,10 @@ class MediaResource extends XotBaseResource
             TextInput::make('name')
 >>>>>>> 184c6ec (.)
 >>>>>>> 2f7c4db (.)
+=======
+            Radio::make('attachment_type'),
+            TextInput::make('name')
+>>>>>>> fa4eb21 (.)
                 ->translateLabel()
                 ->hint(static::trans('fields.name.hint'))
                 ->autocomplete(false)

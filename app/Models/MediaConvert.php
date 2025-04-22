@@ -11,7 +11,7 @@ namespace Modules\Media\Models;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
 /**
- * 
+ *
  *
  * @property int $id
  * @property int $media_id
@@ -87,13 +87,20 @@ class MediaConvert extends BaseModel
         'execution_time',
     ];
 
+    /**
+     * Relazione con il modello Media.
+     */
     public function media(): BelongsTo
     {
         return $this->belongsTo(Media::class);
     }
 
+    /**
+     * Ottiene il disco di storage dal media collegato.
+     */
     public function getDiskAttribute(?string $value): ?string
     {
+<<<<<<< HEAD
 <<<<<<< HEAD
 =======
 <<<<<<< HEAD
@@ -108,10 +115,17 @@ class MediaConvert extends BaseModel
         return $this->media?->disk;
 >>>>>>> 184c6ec (.)
 >>>>>>> 2f7c4db (.)
+=======
+        return $this->media?->disk;
+>>>>>>> fa4eb21 (.)
     }
 
+    /**
+     * Ottiene il percorso del file originale dal media collegato.
+     */
     public function getFileAttribute(?string $value): ?string
     {
+<<<<<<< HEAD
 <<<<<<< HEAD
 =======
 <<<<<<< HEAD
@@ -126,10 +140,17 @@ class MediaConvert extends BaseModel
         return $this->media?->id.'/'.$this->media?->file_name;
 >>>>>>> 184c6ec (.)
 >>>>>>> 2f7c4db (.)
+=======
+        return $this->media?->id.'/'.$this->media?->file_name;
+>>>>>>> fa4eb21 (.)
     }
 
+    /**
+     * Genera il percorso del file convertito basato sul file originale.
+     */
     public function getConvertedFileAttribute(?string $value): ?string
     {
+<<<<<<< HEAD
 <<<<<<< HEAD
 =======
 <<<<<<< HEAD
@@ -144,11 +165,15 @@ class MediaConvert extends BaseModel
         $info = pathinfo((string) $this->media?->file_name);
 >>>>>>> 184c6ec (.)
 >>>>>>> 2f7c4db (.)
+=======
+        $info = pathinfo((string) $this->media?->file_name);
+>>>>>>> fa4eb21 (.)
         // "dirname" => "."
         // "basename" => "20600550-uhd_3840_2160_30fps.mp4"
         // "extension" => "mp4"
         // "filename" => "20600550-uhd_3840_2160_30fps"
 
+<<<<<<< HEAD
 <<<<<<< HEAD
         return $this->media->path . '/conversions/' . $info['filename'] . '_' . $this->id . '.' . $this->format;
 =======
@@ -158,5 +183,8 @@ class MediaConvert extends BaseModel
         return $this->media?->id.'/conversions/'.$info['filename'].'_'.$this->id.'.'.$this->format;
 >>>>>>> 184c6ec (.)
 >>>>>>> 2f7c4db (.)
+=======
+        return $this->media?->id.'/conversions/'.$info['filename'].'_'.$this->id.'.'.$this->format;
+>>>>>>> fa4eb21 (.)
     }
 }

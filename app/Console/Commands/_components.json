@@ -1,7 +1,10 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 [{"name":"convert-video-command","class":"ConvertVideoCommand","module":null,"path":null,"ns":"Modules\\Media\\Console\\Commands\\ConvertVideoCommand"}]
 =======
 <<<<<<< HEAD
+=======
+>>>>>>> fa4eb21 (.)
 [
     {
         "name": "convert-video-command",
@@ -11,7 +14,10 @@
         "ns": "Modules\\Media\\Console\\Commands\\ConvertVideoCommand"
     }
 ]
+<<<<<<< HEAD
 =======
 [{"name":"convert-video-command","class":"ConvertVideoCommand","module":null,"path":null,"ns":"Modules\\Media\\Console\\Commands\\ConvertVideoCommand"}]
 >>>>>>> 184c6ec (.)
 >>>>>>> 2f7c4db (.)
+=======
+>>>>>>> fa4eb21 (.)

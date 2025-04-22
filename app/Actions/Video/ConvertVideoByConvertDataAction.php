@@ -2,8 +2,8 @@
 
 /**
  * @see https://github.com/protonemedia/laravel-ffmpeg
-<<<<<<< HEAD
  * Azione per convertire un video utilizzando ConvertData.
+<<<<<<< HEAD
 =======
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -14,6 +14,8 @@
 =======
 >>>>>>> 184c6ec (.)
 >>>>>>> 2f7c4db (.)
+=======
+>>>>>>> fa4eb21 (.)
  */
 
 declare(strict_types=1);
@@ -24,7 +26,6 @@ use Filament\Notifications\Notification;
 use Illuminate\Support\Facades\Storage;
 use Modules\Media\Datas\ConvertData;
 use ProtoneMedia\LaravelFFMpeg\Support\FFMpeg;
-<<<<<<< HEAD
 use ProtoneMedia\LaravelFFMpeg\MediaOpener;
 <<<<<<< HEAD
 use ProtoneMedia\LaravelFFMpeg\FFMpeg\FFMpegExporter;
@@ -57,29 +58,42 @@ use Webmozart\Assert\Assert;
  */
 =======
  * Classe per convertire video utilizzando i dati di conversione specificati.
- * 
+ *
  * @method \ProtoneMedia\LaravelFFMpeg\Drivers\PHPFFMpeg inFormat(DefaultVideo $format)
  */
+<<<<<<< HEAD
 =======
 use Spatie\QueueableAction\QueueableAction;
 
 >>>>>>> 184c6ec (.)
 >>>>>>> 2f7c4db (.)
+=======
+>>>>>>> fa4eb21 (.)
 class ConvertVideoByConvertDataAction
 {
     use QueueableAction;
 
     /**
-     * Execute the action.
+     * Esegue la conversione del video utilizzando i dati forniti.
+     *
+     * @param ConvertData $data I dati di configurazione per la conversione
+     *
+     * @throws \Exception Se il file non esiste o se mancano parametri essenziali
+     *
+     * @return string|null Il percorso del file convertito o null in caso di errore
      */
+<<<<<<< HEAD
 <<<<<<< HEAD
 =======
 <<<<<<< HEAD
 >>>>>>> 2f7c4db (.)
     public function execute(ConvertData $data): string
+=======
+    public function execute(ConvertData $data): ?string
+>>>>>>> fa4eb21 (.)
     {
         if (!$data->exists()) {
-            throw new \Exception('Il file non esiste');
+            return null;
         }
 
         $format = $data->getFFMpegFormat();
@@ -89,6 +103,7 @@ class ConvertVideoByConvertDataAction
             throw new \Exception('Il nome del file convertito non è stato specificato');
         }
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 =======
@@ -148,39 +163,44 @@ class ConvertVideoByConvertDataAction
         }
         $format = $data->getFFMpegFormat();
         $file_new = $data->getConvertedFilename();
+=======
+>>>>>>> fa4eb21 (.)
         Notification::make()
-            ->title('Start')
+            ->title('Avvio conversione video')
             ->success()
             ->send();
 
+        // Instanziamo il formato prima di usarlo
+        $formatInstance = new $format();
+
         /*
-         * -preset ultrafast.
+         * -preset ultrafast per una conversione più veloce.
          */
-        // Call to an undefined method ProtoneMedia\LaravelFFMpeg\Drivers\PHPFFMpeg::toDisk().
         // @phpstan-ignore method.notFound
         FFMpeg::fromDisk($data->disk)
             ->open($data->file)
             ->export()
-            // ->addFilter(function (VideoFilters $filters) {
-            //    $filters->resize(new \FFMpeg\Coordinate\Dimension(640, 480));
-            // })
-            // ->resize(640, 480)
             ->onProgress(function (float $percentage, float $remaining, float $rate): void {
-                $msg = "{$percentage}% transcoded";
-                $msg .= "{$remaining} seconds left at rate: {$rate}";
+                $msg = "{$percentage}% convertito. ";
+                $msg .= "{$remaining} secondi rimanenti (rate: {$rate})";
+
                 Notification::make()
                     ->title($msg)
                     ->success()
                     ->send();
             })
             ->addFilter('-preset', 'ultrafast')
-            // ->addFilter('-crf', 22)
             ->toDisk($data->disk)
-            ->inFormat($format)
+            ->inFormat($formatInstance)
             ->save($file_new);
 
+<<<<<<< HEAD
         return Storage::disk($data->disk)->url($file_new);
 >>>>>>> 184c6ec (.)
 >>>>>>> 2f7c4db (.)
+=======
+        // Restituisci il percorso del file
+        return $file_new;
+>>>>>>> fa4eb21 (.)
     }
 }
