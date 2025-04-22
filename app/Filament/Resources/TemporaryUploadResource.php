@@ -20,6 +20,7 @@ class TemporaryUploadResource extends XotBaseResource
 {
     protected static ?string $model = TemporaryUpload::class;
 
+<<<<<<< HEAD
     /**
      * @return array<string, \Filament\Forms\Components\Component>
      */
@@ -27,14 +28,29 @@ class TemporaryUploadResource extends XotBaseResource
     {
         return [
             'file' => \Filament\Forms\Components\FileUpload::make('file')
+=======
+    protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
+
+    public static function getFormSchema(): array
+    {
+        return [
+            \Filament\Forms\Components\FileUpload::make('file')
+>>>>>>> 184c6ec (.)
                 ->required()
                 ->preserveFilenames()
                 ->acceptedFileTypes(['image/*', 'application/pdf', 'application/msword'])
                 ->maxSize(10240),
+<<<<<<< HEAD
             'folder' => \Filament\Forms\Components\TextInput::make('folder')
                 ->required()
                 ->maxLength(255),
             'expires_at' => \Filament\Forms\Components\DateTimePicker::make('expires_at')
+=======
+            \Filament\Forms\Components\TextInput::make('folder')
+                ->required()
+                ->maxLength(255),
+            \Filament\Forms\Components\DateTimePicker::make('expires_at')
+>>>>>>> 184c6ec (.)
                 ->required(),
         ];
     }

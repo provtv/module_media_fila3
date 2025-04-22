@@ -13,6 +13,7 @@ use Webmozart\Assert\Assert;
 // implements PathGenerator
 class TemporaryUploadPathGenerator
 {
+<<<<<<< HEAD
     /**
      * @param \Modules\Media\Models\Media $media
      */
@@ -48,5 +49,36 @@ class TemporaryUploadPathGenerator
         $key = md5($media->uuid . $id);
 
         return "tmp/{$key}";
+=======
+    public function getPath(Media $media): string
+    {
+        return $this->getBasePath($media).'/'.md5($media->id.$media->uuid.'original').'/';
+    }
+
+    public function getPathForConversions(Media $media): string
+    {
+        return $this->getBasePath($media).'/'.md5($media->id.$media->uuid.'conversion');
+    }
+
+    public function getPathForResponsiveImages(Media $media): string
+    {
+        return $this->getBasePath($media).'/'.md5($media->id.$media->uuid.'responsive');
+    }
+
+    /*
+    * Get a unique base path for the given media.
+    */
+    protected function getBasePath(Media $media): string
+    {
+        Assert::string($prefix = config('media-library.prefix', ''));
+        Assert::string($id = $media->getKey());
+        $key = md5($media->uuid.$id);
+
+        if ($prefix !== '') {
+            return $prefix.'/'.$key;
+        }
+
+        return $key;
+>>>>>>> 184c6ec (.)
     }
 }

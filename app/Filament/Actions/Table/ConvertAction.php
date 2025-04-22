@@ -19,7 +19,11 @@ class ConvertAction extends Action
     {
         parent::setUp();
         $this->translateLabel()
+<<<<<<< HEAD
 
+=======
+            
+>>>>>>> 184c6ec (.)
             ->tooltip('convert')
             ->openUrlInNewTab()
             // ->icon('heroicon-o-cloud-arrow-down')
