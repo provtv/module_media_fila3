@@ -11,6 +11,7 @@ namespace Modules\Media\Actions\Image;
 // use Intervention\Image\Facades\Image;
 use Intervention\Image\Drivers\Gd\Driver;
 <<<<<<< HEAD
+<<<<<<< HEAD
 use Intervention\Image\ImageManager;
 use Spatie\QueueableAction\QueueableAction;
 
@@ -19,6 +20,11 @@ use Spatie\QueueableAction\QueueableAction;
 use Intervention\Image\ImageManager;
 use Spatie\QueueableAction\QueueableAction;
 
+
+>>>>>>> aurmich/dev
+=======
+use Intervention\Image\ImageManager;
+use Spatie\QueueableAction\QueueableAction;
 
 >>>>>>> aurmich/dev
 class Merge
@@ -36,15 +42,21 @@ class Merge
     }
 
 <<<<<<< HEAD
+<<<<<<< HEAD
     public function execute(array $filenames, string $filenameOut): void
     {
         $manager = app(ImageManager::class);
 =======
 
+=======
+>>>>>>> aurmich/dev
     public function execute(array $filenames, string $filenameOut): void
     {
         $manager = app(ImageManager::class);
 
+<<<<<<< HEAD
+>>>>>>> aurmich/dev
+=======
 >>>>>>> aurmich/dev
         $width = 0;
         $height = 0;
@@ -52,11 +64,15 @@ class Merge
         // Prima passata per calcolare le dimensioni totali
         foreach ($filenames as $filename) {
 <<<<<<< HEAD
+<<<<<<< HEAD
             $img = $manager->read(public_path($filename));
 =======
 
             $img = $manager->read(public_path($filename));
 
+>>>>>>> aurmich/dev
+=======
+            $img = $manager->read(public_path($filename));
 >>>>>>> aurmich/dev
             $width += $img->width();
             $height = max($height, $img->height());
@@ -66,10 +82,14 @@ class Merge
         $img_canvas = $manager->create($width, $height);
 
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> aurmich/dev
         // Seconda passata per inserire le immagini
         $delta = 0;
         foreach ($filenames as $filename) {
             $img = $manager->read(public_path($filename));
+<<<<<<< HEAD
 =======
 
 
@@ -80,16 +100,22 @@ class Merge
             $img = $manager->read(public_path($filename));
 
 >>>>>>> aurmich/dev
+=======
+>>>>>>> aurmich/dev
             $img_canvas->place($img, 'top-left', $delta, 0);
             $delta += $img->width();
         }
 
+<<<<<<< HEAD
 <<<<<<< HEAD
         $img_canvas->save(public_path().'/'.$filenameOut, 100);
 =======
 
         $img_canvas->save(public_path().'/'.$filenameOut, 100);
 
+>>>>>>> aurmich/dev
+=======
+        $img_canvas->save(public_path().'/'.$filenameOut, 100);
 >>>>>>> aurmich/dev
     }
 }

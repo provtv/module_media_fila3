@@ -76,12 +76,17 @@ class SubtitleService
         $plain = $this->getPlain();
         $up = [$this->field_name => $plain];
 <<<<<<< HEAD
+<<<<<<< HEAD
         $this->model = tap($this->model)->update($up);
 
 =======
 
         $this->model = tap($this->model)->update($up);
 
+
+>>>>>>> aurmich/dev
+=======
+        $this->model = tap($this->model)->update($up);
 
 >>>>>>> aurmich/dev
         return $this;

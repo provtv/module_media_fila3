@@ -1,4 +1,7 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> aurmich/dev
 [
     {
         "name": "video-player",
@@ -8,6 +11,9 @@
         "ns": "Modules\\Media\\View\\Components\\VideoPlayer"
     }
 ]
+<<<<<<< HEAD
 =======
 []
+>>>>>>> aurmich/dev
+=======
 >>>>>>> aurmich/dev

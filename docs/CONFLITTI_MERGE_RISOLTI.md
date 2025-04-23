@@ -106,9 +106,23 @@ public function getFileAttribute(?string $value): ?string
 
 ### 5. SubtitleService.php
 
+<<<<<<< HEAD
 **Problema**: Conflitto nella definizione dei tipi di ritorno PHPDoc per il metodo `getFromXml()` con diverse versioni di tipizzazione dei dati.
 
 **Soluzione**: È stata adottata la versione con la tipizzazione più dettagliata e completa, preservando anche il commento psalm che fornisce informazioni più specifiche sulla struttura dell'array.
+=======
+**Problema**: Conflitto nella modalità di aggiornamento del modello Eloquent nel metodo `upateModel()`. Le versioni in conflitto differivano nella gestione dell'assegnazione e nell'utilizzo di `tap($this->model)->update($up)`.
+
+**Intento funzionale**: Garantire che il modello venga aggiornato in modo atomico e che l'istanza aggiornata venga sempre assegnata correttamente alla proprietà. L'obiettivo è mantenere la robustezza, evitare duplicazioni e assicurare coerenza con il resto della codebase.
+
+**Decisione architetturale**: È stata adottata la versione che utilizza `tap($this->model)->update($up)`, eliminando linee ridondanti e mantenendo lo stile coerente. Questa scelta garantisce che l'oggetto model sia sempre aggiornato e pronto per un utilizzo successivo.
+
+Per approfondimenti generali sulle strategie di risoluzione dei conflitti, fare riferimento alla [documentazione centrale](../../../../docs/risoluzione_conflitti_git.md).
+
+---
+
+**Collegamento bidirezionale:** questo file è referenziato anche nella documentazione principale in `/docs/risoluzione_conflitti_git.md`.
+>>>>>>> aurmich/dev
 
 ```php
 /**
@@ -122,6 +136,23 @@ public function getFromXml(): array
 }
 ```
 
+<<<<<<< HEAD
+=======
+### 6. ConvertVideoAction.php
+
+**Problema**: Conflitto nella gestione degli import e nella struttura del metodo execute. Le versioni in conflitto differivano nell'ordine degli import e nella presenza di linee vuote superflue tra i blocchi di codice.
+
+**Intento funzionale**: Garantire chiarezza e leggibilità, mantenendo la coerenza con il resto del modulo e assicurando che la logica di conversione video sia atomica e facilmente manutenibile.
+
+**Decisione architetturale**: È stata adottata la versione che mantiene gli import ordinati e privi di duplicazioni, eliminando linee vuote inutili e assicurando che la logica del metodo sia compatta e leggibile. Nessuna modifica funzionale è stata introdotta, ma solo miglioramenti di stile e mantenibilità.
+
+Per approfondimenti generali sulle strategie di risoluzione dei conflitti, fare riferimento alla [documentazione centrale](../../../../docs/risoluzione_conflitti_git.md).
+
+---
+
+**Collegamento bidirezionale:** questo file è referenziato anche nella documentazione principale in `/docs/risoluzione_conflitti_git.md`.
+
+>>>>>>> aurmich/dev
 ### 6. VideoStream.php
 
 **Problema**: Conflitto nella costruzione e inizializzazione del servizio VideoStream, con differenze nell'implementazione delle tipizzazioni e nel metodo di ottenere il MIME type.
@@ -250,6 +281,23 @@ public static function getFormSchema(): array
 
 Per dettagli completi sulla risoluzione di MediaConvertResource, vedere [documentazione dedicata](../../../../docs/media_convert_resource_conflict.md).
 
+<<<<<<< HEAD
+=======
+### 10. Merge.php
+
+**Problema**: Conflitti storici nella gestione dei driver di Intervention Image, nella modalità di composizione delle immagini e nella gestione dei parametri di input/output.
+
+**Intento funzionale**: Garantire una composizione orizzontale delle immagini robusta, efficiente e compatibile con la pipeline Media, mantenendo la massima leggibilità e manutenibilità del codice.
+
+**Decisione architetturale**: È stata adottata la versione che utilizza il driver Gd di Intervention Image, con gestione esplicita delle dimensioni della canvas e posizionamento progressivo delle immagini. La soluzione mantiene la compatibilità con l’ecosistema Laravel e assicura la massima chiarezza del flusso di composizione.
+
+Per approfondimenti generali sulle strategie di risoluzione dei conflitti, fare riferimento alla [documentazione centrale](../../../../docs/risoluzione_conflitti_git.md).
+
+---
+
+**Collegamento bidirezionale:** questo file è referenziato anche nella documentazione principale in `/docs/risoluzione_conflitti_git.md`.
+
+>>>>>>> aurmich/dev
 ### 10. VideoEntry.php
 
 **Problema**: Conflitto nell'implementazione del componente VideoEntry, con differenze nella gestione dei tipi e nella formattazione.
