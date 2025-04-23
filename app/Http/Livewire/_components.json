@@ -1,3 +1,10 @@
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> aurmich/dev
+>>>>>>> aurmich/dev
 [
     {
         "name": "card.video.clip",
@@ -7,3 +14,12 @@
         "ns": "Modules\\Media\\Http\\Livewire\\Card\\Video\\Clip"
     }
 ]
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+[{"name":"card.video.clip","class":"Card\\Video\\Clip","module":null,"path":null,"ns":"Modules\\Media\\Http\\Livewire\\Card\\Video\\Clip"}]
+>>>>>>> aurmich/dev
+=======
+>>>>>>> aurmich/dev
+>>>>>>> aurmich/dev
