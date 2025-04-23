@@ -29,32 +29,6 @@ class Merge
 
     public function execute(array $filenames, string $filenameOut): void
     {
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-        $width = 0;
-        $height = 0;
-        $imgs = [];
-        foreach ($filenames as $filename) {
-            // $img = Image::make(public_path($filename));
-            if (! is_string($filename)) {
-                continue;
-            }
-            $manager = new ImageManager(new Driver);
-            $img = $manager->read(public_path($filename));
-
-            $imgs[] = $img;
-=======
-=======
-=======
->>>>>>> 0ffeaf3 (fix: auto resolve conflict)
-=======
-<<<<<<< HEAD
->>>>>>> 2f7c4db (.)
->>>>>>> 59bb70f (fix: auto resolve conflict)
-=======
->>>>>>> 2a62ef4 (.)
         $manager = app(ImageManager::class);
         $width = 0;
         $height = 0;
@@ -62,17 +36,6 @@ class Merge
         // Prima passata per calcolare le dimensioni totali
         foreach ($filenames as $filename) {
             $img = $manager->read(public_path($filename));
-<<<<<<< HEAD
-<<<<<<< HEAD
->>>>>>> 06dadfb (.)
-=======
-<<<<<<< HEAD
-=======
-=======
-=======
->>>>>>> fa4eb21 (.)
-=======
->>>>>>> 2a62ef4 (.)
         $width = 0;
         $height = 0;
         $imgs = [];
@@ -85,49 +48,10 @@ class Merge
             $img = $manager->read(public_path($filename));
 
             $imgs[] = $img;
-<<<<<<< HEAD
-<<<<<<< HEAD
->>>>>>> 184c6ec (.)
->>>>>>> 2f7c4db (.)
-<<<<<<< HEAD
->>>>>>> 59bb70f (fix: auto resolve conflict)
-=======
-=======
->>>>>>> fa4eb21 (.)
->>>>>>> 0ffeaf3 (fix: auto resolve conflict)
-=======
->>>>>>> 2a62ef4 (.)
             $width += $img->width();
             $height = max($height, $img->height());
         }
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-        if (! is_numeric($height)) {
-            throw new \Exception('['.__LINE__.']['.class_basename(self::class).']');
-        }
-        $height = (int) $height;
-        // $img_canvas = Image::canvas($width, $height);
-
-        $manager = new ImageManager(Driver::class);
-        $img_canvas = $manager->create($width, $height);
-
-        $delta = 0;
-        foreach ($imgs as $img) {
-            // $img_canvas->insert($img, 'top-left ', $delta, 0);
-            $img_canvas->place($img, 'top-left ', $delta, 0);
-=======
-=======
-=======
->>>>>>> 0ffeaf3 (fix: auto resolve conflict)
-=======
-<<<<<<< HEAD
->>>>>>> 2f7c4db (.)
->>>>>>> 59bb70f (fix: auto resolve conflict)
-=======
->>>>>>> 2a62ef4 (.)
         // Crea un'immagine vuota con le dimensioni calcolate
         $img_canvas = $manager->create($width, $height);
 
@@ -136,17 +60,6 @@ class Merge
         foreach ($filenames as $filename) {
             $img = $manager->read(public_path($filename));
             $img_canvas->place($img, 'top-left', $delta, 0);
-<<<<<<< HEAD
-<<<<<<< HEAD
->>>>>>> 06dadfb (.)
-=======
-<<<<<<< HEAD
-=======
-=======
-=======
->>>>>>> fa4eb21 (.)
-=======
->>>>>>> 2a62ef4 (.)
         if (! is_numeric($height)) {
             throw new \Exception('['.__LINE__.']['.class_basename(self::class).']');
         }
@@ -160,18 +73,6 @@ class Merge
         foreach ($imgs as $img) {
             // $img_canvas->insert($img, 'top-left ', $delta, 0);
             $img_canvas->place($img, 'top-left ', $delta, 0);
-<<<<<<< HEAD
-<<<<<<< HEAD
->>>>>>> 184c6ec (.)
->>>>>>> 2f7c4db (.)
-<<<<<<< HEAD
->>>>>>> 59bb70f (fix: auto resolve conflict)
-=======
-=======
->>>>>>> fa4eb21 (.)
->>>>>>> 0ffeaf3 (fix: auto resolve conflict)
-=======
->>>>>>> 2a62ef4 (.)
             $delta += $img->width();
         }
 

@@ -1,21 +1,3 @@
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-[{"name":"card.video.clip","class":"Card\\Video\\Clip","module":null,"path":null,"ns":"Modules\\Media\\Http\\Livewire\\Card\\Video\\Clip"}]
-=======
-<<<<<<< HEAD
->>>>>>> 59bb70f (fix: auto resolve conflict)
-=======
-[{"name":"card.video.clip","class":"Card\\Video\\Clip","module":null,"path":null,"ns":"Modules\\Media\\Http\\Livewire\\Card\\Video\\Clip"}]
-=======
-<<<<<<< HEAD
-=======
->>>>>>> fa4eb21 (.)
->>>>>>> 0ffeaf3 (fix: auto resolve conflict)
-=======
->>>>>>> 2a62ef4 (.)
 [
     {
         "name": "card.video.clip",
@@ -25,20 +7,3 @@
         "ns": "Modules\\Media\\Http\\Livewire\\Card\\Video\\Clip"
     }
 ]
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-[{"name":"card.video.clip","class":"Card\\Video\\Clip","module":null,"path":null,"ns":"Modules\\Media\\Http\\Livewire\\Card\\Video\\Clip"}]
-<<<<<<< HEAD
->>>>>>> 06dadfb (.)
-=======
->>>>>>> 184c6ec (.)
->>>>>>> 2f7c4db (.)
-<<<<<<< HEAD
->>>>>>> 59bb70f (fix: auto resolve conflict)
-=======
-=======
->>>>>>> fa4eb21 (.)
->>>>>>> 0ffeaf3 (fix: auto resolve conflict)
-=======
->>>>>>> 2a62ef4 (.)

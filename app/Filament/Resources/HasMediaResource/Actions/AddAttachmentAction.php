@@ -43,35 +43,7 @@ class AddAttachmentAction extends Action
     }
 
     /**
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-     * @return (Radio|TextInput|BaseFileUpload|FileUpload)[]
-=======
      * @return array<int, Radio|TextInput|BaseFileUpload|FileUpload>
->>>>>>> 06dadfb (.)
-=======
-=======
->>>>>>> 0ffeaf3 (fix: auto resolve conflict)
-     * @return array<int, Radio|TextInput|BaseFileUpload|FileUpload>
-=======
-<<<<<<< HEAD
-     * @return array<int, Radio|TextInput|BaseFileUpload|FileUpload>
-=======
-     * @return (Radio|TextInput|BaseFileUpload|FileUpload)[]
->>>>>>> 184c6ec (.)
->>>>>>> 2f7c4db (.)
-<<<<<<< HEAD
->>>>>>> 59bb70f (fix: auto resolve conflict)
-=======
-=======
-     * @return (Radio|TextInput|BaseFileUpload|FileUpload)[]
->>>>>>> fa4eb21 (.)
->>>>>>> 0ffeaf3 (fix: auto resolve conflict)
-=======
-     * @return array<int, Radio|TextInput|BaseFileUpload|FileUpload>
->>>>>>> 2a62ef4 (.)
      */
     public static function getFormSchema(bool $asset = true): array
     {

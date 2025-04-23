@@ -129,15 +129,7 @@ class VideoEntry extends Entry
         if (is_scalar($height) || (is_object($height) && method_exists($height, '__toString'))) {
             return is_string($height) ? $height : (string) $height;
         }
-<<<<<<< HEAD
-<<<<<<< HEAD
 
-=======
-        
->>>>>>> 06dadfb (.)
-=======
-
->>>>>>> 0ffeaf3 (fix: auto resolve conflict)
         // If we can't convert to string, return null
         return null;
     }
@@ -153,86 +145,6 @@ class VideoEntry extends Entry
      */
     public function getDefaultImageUrl(): ?string
     {
-<<<<<<< HEAD
-        $url = $this->evaluate($this->defaultImageUrl);
-<<<<<<< HEAD
-<<<<<<< HEAD
-
-        if ($url === null) {
-            return null;
-        }
-
-        if (is_scalar($url) || (is_object($url) && method_exists($url, '__toString'))) {
-            return is_string($url) ? $url : (string) $url;
-        }
-
-=======
-        
-=======
-
->>>>>>> 0ffeaf3 (fix: auto resolve conflict)
-        if ($url === null) {
-            return null;
-        }
-
-        if (is_scalar($url) || (is_object($url) && method_exists($url, '__toString'))) {
-            return is_string($url) ? $url : (string) $url;
-        }
-<<<<<<< HEAD
-        
->>>>>>> 06dadfb (.)
-=======
-
->>>>>>> 0ffeaf3 (fix: auto resolve conflict)
-        return null;
-    }
-
-    /**
-     * Get the visibility value for the video entry.
-     *
-     * @return string The visibility setting
-     */
-    public function getVisibility(): string
-    {
-        $visibility = $this->evaluate($this->visibility);
-<<<<<<< HEAD
-<<<<<<< HEAD
-
-        if (is_scalar($visibility) || (is_object($visibility) && method_exists($visibility, '__toString'))) {
-            return is_string($visibility) ? $visibility : (string) $visibility;
-        }
-
-=======
-        
-        if (is_scalar($visibility) || (is_object($visibility) && method_exists($visibility, '__toString'))) {
-            return is_string($visibility) ? $visibility : (string) $visibility;
-        }
-        
->>>>>>> 06dadfb (.)
-=======
-
-        if (is_scalar($visibility) || (is_object($visibility) && method_exists($visibility, '__toString'))) {
-            return is_string($visibility) ? $visibility : (string) $visibility;
-        }
-
->>>>>>> 0ffeaf3 (fix: auto resolve conflict)
-        // Default to public if invalid value
-        return 'public';
-    }
-
-    /**
-     * Get the width value for the video entry.
-     *
-     * @return string|null The width value as a string (with 'px' suffix if it was an integer) or null if not set
-     */
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-=======
-    public function getDefaultImageUrl(): ?string
-    {
-=======
->>>>>>> 2a62ef4 (.)
         return $this->evaluate($this->defaultImageUrl);
     }
 
@@ -270,39 +182,7 @@ class VideoEntry extends Entry
             return $attributes;
         }
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
->>>>>>> 2f7c4db (.)
-=======
->>>>>>> fa4eb21 (.)
-        if (is_scalar($width) || (is_object($width) && method_exists($width, '__toString'))) {
-            return is_string($width) ? $width : (string) $width;
-        }
-<<<<<<< HEAD
-<<<<<<< HEAD
-
-=======
-        
->>>>>>> 06dadfb (.)
-=======
-
->>>>>>> 0ffeaf3 (fix: auto resolve conflict)
-        return null;
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-=======
-        return $width;
->>>>>>> 184c6ec (.)
->>>>>>> 2f7c4db (.)
-=======
->>>>>>> fa4eb21 (.)
-=======
         return new ComponentAttributeBag($attributes);
->>>>>>> 2a62ef4 (.)
     }
 
     public function isCircular(): bool
@@ -334,57 +214,15 @@ class VideoEntry extends Entry
      */
     public function getWidth(): ?string
     {
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
->>>>>>> 2f7c4db (.)
-=======
->>>>>>> fa4eb21 (.)
-        $attributes = $this->evaluate($this->extraImgAttributes);
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
         $width = $this->evaluate($this->width);
->>>>>>> 2a62ef4 (.)
 
         if ($width === null) {
             return null;
         }
 
-<<<<<<< HEAD
-=======
-        
-        if (is_array($attributes)) {
-            return $attributes;
-        }
-        
->>>>>>> 06dadfb (.)
-=======
-
-        if (is_array($attributes)) {
-            return $attributes;
-        }
-
->>>>>>> 0ffeaf3 (fix: auto resolve conflict)
-        // Return empty array if invalid value
-        return [];
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-=======
-        return $this->evaluate($this->extraImgAttributes);
->>>>>>> 184c6ec (.)
->>>>>>> 2f7c4db (.)
-=======
->>>>>>> fa4eb21 (.)
-    }
-=======
         if (is_int($width)) {
             return "{$width}px";
         }
->>>>>>> 2a62ef4 (.)
 
         if (is_string($width)) {
             return $width;
@@ -423,8 +261,6 @@ class VideoEntry extends Entry
     public function getOverlap(): ?int
     {
         $overlap = $this->evaluate($this->overlap);
-<<<<<<< HEAD
-<<<<<<< HEAD
 
         if ($overlap === null) {
             return null;
@@ -434,24 +270,6 @@ class VideoEntry extends Entry
             return (int) $overlap;
         }
 
-=======
-        
-=======
-
->>>>>>> 0ffeaf3 (fix: auto resolve conflict)
-        if ($overlap === null) {
-            return null;
-        }
-
-        if (is_numeric($overlap)) {
-            return (int) $overlap;
-        }
-<<<<<<< HEAD
-        
->>>>>>> 06dadfb (.)
-=======
-
->>>>>>> 0ffeaf3 (fix: auto resolve conflict)
         return null;
     }
 
@@ -469,8 +287,6 @@ class VideoEntry extends Entry
     public function getRing(): ?int
     {
         $ring = $this->evaluate($this->ring);
-<<<<<<< HEAD
-<<<<<<< HEAD
 
         if ($ring === null) {
             return null;
@@ -480,24 +296,6 @@ class VideoEntry extends Entry
             return (int) $ring;
         }
 
-=======
-        
-=======
-
->>>>>>> 0ffeaf3 (fix: auto resolve conflict)
-        if ($ring === null) {
-            return null;
-        }
-
-        if (is_numeric($ring)) {
-            return (int) $ring;
-        }
-<<<<<<< HEAD
-        
->>>>>>> 06dadfb (.)
-=======
-
->>>>>>> 0ffeaf3 (fix: auto resolve conflict)
         return null;
     }
 
@@ -515,8 +313,6 @@ class VideoEntry extends Entry
     public function getLimit(): ?int
     {
         $limit = $this->evaluate($this->limit);
-<<<<<<< HEAD
-<<<<<<< HEAD
 
         if ($limit === null) {
             return null;
@@ -526,24 +322,6 @@ class VideoEntry extends Entry
             return (int) $limit;
         }
 
-=======
-        
-=======
-
->>>>>>> 0ffeaf3 (fix: auto resolve conflict)
-        if ($limit === null) {
-            return null;
-        }
-
-        if (is_numeric($limit)) {
-            return (int) $limit;
-        }
-<<<<<<< HEAD
-        
->>>>>>> 06dadfb (.)
-=======
-
->>>>>>> 0ffeaf3 (fix: auto resolve conflict)
         return null;
     }
 
@@ -585,8 +363,6 @@ class VideoEntry extends Entry
     public function getLimitedRemainingTextSize(): ?string
     {
         $size = $this->evaluate($this->limitedRemainingTextSize);
-<<<<<<< HEAD
-<<<<<<< HEAD
 
         if ($size === null) {
             return null;
@@ -596,24 +372,6 @@ class VideoEntry extends Entry
             return is_string($size) ? $size : (string) $size;
         }
 
-=======
-        
-=======
-
->>>>>>> 0ffeaf3 (fix: auto resolve conflict)
-        if ($size === null) {
-            return null;
-        }
-
-        if (is_scalar($size) || (is_object($size) && method_exists($size, '__toString'))) {
-            return is_string($size) ? $size : (string) $size;
-        }
-<<<<<<< HEAD
-        
->>>>>>> 06dadfb (.)
-=======
-
->>>>>>> 0ffeaf3 (fix: auto resolve conflict)
         return null;
     }
 

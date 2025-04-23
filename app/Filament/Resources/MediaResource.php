@@ -16,103 +16,22 @@ class MediaResource extends XotBaseResource
 {
     protected static ?string $model = Media::class;
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
     protected static ?string $navigationIcon = 'fas-photo-film';
 
-    public static function getFormSchema(): array
-    {
-        return [
-            FileUpload::make('file')
-=======
-=======
-=======
->>>>>>> 0ffeaf3 (fix: auto resolve conflict)
-=======
-<<<<<<< HEAD
->>>>>>> 2f7c4db (.)
->>>>>>> 59bb70f (fix: auto resolve conflict)
-=======
-    protected static ?string $navigationIcon = 'fas-photo-film';
-
->>>>>>> 2a62ef4 (.)
     /**
      * @return array<string, \Filament\Forms\Components\Component>
      */
     public static function getFormSchema(): array
     {
         return [
-<<<<<<< HEAD
-            'file' => FileUpload::make('file')
-<<<<<<< HEAD
->>>>>>> 06dadfb (.)
-=======
-<<<<<<< HEAD
-=======
-=======
-=======
->>>>>>> fa4eb21 (.)
-    protected static ?string $navigationIcon = 'fas-photo-film';
-
-    public static function getFormSchema(): array
-    {
-        return [
             FileUpload::make('file')
-<<<<<<< HEAD
->>>>>>> 184c6ec (.)
->>>>>>> 2f7c4db (.)
-<<<<<<< HEAD
->>>>>>> 59bb70f (fix: auto resolve conflict)
-=======
-=======
->>>>>>> fa4eb21 (.)
->>>>>>> 0ffeaf3 (fix: auto resolve conflict)
-=======
-            FileUpload::make('file')
->>>>>>> 2a62ef4 (.)
                 ->hint(static::trans('fields.file_hint'))
                 ->storeFileNamesIn('original_file_name')
                 ->visibility('private')
                 ->required()
                 ->columnSpanFull(),
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
             Radio::make('attachment_type'),
             TextInput::make('name')
-=======
-            'attachment_type' => Radio::make('attachment_type'),
-            'name' => TextInput::make('name')
->>>>>>> 06dadfb (.)
-=======
-=======
->>>>>>> 0ffeaf3 (fix: auto resolve conflict)
-            'attachment_type' => Radio::make('attachment_type'),
-            'name' => TextInput::make('name')
-=======
-<<<<<<< HEAD
-            'attachment_type' => Radio::make('attachment_type'),
-            'name' => TextInput::make('name')
-=======
-            Radio::make('attachment_type'),
-            TextInput::make('name')
->>>>>>> 184c6ec (.)
->>>>>>> 2f7c4db (.)
-<<<<<<< HEAD
->>>>>>> 59bb70f (fix: auto resolve conflict)
-=======
-=======
-            Radio::make('attachment_type'),
-            TextInput::make('name')
->>>>>>> fa4eb21 (.)
->>>>>>> 0ffeaf3 (fix: auto resolve conflict)
-=======
-            Radio::make('attachment_type'),
-            TextInput::make('name')
->>>>>>> 2a62ef4 (.)
                 ->translateLabel()
                 ->hint(static::trans('fields.name.hint'))
                 ->autocomplete(false)

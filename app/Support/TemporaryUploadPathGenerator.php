@@ -14,61 +14,6 @@ use Webmozart\Assert\Assert;
 class TemporaryUploadPathGenerator
 {
     /**
-<<<<<<< HEAD
-<<<<<<< HEAD
-     * Genera il percorso di storage per i file originali.
-     *
-     * @param \Modules\Media\Models\Media $media Il modello media per cui generare il percorso
-     */
-    public function getPath(Media $media): string
-    {
-        return $this->getBasePath($media).'/'.md5($media->id.$media->uuid.'original').'/';
-    }
-
-    /**
-     * Genera il percorso di storage per le conversioni.
-     *
-     * @param \Modules\Media\Models\Media $media Il modello media per cui generare il percorso
-     */
-    public function getPathForConversions(Media $media): string
-    {
-        return $this->getBasePath($media).'/'.md5($media->id.$media->uuid.'conversion');
-    }
-
-    /**
-     * Genera il percorso di storage per le immagini responsive.
-     *
-     * @param \Modules\Media\Models\Media $media Il modello media per cui generare il percorso
-     */
-    public function getPathForResponsiveImages(Media $media): string
-    {
-        return $this->getBasePath($media).'/'.md5($media->id.$media->uuid.'responsive');
-    }
-
-    /**
-     * Ottiene un percorso base univoco per il media dato.
-     *
-     * @param \Modules\Media\Models\Media $media Il modello media per cui generare il percorso base
-     */
-    protected function getBasePath(Media $media): string
-    {
-        Assert::string($prefix = config('media-library.prefix', ''));
-        Assert::string($id = $media->getKey());
-        $key = md5($media->uuid.$id);
-
-        if ($prefix !== '') {
-            return $prefix.'/'.$key;
-        }
-
-        return $key;
-=======
-<<<<<<< HEAD
-    /**
-=======
-<<<<<<< HEAD
->>>>>>> 0ffeaf3 (fix: auto resolve conflict)
-=======
->>>>>>> 2a62ef4 (.)
      * @param \Modules\Media\Models\Media $media
      */
     /**
@@ -122,19 +67,7 @@ class TemporaryUploadPathGenerator
         $key = md5($media->uuid . $id);
 
         return "tmp/{$key}";
-<<<<<<< HEAD
-<<<<<<< HEAD
->>>>>>> 06dadfb (.)
-=======
-<<<<<<< HEAD
-=======
-=======
-=======
->>>>>>> fa4eb21 (.)
-    public function getPath(Media $media): string
-=======
      public function getPath(Media $media): string
->>>>>>> 2a62ef4 (.)
     {
         return $this->getBasePath($media).'/'.md5($media->id.$media->uuid.'original').'/';
     }
@@ -175,19 +108,6 @@ class TemporaryUploadPathGenerator
         }
 
         return $key;
-<<<<<<< HEAD
-<<<<<<< HEAD
->>>>>>> 184c6ec (.)
->>>>>>> 2f7c4db (.)
-<<<<<<< HEAD
->>>>>>> 59bb70f (fix: auto resolve conflict)
-=======
-=======
->>>>>>> fa4eb21 (.)
->>>>>>> 0ffeaf3 (fix: auto resolve conflict)
-    }
-=======
  184c6ec (.)
       }
->>>>>>> 2a62ef4 (.)
 }
