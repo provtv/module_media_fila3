@@ -1,7 +1,15 @@
 # Modulo Media
 
+<<<<<<< HEAD
 
 aurmich/dev
+=======
+<<<<<<< HEAD
+=======
+
+aurmich/dev
+>>>>>>> aurmich/dev
+>>>>>>> aurmich/dev
 ## Informazioni Generali
 - **Nome**: `laraxot/module_media_fila3`
 - **Descrizione**: Modulo dedicato alla gestione di immagini e video
@@ -101,7 +109,18 @@ composer format        # Formatta il codice
    - Controllare log di sistema
    - Verificare supporto GD/Imagick
 
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+## Changelog
+Le modifiche vengono tracciate nel repository GitHub. 
+=======
+>>>>>>> aurmich/dev
 
 ## Changelog
 Le modifiche vengono tracciate nel repository GitHub. 
 aurmich/dev
+<<<<<<< HEAD
+=======
+>>>>>>> aurmich/dev
+>>>>>>> aurmich/dev

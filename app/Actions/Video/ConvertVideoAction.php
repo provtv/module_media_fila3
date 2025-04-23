@@ -12,8 +12,16 @@ use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Str;
 use ProtoneMedia\LaravelFFMpeg\Support\FFMpeg;
 use ProtoneMedia\LaravelFFMpeg\MediaOpener;
+<<<<<<< HEAD
 
 
+=======
+<<<<<<< HEAD
+=======
+
+
+>>>>>>> aurmich/dev
+>>>>>>> aurmich/dev
 use Spatie\QueueableAction\QueueableAction;
 use Webmozart\Assert\Assert;
 use FFMpeg\Format\Video\X264;
@@ -23,7 +31,14 @@ class ConvertVideoAction
     use QueueableAction;
 
     /**
+<<<<<<< HEAD
 
+=======
+<<<<<<< HEAD
+=======
+
+>>>>>>> aurmich/dev
+>>>>>>> aurmich/dev
      * Execute the action.
      */
     public function execute(string $disk_mp4, string $file_mp4, string $file_new): string
@@ -44,6 +59,13 @@ class ConvertVideoAction
         $formattedMedia->save($file_new);
 
         return Storage::disk($disk_mp4)->url($file_new);
+<<<<<<< HEAD
 
+=======
+<<<<<<< HEAD
+=======
+
+>>>>>>> aurmich/dev
+>>>>>>> aurmich/dev
     }
 }
