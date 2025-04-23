@@ -14,7 +14,6 @@ use Filament\Tables\Filters\SelectFilter;
 use Modules\Job\Filament\Widgets\ClockWidget;
 use Modules\Media\Actions\Video\ConvertVideoByMediaConvertAction;
 use Modules\Media\Datas\ConvertData;
-use Modules\Media\Datas\ConvertData;
 use Modules\Media\Filament\Resources\MediaConvertResource;
 use Modules\Media\Models\MediaConvert;
 use Modules\Xot\Filament\Resources\Pages\XotBaseListRecords;
@@ -94,9 +93,6 @@ class ListMediaConverts extends XotBaseListRecords
                     app(ConvertVideoByMediaConvertAction::class)
                         ->onQueue()
                         ->execute($data, $record);
-                    app(ConvertVideoByMediaConvertAction::class)
-                        ->onQueue()
-                        ->execute($record);
                 }),
         ];
     }

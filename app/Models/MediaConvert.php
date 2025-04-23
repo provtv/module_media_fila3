@@ -11,7 +11,7 @@ namespace Modules\Media\Models;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
 /**
- *
+ * 
  *
  * @property int $id
  * @property int $media_id
@@ -87,59 +87,38 @@ class MediaConvert extends BaseModel
         'execution_time',
     ];
 
-    /**
-     * Relazione con il modello Media.
-     */
     public function media(): BelongsTo
     {
         return $this->belongsTo(Media::class);
     }
 
-    /**
-     * Ottiene il disco di storage dal media collegato.
-     */
     public function getDiskAttribute(?string $value): ?string
     {
         if($this->media==null){
             return null;
         }
         return $this->media->disk;
-        return $this->media?->disk;
-        return $this->media?->disk;
     }
 
-    /**
-     * Ottiene il percorso del file originale dal media collegato.
-     */
     public function getFileAttribute(?string $value): ?string
     {
         if($this->media==null){
             return null;
         }
         return $this->media->path . '/' . $this->media->file_name;
-        return $this->media?->id.'/'.$this->media?->file_name;
-        return $this->media?->id.'/'.$this->media?->file_name;
     }
 
-    /**
-     * Genera il percorso del file convertito basato sul file originale.
-     */
     public function getConvertedFileAttribute(?string $value): ?string
     {
         if($this->media==null){
             return null;
         }
         $info = pathinfo($this->media->file_name);
-        $info = pathinfo((string) $this->media?->file_name);
-        $info = pathinfo((string) $this->media?->file_name);
         // "dirname" => "."
         // "basename" => "20600550-uhd_3840_2160_30fps.mp4"
         // "extension" => "mp4"
         // "filename" => "20600550-uhd_3840_2160_30fps"
 
         return $this->media->path . '/conversions/' . $info['filename'] . '_' . $this->id . '.' . $this->format;
-        return $this->media->path . '/conversions/' . $info['filename'] . '_' . $this->id . '.' . $this->format;
-        return $this->media?->id.'/conversions/'.$info['filename'].'_'.$this->id.'.'.$this->format;
-        return $this->media?->id.'/conversions/'.$info['filename'].'_'.$this->id.'.'.$this->format;
     }
 }

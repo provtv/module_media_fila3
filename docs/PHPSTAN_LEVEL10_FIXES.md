@@ -50,45 +50,6 @@ Il modello `Media.php` contiene diverse proprietà documentate con tipo `mixed`:
 **Soluzione da implementare**:
 1. Specificare tipi più precisi per queste proprietà in base ai valori effettivi che possono assumere
 
-
-
-
-
-
-
-
- 59bb70f (fix: auto resolve conflict)
-
- 0ffeaf3 (fix: auto resolve conflict)
-
-
-
- origin/dev
-
- 06dadfb (.)
-
-
- 2f7c4db (.)
-
- 59bb70f (fix: auto resolve conflict)
-
-
-
- fa4eb21 (.)
- 0ffeaf3 (fix: auto resolve conflict)
-
-
-
-
-
-
-
-
- 2f7c4db (.)
-
-
- fa4eb21 (.)
- 2a62ef4 (.)
 ### 4. Errori con le API fluenti di FFMpeg in azioni di conversione video
 
 **Problema**: Le classi `ConvertVideoByMediaConvertAction` e `ConvertVideoByConvertDataAction` presentavano errori PHPStan relativi all'utilizzo dell'API fluente di FFMpeg, in particolare:
@@ -118,12 +79,9 @@ Il modello `Media.php` contiene diverse proprietà documentate con tipo `mixed`:
 
 Questa soluzione mantiene la funzionalità originale migliorando al contempo la chiarezza del codice e la compatibilità con l'analisi statica di PHPStan a livello 10.
 
-
-
-
 ### 5. Risoluzione dei conflitti di merge nei file del modulo Media
 
-**Problema**: Diversi file del modulo Media contenevano conflitti di merge non risolti, indicati da marcatori `` e ``. Questi conflitti impedivano la corretta esecuzione del codice e causavano errori di sintassi.
+**Problema**: Diversi file del modulo Media contenevano conflitti di merge non risolti, indicati da marcatori `<<<<<<< HEAD` e `>>>>>>> origin/dev`. Questi conflitti impedivano la corretta esecuzione del codice e causavano errori di sintassi.
 
 **Soluzione implementata**:
 1. Analisi sistematica dei conflitti di merge in ciascun file
@@ -138,154 +96,18 @@ Questa soluzione mantiene la funzionalità originale migliorando al contempo la 
 - `MediaRelationManager.php`
 - `PHPSTAN_LEVEL10_FIXES.md`
 
-
- 184c6ec (.)
-
-
- 59bb70f (fix: auto resolve conflict)
-
-
-
- origin/dev
- origin/dev
-
- 06dadfb (.)
-
-
-
-
-
-
-
-
-
-
- 2a62ef4 (.)
-### 5. Risoluzione dei conflitti di merge nei file del modulo Media
-
-**Problema**: Diversi file del modulo Media contenevano conflitti di merge non risolti, indicati da marcatori `` e ``. Questi conflitti impedivano la corretta esecuzione del codice e causavano errori di sintassi.
-
-**Soluzione implementata**:
-1. Analisi sistematica dei conflitti di merge in ciascun file
-2. Risoluzione dei conflitti mantenendo la versione più completa e documentata del codice
-3. Verifica della coerenza delle modifiche con le best practices del progetto
-4. Backup dei file originali prima delle modifiche per sicurezza
-
-**File corretti**:
-- `TemporaryUploadPathGenerator.php`
-- `ConvertVideoByMediaConvertAction.php`
-- `ConvertVideoByConvertDataAction.php`
-- `MediaRelationManager.php`
-- `PHPSTAN_LEVEL10_FIXES.md`
-
-
-
-
- 184c6ec (.)
- 2f7c4db (.)
-
- 59bb70f (fix: auto resolve conflict)
-
-
-
- 184c6ec (.)
- fa4eb21 (.)
- 0ffeaf3 (fix: auto resolve conflict)
-
-
-
- 184c6ec (.)
- 2f7c4db (.)
-
-
- 184c6ec (.)
- fa4eb21 (.)
- 2a62ef4 (.)
 ## Principi Applicati
 
 1. **Uso appropriato di PHPDoc per tipi speciali**: Quando PHP non supporta nativamente un tipo (come `resource`), utilizzare annotazioni PHPDoc per fornire informazioni di tipo a PHPStan.
 2. **Inizializzazione appropriata**: Inizializzare le proprietà con valori appropriati per il loro tipo.
 3. **Documentazione chiara**: Fornire commenti esplicativi che indicano lo scopo e il tipo atteso delle proprietà.
-
-
-
-
 4. **Risoluzione sistematica dei conflitti**: Analizzare attentamente i conflitti di merge e risolverli mantenendo la versione più completa e documentata del codice.
 5. **Backup prima delle modifiche**: Creare backup dei file originali prima di apportare modifiche significative.
 
- 184c6ec (.)
- 2f7c4db (.)
-
-
-4. **Risoluzione sistematica dei conflitti**: Analizzare attentamente i conflitti di merge e risolverli mantenendo la versione più completa e documentata del codice.
-5. **Backup prima delle modifiche**: Creare backup dei file originali prima di apportare modifiche significative.
-
- 184c6ec (.)
- fa4eb21 (.)
-
-
-4. **Risoluzione sistematica dei conflitti**: Analizzare attentamente i conflitti di merge e risolverli mantenendo la versione più completa e documentata del codice.
-5. **Backup prima delle modifiche**: Creare backup dei file originali prima di apportare modifiche significative.
-
- 184c6ec (.)
-
-
- 06dadfb (.)
 ## Prossimi Passi
 
 1. Completare la revisione di `SubtitleService.php` per risolvere i problemi di tipo complessi.
 2. Aggiornare il modello `Media.php` per specificare tipi più precisi per le proprietà attualmente documentate come `mixed`.
 3. Eseguire l'analisi PHPStan a livello 10 per verificare che le correzioni risolvano effettivamente gli errori.
-
-
-
-
-
 4. Implementare test automatizzati per verificare il corretto funzionamento del modulo Media dopo le correzioni.
 5. Documentare le procedure di risoluzione dei conflitti di merge per prevenire problemi simili in futuro.
-
-4. Documentare pattern e soluzioni standard per gestire risorse di file e altri tipi speciali nel progetto. 
- 184c6ec (.)
-
-4. Documentare pattern e soluzioni standard per gestire risorse di file e altri tipi speciali nel progetto. 
- 06dadfb (.)
-
-
- 0ffeaf3 (fix: auto resolve conflict)
-4. Documentare pattern e soluzioni standard per gestire risorse di file e altri tipi speciali nel progetto. 
-
-
-
-
- 2a62ef4 (.)
-
-
-4. Documentare pattern e soluzioni standard per gestire risorse di file e altri tipi speciali nel progetto. 
-
-
-
-
- fa4eb21 (.)
-4. Implementare test automatizzati per verificare il corretto funzionamento del modulo Media dopo le correzioni.
-5. Documentare le procedure di risoluzione dei conflitti di merge per prevenire problemi simili in futuro.
-
-4. Documentare pattern e soluzioni standard per gestire risorse di file e altri tipi speciali nel progetto. 
-
-
- 184c6ec (.)
- 2f7c4db (.)
-
- 59bb70f (fix: auto resolve conflict)
-
-
- 184c6ec (.)
- fa4eb21 (.)
- 0ffeaf3 (fix: auto resolve conflict)
-
-
- 184c6ec (.)
- 2f7c4db (.)
-
- 184c6ec (.)
- fa4eb21 (.)
- 2a62ef4 (.)

@@ -35,10 +35,6 @@ class ViewMedia extends \Modules\Xot\Filament\Resources\Pages\XotBaseViewRecord
     {
         return [
             'media_viewer' => Split::make([
-    public function getInfolistSchema(): array
-    {
-        return [
-            Split::make([
                 Section::make()->schema([
                     ImageEntry::make('url')
                         ->defaultImageUrl(fn ($record) => $record->getUrl())
@@ -59,8 +55,6 @@ class ViewMedia extends \Modules\Xot\Filament\Resources\Pages\XotBaseViewRecord
                             ->action(function ($record, array $data): void {
                                 $data['disk'] = $record->disk;
                                 $data['file'] = $record->path.'/'.$record->file_name;
-                                $data['file'] = $record->path.'/'.$record->file_name;
-                                $data['file'] = $record->id.'/'.$record->file_name;
                                 $convert_data = ConvertData::from($data);
                                 $record->mediaConverts()->create($convert_data->toArray());
                             }),
@@ -72,10 +66,8 @@ class ViewMedia extends \Modules\Xot\Filament\Resources\Pages\XotBaseViewRecord
                     TextEntry::make('created_at'),
                 ])
             ]),
-
+            
             'entry_conversions' => RepeatableEntry::make('entry_conversions')
-            'entry_conversions' => RepeatableEntry::make('entry_conversions')
-            RepeatableEntry::make('entry_conversions')
                 ->schema([
                     TextEntry::make('name'),
                     TextEntry::make('src'),

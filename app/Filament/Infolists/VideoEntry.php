@@ -129,7 +129,7 @@ class VideoEntry extends Entry
         if (is_scalar($height) || (is_object($height) && method_exists($height, '__toString'))) {
             return is_string($height) ? $height : (string) $height;
         }
-
+        
         // If we can't convert to string, return null
         return null;
     }
@@ -140,77 +140,83 @@ class VideoEntry extends Entry
         return $this;
     }
 
+    public function getImageUrl(?string $state = null): ?string
+    {
+        if ((filter_var($state, FILTER_VALIDATE_URL) !== false) || str($state)->startsWith('data:')) {
+            return $state;
+        }
+        if ($state === null) {
+            return null;
+        }
+
+        /** @var FilesystemAdapter $storage */
+        $storage = $this->getDisk();
+
+        if ($this->shouldCheckFileExistence()) {
+            try {
+                if (! $storage->exists($state)) {
+                    return null;
+                }
+            } catch (UnableToCheckFileExistence) {
+                return null;
+            }
+        }
+
+        if ($this->getVisibility() === 'private') {
+            try {
+                return $storage->temporaryUrl(
+                    $state,
+                    now()->addMinutes(5)
+                );
+            } catch (\Throwable) {
+                // This driver does not support creating temporary URLs.
+            }
+        }
+
+        return $storage->url($state);
+    }
+
     /**
-     * @return string|null
+     * Get the default image URL for the video entry.
+     *
+     * @return string|null The default image URL or null if not set
      */
     public function getDefaultImageUrl(): ?string
     {
-        return $this->evaluate($this->defaultImageUrl);
-    }
-
-    /**
-     * @param  array<mixed>|\Closure  $attributes
-     */
-    public function extraImgAttributes(array|\Closure $attributes = []): static
-    {
-        $this->extraImgAttributes = $attributes;
-        return $this;
-    }
-
-    /**
-     * @return array<mixed>
-     */
-    public function getExtraImgAttributes(): array
-    {
-        $attributes = $this->evaluate($this->extraImgAttributes);
-
-        if (is_array($attributes)) {
-            return $attributes;
+        $url = $this->evaluate($this->defaultImageUrl);
+        
+        if ($url === null) {
+            return null;
         }
-
-        return [];
-    }
-
-    /**
-     * @return array<string, mixed>|ComponentAttributeBag
-     */
-    public function getExtraImgAttributeBag(): array|ComponentAttributeBag
-    {
-        $attributes = $this->getExtraImgAttributes();
-
-        if ($attributes instanceof ComponentAttributeBag) {
-            return $attributes;
+        
+        if (is_scalar($url) || (is_object($url) && method_exists($url, '__toString'))) {
+            return is_string($url) ? $url : (string) $url;
         }
-
-        return new ComponentAttributeBag($attributes);
-    }
-
-    public function isCircular(): bool
-    {
-        return (bool) $this->evaluate($this->isCircular);
-    }
-
-    public function isSquare(): bool
-    {
-        return (bool) $this->evaluate($this->isSquare);
+        
+        return null;
     }
 
     /**
-     * @return string
+     * Get the visibility value for the video entry.
+     *
+     * @return string The visibility setting
      */
     public function getVisibility(): string
     {
         $visibility = $this->evaluate($this->visibility);
-
-        if (is_string($visibility)) {
-            return $visibility;
+        
+        if (is_scalar($visibility) || (is_object($visibility) && method_exists($visibility, '__toString'))) {
+            return is_string($visibility) ? $visibility : (string) $visibility;
         }
-
+        
+        // Default to public if invalid value
         return 'public';
     }
 
     /**
-     * @return string|null
+     * Get the width value for the video entry.
+     *
+     * @return string|null The width value as a string (with 'px' suffix if it was an integer) or null if not set
      */
     public function getWidth(): ?string
     {
@@ -224,16 +230,50 @@ class VideoEntry extends Entry
             return "{$width}px";
         }
 
-        if (is_string($width)) {
-            return $width;
-        }
-
-        // Se non è né stringa né intero, proviamo a convertire
         if (is_scalar($width) || (is_object($width) && method_exists($width, '__toString'))) {
-            return (string) $width;
+            return is_string($width) ? $width : (string) $width;
         }
-
+        
         return null;
+    }
+
+    public function isCircular(): bool
+    {
+        return (bool) $this->evaluate($this->isCircular);
+    }
+
+    public function isSquare(): bool
+    {
+        return (bool) $this->evaluate($this->isSquare);
+    }
+
+    /**
+     * @param  array<mixed>|\Closure  $attributes
+     */
+    public function extraImgAttributes(array|\Closure $attributes): static
+    {
+        $this->extraImgAttributes = $attributes;
+        return $this;
+    }
+
+    /**
+     * @return array<mixed>
+     */
+    public function getExtraImgAttributes(): array
+    {
+        $attributes = $this->evaluate($this->extraImgAttributes);
+        
+        if (is_array($attributes)) {
+            return $attributes;
+        }
+        
+        // Return empty array if invalid value
+        return [];
+    }
+
+    public function getExtraImgAttributeBag(): ComponentAttributeBag
+    {
+        return new ComponentAttributeBag($this->getExtraImgAttributes());
     }
 
     public function stacked(bool|\Closure $condition = true): static
@@ -261,15 +301,15 @@ class VideoEntry extends Entry
     public function getOverlap(): ?int
     {
         $overlap = $this->evaluate($this->overlap);
-
+        
         if ($overlap === null) {
             return null;
         }
-
+        
         if (is_numeric($overlap)) {
             return (int) $overlap;
         }
-
+        
         return null;
     }
 
@@ -287,15 +327,15 @@ class VideoEntry extends Entry
     public function getRing(): ?int
     {
         $ring = $this->evaluate($this->ring);
-
+        
         if ($ring === null) {
             return null;
         }
-
+        
         if (is_numeric($ring)) {
             return (int) $ring;
         }
-
+        
         return null;
     }
 
@@ -313,15 +353,15 @@ class VideoEntry extends Entry
     public function getLimit(): ?int
     {
         $limit = $this->evaluate($this->limit);
-
+        
         if ($limit === null) {
             return null;
         }
-
+        
         if (is_numeric($limit)) {
             return (int) $limit;
         }
-
+        
         return null;
     }
 
@@ -363,15 +403,15 @@ class VideoEntry extends Entry
     public function getLimitedRemainingTextSize(): ?string
     {
         $size = $this->evaluate($this->limitedRemainingTextSize);
-
+        
         if ($size === null) {
             return null;
         }
-
+        
         if (is_scalar($size) || (is_object($size) && method_exists($size, '__toString'))) {
             return is_string($size) ? $size : (string) $size;
         }
-
+        
         return null;
     }
 
