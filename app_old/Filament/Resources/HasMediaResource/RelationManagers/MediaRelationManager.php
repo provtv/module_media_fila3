@@ -29,17 +29,21 @@ class MediaRelationManager extends XotBaseRelationManager
         return trans('media::actions.add_attachment.title');
     }
 
-    public function form(Form $form): Form
+    /**
+     * Metodo per personalizzare lo schema del form.
+     * Viene utilizzato dalla classe parent invece di sovrascrivere il metodo form() finale.
+     *
+     * @return array<string|int, \Filament\Forms\Components\Component>
+     */
+    public function getFormSchema(): array
     {
-        $form = MediaResource::form($form);
-
-        return $form;
+        return MediaResource::getFormSchema();
     }
 
     /**
      * @return array<Action|ActionGroup>
      */
-    protected function getTableHeaderActions(): array
+    public function getTableHeaderActions(): array
     {
         return [
             // Tables\Actions\AttachAction::make(),

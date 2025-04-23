@@ -99,5 +99,30 @@ composer format        # Formatta il codice
    - Controllare log di sistema
    - Verificare supporto GD/Imagick
 
+## Analisi PHPStan
+L'analisi statica del codice con PHPStan ha identificato diverse aree di miglioramento nel modulo:
+
+### Principali problemi riscontrati
+1. **Livello 1**: Problemi di ereditarietà in componenti Filament
+   - Sovrascrittura di metodi `final`
+   - Visibilità incoerente dei metodi
+   - Metodi astratti non implementati
+   
+2. **Livello 10**: Problemi di typehinting e accesso a proprietà/metodi
+   - Utilizzo non sicuro di variabili di tipo `mixed`
+   - Accesso a proprietà senza controlli di tipo
+   - Operazioni binarie su tipi non compatibili
+
+### Report dettagliati
+- [Analisi Livello 1](docs/phpstan/level_1.md)
+- [Analisi Livello 10](docs/phpstan/level_10.md)
+
+### Piano di miglioramento
+1. Implementare type hinting rigoroso in tutte le classi
+2. Correggere i problemi di ereditarietà nei componenti Filament
+3. Implementare verifiche di tipo prima di operazioni su variabili mixed
+4. Aggiungere documentazione PHPDoc completa
+5. Migliorare la gestione degli errori
+
 ## Changelog
 Le modifiche vengono tracciate nel repository GitHub. 

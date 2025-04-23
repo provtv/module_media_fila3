@@ -26,9 +26,14 @@ class ViewMedia extends XotBaseViewRecord
 {
     protected static string $resource = MediaResource::class;
 
-    public function infolist(Infolist $infolist): Infolist
+    /**
+     * Schema per l'infolist, implementazione del metodo astratto richiesto.
+     *
+     * @return array<int, \Filament\Infolists\Components\Component>
+     */
+    protected function getInfolistSchema(): array
     {
-        $schema = [
+        return [
             // ...
             Split::make(
                 [
@@ -36,15 +41,15 @@ class ViewMedia extends XotBaseViewRecord
                         [
                             ImageEntry::make('url')
                                 ->label('')
-                                ->defaultImageUrl(fn ($record) => $record->getUrl())
+                                ->defaultImageUrl(fn ($record) => $record?->getUrl())
                                 ->size(500)
-                                ->visible(fn ($record): bool => $record->type === 'image'),
+                                ->visible(fn ($record): bool => $record?->type === 'image'),
 
                             VideoEntry::make('url')
                                 ->label('')
-                                ->defaultImageUrl(fn ($record) => $record->getUrl())
+                                ->defaultImageUrl(fn ($record) => $record?->getUrl())
                                 ->size(500)
-                                ->visible(fn ($record): bool => $record->type === 'video'),
+                                ->visible(fn ($record): bool => $record?->type === 'video'),
                         ]
                     ),
                     Section::make()->schema(
@@ -57,6 +62,9 @@ class ViewMedia extends XotBaseViewRecord
                                     // ->requiresConfirmation()
                                     ->form(MediaConvertResource::getFormSchema())
                                     ->action(function ($record, array $data): void {
+                                        if (!$record) {
+                                            return;
+                                        }
                                         $data['disk'] = $record->disk;
                                         $data['file'] = $record->id.'/'.$record->file_name;
                                         $convert_data = ConvertData::from($data);
@@ -74,25 +82,17 @@ class ViewMedia extends XotBaseViewRecord
                     ),
                 ]
             ),
+            RepeatableEntry::make('entry_conversions')
+                ->schema([
+                    TextEntry::make('name'),
+                    TextEntry::make('src'),
+                    ImageEntry::make('src'),
+                    // TextEntry::make('title'),
+                    // TextEntry::make('content')
+                    //    ->columnSpan(2),
+                ])
+                ->columns(4)
         ];
-
-        // $schema = [];
-
-        $schema[] = RepeatableEntry::make('entry_conversions')
-            ->schema([
-                TextEntry::make('name'),
-                TextEntry::make('src'),
-                ImageEntry::make('src'),
-                // TextEntry::make('title'),
-                // TextEntry::make('content')
-                //    ->columnSpan(2),
-            ])
-            ->columns(4);
-
-        return $infolist
-
-            ->schema($schema)
-            ->columns(1);
     }
 
     /**
