@@ -2,7 +2,18 @@
 
 /**
  * @see https://github.com/protonemedia/laravel-ffmpeg
+<<<<<<< HEAD
  * Azione per convertire un video utilizzando ConvertData.
+=======
+<<<<<<< HEAD
+ * Azione per convertire un video utilizzando ConvertData.
+=======
+<<<<<<< HEAD
+ * Azione per convertire un video utilizzando ConvertData.
+=======
+>>>>>>> origin/dev
+>>>>>>> origin/dev
+>>>>>>> 06dadfb (.)
  */
 
 declare(strict_types=1);
@@ -14,21 +25,45 @@ use Illuminate\Support\Facades\Storage;
 use Modules\Media\Datas\ConvertData;
 use ProtoneMedia\LaravelFFMpeg\Support\FFMpeg;
 use ProtoneMedia\LaravelFFMpeg\MediaOpener;
+<<<<<<< HEAD
 use ProtoneMedia\LaravelFFMpeg\FFMpeg\FFMpegExporter;
+=======
+<<<<<<< HEAD
+use ProtoneMedia\LaravelFFMpeg\FFMpeg\FFMpegExporter;
+=======
+<<<<<<< HEAD
+use ProtoneMedia\LaravelFFMpeg\FFMpeg\FFMpegExporter;
+=======
+>>>>>>> origin/dev
+>>>>>>> origin/dev
+>>>>>>> 06dadfb (.)
 use Spatie\QueueableAction\QueueableAction;
 use FFMpeg\Format\Video\DefaultVideo;
 use Webmozart\Assert\Assert;
 
 /**
+<<<<<<< HEAD
  * Classe per convertire video utilizzando i dati di conversione specificati.
  *
  * @method \ProtoneMedia\LaravelFFMpeg\Drivers\PHPFFMpeg inFormat(DefaultVideo $format)
+=======
+<<<<<<< HEAD
+ * Classe per convertire video utilizzando i dati di conversione specificati.
+=======
+<<<<<<< HEAD
+ * Classe per convertire video utilizzando i dati di conversione specificati.
+=======
+ * @method \ProtoneMedia\LaravelFFMpeg\Drivers\PHPFFMpeg inFormat(DefaultVideo $format)
+>>>>>>> origin/dev
+>>>>>>> origin/dev
+>>>>>>> 06dadfb (.)
  */
 class ConvertVideoByConvertDataAction
 {
     use QueueableAction;
 
     /**
+<<<<<<< HEAD
      * Esegue la conversione del video utilizzando i dati forniti.
      *
      * @param ConvertData $data I dati di configurazione per la conversione
@@ -41,6 +76,14 @@ class ConvertVideoByConvertDataAction
     {
         if (!$data->exists()) {
             return null;
+=======
+     * Execute the action.
+     */
+    public function execute(ConvertData $data): string
+    {
+        if (!$data->exists()) {
+            throw new \Exception('Il file non esiste');
+>>>>>>> 06dadfb (.)
         }
 
         $format = $data->getFFMpegFormat();
@@ -50,6 +93,7 @@ class ConvertVideoByConvertDataAction
             throw new \Exception('Il nome del file convertito non è stato specificato');
         }
 
+<<<<<<< HEAD
         Notification::make()
             ->title('Avvio conversione video')
             ->success()
@@ -62,10 +106,26 @@ class ConvertVideoByConvertDataAction
          * -preset ultrafast per una conversione più veloce.
          */
         // @phpstan-ignore method.notFound
+=======
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> origin/dev
+        // Instanziamo il formato prima di usarlo
+        $formatInstance = new $format();
+
+        // @phpstan-ignore-next-line
+<<<<<<< HEAD
+=======
+=======
+>>>>>>> origin/dev
+>>>>>>> origin/dev
+>>>>>>> 06dadfb (.)
         FFMpeg::fromDisk($data->disk)
             ->open($data->file)
             ->export()
             ->onProgress(function (float $percentage, float $remaining, float $rate): void {
+<<<<<<< HEAD
                 $msg = "{$percentage}% convertito. ";
                 $msg .= "{$remaining} secondi rimanenti (rate: {$rate})";
 
@@ -80,6 +140,28 @@ class ConvertVideoByConvertDataAction
             ->save($file_new);
 
         // Restituisci il percorso del file
+=======
+                // Gestione del progresso
+                $msg = "{$percentage}% transcoded";
+                $msg .= "{$remaining} seconds left at rate: {$rate}";
+                // Log o notifica del progresso
+            })
+            ->addFilter('-preset', 'ultrafast')
+<<<<<<< HEAD
+            // Utilizziamo il formato istanziato come parametro
+            ->save($file_new, $formatInstance);
+=======
+<<<<<<< HEAD
+            // Utilizziamo il formato istanziato come parametro
+            ->save($file_new, $formatInstance);
+=======
+            ->inFormat($format)
+            ->save($file_new);
+>>>>>>> origin/dev
+>>>>>>> origin/dev
+
+        // Restituisci il percorso del file senza usare il metodo url()
+>>>>>>> 06dadfb (.)
         return $file_new;
     }
 }

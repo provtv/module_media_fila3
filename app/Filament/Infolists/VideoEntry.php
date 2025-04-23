@@ -129,7 +129,11 @@ class VideoEntry extends Entry
         if (is_scalar($height) || (is_object($height) && method_exists($height, '__toString'))) {
             return is_string($height) ? $height : (string) $height;
         }
+<<<<<<< HEAD
 
+=======
+        
+>>>>>>> 06dadfb (.)
         // If we can't convert to string, return null
         return null;
     }
@@ -184,6 +188,7 @@ class VideoEntry extends Entry
     public function getDefaultImageUrl(): ?string
     {
         $url = $this->evaluate($this->defaultImageUrl);
+<<<<<<< HEAD
 
         if ($url === null) {
             return null;
@@ -193,6 +198,17 @@ class VideoEntry extends Entry
             return is_string($url) ? $url : (string) $url;
         }
 
+=======
+        
+        if ($url === null) {
+            return null;
+        }
+        
+        if (is_scalar($url) || (is_object($url) && method_exists($url, '__toString'))) {
+            return is_string($url) ? $url : (string) $url;
+        }
+        
+>>>>>>> 06dadfb (.)
         return null;
     }
 
@@ -204,11 +220,19 @@ class VideoEntry extends Entry
     public function getVisibility(): string
     {
         $visibility = $this->evaluate($this->visibility);
+<<<<<<< HEAD
 
         if (is_scalar($visibility) || (is_object($visibility) && method_exists($visibility, '__toString'))) {
             return is_string($visibility) ? $visibility : (string) $visibility;
         }
 
+=======
+        
+        if (is_scalar($visibility) || (is_object($visibility) && method_exists($visibility, '__toString'))) {
+            return is_string($visibility) ? $visibility : (string) $visibility;
+        }
+        
+>>>>>>> 06dadfb (.)
         // Default to public if invalid value
         return 'public';
     }
@@ -233,7 +257,11 @@ class VideoEntry extends Entry
         if (is_scalar($width) || (is_object($width) && method_exists($width, '__toString'))) {
             return is_string($width) ? $width : (string) $width;
         }
+<<<<<<< HEAD
 
+=======
+        
+>>>>>>> 06dadfb (.)
         return null;
     }
 
@@ -262,11 +290,19 @@ class VideoEntry extends Entry
     public function getExtraImgAttributes(): array
     {
         $attributes = $this->evaluate($this->extraImgAttributes);
+<<<<<<< HEAD
 
         if (is_array($attributes)) {
             return $attributes;
         }
 
+=======
+        
+        if (is_array($attributes)) {
+            return $attributes;
+        }
+        
+>>>>>>> 06dadfb (.)
         // Return empty array if invalid value
         return [];
     }
@@ -301,6 +337,7 @@ class VideoEntry extends Entry
     public function getOverlap(): ?int
     {
         $overlap = $this->evaluate($this->overlap);
+<<<<<<< HEAD
 
         if ($overlap === null) {
             return null;
@@ -310,6 +347,17 @@ class VideoEntry extends Entry
             return (int) $overlap;
         }
 
+=======
+        
+        if ($overlap === null) {
+            return null;
+        }
+        
+        if (is_numeric($overlap)) {
+            return (int) $overlap;
+        }
+        
+>>>>>>> 06dadfb (.)
         return null;
     }
 
@@ -327,6 +375,7 @@ class VideoEntry extends Entry
     public function getRing(): ?int
     {
         $ring = $this->evaluate($this->ring);
+<<<<<<< HEAD
 
         if ($ring === null) {
             return null;
@@ -336,6 +385,17 @@ class VideoEntry extends Entry
             return (int) $ring;
         }
 
+=======
+        
+        if ($ring === null) {
+            return null;
+        }
+        
+        if (is_numeric($ring)) {
+            return (int) $ring;
+        }
+        
+>>>>>>> 06dadfb (.)
         return null;
     }
 
@@ -353,6 +413,7 @@ class VideoEntry extends Entry
     public function getLimit(): ?int
     {
         $limit = $this->evaluate($this->limit);
+<<<<<<< HEAD
 
         if ($limit === null) {
             return null;
@@ -362,6 +423,17 @@ class VideoEntry extends Entry
             return (int) $limit;
         }
 
+=======
+        
+        if ($limit === null) {
+            return null;
+        }
+        
+        if (is_numeric($limit)) {
+            return (int) $limit;
+        }
+        
+>>>>>>> 06dadfb (.)
         return null;
     }
 
@@ -403,6 +475,7 @@ class VideoEntry extends Entry
     public function getLimitedRemainingTextSize(): ?string
     {
         $size = $this->evaluate($this->limitedRemainingTextSize);
+<<<<<<< HEAD
 
         if ($size === null) {
             return null;
@@ -412,6 +485,17 @@ class VideoEntry extends Entry
             return is_string($size) ? $size : (string) $size;
         }
 
+=======
+        
+        if ($size === null) {
+            return null;
+        }
+        
+        if (is_scalar($size) || (is_object($size) && method_exists($size, '__toString'))) {
+            return is_string($size) ? $size : (string) $size;
+        }
+        
+>>>>>>> 06dadfb (.)
         return null;
     }
 

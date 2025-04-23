@@ -66,7 +66,11 @@ class ViewMedia extends \Modules\Xot\Filament\Resources\Pages\XotBaseViewRecord
                     TextEntry::make('created_at'),
                 ])
             ]),
+<<<<<<< HEAD
 
+=======
+            
+>>>>>>> 06dadfb (.)
             'entry_conversions' => RepeatableEntry::make('entry_conversions')
                 ->schema([
                     TextEntry::make('name'),

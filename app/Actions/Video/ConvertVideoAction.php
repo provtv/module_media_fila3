@@ -28,16 +28,26 @@ class ConvertVideoAction
         $media = FFMpeg::fromDisk($disk_mp4);
 
         $openedMedia = $media->open($file_mp4);
+<<<<<<< HEAD
 
+=======
+        
+>>>>>>> 06dadfb (.)
         $exportedMedia = $openedMedia->export();
 
         $format = new X264();
         $format->setKiloBitrate(1000);
 
         $toDiskMedia = $exportedMedia->toDisk($disk_mp4);
+<<<<<<< HEAD
 
         $formattedMedia = $toDiskMedia->inFormat($format);
 
+=======
+        
+        $formattedMedia = $toDiskMedia->inFormat($format);
+        
+>>>>>>> 06dadfb (.)
         $formattedMedia->save($file_new);
 
         return Storage::disk($disk_mp4)->url($file_new);
