@@ -17,6 +17,7 @@ class MediaResource extends XotBaseResource
     protected static ?string $model = Media::class;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
     protected static ?string $navigationIcon = 'fas-photo-film';
 
     public static function getFormSchema(): array
@@ -24,6 +25,11 @@ class MediaResource extends XotBaseResource
         return [
             FileUpload::make('file')
 =======
+=======
+=======
+<<<<<<< HEAD
+>>>>>>> 2f7c4db (.)
+>>>>>>> 59bb70f (fix: auto resolve conflict)
     /**
      * @return array<string, \Filament\Forms\Components\Component>
      */
@@ -31,12 +37,27 @@ class MediaResource extends XotBaseResource
     {
         return [
             'file' => FileUpload::make('file')
+<<<<<<< HEAD
 >>>>>>> 06dadfb (.)
+=======
+<<<<<<< HEAD
+=======
+=======
+    protected static ?string $navigationIcon = 'fas-photo-film';
+
+    public static function getFormSchema(): array
+    {
+        return [
+            FileUpload::make('file')
+>>>>>>> 184c6ec (.)
+>>>>>>> 2f7c4db (.)
+>>>>>>> 59bb70f (fix: auto resolve conflict)
                 ->hint(static::trans('fields.file_hint'))
                 ->storeFileNamesIn('original_file_name')
                 ->visibility('private')
                 ->required()
                 ->columnSpanFull(),
+<<<<<<< HEAD
 <<<<<<< HEAD
             Radio::make('attachment_type'),
             TextInput::make('name')
@@ -44,6 +65,19 @@ class MediaResource extends XotBaseResource
             'attachment_type' => Radio::make('attachment_type'),
             'name' => TextInput::make('name')
 >>>>>>> 06dadfb (.)
+=======
+            'attachment_type' => Radio::make('attachment_type'),
+            'name' => TextInput::make('name')
+=======
+<<<<<<< HEAD
+            'attachment_type' => Radio::make('attachment_type'),
+            'name' => TextInput::make('name')
+=======
+            Radio::make('attachment_type'),
+            TextInput::make('name')
+>>>>>>> 184c6ec (.)
+>>>>>>> 2f7c4db (.)
+>>>>>>> 59bb70f (fix: auto resolve conflict)
                 ->translateLabel()
                 ->hint(static::trans('fields.name.hint'))
                 ->autocomplete(false)

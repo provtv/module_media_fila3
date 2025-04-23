@@ -128,36 +128,80 @@ class MediaConvert extends BaseModel
 =======
     public function getDiskAttribute(?string $value): ?string
     {
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> 2f7c4db (.)
         if($this->media==null){
             return null;
         }
         return $this->media->disk;
+<<<<<<< HEAD
+=======
+=======
+        return $this->media?->disk;
+>>>>>>> 184c6ec (.)
+>>>>>>> 2f7c4db (.)
     }
 
     public function getFileAttribute(?string $value): ?string
     {
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> 2f7c4db (.)
         if($this->media==null){
             return null;
         }
         return $this->media->path . '/' . $this->media->file_name;
+<<<<<<< HEAD
+=======
+=======
+        return $this->media?->id.'/'.$this->media?->file_name;
+>>>>>>> 184c6ec (.)
+>>>>>>> 2f7c4db (.)
     }
 
     public function getConvertedFileAttribute(?string $value): ?string
     {
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> 2f7c4db (.)
         if($this->media==null){
             return null;
         }
         $info = pathinfo($this->media->file_name);
+<<<<<<< HEAD
 >>>>>>> 06dadfb (.)
+=======
+<<<<<<< HEAD
+=======
+=======
+        $info = pathinfo((string) $this->media?->file_name);
+>>>>>>> 184c6ec (.)
+>>>>>>> 2f7c4db (.)
+>>>>>>> 59bb70f (fix: auto resolve conflict)
         // "dirname" => "."
         // "basename" => "20600550-uhd_3840_2160_30fps.mp4"
         // "extension" => "mp4"
         // "filename" => "20600550-uhd_3840_2160_30fps"
 
 <<<<<<< HEAD
+<<<<<<< HEAD
         return $this->media?->id.'/conversions/'.$info['filename'].'_'.$this->id.'.'.$this->format;
 =======
         return $this->media->path . '/conversions/' . $info['filename'] . '_' . $this->id . '.' . $this->format;
 >>>>>>> 06dadfb (.)
+=======
+        return $this->media->path . '/conversions/' . $info['filename'] . '_' . $this->id . '.' . $this->format;
+=======
+<<<<<<< HEAD
+        return $this->media->path . '/conversions/' . $info['filename'] . '_' . $this->id . '.' . $this->format;
+=======
+        return $this->media?->id.'/conversions/'.$info['filename'].'_'.$this->id.'.'.$this->format;
+>>>>>>> 184c6ec (.)
+>>>>>>> 2f7c4db (.)
+>>>>>>> 59bb70f (fix: auto resolve conflict)
     }
 }

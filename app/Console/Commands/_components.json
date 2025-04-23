@@ -1,4 +1,10 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+[{"name":"convert-video-command","class":"ConvertVideoCommand","module":null,"path":null,"ns":"Modules\\Media\\Console\\Commands\\ConvertVideoCommand"}]
+=======
+<<<<<<< HEAD
+>>>>>>> 59bb70f (fix: auto resolve conflict)
 [
     {
         "name": "convert-video-command",
@@ -10,4 +16,9 @@
 ]
 =======
 [{"name":"convert-video-command","class":"ConvertVideoCommand","module":null,"path":null,"ns":"Modules\\Media\\Console\\Commands\\ConvertVideoCommand"}]
+<<<<<<< HEAD
 >>>>>>> 06dadfb (.)
+=======
+>>>>>>> 184c6ec (.)
+>>>>>>> 2f7c4db (.)
+>>>>>>> 59bb70f (fix: auto resolve conflict)

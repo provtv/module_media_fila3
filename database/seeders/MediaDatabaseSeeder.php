@@ -4,6 +4,13 @@ declare(strict_types=1);
 
 namespace Modules\Media\database\seeders;
 
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+namespace Modules\Media\Database\Seeders;
+>>>>>>> 184c6ec (.)
+>>>>>>> 2f7c4db (.)
 
 use Illuminate\Database\Seeder;
 

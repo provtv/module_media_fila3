@@ -64,9 +64,22 @@ class VideoStream
 =======
      * Initialize the video stream.
      *
+<<<<<<< HEAD
      * @param  string $disk  The disk storage name
      * @param  string $path  The path to the video file
+<<<<<<< HEAD
 >>>>>>> 06dadfb (.)
+=======
+=======
+<<<<<<< HEAD
+     * @param  string $disk  The disk storage name
+     * @param  string $path  The path to the video file
+=======
+     * @param  string  $disk  The disk storage name
+     * @param  string  $path  The path to the video file
+>>>>>>> 184c6ec (.)
+>>>>>>> 2f7c4db (.)
+>>>>>>> 59bb70f (fix: auto resolve conflict)
      *
      * @throws Exception If the file does not exist or other errors
      */
@@ -74,6 +87,7 @@ class VideoStream
     {
         $filesystem = Storage::disk($disk);
 
+<<<<<<< HEAD
 <<<<<<< HEAD
         if (! $filesystem->exists($path)) {
             throw new Exception("File does not exist at path: {$path}");
@@ -84,6 +98,11 @@ class VideoStream
         $mime = $this->mimeTypes[$extension] ?? 'application/octet-stream';
 
 =======
+=======
+=======
+<<<<<<< HEAD
+>>>>>>> 2f7c4db (.)
+>>>>>>> 59bb70f (fix: auto resolve conflict)
         if (!$filesystem->exists($path)) {
             throw new Exception("File does not exist at path: {$path}");
         }
@@ -92,17 +111,41 @@ class VideoStream
         if($mime==false){
             throw new Exception('Unable to determine MIME type.');
         }
+<<<<<<< HEAD
 >>>>>>> 06dadfb (.)
+=======
+<<<<<<< HEAD
+=======
+=======
+        if (! $filesystem->exists($path)) {
+            throw new Exception("File does not exist at path: {$path}");
+        }
+
+        Assert::string($mime = $filesystem->mimeType($path));
+>>>>>>> 184c6ec (.)
+>>>>>>> 2f7c4db (.)
+>>>>>>> 59bb70f (fix: auto resolve conflict)
         $this->stream = $filesystem->readStream($path);
         $this->mime = $mime;
         $this->fileModifiedTime = $filesystem->lastModified($path);
         $this->size = $filesystem->size($path);
 
 <<<<<<< HEAD
+<<<<<<< HEAD
         if (! is_string($this->mime)) {
 =======
         if (!is_string($this->mime)) {
 >>>>>>> 06dadfb (.)
+=======
+        if (!is_string($this->mime)) {
+=======
+<<<<<<< HEAD
+        if (!is_string($this->mime)) {
+=======
+        if (! is_string($this->mime)) {
+>>>>>>> 184c6ec (.)
+>>>>>>> 2f7c4db (.)
+>>>>>>> 59bb70f (fix: auto resolve conflict)
             throw new Exception('Unable to determine MIME type.');
         }
     }
@@ -124,16 +167,34 @@ class VideoStream
     {
         ob_end_clean(); // Clean any previous output
 <<<<<<< HEAD
+<<<<<<< HEAD
         header('Content-Type: '.$this->mime);
         header('Cache-Control: max-age=2592000, public'); // 30 days cache
         header('Expires: '.gmdate('D, d M Y H:i:s', time() + 2592000).' GMT'); // 30 days in the future
         header('Last-Modified: '.gmdate('D, d M Y H:i:s', $this->fileModifiedTime).' GMT');
 =======
+=======
+=======
+<<<<<<< HEAD
+>>>>>>> 2f7c4db (.)
+>>>>>>> 59bb70f (fix: auto resolve conflict)
         header('Content-Type: ' . $this->mime);
         header('Cache-Control: max-age=2592000, public'); // 30 days cache
         header('Expires: ' . gmdate('D, d M Y H:i:s', time() + 2592000) . ' GMT'); // 30 days in the future
         header('Last-Modified: ' . gmdate('D, d M Y H:i:s', $this->fileModifiedTime) . ' GMT');
+<<<<<<< HEAD
 >>>>>>> 06dadfb (.)
+=======
+<<<<<<< HEAD
+=======
+=======
+        header('Content-Type: '.$this->mime);
+        header('Cache-Control: max-age=2592000, public'); // 30 days cache
+        header('Expires: '.gmdate('D, d M Y H:i:s', time() + 2592000).' GMT'); // 30 days in the future
+        header('Last-Modified: '.gmdate('D, d M Y H:i:s', $this->fileModifiedTime).' GMT');
+>>>>>>> 184c6ec (.)
+>>>>>>> 2f7c4db (.)
+>>>>>>> 59bb70f (fix: auto resolve conflict)
 
         $this->end = $this->size - 1;
         header('Accept-Ranges: bytes');
@@ -143,10 +204,21 @@ class VideoStream
             $this->processRangeHeader($rangeHeader);
         } else {
 <<<<<<< HEAD
+<<<<<<< HEAD
             header('Content-Length: '.$this->size);
 =======
             header('Content-Length: ' . $this->size);
 >>>>>>> 06dadfb (.)
+=======
+            header('Content-Length: ' . $this->size);
+=======
+<<<<<<< HEAD
+            header('Content-Length: ' . $this->size);
+=======
+            header('Content-Length: '.$this->size);
+>>>>>>> 184c6ec (.)
+>>>>>>> 2f7c4db (.)
+>>>>>>> 59bb70f (fix: auto resolve conflict)
         }
     }
 
@@ -179,10 +251,21 @@ class VideoStream
         $length = $this->end - $this->start + 1;
         header('HTTP/1.1 206 Partial Content');
 <<<<<<< HEAD
+<<<<<<< HEAD
         header('Content-Length: '.$length);
 =======
         header('Content-Length: ' . $length);
 >>>>>>> 06dadfb (.)
+=======
+        header('Content-Length: ' . $length);
+=======
+<<<<<<< HEAD
+        header('Content-Length: ' . $length);
+=======
+        header('Content-Length: '.$length);
+>>>>>>> 184c6ec (.)
+>>>>>>> 2f7c4db (.)
+>>>>>>> 59bb70f (fix: auto resolve conflict)
         header(sprintf('Content-Range: bytes %d-%d/%d', $this->start, $this->end, $this->size));
     }
 

@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 # Analisi PHPStan e Correzioni al Modulo Media
+=======
+# Analisi PHPStan - Modulo Media
+>>>>>>> 59bb70f (fix: auto resolve conflict)
 
 ## Perché questa analisi
 Il modulo Media gestisce l'upload, la manipolazione e la distribuzione di file multimediali. Un'analisi statica approfondita è cruciale per garantire la gestione sicura e efficiente dei file.
@@ -191,6 +195,7 @@ Il modulo Media gestisce l'upload, la manipolazione e la distribuzione di file m
 ## Collegamenti Correlati
 - [Documentazione Generale PHPStan](/docs/phpstan/INDEX.md)
 - [Best Practices Media](../INDEX.md#best-practices)
+<<<<<<< HEAD
 - [Gestione Errori](/docs/errors/README.md)
 
 ## Conflitti di Merge Risolti
@@ -247,3 +252,6 @@ Una delle sfide principali è stata la determinazione corretta dei MIME type. At
 - Uso dell'approccio di Laravel con `Storage::mimeType()`
 
 Per standardizzare questo comportamento, si consiglia di creare una classe/servizio dedicato per la determinazione dei MIME type che possa essere utilizzato in tutto il modulo. 
+=======
+- [Gestione Errori](/docs/errors/README.md) 
+>>>>>>> 59bb70f (fix: auto resolve conflict)

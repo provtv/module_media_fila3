@@ -30,6 +30,7 @@ class Merge
     public function execute(array $filenames, string $filenameOut): void
     {
 <<<<<<< HEAD
+<<<<<<< HEAD
         $width = 0;
         $height = 0;
         $imgs = [];
@@ -43,6 +44,11 @@ class Merge
 
             $imgs[] = $img;
 =======
+=======
+=======
+<<<<<<< HEAD
+>>>>>>> 2f7c4db (.)
+>>>>>>> 59bb70f (fix: auto resolve conflict)
         $manager = app(ImageManager::class);
         $width = 0;
         $height = 0;
@@ -50,11 +56,32 @@ class Merge
         // Prima passata per calcolare le dimensioni totali
         foreach ($filenames as $filename) {
             $img = $manager->read(public_path($filename));
+<<<<<<< HEAD
 >>>>>>> 06dadfb (.)
+=======
+<<<<<<< HEAD
+=======
+=======
+        $width = 0;
+        $height = 0;
+        $imgs = [];
+        foreach ($filenames as $filename) {
+            // $img = Image::make(public_path($filename));
+            if (! is_string($filename)) {
+                continue;
+            }
+            $manager = new ImageManager(new Driver);
+            $img = $manager->read(public_path($filename));
+
+            $imgs[] = $img;
+>>>>>>> 184c6ec (.)
+>>>>>>> 2f7c4db (.)
+>>>>>>> 59bb70f (fix: auto resolve conflict)
             $width += $img->width();
             $height = max($height, $img->height());
         }
 
+<<<<<<< HEAD
 <<<<<<< HEAD
         if (! is_numeric($height)) {
             throw new \Exception('['.__LINE__.']['.class_basename(self::class).']');
@@ -70,6 +97,11 @@ class Merge
             // $img_canvas->insert($img, 'top-left ', $delta, 0);
             $img_canvas->place($img, 'top-left ', $delta, 0);
 =======
+=======
+=======
+<<<<<<< HEAD
+>>>>>>> 2f7c4db (.)
+>>>>>>> 59bb70f (fix: auto resolve conflict)
         // Crea un'immagine vuota con le dimensioni calcolate
         $img_canvas = $manager->create($width, $height);
 
@@ -78,7 +110,28 @@ class Merge
         foreach ($filenames as $filename) {
             $img = $manager->read(public_path($filename));
             $img_canvas->place($img, 'top-left', $delta, 0);
+<<<<<<< HEAD
 >>>>>>> 06dadfb (.)
+=======
+<<<<<<< HEAD
+=======
+=======
+        if (! is_numeric($height)) {
+            throw new \Exception('['.__LINE__.']['.class_basename(self::class).']');
+        }
+        $height = (int) $height;
+        // $img_canvas = Image::canvas($width, $height);
+
+        $manager = new ImageManager(Driver::class);
+        $img_canvas = $manager->create($width, $height);
+
+        $delta = 0;
+        foreach ($imgs as $img) {
+            // $img_canvas->insert($img, 'top-left ', $delta, 0);
+            $img_canvas->place($img, 'top-left ', $delta, 0);
+>>>>>>> 184c6ec (.)
+>>>>>>> 2f7c4db (.)
+>>>>>>> 59bb70f (fix: auto resolve conflict)
             $delta += $img->width();
         }
 

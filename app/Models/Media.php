@@ -2041,9 +2041,21 @@ class Media extends SpatieMedia
         $conversions = [];
         foreach ($this->getGeneratedConversions() as $conv => $state) {
             $item = [
+<<<<<<< HEAD
                 'name' => is_string($conv) ? $conv : (string) $conv,
                 'generated' => $state,
                 'src' => $this->getUrlConv(is_string($conv) ? $conv : (string) $conv),
+=======
+<<<<<<< HEAD
+                'name' => is_string($conv) ? $conv : (string) $conv,
+                'generated' => $state,
+                'src' => $this->getUrlConv(is_string($conv) ? $conv : (string) $conv),
+=======
+                'name' => (string) $conv,
+                'generated' => $state,
+                'src' => $this->getUrlConv((string) $conv),
+>>>>>>> 184c6ec (.)
+>>>>>>> 2f7c4db (.)
             ];
             $conversions[] = $item;
         }
