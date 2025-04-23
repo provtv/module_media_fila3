@@ -13,7 +13,12 @@
 📆 2025-04-22 16:09:08 - 🔧 Configurazione git di base...
 📆 2025-04-22 16:09:08 - ✅ Configurazione git completata
 <<<<<<< HEAD
+<<<<<<< HEAD
 📆 2025-04-22 19:19:22 - 🔧 Configurazione git di base...
 📆 2025-04-22 19:19:22 - ✅ Configurazione git completata
 =======
 >>>>>>> 59bb70f (fix: auto resolve conflict)
+=======
+📆 2025-04-22 19:19:22 - 🔧 Configurazione git di base...
+📆 2025-04-22 19:19:22 - ✅ Configurazione git completata
+>>>>>>> 0ffeaf3 (fix: auto resolve conflict)

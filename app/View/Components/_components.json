@@ -1,10 +1,18 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 []
 =======
 <<<<<<< HEAD
 >>>>>>> 59bb70f (fix: auto resolve conflict)
+=======
+[]
+=======
+<<<<<<< HEAD
+=======
+>>>>>>> fa4eb21 (.)
+>>>>>>> 0ffeaf3 (fix: auto resolve conflict)
 [
     {
         "name": "video-player",
@@ -14,6 +22,7 @@
         "ns": "Modules\\Media\\View\\Components\\VideoPlayer"
     }
 ]
+<<<<<<< HEAD
 =======
 []
 <<<<<<< HEAD
@@ -21,4 +30,9 @@
 =======
 >>>>>>> 184c6ec (.)
 >>>>>>> 2f7c4db (.)
+<<<<<<< HEAD
 >>>>>>> 59bb70f (fix: auto resolve conflict)
+=======
+=======
+>>>>>>> fa4eb21 (.)
+>>>>>>> 0ffeaf3 (fix: auto resolve conflict)

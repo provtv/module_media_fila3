@@ -125,8 +125,8 @@ class SubtitleService
     }
 
     /**
-<<<<<<< HEAD
      * @return array<int, array<string, float|int|string|mixed>>
+<<<<<<< HEAD
 =======
 <<<<<<< HEAD
      * @return array<int, array<string, float|int|string|mixed>>
@@ -134,6 +134,8 @@ class SubtitleService
      * @return (float|int|mixed|string)[][]
 >>>>>>> 184c6ec (.)
 >>>>>>> 2f7c4db (.)
+=======
+>>>>>>> fa4eb21 (.)
      *
      * @psalm-return list{0?: array{sentence_i: int<0, max>, item_i: int<0, max>, start: float|int, end: float|int, time: string, text: mixed},...}
      */
@@ -180,9 +182,9 @@ class SubtitleService
     /**
      * Undocumented function.
      *
-<<<<<<< HEAD
      * @param  string $srtFile
      * @param  string $webVttFile
+<<<<<<< HEAD
 =======
 <<<<<<< HEAD
      * @param  string $srtFile
@@ -192,6 +194,8 @@ class SubtitleService
      * @param  string  $webVttFile
 >>>>>>> 184c6ec (.)
 >>>>>>> 2f7c4db (.)
+=======
+>>>>>>> fa4eb21 (.)
      */
     public function srtToVtt($srtFile, $webVttFile): void
     {

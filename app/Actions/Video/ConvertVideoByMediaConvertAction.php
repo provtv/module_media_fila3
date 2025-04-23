@@ -2,8 +2,8 @@
 
 /**
  * @see https://github.com/protonemedia/laravel-ffmpeg
-<<<<<<< HEAD
  * Azione per convertire un video utilizzando il modello MediaConvert.
+<<<<<<< HEAD
 =======
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -20,7 +20,12 @@
 =======
 >>>>>>> 184c6ec (.)
 >>>>>>> 2f7c4db (.)
+<<<<<<< HEAD
 >>>>>>> 59bb70f (fix: auto resolve conflict)
+=======
+=======
+>>>>>>> fa4eb21 (.)
+>>>>>>> 0ffeaf3 (fix: auto resolve conflict)
  */
 
 declare(strict_types=1);
@@ -32,7 +37,6 @@ use Illuminate\Support\Facades\Storage;
 use Modules\Media\Datas\ConvertData;
 use Modules\Media\Models\MediaConvert;
 use ProtoneMedia\LaravelFFMpeg\Support\FFMpeg;
-<<<<<<< HEAD
 use ProtoneMedia\LaravelFFMpeg\MediaOpener;
 <<<<<<< HEAD
 use ProtoneMedia\LaravelFFMpeg\FFMpeg\FFMpegExporter;
@@ -78,20 +82,26 @@ use Webmozart\Assert\Assert;
  */
 =======
  * Classe per convertire video utilizzando MediaConvert e tenere traccia del progresso.
- * 
+ *
  * @method \ProtoneMedia\LaravelFFMpeg\Drivers\PHPFFMpeg inFormat(DefaultVideo $format)
  */
+<<<<<<< HEAD
 =======
 use Spatie\QueueableAction\QueueableAction;
 
 >>>>>>> 184c6ec (.)
 >>>>>>> 2f7c4db (.)
+=======
+>>>>>>> fa4eb21 (.)
 class ConvertVideoByMediaConvertAction
 {
     use QueueableAction;
 
     /**
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 0ffeaf3 (fix: auto resolve conflict)
      * Esegue la conversione del video.
      *
      * @param ConvertData $data I dati di configurazione per la conversione
@@ -100,6 +110,7 @@ class ConvertVideoByMediaConvertAction
      * @throws \Exception Se il file non esiste o se mancano parametri essenziali
      *
      * @return string|null L'URL del file convertito o null in caso di errore
+<<<<<<< HEAD
      */
     public function execute(ConvertData $data, MediaConvert $record): ?string
     {
@@ -107,14 +118,25 @@ class ConvertVideoByMediaConvertAction
 
 =======
      * Execute the action.
+=======
+>>>>>>> 0ffeaf3 (fix: auto resolve conflict)
      */
+<<<<<<< HEAD
 <<<<<<< HEAD
 =======
 <<<<<<< HEAD
 >>>>>>> 2f7c4db (.)
     public function execute(ConvertData $data, MediaConvert $record): string
+=======
+    public function execute(ConvertData $data, MediaConvert $record): ?string
+>>>>>>> fa4eb21 (.)
     {
+<<<<<<< HEAD
 >>>>>>> 06dadfb (.)
+=======
+        $starting_time = microtime(true);
+
+>>>>>>> 0ffeaf3 (fix: auto resolve conflict)
         if (!$data->exists()) {
             throw new \Exception('Il file non esiste');
         }
@@ -128,6 +150,7 @@ class ConvertVideoByMediaConvertAction
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
         Notification::make()
             ->title('Avvio conversione video')
             ->success()
@@ -136,6 +159,8 @@ class ConvertVideoByMediaConvertAction
 =======
 =======
 >>>>>>> 59bb70f (fix: auto resolve conflict)
+=======
+>>>>>>> 0ffeaf3 (fix: auto resolve conflict)
 <<<<<<< HEAD
 =======
 <<<<<<< HEAD
@@ -145,7 +170,17 @@ class ConvertVideoByMediaConvertAction
 =======
 =======
 >>>>>>> 2f7c4db (.)
+<<<<<<< HEAD
 >>>>>>> 59bb70f (fix: auto resolve conflict)
+=======
+=======
+        Notification::make()
+            ->title('Avvio conversione video')
+            ->success()
+            ->send();
+
+>>>>>>> fa4eb21 (.)
+>>>>>>> 0ffeaf3 (fix: auto resolve conflict)
         // Instanziamo il formato prima di usarlo
         $formatInstance = new $format();
 
@@ -170,12 +205,15 @@ class ConvertVideoByMediaConvertAction
             ->onProgress(function (float $percentage, float $remaining, float $rate) use ($record): void {
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                 $msg = "{$percentage}% convertito. ";
                 $msg .= "{$remaining} secondi rimanenti (rate: {$rate})";
 
 =======
 >>>>>>> 06dadfb (.)
 =======
+=======
+>>>>>>> 0ffeaf3 (fix: auto resolve conflict)
 =======
 =======
     public function execute(MediaConvert $record): ?string
@@ -211,12 +249,21 @@ class ConvertVideoByMediaConvertAction
 
 >>>>>>> 184c6ec (.)
 >>>>>>> 2f7c4db (.)
+<<<<<<< HEAD
 >>>>>>> 59bb70f (fix: auto resolve conflict)
+=======
+=======
+                $msg = "{$percentage}% convertito. ";
+                $msg .= "{$remaining} secondi rimanenti (rate: {$rate})";
+
+>>>>>>> fa4eb21 (.)
+>>>>>>> 0ffeaf3 (fix: auto resolve conflict)
                 $record->update([
                     'percentage' => $percentage,
                     'remaining' => $remaining,
                     'rate' => $rate,
                 ]);
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 
@@ -241,6 +288,8 @@ class ConvertVideoByMediaConvertAction
 =======
 =======
 >>>>>>> 59bb70f (fix: auto resolve conflict)
+=======
+>>>>>>> 0ffeaf3 (fix: auto resolve conflict)
             })
             ->addFilter('-preset', 'ultrafast')
 <<<<<<< HEAD
@@ -272,6 +321,8 @@ class ConvertVideoByMediaConvertAction
 <<<<<<< HEAD
 =======
 =======
+=======
+>>>>>>> fa4eb21 (.)
 
                 Notification::make()
                     ->title($msg)
@@ -279,19 +330,24 @@ class ConvertVideoByMediaConvertAction
                     ->send();
             })
             ->addFilter('-preset', 'ultrafast')
-            // ->addFilter('-crf', 22)
             ->toDisk($data->disk)
-            ->inFormat($format)
+            ->inFormat($formatInstance)
             ->save($file_new);
 
         $finished_time = microtime(true);
 
         $record->update([
+            'status' => 'completed',
             'execution_time' => $finished_time - $starting_time,
         ]);
 
+<<<<<<< HEAD
         return Storage::disk($data->disk)->url((string) $file_new);
 >>>>>>> 184c6ec (.)
 >>>>>>> 2f7c4db (.)
+=======
+        // Restituiamo il percorso del file
+        return $file_new;
+>>>>>>> fa4eb21 (.)
     }
 }

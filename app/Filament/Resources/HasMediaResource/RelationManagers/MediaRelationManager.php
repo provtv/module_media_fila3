@@ -8,6 +8,7 @@ use Filament\Forms\Form;
 use Filament\Tables\Actions\Action;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 use Illuminate\Database\Eloquent\Model;
 use Filament\Tables\Actions\ActionGroup;
 use Modules\Media\Filament\Resources\MediaResource;
@@ -19,6 +20,8 @@ class MediaRelationManager extends XotBaseRelationManager
 {
 =======
 =======
+=======
+>>>>>>> 0ffeaf3 (fix: auto resolve conflict)
 =======
 <<<<<<< HEAD
 >>>>>>> 2f7c4db (.)
@@ -40,13 +43,14 @@ class MediaRelationManager extends XotBaseRelationManager
 =======
 =======
 =======
+=======
+>>>>>>> fa4eb21 (.)
 use Illuminate\Database\Eloquent\Model;
 use Filament\Tables\Actions\ActionGroup;
 use Modules\Media\Filament\Resources\MediaResource;
 use Modules\Xot\Filament\Traits\NavigationLabelTrait;
 use Modules\Media\Filament\Resources\HasMediaResource\Actions\AddAttachmentAction;
-use Modules\Xot\Filament\Resources\XotBaseResource\RelationManager\XotBaseRelationManager;
->>>>>>> 184c6ec (.)
+use Modules\Xot\Filament\Resources\XotBaseResource\RelationManagers\XotBaseRelationManager;
 
 class MediaRelationManager extends XotBaseRelationManager
 {
@@ -58,6 +62,7 @@ class MediaRelationManager extends XotBaseRelationManager
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     protected function getTableHeaderActions(): array
     {
         return [
@@ -65,6 +70,8 @@ class MediaRelationManager extends XotBaseRelationManager
 =======
 =======
 >>>>>>> 59bb70f (fix: auto resolve conflict)
+=======
+>>>>>>> 0ffeaf3 (fix: auto resolve conflict)
     
 
     
@@ -100,13 +107,21 @@ class MediaRelationManager extends XotBaseRelationManager
 
 
 
+=======
+>>>>>>> fa4eb21 (.)
     protected function getTableHeaderActions(): array
     {
         return [
             AddAttachmentAction::make(),
+<<<<<<< HEAD
 >>>>>>> 184c6ec (.)
 >>>>>>> 2f7c4db (.)
+<<<<<<< HEAD
 >>>>>>> 59bb70f (fix: auto resolve conflict)
+=======
+=======
+>>>>>>> fa4eb21 (.)
+>>>>>>> 0ffeaf3 (fix: auto resolve conflict)
         ];
     }
 }

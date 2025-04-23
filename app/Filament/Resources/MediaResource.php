@@ -18,6 +18,7 @@ class MediaResource extends XotBaseResource
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     protected static ?string $navigationIcon = 'fas-photo-film';
 
     public static function getFormSchema(): array
@@ -26,6 +27,8 @@ class MediaResource extends XotBaseResource
             FileUpload::make('file')
 =======
 =======
+=======
+>>>>>>> 0ffeaf3 (fix: auto resolve conflict)
 =======
 <<<<<<< HEAD
 >>>>>>> 2f7c4db (.)
@@ -43,20 +46,29 @@ class MediaResource extends XotBaseResource
 <<<<<<< HEAD
 =======
 =======
+=======
+>>>>>>> fa4eb21 (.)
     protected static ?string $navigationIcon = 'fas-photo-film';
 
     public static function getFormSchema(): array
     {
         return [
             FileUpload::make('file')
+<<<<<<< HEAD
 >>>>>>> 184c6ec (.)
 >>>>>>> 2f7c4db (.)
+<<<<<<< HEAD
 >>>>>>> 59bb70f (fix: auto resolve conflict)
+=======
+=======
+>>>>>>> fa4eb21 (.)
+>>>>>>> 0ffeaf3 (fix: auto resolve conflict)
                 ->hint(static::trans('fields.file_hint'))
                 ->storeFileNamesIn('original_file_name')
                 ->visibility('private')
                 ->required()
                 ->columnSpanFull(),
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
             Radio::make('attachment_type'),
@@ -66,6 +78,8 @@ class MediaResource extends XotBaseResource
             'name' => TextInput::make('name')
 >>>>>>> 06dadfb (.)
 =======
+=======
+>>>>>>> 0ffeaf3 (fix: auto resolve conflict)
             'attachment_type' => Radio::make('attachment_type'),
             'name' => TextInput::make('name')
 =======
@@ -77,7 +91,14 @@ class MediaResource extends XotBaseResource
             TextInput::make('name')
 >>>>>>> 184c6ec (.)
 >>>>>>> 2f7c4db (.)
+<<<<<<< HEAD
 >>>>>>> 59bb70f (fix: auto resolve conflict)
+=======
+=======
+            Radio::make('attachment_type'),
+            TextInput::make('name')
+>>>>>>> fa4eb21 (.)
+>>>>>>> 0ffeaf3 (fix: auto resolve conflict)
                 ->translateLabel()
                 ->hint(static::trans('fields.name.hint'))
                 ->autocomplete(false)

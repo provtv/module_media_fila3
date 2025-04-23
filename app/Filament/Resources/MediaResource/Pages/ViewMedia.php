@@ -27,9 +27,12 @@ class ViewMedia extends \Modules\Xot\Filament\Resources\Pages\XotBaseViewRecord
     protected static string $resource = MediaResource::class;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 <<<<<<< HEAD
 >>>>>>> 2f7c4db (.)
+=======
+>>>>>>> fa4eb21 (.)
     /**
      * Restituisce lo schema dell'infolist per la visualizzazione dei dettagli del record.
      *
@@ -40,6 +43,7 @@ class ViewMedia extends \Modules\Xot\Filament\Resources\Pages\XotBaseViewRecord
         return [
             'media_viewer' => Split::make([
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 =======
     public function getInfolistSchema(): array
@@ -48,6 +52,8 @@ class ViewMedia extends \Modules\Xot\Filament\Resources\Pages\XotBaseViewRecord
             Split::make([
 >>>>>>> 184c6ec (.)
 >>>>>>> 2f7c4db (.)
+=======
+>>>>>>> fa4eb21 (.)
                 Section::make()->schema([
                     ImageEntry::make('url')
                         ->defaultImageUrl(fn ($record) => $record->getUrl())
@@ -67,8 +73,8 @@ class ViewMedia extends \Modules\Xot\Filament\Resources\Pages\XotBaseViewRecord
                             ->form(MediaConvertResource::getFormSchema())
                             ->action(function ($record, array $data): void {
                                 $data['disk'] = $record->disk;
-<<<<<<< HEAD
                                 $data['file'] = $record->path.'/'.$record->file_name;
+<<<<<<< HEAD
 =======
 <<<<<<< HEAD
                                 $data['file'] = $record->path.'/'.$record->file_name;
@@ -76,6 +82,8 @@ class ViewMedia extends \Modules\Xot\Filament\Resources\Pages\XotBaseViewRecord
                                 $data['file'] = $record->id.'/'.$record->file_name;
 >>>>>>> 184c6ec (.)
 >>>>>>> 2f7c4db (.)
+=======
+>>>>>>> fa4eb21 (.)
                                 $convert_data = ConvertData::from($data);
                                 $record->mediaConverts()->create($convert_data->toArray());
                             }),
@@ -88,6 +96,7 @@ class ViewMedia extends \Modules\Xot\Filament\Resources\Pages\XotBaseViewRecord
                 ])
             ]),
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 =======
             
@@ -96,7 +105,11 @@ class ViewMedia extends \Modules\Xot\Filament\Resources\Pages\XotBaseViewRecord
 =======
 <<<<<<< HEAD
 >>>>>>> 59bb70f (fix: auto resolve conflict)
+=======
+
+>>>>>>> 0ffeaf3 (fix: auto resolve conflict)
             'entry_conversions' => RepeatableEntry::make('entry_conversions')
+<<<<<<< HEAD
 =======
 <<<<<<< HEAD
             'entry_conversions' => RepeatableEntry::make('entry_conversions')
@@ -104,6 +117,8 @@ class ViewMedia extends \Modules\Xot\Filament\Resources\Pages\XotBaseViewRecord
             RepeatableEntry::make('entry_conversions')
 >>>>>>> 184c6ec (.)
 >>>>>>> 2f7c4db (.)
+=======
+>>>>>>> fa4eb21 (.)
                 ->schema([
                     TextEntry::make('name'),
                     TextEntry::make('src'),

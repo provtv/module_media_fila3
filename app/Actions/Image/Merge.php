@@ -31,6 +31,7 @@ class Merge
     {
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
         $width = 0;
         $height = 0;
         $imgs = [];
@@ -45,6 +46,8 @@ class Merge
             $imgs[] = $img;
 =======
 =======
+=======
+>>>>>>> 0ffeaf3 (fix: auto resolve conflict)
 =======
 <<<<<<< HEAD
 >>>>>>> 2f7c4db (.)
@@ -62,6 +65,8 @@ class Merge
 <<<<<<< HEAD
 =======
 =======
+=======
+>>>>>>> fa4eb21 (.)
         $width = 0;
         $height = 0;
         $imgs = [];
@@ -74,13 +79,20 @@ class Merge
             $img = $manager->read(public_path($filename));
 
             $imgs[] = $img;
+<<<<<<< HEAD
 >>>>>>> 184c6ec (.)
 >>>>>>> 2f7c4db (.)
+<<<<<<< HEAD
 >>>>>>> 59bb70f (fix: auto resolve conflict)
+=======
+=======
+>>>>>>> fa4eb21 (.)
+>>>>>>> 0ffeaf3 (fix: auto resolve conflict)
             $width += $img->width();
             $height = max($height, $img->height());
         }
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
         if (! is_numeric($height)) {
@@ -98,6 +110,8 @@ class Merge
             $img_canvas->place($img, 'top-left ', $delta, 0);
 =======
 =======
+=======
+>>>>>>> 0ffeaf3 (fix: auto resolve conflict)
 =======
 <<<<<<< HEAD
 >>>>>>> 2f7c4db (.)
@@ -116,6 +130,8 @@ class Merge
 <<<<<<< HEAD
 =======
 =======
+=======
+>>>>>>> fa4eb21 (.)
         if (! is_numeric($height)) {
             throw new \Exception('['.__LINE__.']['.class_basename(self::class).']');
         }
@@ -129,9 +145,15 @@ class Merge
         foreach ($imgs as $img) {
             // $img_canvas->insert($img, 'top-left ', $delta, 0);
             $img_canvas->place($img, 'top-left ', $delta, 0);
+<<<<<<< HEAD
 >>>>>>> 184c6ec (.)
 >>>>>>> 2f7c4db (.)
+<<<<<<< HEAD
 >>>>>>> 59bb70f (fix: auto resolve conflict)
+=======
+=======
+>>>>>>> fa4eb21 (.)
+>>>>>>> 0ffeaf3 (fix: auto resolve conflict)
             $delta += $img->width();
         }
 

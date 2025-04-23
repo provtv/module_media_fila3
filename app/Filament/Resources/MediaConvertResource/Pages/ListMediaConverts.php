@@ -13,14 +13,16 @@ use Filament\Tables\Columns\TextColumn;
 use Filament\Tables\Filters\SelectFilter;
 use Modules\Job\Filament\Widgets\ClockWidget;
 use Modules\Media\Actions\Video\ConvertVideoByMediaConvertAction;
-<<<<<<< HEAD
 use Modules\Media\Datas\ConvertData;
+<<<<<<< HEAD
 =======
 <<<<<<< HEAD
 use Modules\Media\Datas\ConvertData;
 =======
 >>>>>>> 184c6ec (.)
 >>>>>>> 2f7c4db (.)
+=======
+>>>>>>> fa4eb21 (.)
 use Modules\Media\Filament\Resources\MediaConvertResource;
 use Modules\Media\Models\MediaConvert;
 use Modules\Xot\Filament\Resources\Pages\XotBaseListRecords;
@@ -94,9 +96,12 @@ class ListMediaConverts extends XotBaseListRecords
                 ->action(function (MediaConvert $record): void {
                     $record->update(['percentage' => 0]);
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 <<<<<<< HEAD
 >>>>>>> 2f7c4db (.)
+=======
+>>>>>>> fa4eb21 (.)
                     $data = ConvertData::from([
                         'file' => $record->file,
                         'disk' => $record->disk,
@@ -105,6 +110,7 @@ class ListMediaConverts extends XotBaseListRecords
                         ->onQueue()
                         ->execute($data, $record);
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 =======
                     app(ConvertVideoByMediaConvertAction::class)
@@ -112,6 +118,8 @@ class ListMediaConverts extends XotBaseListRecords
                         ->execute($record);
 >>>>>>> 184c6ec (.)
 >>>>>>> 2f7c4db (.)
+=======
+>>>>>>> fa4eb21 (.)
                 }),
         ];
     }
