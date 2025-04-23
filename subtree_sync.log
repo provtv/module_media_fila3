@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 [0;34mℹ️ [2025-04-23 14:58:14] Configurazione avanzata git...[0m
 [0;31m❌ [2025-04-23 14:58:14] Errore durante configurazione: Errore impostazione ignorecase[0m
 [1;33m⚠️ [2025-04-23 14:58:14] Tentativo di ripetere l'operazione (3 tentativi rimasti)[0m
@@ -39,35 +39,6 @@
 [0;32m✅ [2025-04-23 15:01:53] Configurazione git completata con successo[0m
 [0;34mℹ️ [2025-04-23 15:03:24] Configurazione avanzata git...[0m
 [0;32m✅ [2025-04-23 15:03:24] Configurazione git completata con successo[0m
-=======
-📆 2025-04-22 15:53:04 - 🔧 Configurazione git di base...
-📆 2025-04-22 15:53:04 - ✅ Configurazione git completata
-📆 2025-04-22 15:54:19 - 🔧 Configurazione git di base...
-📆 2025-04-22 15:54:19 - ✅ Configurazione git completata
-📆 2025-04-22 15:54:54 - 🔧 Configurazione git di base...
-📆 2025-04-22 15:54:54 - ✅ Configurazione git completata
-📆 2025-04-22 15:55:29 - 🔧 Configurazione git di base...
-📆 2025-04-22 15:55:29 - ✅ Configurazione git completata
-📆 2025-04-22 16:03:57 - 🔧 Configurazione git di base...
-📆 2025-04-22 16:03:57 - ✅ Configurazione git completata
-📆 2025-04-22 16:06:56 - 🔧 Configurazione git di base...
-📆 2025-04-22 16:06:56 - ✅ Configurazione git completata
-📆 2025-04-22 16:09:08 - 🔧 Configurazione git di base...
-📆 2025-04-22 16:09:08 - ✅ Configurazione git completata
-📆 2025-04-22 19:19:22 - 🔧 Configurazione git di base...
-📆 2025-04-22 19:19:22 - ✅ Configurazione git completata
-📆 2025-04-22 21:10:22 - 🔧 Configurazione git di base...
-📆 2025-04-22 21:10:22 - ✅ Configurazione git completata
-[0;34mℹ️ [2025-04-23 08:31:12] Configurazione avanzata git...[0m
-[0;32m✅ [2025-04-23 08:31:12] Configurazione git completata con successo[0m
-[0;34mℹ️ [2025-04-23 08:53:07] Configurazione avanzata git...[0m
-[0;32m✅ [2025-04-23 08:53:07] Configurazione git completata con successo[0m
-[0;34mℹ️ [2025-04-23 09:44:26] Configurazione avanzata git...[0m
-[0;32m✅ [2025-04-23 09:44:26] Configurazione git completata con successo[0m
-[0;34mℹ️ [2025-04-23 10:16:55] Configurazione avanzata git...[0m
-[0;32m✅ [2025-04-23 10:16:55] Configurazione git completata con successo[0m
-[0;34mℹ️ [2025-04-23 10:37:51] Configurazione avanzata git...[0m
-[0;32m✅ [2025-04-23 10:37:51] Configurazione git completata con successo[0m
-[0;34mℹ️ [2025-04-23 14:54:27] Configurazione avanzata git...[0m
-[0;32m✅ [2025-04-23 14:54:27] Configurazione git completata con successo[0m
->>>>>>> aurmich/dev
+aurmich/dev
+📆 2025-04-23 15:42:04 - 🔧 Configurazione git di base...
+📆 2025-04-23 15:42:04 - ✅ Configurazione git completata
