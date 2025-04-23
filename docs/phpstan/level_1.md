@@ -1,68 +1,41 @@
-# Analisi PHPStan Livello 1 - Modulo Media
+# Analisi phpstan livello 1 - Modulo Media
 
-## Riepilogo
-- **Errori totali**: 4
-- **File con errori**: 2
+## Riepilogo degli errori
+- Totale errori: 1
+- File con errori: 1 (`ConvertVideoAction.php`)
 
-## Dettaglio errori
+## Dettaglio degli errori
 
-### 1. MediaRelationManager::form() sovrascrive un metodo finale
+### 1. Classe non trovata - `ConvertVideoAction.php` riga 54
 
-**File**: `app_old/Filament/Resources/HasMediaResource/RelationManagers/MediaRelationManager.php`  
-**Linea**: 32  
-**Problema**: Il metodo `form()` in `MediaRelationManager` sovrascrive un metodo dichiarato come `final` nella classe parent `XotBaseRelationManager`.
+**Errore:**
+```
+Class ProtoneMedia\LaravelFFMpeg\FFMpeg\MediaExporter not found.
+```
 
-**Soluzione proposta**:
-- Rimuovere la sovrascrittura del metodo `form()` e utilizzare invece uno degli hook forniti da Filament o un metodo alternativo
-- Estendere una classe diversa che non abbia questo metodo dichiarato come `final`
-- Modificare l'architettura della classe padre in modo che il metodo non sia dichiarato come `final` (sconsigliato)
+**Contesto:**
+Nel file `ConvertVideoAction.php` viene importata e utilizzata la classe `MediaExporter` con un namespace errato.
 
-### 2. Visibilità metodo getTableHeaderActions() incoerente
+**Soluzione proposta:**
+Il namespace corretto per la classe `MediaExporter` è `ProtoneMedia\LaravelFFMpeg\Exporters\MediaExporter`, non `ProtoneMedia\LaravelFFMpeg\FFMpeg\MediaExporter`.
 
-**File**: `app_old/Filament/Resources/HasMediaResource/RelationManagers/MediaRelationManager.php`  
-**Linea**: 42  
-**Problema**: Il metodo `getTableHeaderActions()` è dichiarato come `protected` ma sovrascrive un metodo `public` della classe parent, violando il principio di sostituzione di Liskov.
+Modificare l'importazione della classe nel file `ConvertVideoAction.php`:
 
-**Soluzione proposta**:
-- Modificare la visibilità del metodo da `protected` a `public` per mantenere la coerenza con la classe parent
+```php
+// Modificare questa riga:
+use ProtoneMedia\LaravelFFMpeg\FFMpeg\MediaExporter;
 
-### 3. Classe ViewMedia contiene un metodo astratto non implementato
+// Con questa:
+use ProtoneMedia\LaravelFFMpeg\Exporters\MediaExporter;
+```
 
-**File**: `app_old/Filament/Resources/MediaResource/Pages/ViewMedia.php`  
-**Linea**: 25  
-**Problema**: La classe non astratta `ViewMedia` non implementa il metodo astratto `getInfolistSchema()` ereditato dalla classe `XotBaseViewRecord`.
+La correzione di questo namespace risolverà anche gli errori correlati all'utilizzo di metodi su questa classe nei livelli successivi dell'analisi phpstan.
 
-**Soluzione proposta**:
-- Implementare il metodo `getInfolistSchema()` nella classe `ViewMedia`
-- Rendere astratta la classe `ViewMedia` se non deve essere istanziata direttamente
+## Note sulla libreria laravel-ffmpeg
 
-### 4. ViewMedia::infolist() sovrascrive un metodo finale
+Il modulo Media utilizza la libreria [laravel-ffmpeg](https://github.com/protonemedia/laravel-ffmpeg) per la manipolazione di file video e audio. Questa libreria permette di convertire, modificare e analizzare file multimediali utilizzando FFmpeg nel contesto di applicazioni Laravel.
 
-**File**: `app_old/Filament/Resources/MediaResource/Pages/ViewMedia.php`  
-**Linea**: 29  
-**Problema**: Il metodo `infolist()` in `ViewMedia` sovrascrive un metodo dichiarato come `final` nella classe parent `XotBaseViewRecord`.
+La versione attualmente installata nel progetto è la 8.7.1, che presenta alcune differenze di namespace rispetto alle versioni precedenti, specialmente riguardo la classe `MediaExporter` che è stata spostata dal namespace `FFMpeg` al namespace `Exporters`.
 
-**Soluzione proposta**:
-- Rimuovere la sovrascrittura del metodo `infolist()`
-- Utilizzare un approccio diverso per personalizzare la visualizzazione dell'infolist
-- Modificare l'architettura della classe base (sconsigliato)
-
-## Impatto delle modifiche
-Le modifiche proposte influenzeranno il modo in cui il modulo Media interagisce con il framework Filament, in particolare nelle relazioni e nelle pagine di visualizzazione. È importante testare attentamente le modifiche per garantire che non ci siano regressioni funzionali.
-
-## Note architetturali
-Gli errori evidenziano un disallineamento tra l'architettura di base definita nel modulo Xot e l'implementazione nel modulo Media. È consigliabile rivedere la documentazione di entrambi i moduli per garantire una coerenza architettonica.
-
-## Osservazioni generali
-
-Gli errori riscontrati sono tutti nella cartella `app_old`, che potrebbe contenere codice obsoleto o deprecato. Valutare se:
-
-1. Questi file sono ancora necessari all'applicazione
-2. Se il codice in `app_old` debba essere aggiornato o rifattorizzato
-3. Se la cartella `app_old` possa essere rimossa completamente
-
-## Prossimi passi
-
-1. Correggere gli errori identificati
-2. Eseguire nuovamente PHPStan per verificare che tutti gli errori siano stati risolti
-3. Proseguire con l'analisi a livelli superiori (2-10)
+## Collegamenti
+- [Guida integrazione FFmpeg](../ffmpeg_integration.md)

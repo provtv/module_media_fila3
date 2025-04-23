@@ -1,5 +1,80 @@
 # Modulo Media
 
+Il modulo Media è responsabile della gestione di file multimediali all'interno dell'applicazione, supportando caricamento, manipolazione e visualizzazione di immagini e video.
+
+## Funzionalità principali
+
+- Caricamento di file multimediali
+- Manipolazione di immagini (ridimensionamento, ritaglio, filigrane)
+- Conversione di formati video
+- Gestione temporanea di caricamenti
+- Relazioni media polimorfiche con altri modelli
+- Interfaccia amministrativa tramite Filament
+
+## Requisiti
+
+Il modulo Media dipende dai seguenti pacchetti esterni:
+
+- **pbmedia/laravel-ffmpeg**: Necessario per la conversione e manipolazione di file video
+  - Versione minima supportata: ^8.5
+  - Namespace utilizzato: `ProtoneMedia\LaravelFFMpeg`
+- **intervention/image**: Utilizzato per la manipolazione di immagini
+
+## Struttura del modulo
+
+```
+Media/
+├── app/                   # Codice principale del modulo
+│   ├── Actions/           # Azioni per manipolazione media
+│   │   ├── Image/         # Azioni per manipolazione immagini
+│   │   └── Video/         # Azioni per elaborazione video (conversione)
+│   ├── Filament/          # Interfaccia amministrativa Filament
+│   ├── Models/            # Modelli Eloquent
+│   └── Providers/         # Service Providers
+├── config/                # Configurazione
+├── database/              # Migrazioni e seeder
+├── docs/                  # Documentazione
+│   ├── phpstan/           # Analisi PHPStan e correzioni
+│   └── ...
+├── resources/             # Risorse (views, assets)
+└── tests/                 # Test
+```
+
+## Configurazione PHPStan
+
+Il modulo Media include una configurazione PHPStan specifica (`phpstan.neon`) che risolve potenziali problemi con dipendenze esterne, in particolare con il pacchetto `pbmedia/laravel-ffmpeg`. La configurazione:
+
+- Include i file principali del pacchetto FFMpeg nella scansione
+- Esclude cartelle non pertinenti come `vendor`, `tests` e `app_old`
+- Configura parametri per una corretta analisi statica
+
+Questa configurazione è particolarmente importante per l'analisi PHPStan, poiché risolve problemi di riconoscimento del namespace `ProtoneMedia\LaravelFFMpeg` utilizzato nel codice.
+
+## Conversione video
+
+La conversione video è gestita attraverso la classe `ConvertVideoAction` che utilizza il pacchetto FFMpeg. 
+
+**Importante:** Sebbene il pacchetto sia referenziato come `pbmedia/laravel-ffmpeg` nel `composer.json`, il codice utilizza il namespace `ProtoneMedia\LaravelFFMpeg`. Questa è una peculiarità del pacchetto che mantiene il namespace originale per ragioni di compatibilità.
+
+### Processo di conversione
+
+1. Il video viene caricato tramite l'interfaccia Filament o programmaticamente
+2. `ConvertVideoAction` apre il file utilizzando la libreria FFMpeg
+3. Viene applicato il formato desiderato (per esempio X264 per MP4)
+4. Il file viene salvato nella destinazione finale
+5. I metadati della conversione vengono salvati nel database
+**Approfondimento:** [Guida integrazione FFmpeg](ffmpeg_integration.md)
+
+## Relazioni polimorfica
+
+Il modulo implementa relazioni polimorche tramite il tratto `HasMedia`, che può essere utilizzato da qualsiasi modello che necessiti di allegare media. La relazione polimorfica permette di associare media a diversi tipi di entità (articoli, prodotti, utenti, etc.).
+
+## Collegamenti
+
+- [Documentazione PHPStan](phpstan/level_1.md) - Analisi e soluzioni per problemi PHPStan
+- [Documentazione pacchetto Laravel FFMpeg](https://github.com/protonemedia/laravel-ffmpeg) - Documentazione ufficiale del pacchetto FFMpeg
+- [Documentazione principale del progetto](../../../docs/phpstan_media_analisi.md) - Analisi PHPStan completa del modulo
+
 ## Informazioni Generali
 - **Nome**: `laraxot/module_media_fila3`
 - **Descrizione**: Modulo dedicato alla gestione di immagini e video

@@ -12,7 +12,7 @@ use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Str;
 use ProtoneMedia\LaravelFFMpeg\Support\FFMpeg;
 use ProtoneMedia\LaravelFFMpeg\MediaOpener;
-use ProtoneMedia\LaravelFFMpeg\FFMpeg\MediaExporter;
+use ProtoneMedia\LaravelFFMpeg\Exporters\MediaExporter;
 use ProtoneMedia\LaravelFFMpeg\Exporters\EncodingException;
 use Spatie\QueueableAction\QueueableAction;
 use Webmozart\Assert\Assert;
