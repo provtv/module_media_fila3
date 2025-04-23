@@ -12,6 +12,9 @@ use Modules\Media\Filament\Resources\TemporaryUploadResource\Pages\EditTemporary
 use Modules\Media\Filament\Resources\TemporaryUploadResource\Pages\ListTemporaryUploads;
 use Modules\Media\Models\TemporaryUpload;
 use Modules\Xot\Filament\Resources\XotBaseResource;
+use Filament\Forms\Components\FileUpload;
+use Filament\Forms\Components\TextInput;
+use Filament\Forms\Components\DateTimePicker;
 
 // use Illuminate\Database\Eloquent\Builder;
 // use Illuminate\Database\Eloquent\SoftDeletingScope;
@@ -19,7 +22,9 @@ use Modules\Xot\Filament\Resources\XotBaseResource;
 class TemporaryUploadResource extends XotBaseResource
 {
     protected static ?string $model = TemporaryUpload::class;
+    protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -37,12 +42,15 @@ class TemporaryUploadResource extends XotBaseResource
 <<<<<<< HEAD
 >>>>>>> 2f7c4db (.)
 >>>>>>> 59bb70f (fix: auto resolve conflict)
+=======
+>>>>>>> 2a62ef4 (.)
     /**
      * @return array<string, \Filament\Forms\Components\Component>
      */
     public static function getFormSchema(): array
     {
         return [
+<<<<<<< HEAD
             'file' => \Filament\Forms\Components\FileUpload::make('file')
 <<<<<<< HEAD
 >>>>>>> 06dadfb (.)
@@ -67,10 +75,14 @@ class TemporaryUploadResource extends XotBaseResource
 =======
 >>>>>>> fa4eb21 (.)
 >>>>>>> 0ffeaf3 (fix: auto resolve conflict)
+=======
+            FileUpload::make('file')
+>>>>>>> 2a62ef4 (.)
                 ->required()
                 ->preserveFilenames()
                 ->acceptedFileTypes(['image/*', 'application/pdf', 'application/msword'])
                 ->maxSize(10240),
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -111,6 +123,12 @@ class TemporaryUploadResource extends XotBaseResource
 =======
 >>>>>>> fa4eb21 (.)
 >>>>>>> 0ffeaf3 (fix: auto resolve conflict)
+=======
+            TextInput::make('folder')
+                ->required()
+                ->maxLength(255),
+            DateTimePicker::make('expires_at')
+>>>>>>> 2a62ef4 (.)
                 ->required(),
         ];
     }

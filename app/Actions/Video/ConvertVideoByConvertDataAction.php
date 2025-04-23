@@ -3,11 +3,8 @@
 /**
  * @see https://github.com/protonemedia/laravel-ffmpeg
  * Azione per convertire un video utilizzando ConvertData.
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-<<<<<<< HEAD
  * Azione per convertire un video utilizzando ConvertData.
+<<<<<<< HEAD
 =======
 <<<<<<< HEAD
  * Azione per convertire un video utilizzando ConvertData.
@@ -26,6 +23,8 @@
 =======
 >>>>>>> fa4eb21 (.)
 >>>>>>> 0ffeaf3 (fix: auto resolve conflict)
+=======
+>>>>>>> 2a62ef4 (.)
  */
 
 declare(strict_types=1);
@@ -37,11 +36,9 @@ use Illuminate\Support\Facades\Storage;
 use Modules\Media\Datas\ConvertData;
 use ProtoneMedia\LaravelFFMpeg\Support\FFMpeg;
 use ProtoneMedia\LaravelFFMpeg\MediaOpener;
-<<<<<<< HEAD
 use ProtoneMedia\LaravelFFMpeg\FFMpeg\FFMpegExporter;
-=======
-<<<<<<< HEAD
 use ProtoneMedia\LaravelFFMpeg\FFMpeg\FFMpegExporter;
+<<<<<<< HEAD
 =======
 <<<<<<< HEAD
 use ProtoneMedia\LaravelFFMpeg\FFMpeg\FFMpegExporter;
@@ -57,14 +54,17 @@ use ProtoneMedia\LaravelFFMpeg\MediaOpener;
 use ProtoneMedia\LaravelFFMpeg\FFMpeg\FFMpegExporter;
 >>>>>>> 2f7c4db (.)
 >>>>>>> 59bb70f (fix: auto resolve conflict)
+=======
+use ProtoneMedia\LaravelFFMpeg\MediaOpener;
+use ProtoneMedia\LaravelFFMpeg\FFMpeg\FFMpegExporter;
+>>>>>>> 2a62ef4 (.)
 use Spatie\QueueableAction\QueueableAction;
 use FFMpeg\Format\Video\DefaultVideo;
 use Webmozart\Assert\Assert;
 
 /**
-<<<<<<< HEAD
-<<<<<<< HEAD
  * Classe per convertire video utilizzando i dati di conversione specificati.
+<<<<<<< HEAD
  *
  * @method \ProtoneMedia\LaravelFFMpeg\Drivers\PHPFFMpeg inFormat(DefaultVideo $format)
 =======
@@ -72,26 +72,23 @@ use Webmozart\Assert\Assert;
  * Classe per convertire video utilizzando i dati di conversione specificati.
 =======
 <<<<<<< HEAD
- * Classe per convertire video utilizzando i dati di conversione specificati.
 =======
+>>>>>>> 2a62ef4 (.)
+ * Classe per convertire video utilizzando i dati di conversione specificati.
  * @method \ProtoneMedia\LaravelFFMpeg\Drivers\PHPFFMpeg inFormat(DefaultVideo $format)
+<<<<<<< HEAD
 >>>>>>> origin/dev
 >>>>>>> origin/dev
 >>>>>>> 06dadfb (.)
- */
 =======
+>>>>>>> 2a62ef4 (.)
+ */
  * Classe per convertire video utilizzando i dati di conversione specificati.
  *
  * @method \ProtoneMedia\LaravelFFMpeg\Drivers\PHPFFMpeg inFormat(DefaultVideo $format)
  */
-<<<<<<< HEAD
-=======
 use Spatie\QueueableAction\QueueableAction;
 
->>>>>>> 184c6ec (.)
->>>>>>> 2f7c4db (.)
-=======
->>>>>>> fa4eb21 (.)
 class ConvertVideoByConvertDataAction
 {
     use QueueableAction;
@@ -119,15 +116,8 @@ class ConvertVideoByConvertDataAction
 =======
 >>>>>>> 0ffeaf3 (fix: auto resolve conflict)
      */
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
->>>>>>> 2f7c4db (.)
     public function execute(ConvertData $data): string
-=======
     public function execute(ConvertData $data): ?string
->>>>>>> fa4eb21 (.)
     {
         if (!$data->exists()) {
 <<<<<<< HEAD
@@ -145,6 +135,7 @@ class ConvertVideoByConvertDataAction
             throw new \Exception('Il nome del file convertito non è stato specificato');
         }
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -171,10 +162,13 @@ class ConvertVideoByConvertDataAction
 >>>>>>> origin/dev
 =======
 >>>>>>> 2f7c4db (.)
+=======
+>>>>>>> 2a62ef4 (.)
         // Instanziamo il formato prima di usarlo
         $formatInstance = new $format();
 
         // @phpstan-ignore-next-line
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 =======
@@ -187,6 +181,8 @@ class ConvertVideoByConvertDataAction
 =======
 >>>>>>> 2f7c4db (.)
 >>>>>>> 59bb70f (fix: auto resolve conflict)
+=======
+>>>>>>> 2a62ef4 (.)
         FFMpeg::fromDisk($data->disk)
             ->open($data->file)
             ->export()
@@ -213,30 +209,21 @@ class ConvertVideoByConvertDataAction
                 // Log o notifica del progresso
             })
             ->addFilter('-preset', 'ultrafast')
-<<<<<<< HEAD
-<<<<<<< HEAD
             // Utilizziamo il formato istanziato come parametro
             ->save($file_new, $formatInstance);
-=======
-<<<<<<< HEAD
             // Utilizziamo il formato istanziato come parametro
             ->save($file_new, $formatInstance);
-=======
             ->inFormat($format)
             ->save($file_new);
->>>>>>> origin/dev
->>>>>>> origin/dev
 
         // Restituisci il percorso del file senza usare il metodo url()
 >>>>>>> 06dadfb (.)
         return $file_new;
-=======
             // Utilizziamo il formato istanziato come parametro
             ->save($file_new, $formatInstance);
 
         // Restituisci il percorso del file senza usare il metodo url()
         return $file_new;
-=======
     public function execute(ConvertData $data): ?string
     {
         if (! $data->exists()) {
@@ -244,8 +231,6 @@ class ConvertVideoByConvertDataAction
         }
         $format = $data->getFFMpegFormat();
         $file_new = $data->getConvertedFilename();
-=======
->>>>>>> fa4eb21 (.)
         Notification::make()
             ->title('Avvio conversione video')
             ->success()
@@ -275,13 +260,8 @@ class ConvertVideoByConvertDataAction
             ->inFormat($formatInstance)
             ->save($file_new);
 
-<<<<<<< HEAD
         return Storage::disk($data->disk)->url($file_new);
->>>>>>> 184c6ec (.)
->>>>>>> 2f7c4db (.)
-=======
         // Restituisci il percorso del file
         return $file_new;
->>>>>>> fa4eb21 (.)
     }
 }

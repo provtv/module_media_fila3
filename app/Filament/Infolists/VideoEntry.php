@@ -57,64 +57,24 @@ class VideoEntry extends Entry
     public function disk(string|\Closure|null $disk): static
     {
         $this->disk = $disk;
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-=======
-
->>>>>>> 184c6ec (.)
->>>>>>> 2f7c4db (.)
-=======
->>>>>>> fa4eb21 (.)
         return $this;
     }
 
     public function height(int|string|\Closure|null $height): static
     {
         $this->height = $height;
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-=======
-
->>>>>>> 184c6ec (.)
->>>>>>> 2f7c4db (.)
-=======
->>>>>>> fa4eb21 (.)
         return $this;
     }
 
     public function circular(bool|\Closure $condition = true): static
     {
         $this->isCircular = $condition;
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-=======
-
->>>>>>> 184c6ec (.)
->>>>>>> 2f7c4db (.)
-=======
->>>>>>> fa4eb21 (.)
         return $this;
     }
 
     public function square(bool|\Closure $condition = true): static
     {
         $this->isSquare = $condition;
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-=======
-
->>>>>>> 184c6ec (.)
->>>>>>> 2f7c4db (.)
-=======
->>>>>>> fa4eb21 (.)
         return $this;
     }
 
@@ -122,48 +82,18 @@ class VideoEntry extends Entry
     {
         $this->width($size);
         $this->height($size);
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-=======
-
->>>>>>> 184c6ec (.)
->>>>>>> 2f7c4db (.)
-=======
->>>>>>> fa4eb21 (.)
         return $this;
     }
 
     public function visibility(string|\Closure $visibility): static
     {
         $this->visibility = $visibility;
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-=======
-
->>>>>>> 184c6ec (.)
->>>>>>> 2f7c4db (.)
-=======
->>>>>>> fa4eb21 (.)
         return $this;
     }
 
     public function width(int|string|\Closure|null $width): static
     {
         $this->width = $width;
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-=======
-
->>>>>>> 184c6ec (.)
->>>>>>> 2f7c4db (.)
-=======
->>>>>>> fa4eb21 (.)
         return $this;
     }
 
@@ -175,13 +105,6 @@ class VideoEntry extends Entry
     public function getDiskName(): string
     {
         Assert::string($res = $this->evaluate($this->disk) ?? config('filament.default_filesystem_disk'));
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
->>>>>>> 2f7c4db (.)
-=======
->>>>>>> fa4eb21 (.)
         return $res;
     }
 
@@ -190,18 +113,6 @@ class VideoEntry extends Entry
      *
      * @return string|null The height value as a string (with 'px' suffix if it was an integer) or null if not set
      */
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-=======
-
-        return $res;
-    }
-
->>>>>>> 184c6ec (.)
->>>>>>> 2f7c4db (.)
-=======
->>>>>>> fa4eb21 (.)
     public function getHeight(): ?string
     {
         $height = $this->evaluate($this->height);
@@ -214,13 +125,6 @@ class VideoEntry extends Entry
             return "{$height}px";
         }
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
->>>>>>> 2f7c4db (.)
-=======
->>>>>>> fa4eb21 (.)
         // Convert to string to ensure consistent return type
         if (is_scalar($height) || (is_object($height) && method_exists($height, '__toString'))) {
             return is_string($height) ? $height : (string) $height;
@@ -236,93 +140,20 @@ class VideoEntry extends Entry
 >>>>>>> 0ffeaf3 (fix: auto resolve conflict)
         // If we can't convert to string, return null
         return null;
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-=======
-        return $height;
->>>>>>> 184c6ec (.)
->>>>>>> 2f7c4db (.)
-=======
->>>>>>> fa4eb21 (.)
     }
 
     public function defaultImageUrl(string|\Closure|null $url): static
     {
         $this->defaultImageUrl = $url;
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-=======
-
->>>>>>> 184c6ec (.)
->>>>>>> 2f7c4db (.)
-=======
->>>>>>> fa4eb21 (.)
         return $this;
     }
 
-    public function getImageUrl(?string $state = null): ?string
-    {
-        if ((filter_var($state, FILTER_VALIDATE_URL) !== false) || str($state)->startsWith('data:')) {
-            return $state;
-        }
-        if ($state === null) {
-            return null;
-        }
-
-        /** @var FilesystemAdapter $storage */
-        $storage = $this->getDisk();
-
-        if ($this->shouldCheckFileExistence()) {
-            try {
-                if (! $storage->exists($state)) {
-                    return null;
-                }
-            } catch (UnableToCheckFileExistence) {
-                return null;
-            }
-        }
-
-        if ($this->getVisibility() === 'private') {
-            try {
-                return $storage->temporaryUrl(
-                    $state,
-                    now()->addMinutes(5)
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-                    now()->addMinutes(5)
-=======
-                    now()->addMinutes(5),
->>>>>>> 184c6ec (.)
->>>>>>> 2f7c4db (.)
-=======
->>>>>>> fa4eb21 (.)
-                );
-            } catch (\Throwable) {
-                // This driver does not support creating temporary URLs.
-            }
-        }
-
-        return $storage->url($state);
-    }
-
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
->>>>>>> 2f7c4db (.)
-=======
->>>>>>> fa4eb21 (.)
     /**
-     * Get the default image URL for the video entry.
-     *
-     * @return string|null The default image URL or null if not set
+     * @return string|null
      */
     public function getDefaultImageUrl(): ?string
     {
+<<<<<<< HEAD
         $url = $this->evaluate($this->defaultImageUrl);
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -400,30 +231,46 @@ class VideoEntry extends Entry
 =======
     public function getDefaultImageUrl(): ?string
     {
+=======
+>>>>>>> 2a62ef4 (.)
         return $this->evaluate($this->defaultImageUrl);
     }
 
-    public function getVisibility(): string
+    /**
+     * @param  array<mixed>|\Closure  $attributes
+     */
+    public function extraImgAttributes(array|\Closure $attributes = []): static
     {
-        return $this->evaluate($this->visibility);
+        $this->extraImgAttributes = $attributes;
+        return $this;
     }
 
->>>>>>> 184c6ec (.)
->>>>>>> 2f7c4db (.)
-=======
->>>>>>> fa4eb21 (.)
-    public function getWidth(): ?string
+    /**
+     * @return array<mixed>
+     */
+    public function getExtraImgAttributes(): array
     {
-        $width = $this->evaluate($this->width);
+        $attributes = $this->evaluate($this->extraImgAttributes);
 
-        if ($width === null) {
-            return null;
+        if (is_array($attributes)) {
+            return $attributes;
         }
 
-        if (is_int($width)) {
-            return "{$width}px";
+        return [];
+    }
+
+    /**
+     * @return array<string, mixed>|ComponentAttributeBag
+     */
+    public function getExtraImgAttributeBag(): array|ComponentAttributeBag
+    {
+        $attributes = $this->getExtraImgAttributes();
+
+        if ($attributes instanceof ComponentAttributeBag) {
+            return $attributes;
         }
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 =======
@@ -453,6 +300,9 @@ class VideoEntry extends Entry
 >>>>>>> 2f7c4db (.)
 =======
 >>>>>>> fa4eb21 (.)
+=======
+        return new ComponentAttributeBag($attributes);
+>>>>>>> 2a62ef4 (.)
     }
 
     public function isCircular(): bool
@@ -466,29 +316,25 @@ class VideoEntry extends Entry
     }
 
     /**
-     * @param  array<mixed>|\Closure  $attributes
+     * @return string
      */
-    public function extraImgAttributes(array|\Closure $attributes): static
+    public function getVisibility(): string
     {
-        $this->extraImgAttributes = $attributes;
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-=======
+        $visibility = $this->evaluate($this->visibility);
 
->>>>>>> 184c6ec (.)
->>>>>>> 2f7c4db (.)
-=======
->>>>>>> fa4eb21 (.)
-        return $this;
+        if (is_string($visibility)) {
+            return $visibility;
+        }
+
+        return 'public';
     }
 
     /**
-     * @return array<mixed>
+     * @return string|null
      */
-    public function getExtraImgAttributes(): array
+    public function getWidth(): ?string
     {
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 =======
@@ -499,11 +345,15 @@ class VideoEntry extends Entry
         $attributes = $this->evaluate($this->extraImgAttributes);
 <<<<<<< HEAD
 <<<<<<< HEAD
+=======
+        $width = $this->evaluate($this->width);
+>>>>>>> 2a62ef4 (.)
 
-        if (is_array($attributes)) {
-            return $attributes;
+        if ($width === null) {
+            return null;
         }
 
+<<<<<<< HEAD
 =======
         
         if (is_array($attributes)) {
@@ -530,25 +380,27 @@ class VideoEntry extends Entry
 =======
 >>>>>>> fa4eb21 (.)
     }
+=======
+        if (is_int($width)) {
+            return "{$width}px";
+        }
+>>>>>>> 2a62ef4 (.)
 
-    public function getExtraImgAttributeBag(): ComponentAttributeBag
-    {
-        return new ComponentAttributeBag($this->getExtraImgAttributes());
+        if (is_string($width)) {
+            return $width;
+        }
+
+        // Se non è né stringa né intero, proviamo a convertire
+        if (is_scalar($width) || (is_object($width) && method_exists($width, '__toString'))) {
+            return (string) $width;
+        }
+
+        return null;
     }
 
     public function stacked(bool|\Closure $condition = true): static
     {
         $this->isStacked = $condition;
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-=======
-
->>>>>>> 184c6ec (.)
->>>>>>> 2f7c4db (.)
-=======
->>>>>>> fa4eb21 (.)
         return $this;
     }
 
@@ -560,13 +412,6 @@ class VideoEntry extends Entry
     public function overlap(int|\Closure|null $overlap): static
     {
         $this->overlap = $overlap;
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
->>>>>>> 2f7c4db (.)
-=======
->>>>>>> fa4eb21 (.)
         return $this;
     }
 
@@ -608,33 +453,11 @@ class VideoEntry extends Entry
 
 >>>>>>> 0ffeaf3 (fix: auto resolve conflict)
         return null;
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-=======
-
-        return $this;
-    }
-
-    public function getOverlap(): ?int
-    {
-        return $this->evaluate($this->overlap);
->>>>>>> 184c6ec (.)
->>>>>>> 2f7c4db (.)
-=======
->>>>>>> fa4eb21 (.)
     }
 
     public function ring(string|int|\Closure|null $ring): static
     {
         $this->ring = $ring;
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
->>>>>>> 2f7c4db (.)
-=======
->>>>>>> fa4eb21 (.)
         return $this;
     }
 
@@ -676,33 +499,11 @@ class VideoEntry extends Entry
 
 >>>>>>> 0ffeaf3 (fix: auto resolve conflict)
         return null;
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-=======
-
-        return $this;
-    }
-
-    public function getRing(): ?int
-    {
-        return $this->evaluate($this->ring);
->>>>>>> 184c6ec (.)
->>>>>>> 2f7c4db (.)
-=======
->>>>>>> fa4eb21 (.)
     }
 
     public function limit(int|\Closure|null $limit = 3): static
     {
         $this->limit = $limit;
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
->>>>>>> 2f7c4db (.)
-=======
->>>>>>> fa4eb21 (.)
         return $this;
     }
 
@@ -744,21 +545,6 @@ class VideoEntry extends Entry
 
 >>>>>>> 0ffeaf3 (fix: auto resolve conflict)
         return null;
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-=======
-
-        return $this;
-    }
-
-    public function getLimit(): ?int
-    {
-        return $this->evaluate($this->limit);
->>>>>>> 184c6ec (.)
->>>>>>> 2f7c4db (.)
-=======
->>>>>>> fa4eb21 (.)
     }
 
     public function limitedRemainingText(bool|\Closure $condition = true, bool|\Closure $isSeparate = false, string|\Closure|null $size = null): static
@@ -766,32 +552,12 @@ class VideoEntry extends Entry
         $this->hasLimitedRemainingText = $condition;
         $this->limitedRemainingTextSeparate($isSeparate);
         $this->limitedRemainingTextSize($size);
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-=======
-
->>>>>>> 184c6ec (.)
->>>>>>> 2f7c4db (.)
-=======
->>>>>>> fa4eb21 (.)
         return $this;
     }
 
     public function limitedRemainingTextSeparate(bool|\Closure $condition = true): static
     {
         $this->isLimitedRemainingTextSeparate = $condition;
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-=======
-
->>>>>>> 184c6ec (.)
->>>>>>> 2f7c4db (.)
-=======
->>>>>>> fa4eb21 (.)
         return $this;
     }
 
@@ -808,13 +574,6 @@ class VideoEntry extends Entry
     public function limitedRemainingTextSize(string|\Closure|null $size): static
     {
         $this->limitedRemainingTextSize = $size;
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
->>>>>>> 2f7c4db (.)
-=======
->>>>>>> fa4eb21 (.)
         return $this;
     }
 
@@ -856,36 +615,11 @@ class VideoEntry extends Entry
 
 >>>>>>> 0ffeaf3 (fix: auto resolve conflict)
         return null;
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-=======
-
-        return $this;
-    }
-
-    public function getLimitedRemainingTextSize(): ?string
-    {
-        return $this->evaluate($this->limitedRemainingTextSize);
->>>>>>> 184c6ec (.)
->>>>>>> 2f7c4db (.)
-=======
->>>>>>> fa4eb21 (.)
     }
 
     public function checkFileExistence(bool|\Closure $condition = true): static
     {
         $this->shouldCheckFileExistence = $condition;
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-=======
-
->>>>>>> 184c6ec (.)
->>>>>>> 2f7c4db (.)
-=======
->>>>>>> fa4eb21 (.)
         return $this;
     }
 

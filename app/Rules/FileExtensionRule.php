@@ -25,6 +25,7 @@ class FileExtensionRule implements Rule
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
      * @param  string  $attribute
 =======
      * @param  string $attribute
@@ -32,12 +33,12 @@ class FileExtensionRule implements Rule
 =======
 =======
 >>>>>>> 0ffeaf3 (fix: auto resolve conflict)
-     * @param  string $attribute
 =======
-<<<<<<< HEAD
+>>>>>>> 2a62ef4 (.)
      * @param  string $attribute
-=======
+     * @param  string $attribute
      * @param  string  $attribute
+<<<<<<< HEAD
 >>>>>>> 184c6ec (.)
 >>>>>>> 2f7c4db (.)
 <<<<<<< HEAD
@@ -47,6 +48,9 @@ class FileExtensionRule implements Rule
      * @param  string  $attribute
 >>>>>>> fa4eb21 (.)
 >>>>>>> 0ffeaf3 (fix: auto resolve conflict)
+=======
+     * @param  string  $attribute
+>>>>>>> 2a62ef4 (.)
      * @param  UploadedFile  $value
      */
     public function passes($attribute, $value): bool

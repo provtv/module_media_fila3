@@ -32,6 +32,7 @@ class Merge
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
         $width = 0;
         $height = 0;
         $imgs = [];
@@ -52,6 +53,8 @@ class Merge
 <<<<<<< HEAD
 >>>>>>> 2f7c4db (.)
 >>>>>>> 59bb70f (fix: auto resolve conflict)
+=======
+>>>>>>> 2a62ef4 (.)
         $manager = app(ImageManager::class);
         $width = 0;
         $height = 0;
@@ -60,6 +63,7 @@ class Merge
         foreach ($filenames as $filename) {
             $img = $manager->read(public_path($filename));
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> 06dadfb (.)
 =======
 <<<<<<< HEAD
@@ -67,6 +71,8 @@ class Merge
 =======
 =======
 >>>>>>> fa4eb21 (.)
+=======
+>>>>>>> 2a62ef4 (.)
         $width = 0;
         $height = 0;
         $imgs = [];
@@ -79,6 +85,7 @@ class Merge
             $img = $manager->read(public_path($filename));
 
             $imgs[] = $img;
+<<<<<<< HEAD
 <<<<<<< HEAD
 >>>>>>> 184c6ec (.)
 >>>>>>> 2f7c4db (.)
@@ -88,10 +95,13 @@ class Merge
 =======
 >>>>>>> fa4eb21 (.)
 >>>>>>> 0ffeaf3 (fix: auto resolve conflict)
+=======
+>>>>>>> 2a62ef4 (.)
             $width += $img->width();
             $height = max($height, $img->height());
         }
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -116,6 +126,8 @@ class Merge
 <<<<<<< HEAD
 >>>>>>> 2f7c4db (.)
 >>>>>>> 59bb70f (fix: auto resolve conflict)
+=======
+>>>>>>> 2a62ef4 (.)
         // Crea un'immagine vuota con le dimensioni calcolate
         $img_canvas = $manager->create($width, $height);
 
@@ -125,6 +137,7 @@ class Merge
             $img = $manager->read(public_path($filename));
             $img_canvas->place($img, 'top-left', $delta, 0);
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> 06dadfb (.)
 =======
 <<<<<<< HEAD
@@ -132,6 +145,8 @@ class Merge
 =======
 =======
 >>>>>>> fa4eb21 (.)
+=======
+>>>>>>> 2a62ef4 (.)
         if (! is_numeric($height)) {
             throw new \Exception('['.__LINE__.']['.class_basename(self::class).']');
         }
@@ -146,6 +161,7 @@ class Merge
             // $img_canvas->insert($img, 'top-left ', $delta, 0);
             $img_canvas->place($img, 'top-left ', $delta, 0);
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> 184c6ec (.)
 >>>>>>> 2f7c4db (.)
 <<<<<<< HEAD
@@ -154,6 +170,8 @@ class Merge
 =======
 >>>>>>> fa4eb21 (.)
 >>>>>>> 0ffeaf3 (fix: auto resolve conflict)
+=======
+>>>>>>> 2a62ef4 (.)
             $delta += $img->width();
         }
 

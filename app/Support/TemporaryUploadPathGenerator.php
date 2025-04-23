@@ -15,6 +15,7 @@ class TemporaryUploadPathGenerator
 {
     /**
 <<<<<<< HEAD
+<<<<<<< HEAD
      * Genera il percorso di storage per i file originali.
      *
      * @param \Modules\Media\Models\Media $media Il modello media per cui generare il percorso
@@ -66,103 +67,62 @@ class TemporaryUploadPathGenerator
 =======
 <<<<<<< HEAD
 >>>>>>> 0ffeaf3 (fix: auto resolve conflict)
+=======
+>>>>>>> 2a62ef4 (.)
      * @param \Modules\Media\Models\Media $media
      */
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
     /**
      * @param \Modules\Media\Models\Media $media
      */
-=======
->>>>>>> origin/dev
->>>>>>> origin/dev
-=======
->>>>>>> 2f7c4db (.)
-    public function getPath($media): string
+       public function getPath($media): string
     {
         return $this->getBasePath($media).'/'.md5($media->id . $media->uuid . 'original').'/';
     }
 
-<<<<<<< HEAD
-<<<<<<< HEAD
     /**
      * @param \Modules\Media\Models\Media $media
      */
-=======
-<<<<<<< HEAD
     /**
      * @param \Modules\Media\Models\Media $media
      */
-=======
->>>>>>> origin/dev
->>>>>>> origin/dev
-=======
-    /**
+      /**
      * @param \Modules\Media\Models\Media $media
      */
->>>>>>> 2f7c4db (.)
-    public function getPathForConversions($media): string
+     public function getPathForConversions($media): string
     {
         return $this->getBasePath($media).'/'.md5($media->id . $media->uuid . 'conversion');
     }
 
-<<<<<<< HEAD
-<<<<<<< HEAD
     /**
      * @param \Modules\Media\Models\Media $media
      */
-=======
-<<<<<<< HEAD
     /**
      * @param \Modules\Media\Models\Media $media
      */
-=======
->>>>>>> origin/dev
->>>>>>> origin/dev
-=======
-    /**
+      /**
      * @param \Modules\Media\Models\Media $media
      */
->>>>>>> 2f7c4db (.)
-    public function getPathForResponsiveImages($media): string
+     public function getPathForResponsiveImages($media): string
     {
         return $this->getBasePath($media).'/'.md5($media->id . $media->uuid . 'responsive');
     }
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
->>>>>>> origin/dev
-=======
->>>>>>> 2f7c4db (.)
-    /**
+      /**
      * Get a unique base path for the given media.
-=======
      * Genera il percorso di storage per i file originali.
->>>>>>> fa4eb21 (.)
-     *
+      *
      * @param \Modules\Media\Models\Media $media Il modello media per cui generare il percorso
      */
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-=======
     /*
     * Get a unique base path for the given media.
     */
->>>>>>> origin/dev
->>>>>>> origin/dev
-=======
->>>>>>> 2f7c4db (.)
-    protected function getBasePath($media): string
+       protected function getBasePath($media): string
     {
         Assert::string($id = $media->getKey());
         $key = md5($media->uuid . $id);
 
         return "tmp/{$key}";
+<<<<<<< HEAD
 <<<<<<< HEAD
 >>>>>>> 06dadfb (.)
 =======
@@ -172,6 +132,9 @@ class TemporaryUploadPathGenerator
 =======
 >>>>>>> fa4eb21 (.)
     public function getPath(Media $media): string
+=======
+     public function getPath(Media $media): string
+>>>>>>> 2a62ef4 (.)
     {
         return $this->getBasePath($media).'/'.md5($media->id.$media->uuid.'original').'/';
     }
@@ -212,6 +175,7 @@ class TemporaryUploadPathGenerator
         }
 
         return $key;
+<<<<<<< HEAD
 <<<<<<< HEAD
 >>>>>>> 184c6ec (.)
 >>>>>>> 2f7c4db (.)
@@ -222,4 +186,8 @@ class TemporaryUploadPathGenerator
 >>>>>>> fa4eb21 (.)
 >>>>>>> 0ffeaf3 (fix: auto resolve conflict)
     }
+=======
+ 184c6ec (.)
+      }
+>>>>>>> 2a62ef4 (.)
 }

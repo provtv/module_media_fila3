@@ -11,26 +11,11 @@ namespace Modules\Media\Actions\Video;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Str;
 use ProtoneMedia\LaravelFFMpeg\Support\FFMpeg;
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
->>>>>>> 2f7c4db (.)
-=======
->>>>>>> fa4eb21 (.)
 use ProtoneMedia\LaravelFFMpeg\MediaOpener;
 use Spatie\QueueableAction\QueueableAction;
 use Webmozart\Assert\Assert;
 use FFMpeg\Format\Video\X264;
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-=======
 use Spatie\QueueableAction\QueueableAction;
->>>>>>> 184c6ec (.)
->>>>>>> 2f7c4db (.)
-=======
->>>>>>> fa4eb21 (.)
 
 class ConvertVideoAction
 {
@@ -39,13 +24,6 @@ class ConvertVideoAction
     /**
      * Execute the action.
      */
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
->>>>>>> 2f7c4db (.)
-=======
->>>>>>> fa4eb21 (.)
     public function execute(string $disk_mp4, string $file_mp4, string $file_new): string
     {
         $media = FFMpeg::fromDisk($disk_mp4);
@@ -68,20 +46,20 @@ class ConvertVideoAction
         $toDiskMedia = $exportedMedia->toDisk($disk_mp4);
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 
         $formattedMedia = $toDiskMedia->inFormat($format);
 
 =======
 =======
 >>>>>>> 0ffeaf3 (fix: auto resolve conflict)
+=======
+>>>>>>> 2a62ef4 (.)
         
         $formattedMedia = $toDiskMedia->inFormat($format);
         
 >>>>>>> 06dadfb (.)
         $formattedMedia->save($file_new);
-<<<<<<< HEAD
-=======
-=======
     public function execute(string $disk_mp4, string $file_mp4, string $format): ?string
     {
         if (! Storage::disk($disk_mp4)->exists($file_mp4)) {
@@ -112,14 +90,10 @@ class ConvertVideoAction
             ->toDisk($disk_mp4)
             ->inFormat($format)
             ->save($file_new);
->>>>>>> 184c6ec (.)
->>>>>>> 2f7c4db (.)
-=======
 
         $formattedMedia = $toDiskMedia->inFormat($format);
 
         $formattedMedia->save($file_new);
->>>>>>> fa4eb21 (.)
 
         return Storage::disk($disk_mp4)->url($file_new);
     }

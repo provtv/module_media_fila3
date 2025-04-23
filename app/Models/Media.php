@@ -3776,20 +3776,12 @@ class Media extends SpatieMedia
                 'name' => is_string($conv) ? $conv : (string) $conv,
                 'generated' => $state,
                 'src' => $this->getUrlConv(is_string($conv) ? $conv : (string) $conv),
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
                 'name' => is_string($conv) ? $conv : (string) $conv,
                 'generated' => $state,
                 'src' => $this->getUrlConv(is_string($conv) ? $conv : (string) $conv),
-=======
                 'name' => (string) $conv,
                 'generated' => $state,
                 'src' => $this->getUrlConv((string) $conv),
->>>>>>> 184c6ec (.)
->>>>>>> 2f7c4db (.)
-=======
->>>>>>> fa4eb21 (.)
             ];
             $conversions[] = $item;
         }

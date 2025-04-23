@@ -7,15 +7,7 @@ namespace Modules\Media\Actions\Image;
 use Illuminate\Support\Arr;
 use Modules\UI\Actions\Icon\GetAllIconsAction;
 use Webmozart\Assert\Assert;
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
 use Webmozart\Assert\Assert;
-=======
->>>>>>> 184c6ec (.)
->>>>>>> 2f7c4db (.)
-=======
->>>>>>> fa4eb21 (.)
 
 /**
  * Verifica l'esistenza di un SVG registrato utilizzando BladeUI Icons.
@@ -28,16 +20,8 @@ class SvgExistsAction
      * Verifica se l'SVG esiste nei set di icone registrati.
      *
      * @param  string $svgName  Il nome dell'SVG da verificare (es: 'heroicon-o-user')
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
      * @param  string $svgName  Il nome dell'SVG da verificare (es: 'heroicon-o-user')
-=======
      * @param  string  $svgName  Il nome dell'SVG da verificare (es: 'heroicon-o-user')
->>>>>>> 184c6ec (.)
->>>>>>> 2f7c4db (.)
-=======
->>>>>>> fa4eb21 (.)
      * @return bool True se l'SVG esiste, false altrimenti
      */
     public function execute(string $svgName): bool
@@ -47,13 +31,6 @@ class SvgExistsAction
         }
 
         $packs = app(GetAllIconsAction::class)->execute();
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
->>>>>>> 2f7c4db (.)
-=======
->>>>>>> fa4eb21 (.)
         Assert::isArray($packs, 'Il risultato di GetAllIconsAction deve essere un array');
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -86,10 +63,6 @@ class SvgExistsAction
                 if ($svgName === $icon) {
                     return true;
                 }
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-=======
         foreach ($packs as $pack) {
             $icons = $pack['icons'];
             $first = Arr::first($icons, function (string $value, int $key) use ($svgName) {
@@ -97,10 +70,6 @@ class SvgExistsAction
             });
             if ($first != null) {
                 return true;
->>>>>>> 184c6ec (.)
->>>>>>> 2f7c4db (.)
-=======
->>>>>>> fa4eb21 (.)
             }
         }
 

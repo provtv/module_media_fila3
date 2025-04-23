@@ -9,7 +9,13 @@ Questo documento descrive i conflitti di merge Git risolti nel modulo Media e fo
 Per una panoramica generale sulla risoluzione dei conflitti Git nel progetto, consultare:
 
 - [Risoluzione Conflitti Git](../../../../docs/risoluzione_conflitti_git.md)
+- [Report completo di intervento](../../../../docs/logs/conflict_resolution_report.md)
 - [Gestione Git con Script Bash](../../../../docs/bashscripts/gestione_git.md)
+
+## Collegamenti alle Risoluzioni Specifiche
+
+- [Risoluzione conflitto VideoEntry](./risoluzione_conflitti_video_entry.md)
+- [Risoluzione conflitto MediaConvertResource](../../../../docs/media_convert_resource_conflict.md)
 
 ## File Risolti
 
@@ -97,6 +103,158 @@ public function getFileAttribute(?string $value): ?string
 **Problema**: Conflitto nell'implementazione del metodo principale con differenze nella gestione dell'output e nelle notifiche.
 
 **Soluzione**: È stata integrata la versione con le notifiche Filament e il tracciamento del progresso, mantenendo i controlli di validità più rigorosi.
+
+### 5. SubtitleService.php
+
+**Problema**: Conflitto nella definizione dei tipi di ritorno PHPDoc per il metodo `getFromXml()` con diverse versioni di tipizzazione dei dati.
+
+**Soluzione**: È stata adottata la versione con la tipizzazione più dettagliata e completa, preservando anche il commento psalm che fornisce informazioni più specifiche sulla struttura dell'array.
+
+```php
+/**
+ * @return array<int, array<string, float|int|string|mixed>>
+ *
+ * @psalm-return list{0?: array{sentence_i: int<0, max>, item_i: int<0, max>, start: float|int, end: float|int, time: string, text: mixed},...}
+ */
+public function getFromXml(): array
+{
+    // Implementazione...
+}
+```
+
+### 6. VideoStream.php
+
+**Problema**: Conflitto nella costruzione e inizializzazione del servizio VideoStream, con differenze nell'implementazione delle tipizzazioni e nel metodo di ottenere il MIME type.
+
+**Soluzione**: È stata adottata la versione più robusta che determina il MIME type in base all'estensione del file anziché utilizzare il metodo `mimeType()` di Laravel. Questo approccio è più efficiente e riduce la dipendenza da metodi esterni potenzialmente instabili.
+
+```php
+/**
+ * Initialize the video stream.
+ *
+ * @param  string $disk  The disk storage name
+ * @param  string $path  The path to the video file
+ *
+ * @throws Exception If the file does not exist or other errors
+ */
+public function __construct(string $disk, string $path)
+{
+    $filesystem = Storage::disk($disk);
+
+    if (! $filesystem->exists($path)) {
+        throw new Exception("File does not exist at path: {$path}");
+    }
+
+    // Determina il MIME type in base all'estensione del file
+    $extension = strtolower(pathinfo($path, PATHINFO_EXTENSION));
+    $mime = $this->mimeTypes[$extension] ?? 'application/octet-stream';
+
+    // Resto dell'implementazione...
+}
+```
+
+### 7. MediaResource.php
+
+**Problema**: Conflitto nella struttura dello schema del form per la risorsa Media, con differenze nell'uso di chiavi nominate vs componenti Filament direttamente.
+
+**Soluzione**: È stata adottata la versione più moderna e conforme alle convenzioni Filament, utilizzando i componenti direttamente senza chiavi nominate, mantenendo l'icona di navigazione e le funzionalità complete.
+
+```php
+protected static ?string $model = Media::class;
+protected static ?string $navigationIcon = 'fas-photo-film';
+
+/**
+ * @return array<string, \Filament\Forms\Components\Component>
+ */
+public static function getFormSchema(): array
+{
+    return [
+        FileUpload::make('file')
+            ->hint(static::trans('fields.file_hint'))
+            ->storeFileNamesIn('original_file_name')
+            ->visibility('private')
+            ->required()
+            ->columnSpanFull(),
+        Radio::make('attachment_type'),
+        TextInput::make('name')
+            ->translateLabel()
+            ->hint(static::trans('fields.name.hint'))
+            ->autocomplete(false)
+            ->maxLength(255)
+            ->columnSpanFull(),
+    ];
+}
+```
+
+### 8. test.blade.php
+
+**Problema**: Conflitto nelle variabili utilizzate nel template Blade per accedere alle proprietà degli oggetti, con errori di sintassi nelle proprietà.
+
+**Soluzione**: È stata adottata la versione che utilizza correttamente le proprietà dell'oggetto con il riferimento `->id` invece della versione incompleta `->` che causava errori di sintassi.
+
+```blade
+<h4>[{{ $change_cat->id }}]{{ $change_cat->title }}</h4>
+@foreach ($changes->where('id_cat', $change_cat->id) as $change)
+    <h5>[{{ $change->id }}]{{ $change->title }}</h5>
+    
+    <div class="btn-group btn-group-toggle">
+        <x-filament-forms::field-wrapper.label class="btn btn-danger">
+            <input type="radio" wire:model="qty.{{ $change_cat->id }}.{{ $change->id }}"
+                name="qty[{{ $change_cat->id }}][{{ $change->id }}]" autocomplete="off" value="-1">
+            @if (isset($qty[$change_cat->id][$change->id]) && $qty[$change_cat->id][$change->id] == -1)
+                [-]
+            @else
+                -
+            @endif
+        </label>
+        <!-- Resto dell'implementazione... -->
+    </div>
+@endforeach
+```
+
+### 9. MediaConvertResource.php
+
+**Problema**: Conflitto tra tre versioni della stessa risorsa Filament, con differenze nell'implementazione dello schema del form e nella navigazione.
+
+**Soluzione**: È stata adottata la versione che segue le best practice Filament più recenti, unendo la completezza della documentazione PHPDoc di una versione con la struttura moderna della definizione del form dell'altra versione.
+
+```php
+protected static ?string $model = MediaConvert::class;
+protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
+
+/**
+ * Restituisce lo schema del form per la risorsa MediaConvert.
+ * @return array<int, \Filament\Forms\Components\Component>
+ */
+public static function getFormSchema(): array
+{
+    return [
+        Radio::make('format')
+            ->options([
+                'webm' => 'webm',
+                // 'webm02' => 'webm02',
+            ])
+            ->inline()
+            ->inlineLabel(false),
+        Radio::make('codec_video')
+            ->options([
+                'libvpx-vp9' => 'libvpx-vp9',
+                'libvpx-vp8' => 'libvpx-vp8',
+            ])
+            ->inline()
+            ->inlineLabel(false),
+        // Resto dell'implementazione...
+    ];
+}
+```
+
+Per dettagli completi sulla risoluzione di MediaConvertResource, vedere [documentazione dedicata](../../../../docs/media_convert_resource_conflict.md).
+
+### 10. VideoEntry.php
+
+**Problema**: Conflitto nell'implementazione del componente VideoEntry, con differenze nella gestione dei tipi e nella formattazione.
+
+**Soluzione**: È stata adottata l'implementazione più robusta con controlli di tipo completi e documentazione dettagliata, mantenendo la coerenza stilistica senza linee vuote superflue. Per dettagli completi, vedere [documentazione dedicata](./risoluzione_conflitti_video_entry.md).
 
 ## Principi di Risoluzione Applicati
 
