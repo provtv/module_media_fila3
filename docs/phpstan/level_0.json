@@ -1,0 +1,37 @@
+
+   Symfony\Component\ErrorHandler\Error\FatalError 
+
+  Cannot use function Safe\json_decode as json_decode because the name is already in use
+
+  at Modules/Xot/app/Actions/File/GetComponentsAction.php:14
+     10▕ 
+     11▕ use function Safe\json_decode;
+     12▕ 
+     13▕ 
+  ➜  14▕ use function Safe\json_decode;
+     15▕ 
+     16▕ use Spatie\LaravelData\DataCollection;
+     17▕ use Spatie\QueueableAction\QueueableAction;
+     18▕ use Webmozart\Assert\Assert;
+
+
+   Whoops\Exception\ErrorException 
+
+  Cannot use function Safe\json_decode as json_decode because the name is already in use
+
+  at Modules/Xot/app/Actions/File/GetComponentsAction.php:14
+     10▕ 
+     11▕ use function Safe\json_decode;
+     12▕ 
+     13▕ 
+  ➜  14▕ use function Safe\json_decode;
+     15▕ 
+     16▕ use Spatie\LaravelData\DataCollection;
+     17▕ use Spatie\QueueableAction\QueueableAction;
+     18▕ use Webmozart\Assert\Assert;
+
+      [2m+1 vendor frames [22m
+
+  2   [internal]:0
+      Whoops\Run::handleShutdown()
+
