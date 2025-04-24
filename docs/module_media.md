@@ -3,10 +3,19 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 =======
+=======
+<<<<<<< HEAD
+>>>>>>> aurmich/dev
+<<<<<<< HEAD
+=======
 
 aurmich/dev
 >>>>>>> aurmich/dev
 =======
+>>>>>>> aurmich/dev
+<<<<<<< HEAD
+=======
+>>>>>>> aurmich/dev
 >>>>>>> aurmich/dev
 ## Informazioni Generali
 - **Nome**: `laraxot/module_media_fila3`
@@ -30,6 +39,12 @@ app/
 
 <<<<<<< HEAD
 =======
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+>>>>>>> aurmich/dev
+>>>>>>> aurmich/dev
 ## Aggiornamenti Recenti
 
 ### Risoluzione Conflitti Git
@@ -47,6 +62,12 @@ La risoluzione ha puntato a mantenere la coerenza del codice, evitando duplicazi
 
 Per maggiori dettagli, consultare il [Rapporto sulla Risoluzione dei Conflitti](/docs/risoluzione_conflitti_merge_update.md).
 
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+>>>>>>> aurmich/dev
+>>>>>>> aurmich/dev
 >>>>>>> aurmich/dev
 ## Dipendenze
 ### Pacchetti Required
@@ -129,6 +150,13 @@ composer format        # Formatta il codice
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+=======
+## Changelog
+Le modifiche vengono tracciate nel repository GitHub.
+=======
+<<<<<<< HEAD
+>>>>>>> aurmich/dev
+<<<<<<< HEAD
 ## Changelog
 Le modifiche vengono tracciate nel repository GitHub. 
 =======
@@ -140,4 +168,8 @@ aurmich/dev
 =======
 ## Changelog
 Le modifiche vengono tracciate nel repository GitHub.
+>>>>>>> aurmich/dev
+<<<<<<< HEAD
+=======
+>>>>>>> aurmich/dev
 >>>>>>> aurmich/dev
