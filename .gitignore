@@ -98,8 +98,11 @@ cache/
 .php-cs-fixer.cache
 .php-cs-fixer.cache
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 
 # File di log
 *.log
 >>>>>>> aurmich/dev
+=======
+>>>>>>> 74cd77a (.)

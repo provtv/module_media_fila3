@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 
 
 # Analisi PHPStan e Correzioni al Modulo Media
@@ -7,6 +8,9 @@
 
 # Analisi PHPStan e Correzioni al Modulo Media
  0ffeaf3 (fix: auto resolve conflict)
+=======
+# Analisi PHPStan - Modulo Media
+>>>>>>> 74cd77a (.)
 
 ## Perché questa analisi
 Il modulo Media gestisce l'upload, la manipolazione e la distribuzione di file multimediali. Un'analisi statica approfondita è cruciale per garantire la gestione sicura e efficiente dei file.
@@ -199,6 +203,7 @@ Il modulo Media gestisce l'upload, la manipolazione e la distribuzione di file m
 ## Collegamenti Correlati
 - [Documentazione Generale PHPStan](/docs/phpstan/INDEX.md)
 - [Best Practices Media](../INDEX.md#best-practices)
+<<<<<<< HEAD
 
 
 
@@ -265,3 +270,6 @@ Per standardizzare questo comportamento, si consiglia di creare una classe/servi
  59bb70f (fix: auto resolve conflict)
 
  0ffeaf3 (fix: auto resolve conflict)
+=======
+- [Gestione Errori](/docs/errors/README.md) 
+>>>>>>> 74cd77a (.)
