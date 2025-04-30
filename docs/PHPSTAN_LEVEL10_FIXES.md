@@ -2,6 +2,11 @@
 
 Questo documento traccia gli errori PHPStan di livello 10 identificati nel modulo Media e le relative soluzioni implementate.
 
+## Collegamenti Bidirezionali
+
+- [Linee Guida Generali per la Risoluzione dei Conflitti Git](../../../../docs/risoluzione_conflitti_git.md)
+- [Documentazione Conflitti Git nei Moduli](../../../../docs/conflitti_git_moduli.md)
+
 ## Errori Identificati
 
 ### 1. Uso del tipo mixed per risorsa di file in VideoStream.php
