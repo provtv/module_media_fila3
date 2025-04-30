@@ -30,14 +30,7 @@ class Merge
     public function execute(array $filenames, string $filenameOut): void
     {
         $manager = app(ImageManager::class);
-<<<<<<< HEAD
 
-=======
-<<<<<<< HEAD
-
-=======
->>>>>>> 74cd77a (.)
->>>>>>> aurmich/dev
         $width = 0;
         $height = 0;
 
