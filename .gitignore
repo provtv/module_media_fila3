@@ -97,6 +97,18 @@ cache/
 .git-blame-ignore-revs
 .php-cs-fixer.cache
 .php-cs-fixer.cache
+<<<<<<< HEAD
 
 # File di log
 *.log
+=======
+<<<<<<< HEAD
+<<<<<<< HEAD
+=======
+
+# File di log
+*.log
+>>>>>>> aurmich/dev
+=======
+>>>>>>> 74cd77a (.)
+>>>>>>> aurmich/dev

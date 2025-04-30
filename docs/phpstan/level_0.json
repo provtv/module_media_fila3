@@ -1,7 +1,16 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 {"totals":{"errors":0,"file_errors":0},"files":{},"errors":[]}
 =======
 <<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+{"totals":{"errors":0,"file_errors":0},"files":{},"errors":[]}
+=======
+<<<<<<< HEAD
+>>>>>>> aurmich/dev
+>>>>>>> aurmich/dev
 
    Symfony\Component\ErrorHandler\Error\FatalError 
 
@@ -41,5 +50,11 @@
 
 =======
 {"totals":{"errors":0,"file_errors":0},"files":{},"errors":[]}
+>>>>>>> aurmich/dev
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+>>>>>>> aurmich/dev
 >>>>>>> aurmich/dev
 >>>>>>> aurmich/dev

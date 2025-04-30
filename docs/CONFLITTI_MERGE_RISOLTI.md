@@ -107,6 +107,11 @@ public function getFileAttribute(?string $value): ?string
 ### 5. SubtitleService.php
 
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+=======
+<<<<<<< HEAD
+>>>>>>> aurmich/dev
 **Problema**: Conflitto nella modalità di aggiornamento del modello Eloquent nel metodo `upateModel()`. Le versioni in conflitto differivano nella gestione dell'assegnazione e nell'utilizzo di `tap($this->model)->update($up)`.
 
 **Intento funzionale**: Garantire che il modello venga aggiornato in modo atomico e che l'istanza aggiornata venga sempre assegnata correttamente alla proprietà. L'obiettivo è mantenere la robustezza, evitare duplicazioni e assicurare coerenza con il resto della codebase.
@@ -130,6 +135,10 @@ public function getFromXml(): array
     // Implementazione...
 }
 =======
+<<<<<<< HEAD
+=======
+>>>>>>> aurmich/dev
+>>>>>>> aurmich/dev
 **Problema**: Conflitto nella definizione dei tipi di ritorno PHPDoc per il metodo `getFromXml()` con diverse versioni di tipizzazione dei dati.
 
 **Soluzione**: È stata adottata la versione con la tipizzazione più dettagliata e completa, preservando anche il commento psalm che fornisce informazioni più specifiche sulla struttura dell'array.
@@ -149,12 +158,23 @@ public function getFromXml(): array
  * }>
  */
 public function getFromXml($xmlFile)
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+>>>>>>> aurmich/dev
+>>>>>>> aurmich/dev
 >>>>>>> aurmich/dev
 ```
 
 ### 6. ConvertVideoAction.php
 
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+=======
+<<<<<<< HEAD
+>>>>>>> aurmich/dev
 **Problema**: Conflitto nella gestione degli import e nella struttura del metodo execute. Le versioni in conflitto differivano nell'ordine degli import e nella presenza di linee vuote superflue tra i blocchi di codice.
 
 **Intento funzionale**: Garantire chiarezza e leggibilità, mantenendo la coerenza con il resto del modulo e assicurando che la logica di conversione video sia atomica e facilmente manutenibile.
@@ -169,6 +189,10 @@ Per approfondimenti generali sulle strategie di risoluzione dei conflitti, fare 
 
 ### 6. VideoStream.php
 =======
+<<<<<<< HEAD
+=======
+>>>>>>> aurmich/dev
+>>>>>>> aurmich/dev
 **Problema**: Conflitto nella modalità di restituzione del percorso del file convertito. Le versioni in conflitto differivano nell'utilizzo di `Storage::disk()->url()` vs `Storage::disk()->path()`.
 
 **Intento funzionale**: Standardizzare la modalità di restituzione dei percorsi file in tutto il modulo Media.
@@ -178,6 +202,12 @@ Per approfondimenti generali sulle strategie di risoluzione dei conflitti, fare 
 Per approfondimenti generali sulle strategie di risoluzione dei conflitti, fare riferimento alla [documentazione centrale](../../../../docs/risoluzione_conflitti_git.md).
 
 ### 7. VideoStream.php
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+>>>>>>> aurmich/dev
+>>>>>>> aurmich/dev
 >>>>>>> aurmich/dev
 
 **Problema**: Conflitto nella costruzione e inizializzazione del servizio VideoStream, con differenze nell'implementazione delle tipizzazioni e nel metodo di ottenere il MIME type.
@@ -210,9 +240,19 @@ public function __construct(string $disk, string $path)
 ```
 
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+### 8. MediaResource.php
+=======
+<<<<<<< HEAD
+>>>>>>> aurmich/dev
 ### 7. MediaResource.php
 =======
 ### 8. MediaResource.php
+>>>>>>> aurmich/dev
+<<<<<<< HEAD
+=======
+>>>>>>> aurmich/dev
 >>>>>>> aurmich/dev
 
 **Problema**: Conflitto nella struttura dello schema del form per la risorsa Media, con differenze nell'uso di chiavi nominate vs componenti Filament direttamente.
@@ -247,9 +287,19 @@ public static function getFormSchema(): array
 ```
 
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+### 9. test.blade.php
+=======
+<<<<<<< HEAD
+>>>>>>> aurmich/dev
 ### 8. test.blade.php
 =======
 ### 9. test.blade.php
+>>>>>>> aurmich/dev
+<<<<<<< HEAD
+=======
+>>>>>>> aurmich/dev
 >>>>>>> aurmich/dev
 
 **Problema**: Conflitto nelle variabili utilizzate nel template Blade per accedere alle proprietà degli oggetti, con errori di sintassi nelle proprietà.
@@ -277,9 +327,19 @@ public static function getFormSchema(): array
 ```
 
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+### 10. MediaConvertResource.php
+=======
+<<<<<<< HEAD
+>>>>>>> aurmich/dev
 ### 9. MediaConvertResource.php
 =======
 ### 10. MediaConvertResource.php
+>>>>>>> aurmich/dev
+<<<<<<< HEAD
+=======
+>>>>>>> aurmich/dev
 >>>>>>> aurmich/dev
 
 **Problema**: Conflitto tra tre versioni della stessa risorsa Filament, con differenze nell'implementazione dello schema del form e nella navigazione.
@@ -319,9 +379,19 @@ public static function getFormSchema(): array
 Per dettagli completi sulla risoluzione di MediaConvertResource, vedere [documentazione dedicata](../../../../docs/media_convert_resource_conflict.md).
 
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+### 11. Merge.php
+=======
+<<<<<<< HEAD
+>>>>>>> aurmich/dev
 ### 10. Merge.php
 =======
 ### 11. Merge.php
+>>>>>>> aurmich/dev
+<<<<<<< HEAD
+=======
+>>>>>>> aurmich/dev
 >>>>>>> aurmich/dev
 
 **Problema**: Conflitti storici nella gestione dei driver di Intervention Image, nella modalità di composizione delle immagini e nella gestione dei parametri di input/output.
@@ -329,6 +399,11 @@ Per dettagli completi sulla risoluzione di MediaConvertResource, vedere [documen
 **Intento funzionale**: Garantire una composizione orizzontale delle immagini robusta, efficiente e compatibile con la pipeline Media, mantenendo la massima leggibilità e manutenibilità del codice.
 
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+=======
+<<<<<<< HEAD
+>>>>>>> aurmich/dev
 **Decisione architetturale**: È stata adottata la versione che utilizza il driver Gd di Intervention Image, con gestione esplicita delle dimensioni della canvas e posizionamento progressivo delle immagini. La soluzione mantiene la compatibilità con l’ecosistema Laravel e assicura la massima chiarezza del flusso di composizione.
 
 Per approfondimenti generali sulle strategie di risoluzione dei conflitti, fare riferimento alla [documentazione centrale](../../../../docs/risoluzione_conflitti_git.md).
@@ -339,11 +414,21 @@ Per approfondimenti generali sulle strategie di risoluzione dei conflitti, fare 
 
 ### 10. VideoEntry.php
 =======
+<<<<<<< HEAD
+=======
+>>>>>>> aurmich/dev
+>>>>>>> aurmich/dev
 **Decisione architetturale**: È stata adottata la versione che utilizza il driver Gd di Intervention Image, con gestione esplicita delle dimensioni della canvas e posizionamento progressivo delle immagini. La soluzione mantiene la compatibilità con l'ecosistema Laravel e assicura la massima chiarezza del flusso di composizione.
 
 Per approfondimenti generali sulle strategie di risoluzione dei conflitti, fare riferimento alla [documentazione centrale](../../../../docs/risoluzione_conflitti_git.md).
 
 ### 12. VideoEntry.php
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+>>>>>>> aurmich/dev
+>>>>>>> aurmich/dev
 >>>>>>> aurmich/dev
 
 **Problema**: Conflitto nell'implementazione del componente VideoEntry, con differenze nella gestione dei tipi e nella formattazione.
@@ -383,8 +468,16 @@ Per prevenire o gestire meglio i conflitti Git in futuro:
 - [Documentazione Laravel FFMpeg](https://github.com/protonemedia/laravel-ffmpeg)
 - [PHP 8.x Nullsafe Operator](https://www.php.net/manual/en/migration80.new-features.php#migration80.new-features.nullsafe-operator)
 <<<<<<< HEAD
+<<<<<<< HEAD
 - [PHPStan Documentation](https://phpstan.org/user-guide/getting-started) 
 =======
+=======
+=======
+<<<<<<< HEAD
+- [PHPStan Documentation](https://phpstan.org/user-guide/getting-started) 
+=======
+>>>>>>> aurmich/dev
+>>>>>>> aurmich/dev
 - [PHPStan Documentation](https://phpstan.org/user-guide/getting-started)
 
 ## Conflitti nell'integrazione FFmpeg (15/06/2024)
@@ -410,4 +503,10 @@ I problemi di conflitto nei file relativi all'integrazione di FFmpeg erano princ
 ### Documentazione
 
 Per maggiori dettagli, consultare il [documento dedicato alla risoluzione dei conflitti FFmpeg](risoluzione_conflitti_ffmpeg.md). 
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+>>>>>>> aurmich/dev
+>>>>>>> aurmich/dev
 >>>>>>> aurmich/dev

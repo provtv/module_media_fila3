@@ -82,10 +82,20 @@ Questa soluzione mantiene la funzionalità originale migliorando al contempo la 
 ### 5. Risoluzione dei conflitti di merge nei file del modulo Media
 
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> aurmich/dev
 
 **Problema**: Diversi file del modulo Media contenevano conflitti di merge non risolti, indicati da marcatori `<<<<<<< HEAD` e `aurmich/dev
 =======
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> aurmich/dev
+>>>>>>> aurmich/dev
 <<<<<<< HEAD
 **Problema**: Diversi file del modulo Media contenevano conflitti di merge non risolti, indicati da marcatori `<<<<<<< HEAD` e `>>>>>>> origin/dev`. Questi conflitti impedivano la corretta esecuzione del codice e causavano errori di sintassi.
 =======
@@ -97,6 +107,16 @@ aurmich/dev
 
 **Problema**: Diversi file del modulo Media contenevano conflitti di merge non risolti, indicati da marcatori `<<<<<<< HEAD` e `aurmich/dev
 >>>>>>> aurmich/dev
+<<<<<<< HEAD
+>>>>>>> aurmich/dev
+=======
+<<<<<<< HEAD
+=======
+>>>>>>> aurmich/dev
+>>>>>>> aurmich/dev
+=======
+**Problema**: Diversi file del modulo Media contenevano conflitti di merge non risolti, indicati da marcatori `` e ``. Questi conflitti impedivano la corretta esecuzione del codice e causavano errori di sintassi.
+>>>>>>> 74cd77a (.)
 >>>>>>> aurmich/dev
 
 **Soluzione implementata**:

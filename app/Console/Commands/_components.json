@@ -1,9 +1,24 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> aurmich/dev
+=======
+>>>>>>> aurmich/dev
 =======
 <<<<<<< HEAD
 <<<<<<< HEAD
 =======
 >>>>>>> aurmich/dev
+>>>>>>> aurmich/dev
+<<<<<<< HEAD
+=======
+>>>>>>> aurmich/dev
+=======
+>>>>>>> 74cd77a (.)
 >>>>>>> aurmich/dev
 [
     {
@@ -13,13 +28,33 @@
         "path": null,
         "ns": "Modules\\Media\\Console\\Commands\\ConvertVideoCommand"
     }
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> aurmich/dev
 ]
 <<<<<<< HEAD
 =======
 <<<<<<< HEAD
 =======
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+>>>>>>> aurmich/dev
+>>>>>>> aurmich/dev
 [{"name":"convert-video-command","class":"ConvertVideoCommand","module":null,"path":null,"ns":"Modules\\Media\\Console\\Commands\\ConvertVideoCommand"}]
 >>>>>>> aurmich/dev
 =======
 >>>>>>> aurmich/dev
+<<<<<<< HEAD
+>>>>>>> aurmich/dev
+=======
+<<<<<<< HEAD
+=======
+>>>>>>> aurmich/dev
+>>>>>>> aurmich/dev
+=======
+]
+>>>>>>> 74cd77a (.)
 >>>>>>> aurmich/dev

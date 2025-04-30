@@ -1,8 +1,17 @@
 # Modulo Media
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 <<<<<<< HEAD
+=======
+<<<<<<< HEAD
+<<<<<<< HEAD
+=======
+=======
+<<<<<<< HEAD
+>>>>>>> aurmich/dev
+>>>>>>> aurmich/dev
 <<<<<<< HEAD
 =======
 
@@ -10,6 +19,15 @@ aurmich/dev
 >>>>>>> aurmich/dev
 =======
 >>>>>>> aurmich/dev
+<<<<<<< HEAD
+>>>>>>> aurmich/dev
+=======
+<<<<<<< HEAD
+=======
+>>>>>>> aurmich/dev
+>>>>>>> aurmich/dev
+=======
+>>>>>>> 74cd77a (.)
 >>>>>>> aurmich/dev
 ## Informazioni Generali
 - **Nome**: `laraxot/module_media_fila3`
@@ -32,9 +50,19 @@ app/
 ```
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 <<<<<<< HEAD
 =======
+=======
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+>>>>>>> aurmich/dev
+>>>>>>> aurmich/dev
 >>>>>>> aurmich/dev
 ## Aggiornamenti Recenti
 
@@ -55,7 +83,17 @@ Per maggiori dettagli, consultare il [Rapporto sulla Risoluzione dei Conflitti](
 
 <<<<<<< HEAD
 =======
+<<<<<<< HEAD
 >>>>>>> aurmich/dev
+>>>>>>> aurmich/dev
+=======
+<<<<<<< HEAD
+=======
+>>>>>>> aurmich/dev
+>>>>>>> aurmich/dev
+>>>>>>> aurmich/dev
+=======
+>>>>>>> 74cd77a (.)
 >>>>>>> aurmich/dev
 ## Dipendenze
 ### Pacchetti Required
@@ -137,10 +175,20 @@ composer format        # Formatta il codice
    - Verificare supporto GD/Imagick
 
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> aurmich/dev
 ## Changelog
 Le modifiche vengono tracciate nel repository GitHub.
 =======
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> aurmich/dev
+>>>>>>> aurmich/dev
 <<<<<<< HEAD
 ## Changelog
 Le modifiche vengono tracciate nel repository GitHub. 
@@ -154,4 +202,15 @@ aurmich/dev
 ## Changelog
 Le modifiche vengono tracciate nel repository GitHub.
 >>>>>>> aurmich/dev
+<<<<<<< HEAD
+>>>>>>> aurmich/dev
+=======
+<<<<<<< HEAD
+=======
+>>>>>>> aurmich/dev
+>>>>>>> aurmich/dev
+=======
+## Changelog
+Le modifiche vengono tracciate nel repository GitHub. 
+>>>>>>> 74cd77a (.)
 >>>>>>> aurmich/dev
