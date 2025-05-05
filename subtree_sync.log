@@ -31,7 +31,12 @@
 📆 2025-04-30 18:16:41 - ✅ Configurazione git completata
 📆 2025-04-30 19:19:30 - 🔧 Configurazione git di base...
 📆 2025-04-30 19:19:30 - ✅ Configurazione git completata
+<<<<<<< HEAD
 =======
 📆 2025-05-02 15:56:52 - 🔧 Configurazione git di base...
 📆 2025-05-02 15:56:52 - ✅ Configurazione git completata
 >>>>>>> 4050f7d (.)
+=======
+📆 2025-05-05 10:41:02 - 🔧 Configurazione git di base...
+📆 2025-05-05 10:41:02 - ✅ Configurazione git completata
+>>>>>>> 8fc1e0b (.)
