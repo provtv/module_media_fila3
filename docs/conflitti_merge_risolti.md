@@ -387,3 +387,16 @@ I problemi di conflitto nei file relativi all'integrazione di FFmpeg erano princ
 ### Documentazione
 
 Per maggiori dettagli, consultare il [documento dedicato alla risoluzione dei conflitti FFmpeg](risoluzione_conflitti_ffmpeg.md). 
+
+## Collegamenti tra versioni di CONFLITTI_MERGE_RISOLTI.md
+* [CONFLITTI_MERGE_RISOLTI.md](laravel/Modules/Gdpr/docs/CONFLITTI_MERGE_RISOLTI.md)
+* [CONFLITTI_MERGE_RISOLTI.md](laravel/Modules/Xot/docs/CONFLITTI_MERGE_RISOLTI.md)
+* [CONFLITTI_MERGE_RISOLTI.md](laravel/Modules/UI/docs/CONFLITTI_MERGE_RISOLTI.md)
+* [CONFLITTI_MERGE_RISOLTI.md](laravel/Modules/Media/docs/CONFLITTI_MERGE_RISOLTI.md)
+
+
+## Collegamenti tra versioni di conflitti_merge_risolti.md
+* [conflitti_merge_risolti.md](../../Gdpr/docs/conflitti_merge_risolti.md)
+* [conflitti_merge_risolti.md](../../Xot/docs/conflitti_merge_risolti.md)
+* [conflitti_merge_risolti.md](../../UI/docs/conflitti_merge_risolti.md)
+

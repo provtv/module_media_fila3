@@ -124,3 +124,19 @@ aurmich/dev
 3. Eseguire l'analisi PHPStan a livello 10 per verificare che le correzioni risolvano effettivamente gli errori.
 4. Implementare test automatizzati per verificare il corretto funzionamento del modulo Media dopo le correzioni.
 5. Documentare le procedure di risoluzione dei conflitti di merge per prevenire problemi simili in futuro.
+
+## Collegamenti tra versioni di PHPSTAN_LEVEL10_FIXES.md
+* [PHPSTAN_LEVEL10_FIXES.md](docs/PHPSTAN_LEVEL10_FIXES.md)
+* [PHPSTAN_LEVEL10_FIXES.md](laravel/Modules/Notify/docs/PHPSTAN_LEVEL10_FIXES.md)
+* [PHPSTAN_LEVEL10_FIXES.md](laravel/Modules/User/docs/PHPSTAN_LEVEL10_FIXES.md)
+* [PHPSTAN_LEVEL10_FIXES.md](laravel/Modules/Lang/docs/PHPSTAN_LEVEL10_FIXES.md)
+* [PHPSTAN_LEVEL10_FIXES.md](laravel/Modules/Job/docs/PHPSTAN_LEVEL10_FIXES.md)
+* [PHPSTAN_LEVEL10_FIXES.md](laravel/Modules/Media/docs/PHPSTAN_LEVEL10_FIXES.md)
+
+
+## Collegamenti tra versioni di phpstan_level10_fixes.md
+* [phpstan_level10_fixes.md](../../Notify/docs/phpstan_level10_fixes.md)
+* [phpstan_level10_fixes.md](../../User/docs/phpstan_level10_fixes.md)
+* [phpstan_level10_fixes.md](../../Lang/docs/phpstan_level10_fixes.md)
+* [phpstan_level10_fixes.md](../../Job/docs/phpstan_level10_fixes.md)
+

@@ -53,3 +53,7 @@ L'analisi PHPStan di livello 1 non ha rilevato errori nel modulo Media. Questo Ã
    - Utilizzare CDN quando possibile
    - Gestire correttamente le risorse
    - Monitorare l'utilizzo dello storage 
+## Collegamenti tra versioni di phpstan_report.md
+* [phpstan_report.md](laravel/Modules/Lang/docs/phpstan_report.md)
+* [phpstan_report.md](laravel/Modules/Media/docs/phpstan_report.md)
+

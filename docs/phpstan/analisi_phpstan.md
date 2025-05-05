@@ -265,3 +265,26 @@ Per standardizzare questo comportamento, si consiglia di creare una classe/servi
  59bb70f (fix: auto resolve conflict)
 
  0ffeaf3 (fix: auto resolve conflict)
+
+## Collegamenti tra versioni di ANALISI_PHPSTAN.md
+* [ANALISI_PHPSTAN.md](laravel/Modules/Gdpr/docs/phpstan/ANALISI_PHPSTAN.md)
+* [ANALISI_PHPSTAN.md](laravel/Modules/Xot/docs/phpstan/ANALISI_PHPSTAN.md)
+* [ANALISI_PHPSTAN.md](laravel/Modules/User/docs/phpstan/ANALISI_PHPSTAN.md)
+* [ANALISI_PHPSTAN.md](laravel/Modules/UI/docs/phpstan/ANALISI_PHPSTAN.md)
+* [ANALISI_PHPSTAN.md](laravel/Modules/Lang/docs/phpstan/ANALISI_PHPSTAN.md)
+* [ANALISI_PHPSTAN.md](laravel/Modules/Job/docs/phpstan/ANALISI_PHPSTAN.md)
+* [ANALISI_PHPSTAN.md](laravel/Modules/Media/docs/phpstan/ANALISI_PHPSTAN.md)
+* [ANALISI_PHPSTAN.md](laravel/Modules/Tenant/docs/phpstan/ANALISI_PHPSTAN.md)
+* [ANALISI_PHPSTAN.md](laravel/Modules/Activity/docs/phpstan/ANALISI_PHPSTAN.md)
+
+
+## Collegamenti tra versioni di analisi_phpstan.md
+* [analisi_phpstan.md](../../../Gdpr/docs/phpstan/analisi_phpstan.md)
+* [analisi_phpstan.md](../../../Xot/docs/phpstan/analisi_phpstan.md)
+* [analisi_phpstan.md](../../../User/docs/phpstan/analisi_phpstan.md)
+* [analisi_phpstan.md](../../../UI/docs/phpstan/analisi_phpstan.md)
+* [analisi_phpstan.md](../../../Lang/docs/phpstan/analisi_phpstan.md)
+* [analisi_phpstan.md](../../../Job/docs/phpstan/analisi_phpstan.md)
+* [analisi_phpstan.md](../../../Tenant/docs/phpstan/analisi_phpstan.md)
+* [analisi_phpstan.md](../../../Activity/docs/phpstan/analisi_phpstan.md)
+
