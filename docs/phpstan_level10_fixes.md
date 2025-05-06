@@ -92,7 +92,7 @@ Questa soluzione mantiene la funzionalità originale migliorando al contempo la 
 
 **Problema**: Diversi file del modulo Media contenevano conflitti di merge non risolti, indicati da marcatori  Questi conflitti impedivano la corretta esecuzione del codice e causavano errori di sintassi.
 aurmich/dev
-=======
+
 
 **Problema**: Diversi file del modulo Media contenevano conflitti di merge non risolti, indicati da marcatori 
 
