@@ -48,6 +48,6 @@ class YourResource extends Resource
 - Aggiunta tipizzazione stretta
 - Implementata integrazione Laraxot 
 ## Collegamenti tra versioni di media-relation-manager.md
-* [media-relation-manager.md](laravel/Modules/Media/docs/filament/relation-managers/media-relation-manager.md)
-* [media-relation-manager.md](laravel/Modules/Media/docs/resources/media-relation-manager.md)
+* [media-relation-manager.md](../../../Media/docs/filament/relation-managers/media-relation-manager.md)
+* [media-relation-manager.md](../../../Media/docs/resources/media-relation-manager.md)
 

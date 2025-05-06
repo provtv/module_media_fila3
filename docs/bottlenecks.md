@@ -819,10 +819,10 @@ Implementando queste soluzioni, il modulo Media potrà superare i principali col
 - [Struttura Moduli](../Xot/docs/MODULE_STRUCTURE.md)
 
 ## Collegamenti tra versioni di BOTTLENECKS.md
-* [BOTTLENECKS.md](laravel/Modules/Xot/docs/BOTTLENECKS.md)
-* [BOTTLENECKS.md](laravel/Modules/User/docs/BOTTLENECKS.md)
-* [BOTTLENECKS.md](laravel/Modules/Media/docs/BOTTLENECKS.md)
-* [BOTTLENECKS.md](laravel/Modules/Cms/docs/BOTTLENECKS.md)
+* [BOTTLENECKS.md](../../../Xot/docs/BOTTLENECKS.md)
+* [BOTTLENECKS.md](../../../User/docs/BOTTLENECKS.md)
+* [BOTTLENECKS.md](../../../Media/docs/BOTTLENECKS.md)
+* [BOTTLENECKS.md](../../../Cms/docs/BOTTLENECKS.md)
 
 
 ## Collegamenti tra versioni di bottlenecks.md

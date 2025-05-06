@@ -33,11 +33,11 @@ while (! feof($this->stream) && $this->start <= $this->end) {
 
 Questo controllo garantisce che `fread()` venga chiamato solo con un valore positivo per il parametro `$length`, evitando anche potenziali loop infiniti nel caso in cui `$bytesToRead` fosse zero o negativo. 
 ## Collegamenti tra versioni di PHPSTAN_FIXES.md
-* [PHPSTAN_FIXES.md](laravel/Modules/Xot/docs/phpstan/PHPSTAN_FIXES.md)
-* [PHPSTAN_FIXES.md](laravel/Modules/Xot/docs/PHPSTAN_FIXES.md)
-* [PHPSTAN_FIXES.md](laravel/Modules/User/docs/PHPSTAN_FIXES.md)
-* [PHPSTAN_FIXES.md](laravel/Modules/UI/docs/PHPSTAN_FIXES.md)
-* [PHPSTAN_FIXES.md](laravel/Modules/Media/docs/PHPSTAN_FIXES.md)
+* [PHPSTAN_FIXES.md](../../../Xot/docs/phpstan/PHPSTAN_FIXES.md)
+* [PHPSTAN_FIXES.md](../../../Xot/docs/PHPSTAN_FIXES.md)
+* [PHPSTAN_FIXES.md](../../../User/docs/PHPSTAN_FIXES.md)
+* [PHPSTAN_FIXES.md](../../../UI/docs/PHPSTAN_FIXES.md)
+* [PHPSTAN_FIXES.md](../../../Media/docs/PHPSTAN_FIXES.md)
 
 
 ## Collegamenti tra versioni di phpstan_fixes.md

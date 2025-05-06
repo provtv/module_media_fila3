@@ -6,8 +6,8 @@ PHPSTAN_LEVEL10_FIXES_media.md
 
 PHPSTAN_LEVEL10_FIXES_media.md
 ## Collegamenti tra versioni di PHPSTAN_LEVEL10_FIXES_root_symlink.md
-* [PHPSTAN_LEVEL10_FIXES_root_symlink.md](laravel/Modules/Notify/docs/PHPSTAN_LEVEL10_FIXES_root_symlink.md)
-* [PHPSTAN_LEVEL10_FIXES_root_symlink.md](laravel/Modules/Media/docs/PHPSTAN_LEVEL10_FIXES_root_symlink.md)
+* [PHPSTAN_LEVEL10_FIXES_root_symlink.md](../../../Notify/docs/PHPSTAN_LEVEL10_FIXES_root_symlink.md)
+* [PHPSTAN_LEVEL10_FIXES_root_symlink.md](../../../Media/docs/PHPSTAN_LEVEL10_FIXES_root_symlink.md)
 
 
 ## Collegamenti tra versioni di phpstan_level10_fixes_root_symlink.md
