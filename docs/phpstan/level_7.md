@@ -1,14 +1,47 @@
+<<<<<<< HEAD
+
+=======
 
 
+=======
 
+=======
+
+>>>>>>> aurmich/dev
+
+=======
+>>>>>>> 5770259 (.)
+
+
+<<<<<<< HEAD
+=======
+>>>>>>> aurmich/dev
+
+=======
+>>>>>>> aurmich/dev
+>>>>>>> aurmich/dev
+>>>>>>> 5770259 (.)
 # Rapporto PHPStan Livello 7 per il modulo Media
 
 Data analisi: 2025-04-15 22:06:03
 
 🎉 **Congratulazioni!** Nessun errore trovato a questo livello.
+<<<<<<< HEAD
+aurmich/dev
+=======
+
+
+=======
+aurmich/dev
+=======
+
+>>>>>>> aurmich/dev
+
+=======
+>>>>>>> 5770259 (.)
 aurmich/dev
 aurmich/dev
-aurmich/dev
+<<<<<<< HEAD
 
 ## Collegamenti tra versioni di level_7.md
 * [level_7.md](../../../Chart/docs/phpstan/level_7.md)
@@ -27,3 +60,10 @@ aurmich/dev
 * [level_7.md](../../../Patient/docs/phpstan/level_7.md)
 * [level_7.md](../../../Cms/docs/phpstan/level_7.md)
 
+=======
+>>>>>>> aurmich/dev
+
+=======
+>>>>>>> aurmich/dev
+>>>>>>> aurmich/dev
+>>>>>>> 5770259 (.)

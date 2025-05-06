@@ -79,6 +79,48 @@ Il modello `Media.php` contiene diverse proprietà documentate con tipo `mixed`:
 
 Questa soluzione mantiene la funzionalità originale migliorando al contempo la chiarezza del codice e la compatibilità con l'analisi statica di PHPStan a livello 10.
 
+<<<<<<< HEAD
+=======
+### 5. Risoluzione dei conflitti di merge nei file del modulo Media
+
+
+
+=======
+
+**Problema**: Diversi file del modulo Media contenevano conflitti di merge non risolti, indicati da marcatori `` e `aurmich/dev
+=======
+
+>>>>>>> aurmich/dev
+
+**Problema**: Diversi file del modulo Media contenevano conflitti di merge non risolti, indicati da marcatori `` e `>>>>>>> origin/dev`. Questi conflitti impedivano la corretta esecuzione del codice e causavano errori di sintassi.
+=======
+
+**Problema**: Diversi file del modulo Media contenevano conflitti di merge non risolti, indicati da marcatori `` e `>>>>>>> origin/dev`. Questi conflitti impedivano la corretta esecuzione del codice e causavano errori di sintassi.
+aurmich/dev
+>>>>>>> aurmich/dev
+=======
+
+**Problema**: Diversi file del modulo Media contenevano conflitti di merge non risolti, indicati da marcatori `` e `aurmich/dev
+>>>>>>> aurmich/dev
+
+=======
+>>>>>>> aurmich/dev
+>>>>>>> aurmich/dev
+
+**Soluzione implementata**:
+1. Analisi sistematica dei conflitti di merge in ciascun file
+2. Risoluzione dei conflitti mantenendo la versione più completa e documentata del codice
+3. Verifica della coerenza delle modifiche con le best practices del progetto
+4. Backup dei file originali prima delle modifiche per sicurezza
+
+**File corretti**:
+- `TemporaryUploadPathGenerator.php`
+- `ConvertVideoByMediaConvertAction.php`
+- `ConvertVideoByConvertDataAction.php`
+- `MediaRelationManager.php`
+- `PHPSTAN_LEVEL10_FIXES.md`
+
+>>>>>>> 5770259 (.)
 ## Principi Applicati
 
 1. **Uso appropriato di PHPDoc per tipi speciali**: Quando PHP non supporta nativamente un tipo (come `resource`), utilizzare annotazioni PHPDoc per fornire informazioni di tipo a PHPStan.

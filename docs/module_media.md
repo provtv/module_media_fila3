@@ -1,5 +1,6 @@
 # Modulo Media
 
+<<<<<<< HEAD
 ### Versione HEAD
 
 
@@ -13,6 +14,25 @@ aurmich/dev
 
 ---
 
+=======
+
+
+=======
+=======
+
+>>>>>>> aurmich/dev
+
+=======
+
+aurmich/dev
+>>>>>>> aurmich/dev
+=======
+>>>>>>> aurmich/dev
+
+=======
+>>>>>>> aurmich/dev
+>>>>>>> aurmich/dev
+>>>>>>> 5770259 (.)
 ## Informazioni Generali
 - **Nome**: `laraxot/module_media_fila3`
 - **Descrizione**: Modulo dedicato alla gestione di immagini e video
@@ -33,8 +53,19 @@ app/
 └── Services/       # Servizi media
 ```
 
+<<<<<<< HEAD
 ### Versione HEAD
 
+=======
+
+=======
+
+=======
+
+=======
+>>>>>>> aurmich/dev
+>>>>>>> aurmich/dev
+>>>>>>> 5770259 (.)
 ## Aggiornamenti Recenti
 
 ### Risoluzione Conflitti Git
@@ -53,11 +84,20 @@ La risoluzione ha puntato a mantenere la coerenza del codice, evitando duplicazi
 Per maggiori dettagli, consultare il [Rapporto sulla Risoluzione dei Conflitti](/docs/risoluzione_conflitti_merge_update.md).
 
 
+<<<<<<< HEAD
 ### Versione Incoming
 
 
 ---
 
+=======
+=======
+
+=======
+>>>>>>> aurmich/dev
+>>>>>>> aurmich/dev
+>>>>>>> aurmich/dev
+>>>>>>> 5770259 (.)
 ## Dipendenze
 ### Pacchetti Required
 - PHP ^8.2
@@ -137,10 +177,23 @@ composer format        # Formatta il codice
    - Controllare log di sistema
    - Verificare supporto GD/Imagick
 
+<<<<<<< HEAD
+=======
+
+
+=======
+>>>>>>> 5770259 (.)
 ## Changelog
 ### Versione HEAD
 
 Le modifiche vengono tracciate nel repository GitHub.
+<<<<<<< HEAD
+=======
+=======
+
+>>>>>>> aurmich/dev
+
+>>>>>>> 5770259 (.)
 ## Changelog
 Le modifiche vengono tracciate nel repository GitHub. 
 
@@ -152,6 +205,7 @@ aurmich/dev
 
 ## Changelog
 Le modifiche vengono tracciate nel repository GitHub.
+<<<<<<< HEAD
 
 ### Versione Incoming
 
@@ -261,3 +315,10 @@ Le modifiche vengono tracciate nel repository GitHub.
 
 ---
 
+=======
+>>>>>>> aurmich/dev
+
+=======
+>>>>>>> aurmich/dev
+>>>>>>> aurmich/dev
+>>>>>>> 5770259 (.)
