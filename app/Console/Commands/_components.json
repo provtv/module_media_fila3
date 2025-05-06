@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 [
     {
         "name": "convert-video-command",
@@ -7,3 +8,6 @@
         "ns": "Modules\\Media\\Console\\Commands\\ConvertVideoCommand"
     }
 ]
+=======
+[{"name":"convert-video-command","class":"ConvertVideoCommand","module":null,"path":null,"ns":"Modules\\Media\\Console\\Commands\\ConvertVideoCommand"}]
+>>>>>>> c3d1282 (.)

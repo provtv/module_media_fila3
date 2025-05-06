@@ -75,6 +75,7 @@ Overall Module Completion: 60%
    - Query optimization
    - Cache implementation
    - Priority: High
+<<<<<<< HEAD
 
 ## Collegamenti tra versioni di roadmap.md
 * [roadmap.md](bashscripts/docs/roadmap.md)
@@ -94,3 +95,5 @@ Overall Module Completion: 60%
 * [roadmap.md](laravel/Modules/Cms/docs/roadmap.md)
 * [roadmap.md](laravel/Themes/One/docs/roadmap.md)
 
+=======
+>>>>>>> c3d1282 (.)

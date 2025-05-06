@@ -1,6 +1,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 📆 2025-04-23 18:55:58 - 🔧 Configurazione git di base...
 📆 2025-04-23 18:55:58 - ✅ Configurazione git completata
 📆 2025-04-23 19:30:56 - 🔧 Configurazione git di base...
@@ -47,3 +48,15 @@
 📆 2025-05-05 22:55:32 - 🔧 Configurazione git di base...
 📆 2025-05-05 22:55:32 - ✅ Configurazione git completata
 >>>>>>> 9603a47 (.)
+=======
+[0;34mℹ️ [2025-04-22 13:13:39] Inizializzazione repository locale[0m
+[0;34mℹ️ [2025-04-22 13:13:39] Creazione branch main[0m
+[0;34mℹ️ [2025-04-22 13:13:39] Configurazione remote origin[0m
+[0;34mℹ️ [2025-04-22 13:13:40] Fetch da remote[0m
+[0;34mℹ️ [2025-04-22 13:14:21] Commit dei file locali[0m
+[0;34mℹ️ [2025-04-22 13:14:21] Merge con remote[0m
+[0;34mℹ️ [2025-04-22 13:14:23] Commit finale e push[0m
+[0;34mℹ️ [2025-04-22 13:14:25] Pulizia repository locale[0m
+📆 2025-05-06 08:55:27 - 🔧 Configurazione git di base...
+📆 2025-05-06 08:55:27 - ✅ Configurazione git completata
+>>>>>>> c3d1282 (.)

@@ -30,7 +30,10 @@ class Merge
     public function execute(array $filenames, string $filenameOut): void
     {
         $manager = app(ImageManager::class);
+<<<<<<< HEAD
 
+=======
+>>>>>>> c3d1282 (.)
         $width = 0;
         $height = 0;
 
