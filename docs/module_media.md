@@ -1,6 +1,5 @@
 # Modulo Media
 
-<<<<<<< HEAD
 ### Versione HEAD
 
 
@@ -14,13 +13,11 @@ aurmich/dev
 
 ---
 
-=======
 
 
 =======
 =======
 
->>>>>>> aurmich/dev
 
 =======
 
@@ -53,17 +50,14 @@ app/
 └── Services/       # Servizi media
 ```
 
-<<<<<<< HEAD
 ### Versione HEAD
 
-=======
 
 =======
 
 =======
 
 =======
->>>>>>> aurmich/dev
 >>>>>>> aurmich/dev
 >>>>>>> 5770259 (.)
 ## Aggiornamenti Recenti
@@ -84,17 +78,14 @@ La risoluzione ha puntato a mantenere la coerenza del codice, evitando duplicazi
 Per maggiori dettagli, consultare il [Rapporto sulla Risoluzione dei Conflitti](/docs/risoluzione_conflitti_merge_update.md).
 
 
-<<<<<<< HEAD
 ### Versione Incoming
 
 
 ---
 
 =======
-=======
 
 =======
->>>>>>> aurmich/dev
 >>>>>>> aurmich/dev
 >>>>>>> aurmich/dev
 >>>>>>> 5770259 (.)
@@ -177,21 +168,15 @@ composer format        # Formatta il codice
    - Controllare log di sistema
    - Verificare supporto GD/Imagick
 
-<<<<<<< HEAD
-=======
 
 
 =======
->>>>>>> 5770259 (.)
 ## Changelog
 ### Versione HEAD
 
 Le modifiche vengono tracciate nel repository GitHub.
-<<<<<<< HEAD
-=======
 =======
 
->>>>>>> aurmich/dev
 
 >>>>>>> 5770259 (.)
 ## Changelog
@@ -205,7 +190,6 @@ aurmich/dev
 
 ## Changelog
 Le modifiche vengono tracciate nel repository GitHub.
-<<<<<<< HEAD
 
 ### Versione Incoming
 
@@ -315,8 +299,6 @@ Le modifiche vengono tracciate nel repository GitHub.
 
 ---
 
-=======
->>>>>>> aurmich/dev
 
 =======
 >>>>>>> aurmich/dev

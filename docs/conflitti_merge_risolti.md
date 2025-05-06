@@ -106,12 +106,9 @@ public function getFileAttribute(?string $value): ?string
 
 ### 5. SubtitleService.php
 
-<<<<<<< HEAD:docs/conflitti_merge_risolti.md
-=======
 
 =======
 
->>>>>>> 5770259 (.):docs/CONFLITTI_MERGE_RISOLTI.md
 **Problema**: Conflitto nella modalità di aggiornamento del modello Eloquent nel metodo `upateModel()`. Le versioni in conflitto differivano nella gestione dell'assegnazione e nell'utilizzo di `tap($this->model)->update($up)`.
 
 **Intento funzionale**: Garantire che il modello venga aggiornato in modo atomico e che l'istanza aggiornata venga sempre assegnata correttamente alla proprietà. L'obiettivo è mantenere la robustezza, evitare duplicazioni e assicurare coerenza con il resto della codebase.
@@ -153,23 +150,17 @@ public function getFromXml(): array
  * }>
  */
 public function getFromXml($xmlFile)
-<<<<<<< HEAD:docs/conflitti_merge_risolti.md
-=======
 
 =======
->>>>>>> aurmich/dev
 >>>>>>> aurmich/dev
 >>>>>>> 5770259 (.):docs/CONFLITTI_MERGE_RISOLTI.md
 ```
 
 ### 6. ConvertVideoAction.php
 
-<<<<<<< HEAD:docs/conflitti_merge_risolti.md
-=======
 
 =======
 
->>>>>>> 5770259 (.):docs/CONFLITTI_MERGE_RISOLTI.md
 **Problema**: Conflitto nella gestione degli import e nella struttura del metodo execute. Le versioni in conflitto differivano nell'ordine degli import e nella presenza di linee vuote superflue tra i blocchi di codice.
 
 **Intento funzionale**: Garantire chiarezza e leggibilità, mantenendo la coerenza con il resto del modulo e assicurando che la logica di conversione video sia atomica e facilmente manutenibile.
@@ -192,11 +183,8 @@ Per approfondimenti generali sulle strategie di risoluzione dei conflitti, fare 
 Per approfondimenti generali sulle strategie di risoluzione dei conflitti, fare riferimento alla [documentazione centrale](../../../../docs/risoluzione_conflitti_git.md).
 
 ### 7. VideoStream.php
-<<<<<<< HEAD:docs/conflitti_merge_risolti.md
-=======
 
 =======
->>>>>>> aurmich/dev
 >>>>>>> aurmich/dev
 >>>>>>> 5770259 (.):docs/CONFLITTI_MERGE_RISOLTI.md
 
@@ -229,13 +217,10 @@ public function __construct(string $disk, string $path)
 }
 ```
 
-<<<<<<< HEAD:docs/conflitti_merge_risolti.md
-=======
 
 ### 8. MediaResource.php
 =======
 
->>>>>>> 5770259 (.):docs/CONFLITTI_MERGE_RISOLTI.md
 ### 7. MediaResource.php
 ### 8. MediaResource.php
 
@@ -270,13 +255,10 @@ public static function getFormSchema(): array
 }
 ```
 
-<<<<<<< HEAD:docs/conflitti_merge_risolti.md
-=======
 
 ### 9. test.blade.php
 =======
 
->>>>>>> 5770259 (.):docs/CONFLITTI_MERGE_RISOLTI.md
 ### 8. test.blade.php
 ### 9. test.blade.php
 
@@ -304,13 +286,10 @@ public static function getFormSchema(): array
 @endforeach
 ```
 
-<<<<<<< HEAD:docs/conflitti_merge_risolti.md
-=======
 
 ### 10. MediaConvertResource.php
 =======
 
->>>>>>> 5770259 (.):docs/CONFLITTI_MERGE_RISOLTI.md
 ### 9. MediaConvertResource.php
 ### 10. MediaConvertResource.php
 
@@ -350,13 +329,10 @@ public static function getFormSchema(): array
 
 Per dettagli completi sulla risoluzione di MediaConvertResource, vedere [documentazione dedicata](../../../../docs/media_convert_resource_conflict.md).
 
-<<<<<<< HEAD:docs/conflitti_merge_risolti.md
-=======
 
 ### 11. Merge.php
 =======
 
->>>>>>> 5770259 (.):docs/CONFLITTI_MERGE_RISOLTI.md
 ### 10. Merge.php
 ### 11. Merge.php
 
@@ -364,12 +340,9 @@ Per dettagli completi sulla risoluzione di MediaConvertResource, vedere [documen
 
 **Intento funzionale**: Garantire una composizione orizzontale delle immagini robusta, efficiente e compatibile con la pipeline Media, mantenendo la massima leggibilità e manutenibilità del codice.
 
-<<<<<<< HEAD:docs/conflitti_merge_risolti.md
-=======
 
 =======
 
->>>>>>> 5770259 (.):docs/CONFLITTI_MERGE_RISOLTI.md
 **Decisione architetturale**: È stata adottata la versione che utilizza il driver Gd di Intervention Image, con gestione esplicita delle dimensioni della canvas e posizionamento progressivo delle immagini. La soluzione mantiene la compatibilità con l’ecosistema Laravel e assicura la massima chiarezza del flusso di composizione.
 
 Per approfondimenti generali sulle strategie di risoluzione dei conflitti, fare riferimento alla [documentazione centrale](../../../../docs/risoluzione_conflitti_git.md).
@@ -384,11 +357,8 @@ Per approfondimenti generali sulle strategie di risoluzione dei conflitti, fare 
 Per approfondimenti generali sulle strategie di risoluzione dei conflitti, fare riferimento alla [documentazione centrale](../../../../docs/risoluzione_conflitti_git.md).
 
 ### 12. VideoEntry.php
-<<<<<<< HEAD:docs/conflitti_merge_risolti.md
-=======
 
 =======
->>>>>>> aurmich/dev
 >>>>>>> aurmich/dev
 >>>>>>> 5770259 (.):docs/CONFLITTI_MERGE_RISOLTI.md
 
@@ -428,12 +398,9 @@ Per prevenire o gestire meglio i conflitti Git in futuro:
 
 - [Documentazione Laravel FFMpeg](https://github.com/protonemedia/laravel-ffmpeg)
 - [PHP 8.x Nullsafe Operator](https://www.php.net/manual/en/migration80.new-features.php#migration80.new-features.nullsafe-operator)
-<<<<<<< HEAD:docs/conflitti_merge_risolti.md
-=======
 
 =======
 
->>>>>>> 5770259 (.):docs/CONFLITTI_MERGE_RISOLTI.md
 - [PHPStan Documentation](https://phpstan.org/user-guide/getting-started) 
 - [PHPStan Documentation](https://phpstan.org/user-guide/getting-started)
 
@@ -461,7 +428,6 @@ I problemi di conflitto nei file relativi all'integrazione di FFmpeg erano princ
 
 Per maggiori dettagli, consultare il [documento dedicato alla risoluzione dei conflitti FFmpeg](risoluzione_conflitti_ffmpeg.md). 
 
-<<<<<<< HEAD:docs/conflitti_merge_risolti.md
 ## Collegamenti tra versioni di CONFLITTI_MERGE_RISOLTI.md
 * [CONFLITTI_MERGE_RISOLTI.md](../../../Gdpr/docs/CONFLITTI_MERGE_RISOLTI.md)
 * [CONFLITTI_MERGE_RISOLTI.md](../../../Xot/docs/CONFLITTI_MERGE_RISOLTI.md)
@@ -475,7 +441,5 @@ Per maggiori dettagli, consultare il [documento dedicato alla risoluzione dei co
 * [conflitti_merge_risolti.md](../../UI/docs/conflitti_merge_risolti.md)
 
 =======
-=======
->>>>>>> aurmich/dev
 >>>>>>> aurmich/dev
 >>>>>>> 5770259 (.):docs/CONFLITTI_MERGE_RISOLTI.md

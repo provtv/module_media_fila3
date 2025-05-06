@@ -4,11 +4,11 @@
 - Garantire che il metodo `upateModel()` aggiorni il modello in modo atomico assegnando l'istanza aggiornata correttamente.
 
 ## Cosa
-<<<<<<< HEAD
+
 - Rimozione dei marker di conflitto .
 =======
 - Rimozione dei marker di conflitto (``, `=======`, `>>>>>>> aurmich/dev`).
->>>>>>> 5770259 (.)
+
 - Eliminazione delle righe duplicate e delle linee vuote ridondanti.
 - Mantenimento dell'utilizzo di `tap($this->model)->update($up)` per garantire coerenza e robustezza.
 

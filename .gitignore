@@ -98,10 +98,10 @@ cache/
 .php-cs-fixer.cache
 .php-cs-fixer.cache
 
-<<<<<<< HEAD
 # Backup files
 *.bak
-=======
 # File di log
 *.log
->>>>>>> 5770259 (.)
+-e 
+# PHPStan documentation
+docs/phpstan/

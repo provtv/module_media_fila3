@@ -79,8 +79,6 @@ Il modello `Media.php` contiene diverse proprietà documentate con tipo `mixed`:
 
 Questa soluzione mantiene la funzionalità originale migliorando al contempo la chiarezza del codice e la compatibilità con l'analisi statica di PHPStan a livello 10.
 
-<<<<<<< HEAD
-=======
 ### 5. Risoluzione dei conflitti di merge nei file del modulo Media
 
 
@@ -90,7 +88,6 @@ Questa soluzione mantiene la funzionalità originale migliorando al contempo la 
 **Problema**: Diversi file del modulo Media contenevano conflitti di merge non risolti, indicati da marcatori `` e `aurmich/dev
 =======
 
->>>>>>> aurmich/dev
 
 **Problema**: Diversi file del modulo Media contenevano conflitti di merge non risolti, indicati da marcatori `` e `>>>>>>> origin/dev`. Questi conflitti impedivano la corretta esecuzione del codice e causavano errori di sintassi.
 =======
