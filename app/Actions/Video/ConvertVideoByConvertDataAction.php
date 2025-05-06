@@ -21,11 +21,6 @@ use Webmozart\Assert\Assert;
 
 /**
  * Classe per convertire video utilizzando i dati di conversione specificati.
-<<<<<<< HEAD
- * 
- * @method \ProtoneMedia\LaravelFFMpeg\Drivers\PHPFFMpeg inFormat(DefaultVideo $format)
-=======
->>>>>>> c3d1282 (.)
  */
 class ConvertVideoByConvertDataAction
 {
