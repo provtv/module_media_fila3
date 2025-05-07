@@ -18,6 +18,9 @@ FFPROBE_PATH=c:/ProgramData/chocolatey/bin/ffprobe.exe
 
 -------------------------------------------------------------
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> be786ab (.)
 WINDOWS
 
 https://www.gyan.dev/ffmpeg/builds/
@@ -37,5 +40,8 @@ FFPROBE_PATH=c:/ProgramData/chocolatey/bin/ffprobe.exe
 
 
 -------------------------------------------------------------
+<<<<<<< HEAD
 =======
 >>>>>>> origin/dev
+=======
+>>>>>>> be786ab (.)

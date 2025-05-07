@@ -55,8 +55,36 @@
 📆 2025-04-24 15:12:46 - 🔧 Configurazione git di base...
 📆 2025-04-24 15:12:46 - ✅ Configurazione git completata
 >>>>>>> aurmich/dev
+<<<<<<< HEAD
 [0;34mℹ️ [2025-05-07 15:38:52] Configurazione avanzata git...[0m
 [0;32m✅ [2025-05-07 15:38:52] Configurazione git completata con successo[0m
 >>>>>>> e94deb4 (.)
 [0;34mℹ️ [2025-05-07 15:47:25] Configurazione avanzata git...[0m
 [0;32m✅ [2025-05-07 15:47:26] Configurazione git completata con successo[0m
+=======
+[0;34mℹ️ [2025-05-06 16:44:06] Configurazione avanzata git...[0m
+[0;32m✅ [2025-05-06 16:44:06] Configurazione git completata con successo[0m
+>>>>>>> 5770259 (.)
+[0;34mℹ️ [2025-05-06 17:22:17] Configurazione avanzata git...[0m
+[0;32m✅ [2025-05-06 17:22:17] Configurazione git completata con successo[0m
+[0;34mℹ️ [2025-05-06 17:27:18] Configurazione avanzata git...[0m
+[0;32m✅ [2025-05-06 17:27:18] Configurazione git completata con successo[0m
+=======
+[0;34mℹ️ [2025-05-06 18:39:47] Configurazione avanzata git...[0m
+[0;32m✅ [2025-05-06 18:39:47] Configurazione git completata con successo[0m
+>>>>>>> 99c9d86 (.)
+[0;34mℹ️ [2025-05-06 21:19:18] Configurazione avanzata git...[0m
+[0;32m✅ [2025-05-06 21:19:18] Configurazione git completata con successo[0m
+=======
+[0;34mℹ️ [2025-05-06 21:29:58] Configurazione avanzata git...[0m
+[0;32m✅ [2025-05-06 21:29:58] Configurazione git completata con successo[0m
+>>>>>>> 73d5803 (.)
+[0;34mℹ️ [2025-05-06 21:53:55] Configurazione avanzata git...[0m
+[0;32m✅ [2025-05-06 21:53:55] Configurazione git completata con successo[0m
+[0;34mℹ️ [2025-05-06 22:11:02] Configurazione avanzata git...[0m
+[0;32m✅ [2025-05-06 22:11:02] Configurazione git completata con successo[0m
+[0;34mℹ️ [2025-05-06 22:19:45] Configurazione avanzata git...[0m
+[0;32m✅ [2025-05-06 22:19:45] Configurazione git completata con successo[0m
+[0;34mℹ️ [2025-05-07 16:56:09] Configurazione avanzata git...[0m
+[0;32m✅ [2025-05-07 16:56:09] Configurazione git completata con successo[0m
+>>>>>>> be786ab (.)
