@@ -347,13 +347,6 @@ final class Media extends Model
         );
     }
 }
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-
-### Versione HEAD
-
->>>>>>> e94deb4 (.)
 ### Versione HEAD
 
 ``` 
@@ -369,16 +362,3 @@ final class Media extends Model
 
 ---
 
-<<<<<<< HEAD
-=======
-``` 
->>>>>>> 83f472a (.)
-=======
-
-### Versione Alternativa
-
-``` 
-
----
-
->>>>>>> e94deb4 (.)

@@ -58,8 +58,6 @@ Modules/Media/
 - Integration tests with dependent modules
 - Security testing
 - Performance testing
-<<<<<<< HEAD
-<<<<<<< HEAD
 ### Versione HEAD
 
 
@@ -84,24 +82,3 @@ Modules/Media/
 
 ---
 
-=======
->>>>>>> 83f472a (.)
-=======
-
-## Collegamenti tra Moduli
-* [Notify Module Analysis](../../../Notify/docs/analysis.md)
-* [Xot Module Analysis](../../../Xot/docs/analysis.md)
-* [User Module Analysis](../../../User/docs/analysis.md)
-* [UI Module Analysis](../../../UI/docs/analysis.md)
-* [Job Module Analysis](../../../Job/docs/analysis.md)
-* [Media Module Analysis](../../../Media/docs/analysis.md)
-* [Theme One Analysis](../../../../Themes/One/docs/analysis.md)
-
-## PHPStan Analysis
-* [Notify PHPStan Analysis](../../../Notify/docs/phpstan/analysis.md)
-* [Xot PHPStan Analysis](../../../Xot/docs/phpstan/analysis.md)
-* [User PHPStan Analysis](../../../User/docs/phpstan/analysis.md)
-* [UI PHPStan Analysis](../../../UI/docs/phpstan/analysis.md)
-* [Job PHPStan Analysis](../../../Job/docs/phpstan/analysis.md)
-* [Media PHPStan Analysis](../../../Media/docs/phpstan/analysis.md)
->>>>>>> e94deb4 (.)

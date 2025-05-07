@@ -58,13 +58,6 @@
 - [CDN](packages/cdn.md)
 - [Performance](packages/performance.md)
 - [Integrazioni](packages/integrations.md) 
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-
-### Versione HEAD
-
->>>>>>> e94deb4 (.)
 ### Versione HEAD
 
 
@@ -85,14 +78,3 @@
 
 ---
 
-<<<<<<< HEAD
-=======
->>>>>>> 83f472a (.)
-=======
-
-### Versione Alternativa
-
-
----
-
->>>>>>> e94deb4 (.)

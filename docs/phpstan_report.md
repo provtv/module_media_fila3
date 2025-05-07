@@ -52,13 +52,6 @@ L'analisi PHPStan di livello 1 non ha rilevato errori nel modulo Media. Questo Ã
    - Implementare caching efficiente
    - Utilizzare CDN quando possibile
    - Gestire correttamente le risorse
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-
-### Versione HEAD
-
->>>>>>> e94deb4 (.)
 ### Versione HEAD
 
    - Monitorare l'utilizzo dello storage 
@@ -73,16 +66,3 @@ L'analisi PHPStan di livello 1 non ha rilevato errori nel modulo Media. Questo Ã
 
 ---
 
-<<<<<<< HEAD
-=======
-   - Monitorare l'utilizzo dello storage 
->>>>>>> 83f472a (.)
-=======
-
-### Versione Alternativa
-
-   - Monitorare l'utilizzo dello storage 
-
----
-
->>>>>>> e94deb4 (.)

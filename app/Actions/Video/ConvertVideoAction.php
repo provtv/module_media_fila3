@@ -8,36 +8,13 @@ declare(strict_types=1);
 
 namespace Modules\Media\Actions\Video;
 
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-=======
-use FFMpeg\Format\Video\X264;
-<<<<<<< HEAD
->>>>>>> origin/dev
->>>>>>> 83f472a (.)
-=======
- origin/dev
->>>>>>> e94deb4 (.)
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Str;
 use ProtoneMedia\LaravelFFMpeg\Support\FFMpeg;
 use ProtoneMedia\LaravelFFMpeg\MediaOpener;
 use Spatie\QueueableAction\QueueableAction;
 use Webmozart\Assert\Assert;
-<<<<<<< HEAD
-<<<<<<< HEAD
 use FFMpeg\Format\Video\X264;
-=======
-<<<<<<< HEAD
-use FFMpeg\Format\Video\X264;
-=======
->>>>>>> origin/dev
->>>>>>> 83f472a (.)
-=======
-use FFMpeg\Format\Video\X264;
- origin/dev
->>>>>>> e94deb4 (.)
 
 class ConvertVideoAction
 {
@@ -51,57 +28,18 @@ class ConvertVideoAction
         $media = FFMpeg::fromDisk($disk_mp4);
 
         $openedMedia = $media->open($file_mp4);
-<<<<<<< HEAD
-<<<<<<< HEAD
         
-=======
-<<<<<<< HEAD
-        
-=======
-
->>>>>>> origin/dev
->>>>>>> 83f472a (.)
-=======
-        
-
- origin/dev
->>>>>>> e94deb4 (.)
         $exportedMedia = $openedMedia->export();
 
         $format = new X264();
         $format->setKiloBitrate(1000);
 
         $toDiskMedia = $exportedMedia->toDisk($disk_mp4);
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
->>>>>>> 83f472a (.)
-=======
->>>>>>> e94deb4 (.)
         
         $formattedMedia = $toDiskMedia->inFormat($format);
         
         $formattedMedia->save($file_new);
 
         return Storage::disk($disk_mp4)->url($file_new);
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-=======
-=======
->>>>>>> e94deb4 (.)
-
-        $formattedMedia = $toDiskMedia->inFormat($format);
-
-        $formattedMedia->save($file_new);
-
-        return Storage::disk($disk_mp4)->path($file_new);
-<<<<<<< HEAD
->>>>>>> origin/dev
->>>>>>> 83f472a (.)
-=======
- origin/dev
->>>>>>> e94deb4 (.)
     }
 }
