@@ -18,6 +18,12 @@
 ## Collegamenti
 - [Link a docs/phpstan della root per sintesi trasversali]
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+
+### Versione HEAD
+
+>>>>>>> e94deb4 (.)
 
 ## Collegamenti tra versioni di analysis.md
 * [analysis.md](../../../Notify/docs/analysis.md)
@@ -34,5 +40,14 @@
 * [analysis.md](../../../Media/docs/phpstan/analysis.md)
 * [analysis.md](../../../../Themes/One/docs/analysis.md)
 
+<<<<<<< HEAD
 =======
 >>>>>>> 83f472a (.)
+=======
+
+### Versione Alternativa
+
+
+---
+
+>>>>>>> e94deb4 (.)

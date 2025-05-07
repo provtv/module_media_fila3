@@ -10,12 +10,19 @@ use Livewire\Component;
 use Modules\Xot\Actions\GetViewAction;
 
 /**
- * Class Clip.
+ * Componente Livewire per la gestione dei clip video.
+ * Permette la visualizzazione e modifica dei clip video associati a un modello.
  */
 class Clip extends Component
 {
+    /**
+     * Template di visualizzazione del componente.
+     */
     public string $tpl = 'edit';
 
+    /**
+     * Il modello associato al clip.
+     */
     public Model $model;
 
 <<<<<<< HEAD
@@ -25,21 +32,26 @@ class Clip extends Component
 =======
 >>>>>>> 83f472a (.)
     /**
-     * Undocumented variable.
-     *
-     * @var array
+     * Lista degli eventi ascoltati dal componente.
+     * 
+     * @var array<string, string>
      */
+<<<<<<< HEAD
 <<<<<<< HEAD
 =======
 >>>>>>> origin/dev
 >>>>>>> 83f472a (.)
     /** @var array<string, string> */
+=======
+>>>>>>> e94deb4 (.)
     protected $listeners = [
         'updateDataFromModal' => 'updateDataFromModal',
     ];
 
     /**
-     * Undocumented function.
+     * Inizializza il componente con il modello fornito.
+     *
+     * @param Model $model Il modello da associare al clip
      */
     public function mount(Model $model): void
     {
@@ -47,7 +59,9 @@ class Clip extends Component
     }
 
     /**
-     * Undocumented function.
+     * Renderizza il componente.
+     *
+     * @return View
      */
     public function render(): View
     {
@@ -63,7 +77,7 @@ class Clip extends Component
     }
 
     /**
-     * Undocumented function.
+     * Apre il modale per la modifica del clip.
      */
     public function editClip(): void
     {
@@ -72,7 +86,10 @@ class Clip extends Component
     }
 
     /**
-     * Undocumented function.
+     * Aggiorna i dati del clip dal modale.
+     *
+     * @param string $id L'identificatore del modale
+     * @param array $data I dati da aggiornare
      */
     public function updateDataFromModal(string $id, array $data): void
     {
@@ -84,7 +101,6 @@ class Clip extends Component
             return;
         }
 
-        // dddx(['data'=>$data,'model'=>$this->model]);
         /** @var array<string, string> */
         $up = collect($data)
             ->only(['title', 'subtitle'])

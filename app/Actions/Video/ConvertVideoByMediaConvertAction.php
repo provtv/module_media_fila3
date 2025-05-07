@@ -11,6 +11,7 @@ namespace Modules\Media\Actions\Video;
 
 use Filament\Notifications\Notification;
 <<<<<<< HEAD
+<<<<<<< HEAD
 use Illuminate\Support\Facades\Storage;
 =======
 <<<<<<< HEAD
@@ -19,6 +20,11 @@ use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Storage;
 >>>>>>> origin/dev
 >>>>>>> 83f472a (.)
+=======
+use Illuminate\Support\Facades\Log;
+use Illuminate\Support\Facades\Storage;
+ origin/dev
+>>>>>>> e94deb4 (.)
 use Modules\Media\Datas\ConvertData;
 use Modules\Media\Models\MediaConvert;
 use ProtoneMedia\LaravelFFMpeg\Support\FFMpeg;
@@ -36,8 +42,12 @@ use Webmozart\Assert\Assert;
 =======
  * 
  * @method \ProtoneMedia\LaravelFFMpeg\Drivers\PHPFFMpeg inFormat(DefaultVideo $format)
+<<<<<<< HEAD
 >>>>>>> origin/dev
 >>>>>>> 83f472a (.)
+=======
+ origin/dev
+>>>>>>> e94deb4 (.)
  */
 class ConvertVideoByMediaConvertAction
 {
@@ -45,8 +55,11 @@ class ConvertVideoByMediaConvertAction
 
     /**
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 <<<<<<< HEAD
+=======
+>>>>>>> e94deb4 (.)
      * Esegue la conversione del video e aggiorna il record MediaConvert.
      *
      * @throws \Exception Se il file non esiste o il nome del file convertito non è valido
@@ -84,23 +97,33 @@ class ConvertVideoByMediaConvertAction
      */
     private function validateInput(ConvertData $data, MediaConvert $record): void
     {
+<<<<<<< HEAD
 =======
 >>>>>>> 83f472a (.)
+=======
+>>>>>>> e94deb4 (.)
      * Execute the action.
      */
     public function execute(ConvertData $data, MediaConvert $record): string
     {
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> origin/dev
 >>>>>>> 83f472a (.)
+=======
+ origin/dev
+>>>>>>> e94deb4 (.)
         if (!$data->exists()) {
             throw new \Exception('Il file non esiste');
         }
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 <<<<<<< HEAD
+=======
+>>>>>>> e94deb4 (.)
         if (!$record->converted_file) {
             throw new \Exception('Il nome del file convertito non è stato specificato');
         }
@@ -132,8 +155,11 @@ class ConvertVideoByMediaConvertAction
                 ->body($message)
                 ->send();
         }
+<<<<<<< HEAD
 =======
 >>>>>>> 83f472a (.)
+=======
+>>>>>>> e94deb4 (.)
         $format = $data->getFFMpegFormat();
         $file_new = $record->converted_file;
 
@@ -165,8 +191,12 @@ class ConvertVideoByMediaConvertAction
 
         return $file_new;
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> origin/dev
 >>>>>>> 83f472a (.)
+=======
+ origin/dev
+>>>>>>> e94deb4 (.)
     }
 }

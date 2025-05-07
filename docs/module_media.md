@@ -1,6 +1,7 @@
 # Modulo Media
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 ### Versione HEAD
 
 
@@ -43,6 +44,8 @@ aurmich/dev
 >>>>>>> aurmich/dev
 >>>>>>> origin/dev
 >>>>>>> 83f472a (.)
+=======
+>>>>>>> e94deb4 (.)
 ## Informazioni Generali
 - **Nome**: `laraxot/module_media_fila3`
 - **Descrizione**: Modulo dedicato alla gestione di immagini e video
@@ -64,6 +67,7 @@ app/
 ```
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 ### Versione HEAD
 
 
@@ -81,6 +85,8 @@ app/
 >>>>>>> aurmich/dev
 >>>>>>> aurmich/dev
 >>>>>>> 83f472a (.)
+=======
+>>>>>>> e94deb4 (.)
 ## Aggiornamenti Recenti
 
 ### Risoluzione Conflitti Git
@@ -98,6 +104,7 @@ La risoluzione ha puntato a mantenere la coerenza del codice, evitando duplicazi
 
 Per maggiori dettagli, consultare il [Rapporto sulla Risoluzione dei Conflitti](/docs/risoluzione_conflitti_merge_update.md).
 
+<<<<<<< HEAD
 
 <<<<<<< HEAD
 ### Versione Incoming
@@ -115,6 +122,8 @@ Per maggiori dettagli, consultare il [Rapporto sulla Risoluzione dei Conflitti](
 >>>>>>> aurmich/dev
 >>>>>>> origin/dev
 >>>>>>> 83f472a (.)
+=======
+>>>>>>> e94deb4 (.)
 ## Dipendenze
 ### Pacchetti Required
 - PHP ^8.2
@@ -194,6 +203,7 @@ composer format        # Formatta il codice
    - Controllare log di sistema
    - Verificare supporto GD/Imagick
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 
 
@@ -358,3 +368,7 @@ Le modifiche vengono tracciate nel repository GitHub.
 >>>>>>> aurmich/dev
 >>>>>>> origin/dev
 >>>>>>> 83f472a (.)
+=======
+## Changelog
+Le modifiche vengono tracciate nel repository GitHub.
+>>>>>>> e94deb4 (.)

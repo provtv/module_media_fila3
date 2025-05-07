@@ -225,6 +225,12 @@ Implementare:
    }
    ```
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+
+### Versione HEAD
+
+>>>>>>> e94deb4 (.)
 ### Versione HEAD
 
 
@@ -246,5 +252,14 @@ Implementare:
 
 ---
 
+<<<<<<< HEAD
 =======
 >>>>>>> 83f472a (.)
+=======
+
+### Versione Alternativa
+
+
+---
+
+>>>>>>> e94deb4 (.)

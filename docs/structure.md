@@ -394,6 +394,12 @@ tests_old/Unit
 - [Report PHPStan](/docs/phpstan/)
 
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+
+### Versione HEAD
+
+>>>>>>> e94deb4 (.)
 
 ## Collegamenti tra versioni di structure.md
 * [structure.md](bashscripts/docs/structure.md)
@@ -413,5 +419,14 @@ tests_old/Unit
 * [structure.md](../../../Cms/docs/themes/structure.md)
 * [structure.md](../../../Cms/docs/components/structure.md)
 
+<<<<<<< HEAD
 =======
 >>>>>>> 83f472a (.)
+=======
+
+### Versione Alternativa
+
+
+---
+
+>>>>>>> e94deb4 (.)

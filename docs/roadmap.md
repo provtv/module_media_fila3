@@ -76,6 +76,12 @@ Overall Module Completion: 60%
    - Cache implementation
    - Priority: High
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+
+### Versione HEAD
+
+>>>>>>> e94deb4 (.)
 ### Versione HEAD
 
 
@@ -103,5 +109,14 @@ Overall Module Completion: 60%
 
 ---
 
+<<<<<<< HEAD
 =======
 >>>>>>> 83f472a (.)
+=======
+
+### Versione Alternativa
+
+
+---
+
+>>>>>>> e94deb4 (.)

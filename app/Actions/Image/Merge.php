@@ -35,8 +35,12 @@ class Merge
 <<<<<<< HEAD
 =======
 
+<<<<<<< HEAD
 >>>>>>> origin/dev
 >>>>>>> 83f472a (.)
+=======
+ origin/dev
+>>>>>>> e94deb4 (.)
         $width = 0;
         $height = 0;
 

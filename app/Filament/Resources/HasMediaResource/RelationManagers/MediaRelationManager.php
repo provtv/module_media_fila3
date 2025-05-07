@@ -11,9 +11,17 @@ use Illuminate\Database\Eloquent\Model;
 use Modules\Media\Filament\Resources\HasMediaResource\Actions\AddAttachmentAction;
 use Modules\Media\Filament\Resources\MediaResource;
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> e94deb4 (.)
 use Modules\Xot\Filament\Resources\XotBaseResource\RelationManagers\XotBaseRelationManager;
 use Modules\Xot\Filament\Traits\NavigationLabelTrait;
 
+/**
+ * Class MediaRelationManager
+ * 
+ * Gestisce le relazioni media nel sistema Filament seguendo le convenzioni Laraxot.
+ */
 class MediaRelationManager extends XotBaseRelationManager
 {
     
@@ -43,6 +51,7 @@ class MediaRelationManager extends XotBaseRelationManager
     
 
     /**
+<<<<<<< HEAD
 =======
     /**
 <<<<<<< HEAD
@@ -51,6 +60,10 @@ class MediaRelationManager extends XotBaseRelationManager
 =======
 >>>>>>> origin/dev
 >>>>>>> 83f472a (.)
+=======
+     * Restituisce le azioni dell'header della tabella.
+     * 
+>>>>>>> e94deb4 (.)
      * @return array<string, Action|ActionGroup>
      */
     public function getTableHeaderActions(): array

@@ -90,6 +90,7 @@ Il modello `Media.php` contiene diverse proprietà documentate con tipo `mixed`:
 - L'istanziazione esplicita del formato e il passaggio diretto al metodo `save()` fornisce a PHPStan un tipo concreto che può analizzare
 - L'annotazione `@phpstan-ignore-next-line` è utilizzata solo dove strettamente necessario per gestire le limitazioni dell'analisi statica su API fluenti complesse
 
+<<<<<<< HEAD
 Questa soluzione mantiene la funzionalità originale migliorando al contempo la chiarezza del codice e la compatibilità con l'analisi statica di PHPStan a livello 10.
 
 <<<<<<< HEAD
@@ -143,6 +144,11 @@ aurmich/dev
 >>>>>>> aurmich/dev
 >>>>>>> aurmich/dev
 >>>>>>> 83f472a (.)
+=======
+### 5. Risoluzione dei conflitti di merge nei file del modulo Media
+
+**Problema**: Diversi file del modulo Media contenevano conflitti di merge non risolti che impedivano la corretta esecuzione del codice e causavano errori di sintassi.
+>>>>>>> e94deb4 (.)
 
 **Soluzione implementata**:
 1. Analisi sistematica dei conflitti di merge in ciascun file

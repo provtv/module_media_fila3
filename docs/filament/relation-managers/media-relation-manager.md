@@ -47,11 +47,27 @@ class YourResource extends Resource
 - Migliorata la documentazione del codice
 - Aggiunta tipizzazione stretta
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+
+### Versione HEAD
+
+>>>>>>> e94deb4 (.)
 - Implementata integrazione Laraxot 
 ## Collegamenti tra versioni di media-relation-manager.md
 * [media-relation-manager.md](../../../Media/docs/filament/relation-managers/media-relation-manager.md)
 * [media-relation-manager.md](../../../Media/docs/resources/media-relation-manager.md)
 
+<<<<<<< HEAD
 =======
 - Implementata integrazione Laraxot 
 >>>>>>> 83f472a (.)
+=======
+
+### Versione Alternativa
+
+- Implementata integrazione Laraxot 
+
+---
+
+>>>>>>> e94deb4 (.)
