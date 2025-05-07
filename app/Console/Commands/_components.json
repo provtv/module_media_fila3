@@ -1,1 +1,17 @@
+<<<<<<< HEAD
 [{"name":"convert-video-command","class":"ConvertVideoCommand","module":null,"path":null,"ns":"Modules\\Media\\Console\\Commands\\ConvertVideoCommand"}]
+=======
+<<<<<<< HEAD
+[{"name":"convert-video-command","class":"ConvertVideoCommand","module":null,"path":null,"ns":"Modules\\Media\\Console\\Commands\\ConvertVideoCommand"}]
+=======
+[
+    {
+        "name": "convert-video-command",
+        "class": "ConvertVideoCommand",
+        "module": null,
+        "path": null,
+        "ns": "Modules\\Media\\Console\\Commands\\ConvertVideoCommand"
+    }
+]
+>>>>>>> origin/dev
+>>>>>>> 83f472a (.)

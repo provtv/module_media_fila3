@@ -1,5 +1,6 @@
 # Modulo Media
 
+<<<<<<< HEAD
 ### Versione HEAD
 
 
@@ -20,6 +21,28 @@ aurmich/dev
 
 aurmich/dev
 
+=======
+<<<<<<< HEAD
+=======
+
+
+=======
+=======
+
+>>>>>>> aurmich/dev
+
+=======
+
+aurmich/dev
+>>>>>>> aurmich/dev
+=======
+>>>>>>> aurmich/dev
+
+=======
+>>>>>>> aurmich/dev
+>>>>>>> aurmich/dev
+>>>>>>> origin/dev
+>>>>>>> 83f472a (.)
 ## Informazioni Generali
 - **Nome**: `laraxot/module_media_fila3`
 - **Descrizione**: Modulo dedicato alla gestione di immagini e video
@@ -40,11 +63,24 @@ app/
 └── Services/       # Servizi media
 ```
 
+<<<<<<< HEAD
 ### Versione HEAD
 
 
 
 
+=======
+<<<<<<< HEAD
+=======
+
+=======
+
+=======
+
+=======
+>>>>>>> aurmich/dev
+>>>>>>> aurmich/dev
+>>>>>>> 83f472a (.)
 ## Aggiornamenti Recenti
 
 ### Risoluzione Conflitti Git
@@ -63,12 +99,22 @@ La risoluzione ha puntato a mantenere la coerenza del codice, evitando duplicazi
 Per maggiori dettagli, consultare il [Rapporto sulla Risoluzione dei Conflitti](/docs/risoluzione_conflitti_merge_update.md).
 
 
+<<<<<<< HEAD
 ### Versione Incoming
 
 
 ---
 
 
+=======
+=======
+
+=======
+>>>>>>> aurmich/dev
+>>>>>>> aurmich/dev
+>>>>>>> aurmich/dev
+>>>>>>> origin/dev
+>>>>>>> 83f472a (.)
 ## Dipendenze
 ### Pacchetti Required
 - PHP ^8.2
@@ -148,6 +194,7 @@ composer format        # Formatta il codice
    - Controllare log di sistema
    - Verificare supporto GD/Imagick
 
+<<<<<<< HEAD
 
 
 ## Changelog
@@ -170,6 +217,10 @@ Le modifiche vengono tracciate nel repository GitHub.
 
 ### Versione Incoming
 
+=======
+<<<<<<< HEAD
+## Changelog
+>>>>>>> 83f472a (.)
 # Modulo Media
 
 ## Informazioni Generali
@@ -273,7 +324,37 @@ composer format        # Formatta il codice
 
 ## Changelog
 Le modifiche vengono tracciate nel repository GitHub. 
+<<<<<<< HEAD
 
 ---
 
 
+=======
+=======
+
+
+=======
+## Changelog
+Le modifiche vengono tracciate nel repository GitHub.
+=======
+
+>>>>>>> aurmich/dev
+
+## Changelog
+Le modifiche vengono tracciate nel repository GitHub. 
+=======
+
+## Changelog
+Le modifiche vengono tracciate nel repository GitHub. 
+aurmich/dev
+>>>>>>> aurmich/dev
+=======
+## Changelog
+Le modifiche vengono tracciate nel repository GitHub.
+>>>>>>> aurmich/dev
+
+=======
+>>>>>>> aurmich/dev
+>>>>>>> aurmich/dev
+>>>>>>> origin/dev
+>>>>>>> 83f472a (.)

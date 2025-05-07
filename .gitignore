@@ -97,6 +97,7 @@ cache/
 .git-blame-ignore-revs
 .php-cs-fixer.cache
 .php-cs-fixer.cache
+<<<<<<< HEAD
 
 # Backup files
 *.bak
@@ -105,3 +106,11 @@ cache/
 -e 
 # PHPStan documentation
 docs/phpstan/
+=======
+<<<<<<< HEAD
+=======
+
+# File di log
+*.log
+>>>>>>> origin/dev
+>>>>>>> 83f472a (.)

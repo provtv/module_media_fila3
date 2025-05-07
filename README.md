@@ -1,5 +1,8 @@
+<<<<<<< HEAD
 ### Versione HEAD
 
+=======
+>>>>>>> 83f472a (.)
 # 🎉 Unlock the Power of Media with Fila3 Module! 🚀
 
 ![GitHub issues](https://img.shields.io/github/issues/laraxot/module_media_fila3)
@@ -60,9 +63,13 @@ This project is licensed under the MIT License - see the LICENSE file for detail
 👤 Author
 Marco Sottana
 Check out more of my work at marco76tv!
+<<<<<<< HEAD
 
 ### Versione Incoming
 
+=======
+<<<<<<< HEAD
+>>>>>>> 83f472a (.)
 # 🖼️ Media Module - Gestione Media
 
 [![PHP Version](https://img.shields.io/badge/PHP-8.2+-blue.svg)](https://php.net)
@@ -179,6 +186,11 @@ Questo progetto è distribuito sotto la licenza MIT. Vedi il file [LICENSE](LICE
 This project is distributed under the MIT license. See the [LICENSE](LICENSE) file for more details.
 
 Este proyecto está distribuido bajo la licencia MIT. Ver el archivo [LICENSE](LICENSE) para más detalles.
+<<<<<<< HEAD
 
 ---
 
+=======
+=======
+>>>>>>> origin/dev
+>>>>>>> 83f472a (.)

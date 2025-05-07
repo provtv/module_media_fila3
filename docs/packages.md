@@ -58,6 +58,7 @@
 - [CDN](packages/cdn.md)
 - [Performance](packages/performance.md)
 - [Integrazioni](packages/integrations.md) 
+<<<<<<< HEAD
 ### Versione HEAD
 
 
@@ -78,3 +79,5 @@
 
 ---
 
+=======
+>>>>>>> 83f472a (.)

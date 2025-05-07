@@ -30,6 +30,13 @@ class Merge
     public function execute(array $filenames, string $filenameOut): void
     {
         $manager = app(ImageManager::class);
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+
+>>>>>>> origin/dev
+>>>>>>> 83f472a (.)
         $width = 0;
         $height = 0;
 

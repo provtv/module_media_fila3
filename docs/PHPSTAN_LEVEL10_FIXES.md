@@ -50,6 +50,19 @@ Il modello `Media.php` contiene diverse proprietà documentate con tipo `mixed`:
 **Soluzione da implementare**:
 1. Specificare tipi più precisi per queste proprietà in base ai valori effettivi che possono assumere
 
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+
+
+
+
+
+
+
+=======
+>>>>>>> origin/dev
+>>>>>>> 83f472a (.)
 ### 4. Errori con le API fluenti di FFMpeg in azioni di conversione video
 
 **Problema**: Le classi `ConvertVideoByMediaConvertAction` e `ConvertVideoByConvertDataAction` presentavano errori PHPStan relativi all'utilizzo dell'API fluente di FFMpeg, in particolare:
@@ -79,10 +92,23 @@ Il modello `Media.php` contiene diverse proprietà documentate con tipo `mixed`:
 
 Questa soluzione mantiene la funzionalità originale migliorando al contempo la chiarezza del codice e la compatibilità con l'analisi statica di PHPStan a livello 10.
 
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+
+
+
+
+
+
+
+=======
+>>>>>>> 83f472a (.)
 ### 5. Risoluzione dei conflitti di merge nei file del modulo Media
 
 
 
+<<<<<<< HEAD
 
 **Problema**: Diversi file del modulo Media contenevano conflitti di merge non risolti, indicati da marcatori `` e `aurmich/dev
 
@@ -94,6 +120,29 @@ aurmich/dev
 
 **Problema**: Diversi file del modulo Media contenevano conflitti di merge non risolti, indicati da marcatori `` e `aurmich/dev
 
+=======
+=======
+
+**Problema**: Diversi file del modulo Media contenevano conflitti di merge non risolti, indicati da marcatori `` e `aurmich/dev
+=======
+
+>>>>>>> aurmich/dev
+
+**Problema**: Diversi file del modulo Media contenevano conflitti di merge non risolti, indicati da marcatori `` e `>>>>>>> origin/dev`. Questi conflitti impedivano la corretta esecuzione del codice e causavano errori di sintassi.
+=======
+
+**Problema**: Diversi file del modulo Media contenevano conflitti di merge non risolti, indicati da marcatori `` e `>>>>>>> origin/dev`. Questi conflitti impedivano la corretta esecuzione del codice e causavano errori di sintassi.
+aurmich/dev
+>>>>>>> aurmich/dev
+=======
+
+**Problema**: Diversi file del modulo Media contenevano conflitti di merge non risolti, indicati da marcatori `` e `aurmich/dev
+>>>>>>> aurmich/dev
+
+=======
+>>>>>>> aurmich/dev
+>>>>>>> aurmich/dev
+>>>>>>> 83f472a (.)
 
 **Soluzione implementata**:
 1. Analisi sistematica dei conflitti di merge in ciascun file
@@ -107,16 +156,37 @@ aurmich/dev
 - `ConvertVideoByConvertDataAction.php`
 - `MediaRelationManager.php`
 - `PHPSTAN_LEVEL10_FIXES.md`
+<<<<<<< HEAD
+=======
+>>>>>>> origin/dev
+>>>>>>> 83f472a (.)
 
 ## Principi Applicati
 
 1. **Uso appropriato di PHPDoc per tipi speciali**: Quando PHP non supporta nativamente un tipo (come `resource`), utilizzare annotazioni PHPDoc per fornire informazioni di tipo a PHPStan.
 2. **Inizializzazione appropriata**: Inizializzare le proprietà con valori appropriati per il loro tipo.
 3. **Documentazione chiara**: Fornire commenti esplicativi che indicano lo scopo e il tipo atteso delle proprietà.
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+4. **Risoluzione sistematica dei conflitti**: Analizzare attentamente i conflitti di merge e risolverli mantenendo la versione più completa e documentata del codice.
+5. **Backup prima delle modifiche**: Creare backup dei file originali prima di apportare modifiche significative.
+>>>>>>> origin/dev
+>>>>>>> 83f472a (.)
 
 ## Prossimi Passi
 
 1. Completare la revisione di `SubtitleService.php` per risolvere i problemi di tipo complessi.
 2. Aggiornare il modello `Media.php` per specificare tipi più precisi per le proprietà attualmente documentate come `mixed`.
 3. Eseguire l'analisi PHPStan a livello 10 per verificare che le correzioni risolvano effettivamente gli errori.
+<<<<<<< HEAD
 4. Documentare pattern e soluzioni standard per gestire risorse di file e altri tipi speciali nel progetto. 
+=======
+<<<<<<< HEAD
+4. Documentare pattern e soluzioni standard per gestire risorse di file e altri tipi speciali nel progetto. 
+=======
+4. Implementare test automatizzati per verificare il corretto funzionamento del modulo Media dopo le correzioni.
+5. Documentare le procedure di risoluzione dei conflitti di merge per prevenire problemi simili in futuro.
+>>>>>>> origin/dev
+>>>>>>> 83f472a (.)
