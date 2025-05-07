@@ -108,10 +108,15 @@ public function getFileAttribute(?string $value): ?string
 
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 
 =======
 >>>>>>> be786ab (.)
+=======
+
+=======
+>>>>>>> 71911a6 (.)
 **Problema**: Conflitto nella modalità di aggiornamento del modello Eloquent nel metodo `upateModel()`. Le versioni in conflitto differivano nella gestione dell'assegnazione e nell'utilizzo di `tap($this->model)->update($up)`.
 
 **Intento funzionale**: Garantire che il modello venga aggiornato in modo atomico e che l'istanza aggiornata venga sempre assegnata correttamente alla proprietà. L'obiettivo è mantenere la robustezza, evitare duplicazioni e assicurare coerenza con il resto della codebase.
@@ -134,10 +139,15 @@ public function getFromXml(): array
 {
     // Implementazione...
 <<<<<<< HEAD
+<<<<<<< HEAD
 }
 =======
 >>>>>>> aurmich/dev
 =======
+=======
+}
+=======
+>>>>>>> 71911a6 (.)
 } aurmich/dev
 >>>>>>> be786ab (.)
 **Problema**: Conflitto nella definizione dei tipi di ritorno PHPDoc per il metodo `getFromXml()` con diverse versioni di tipizzazione dei dati.
@@ -160,9 +170,13 @@ public function getFromXml(): array
  */
 public function getFromXml($xmlFile)
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 =======
 >>>>>>> aurmich/dev
+=======
+
+>>>>>>> 71911a6 (.)
 >>>>>>> aurmich/dev
 =======
  aurmich/dev
@@ -174,10 +188,15 @@ public function getFromXml($xmlFile)
 
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 
 =======
 >>>>>>> be786ab (.)
+=======
+
+=======
+>>>>>>> 71911a6 (.)
 **Problema**: Conflitto nella gestione degli import e nella struttura del metodo execute. Le versioni in conflitto differivano nell'ordine degli import e nella presenza di linee vuote superflue tra i blocchi di codice.
 
 **Intento funzionale**: Garantire chiarezza e leggibilità, mantenendo la coerenza con il resto del modulo e assicurando che la logica di conversione video sia atomica e facilmente manutenibile.
@@ -191,10 +210,15 @@ Per approfondimenti generali sulle strategie di risoluzione dei conflitti, fare 
 **Collegamento bidirezionale:** questo file è referenziato anche nella documentazione principale in `/docs/risoluzione_conflitti_git.md`.
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 ### 6. VideoStream.php
 =======
 >>>>>>> aurmich/dev
 =======
+=======
+### 6. VideoStream.php
+=======
+>>>>>>> 71911a6 (.)
 ### 6. VideoStream.php aurmich/dev
 >>>>>>> be786ab (.)
 **Problema**: Conflitto nella modalità di restituzione del percorso del file convertito. Le versioni in conflitto differivano nell'utilizzo di `Storage::disk()->url()` vs `Storage::disk()->path()`.
@@ -207,9 +231,13 @@ Per approfondimenti generali sulle strategie di risoluzione dei conflitti, fare 
 
 ### 7. VideoStream.php
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 =======
 >>>>>>> aurmich/dev
+=======
+
+>>>>>>> 71911a6 (.)
 >>>>>>> aurmich/dev
 =======
  aurmich/dev
@@ -248,13 +276,19 @@ public function __construct(string $disk, string $path)
 
 ### 8. MediaResource.php
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> 71911a6 (.)
 
 ### 7. MediaResource.php
 =======
 ### 8. MediaResource.php
 >>>>>>> aurmich/dev
+<<<<<<< HEAD
 >>>>>>> aurmich/dev
+=======
+>>>>>>> 71911a6 (.)
 =======
 ### 7. MediaResource.php### 8. MediaResource.php
  aurmich/dev
@@ -295,13 +329,19 @@ public static function getFormSchema(): array
 
 ### 9. test.blade.php
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> 71911a6 (.)
 
 ### 8. test.blade.php
 =======
 ### 9. test.blade.php
 >>>>>>> aurmich/dev
+<<<<<<< HEAD
 >>>>>>> aurmich/dev
+=======
+>>>>>>> 71911a6 (.)
 =======
 ### 8. test.blade.php### 9. test.blade.php
  aurmich/dev
@@ -335,13 +375,19 @@ public static function getFormSchema(): array
 
 ### 10. MediaConvertResource.php
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> 71911a6 (.)
 
 ### 9. MediaConvertResource.php
 =======
 ### 10. MediaConvertResource.php
 >>>>>>> aurmich/dev
+<<<<<<< HEAD
 >>>>>>> aurmich/dev
+=======
+>>>>>>> 71911a6 (.)
 =======
 ### 9. MediaConvertResource.php### 10. MediaConvertResource.php
  aurmich/dev
@@ -387,13 +433,19 @@ Per dettagli completi sulla risoluzione di MediaConvertResource, vedere [documen
 
 ### 11. Merge.php
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> 71911a6 (.)
 
 ### 10. Merge.php
 =======
 ### 11. Merge.php
 >>>>>>> aurmich/dev
+<<<<<<< HEAD
 >>>>>>> aurmich/dev
+=======
+>>>>>>> 71911a6 (.)
 =======
 ### 10. Merge.php### 11. Merge.php
  aurmich/dev
@@ -406,10 +458,15 @@ Per dettagli completi sulla risoluzione di MediaConvertResource, vedere [documen
 
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 
 =======
 >>>>>>> be786ab (.)
+=======
+
+=======
+>>>>>>> 71911a6 (.)
 **Decisione architetturale**: È stata adottata la versione che utilizza il driver Gd di Intervention Image, con gestione esplicita delle dimensioni della canvas e posizionamento progressivo delle immagini. La soluzione mantiene la compatibilità con l’ecosistema Laravel e assicura la massima chiarezza del flusso di composizione.
 
 Per approfondimenti generali sulle strategie di risoluzione dei conflitti, fare riferimento alla [documentazione centrale](../../../../docs/risoluzione_conflitti_git.md).
@@ -419,10 +476,15 @@ Per approfondimenti generali sulle strategie di risoluzione dei conflitti, fare 
 **Collegamento bidirezionale:** questo file è referenziato anche nella documentazione principale in `/docs/risoluzione_conflitti_git.md`.
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 ### 10. VideoEntry.php
 =======
 >>>>>>> aurmich/dev
 =======
+=======
+### 10. VideoEntry.php
+=======
+>>>>>>> 71911a6 (.)
 ### 10. VideoEntry.php aurmich/dev
 >>>>>>> be786ab (.)
 **Decisione architetturale**: È stata adottata la versione che utilizza il driver Gd di Intervention Image, con gestione esplicita delle dimensioni della canvas e posizionamento progressivo delle immagini. La soluzione mantiene la compatibilità con l'ecosistema Laravel e assicura la massima chiarezza del flusso di composizione.
@@ -431,9 +493,13 @@ Per approfondimenti generali sulle strategie di risoluzione dei conflitti, fare 
 
 ### 12. VideoEntry.php
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 =======
 >>>>>>> aurmich/dev
+=======
+
+>>>>>>> 71911a6 (.)
 >>>>>>> aurmich/dev
 =======
  aurmich/dev
@@ -478,11 +544,17 @@ Per prevenire o gestire meglio i conflitti Git in futuro:
 - [PHP 8.x Nullsafe Operator](https://www.php.net/manual/en/migration80.new-features.php#migration80.new-features.nullsafe-operator)
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 
 - [PHPStan Documentation](https://phpstan.org/user-guide/getting-started) 
 =======
 >>>>>>> aurmich/dev
+=======
+
+- [PHPStan Documentation](https://phpstan.org/user-guide/getting-started) 
+=======
+>>>>>>> 71911a6 (.)
 =======
 - [PHPStan Documentation](https://phpstan.org/user-guide/getting-started)  aurmich/dev
 >>>>>>> be786ab (.)
@@ -512,9 +584,13 @@ I problemi di conflitto nei file relativi all'integrazione di FFmpeg erano princ
 
 Per maggiori dettagli, consultare il [documento dedicato alla risoluzione dei conflitti FFmpeg](risoluzione_conflitti_ffmpeg.md). 
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 =======
 >>>>>>> aurmich/dev
+=======
+
+>>>>>>> 71911a6 (.)
 >>>>>>> aurmich/dev
 =======
  aurmich/dev
