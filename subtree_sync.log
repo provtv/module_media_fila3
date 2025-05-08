@@ -87,9 +87,14 @@
 >>>>>>> f1e6147 (.)
 [0;34mℹ️ [2025-05-07 21:05:18] Configurazione avanzata git...[0m
 [0;32m✅ [2025-05-07 21:05:18] Configurazione git completata con successo[0m
+<<<<<<< HEAD
 =======
 [0;34mℹ️ [2025-05-08 09:21:37] Configurazione avanzata git...[0m
 [0;32m✅ [2025-05-08 09:21:37] Configurazione git completata con successo[0m
 >>>>>>> e27d9a8 (.)
 [0;34mℹ️ [2025-05-08 09:25:47] Configurazione avanzata git...[0m
 [0;32m✅ [2025-05-08 09:25:47] Configurazione git completata con successo[0m
+=======
+[0;34mℹ️ [2025-05-08 21:20:17] Configurazione avanzata git...[0m
+[0;32m✅ [2025-05-08 21:20:17] Configurazione git completata con successo[0m
+>>>>>>> c2e1716 (.)
