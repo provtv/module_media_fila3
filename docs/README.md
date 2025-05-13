@@ -323,3 +323,20 @@ $media->convert('thumb', [
 
 ---
 
+## Server MCP consigliati per Media
+
+Per il modulo Media, si consiglia di utilizzare i seguenti server MCP:
+
+- **sequential-thinking**: per orchestrare workflow di gestione media, automazione di processi di upload/download e revisione di asset multimediali.
+- **memory**: per mantenere una knowledge base di file, immagini, video e storico delle operazioni media.
+- **filesystem**: per esportare/importare file, immagini, video o gestire backup di asset multimediali.
+- **postgres**: se il modulo utilizza un database PostgreSQL per archiviare metadati, log o riferimenti a file media.
+- **puppeteer**: per automatizzare scraping di immagini/video da web, generazione di thumbnail, esportazione PDF o test di visualizzazione media.
+
+**Nota:**
+- Usa solo server MCP Node.js disponibili su npm e avviabili con `npx`.
+- Configura sempre gli argomenti obbligatori (es. directory per filesystem, stringa di connessione per postgres).
+- Non usare fetch, mysql o redis se non attivo.
+
+Per dettagli e best practice consulta la guida generale MCP nel workspace.
+
