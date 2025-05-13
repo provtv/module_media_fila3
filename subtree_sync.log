@@ -1,4 +1,5 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 [0;34mℹ️ [2025-05-09 22:10:03] Configurazione avanzata git...[0m
 [0;32m✅ [2025-05-09 22:10:03] Configurazione git completata con successo[0m
 [0;34mℹ️ [2025-05-12 22:18:37] Configurazione avanzata git...[0m
@@ -47,3 +48,46 @@
 >>>>>>> 53cab44 (.)
 [0;34mℹ️ [2025-05-13 10:39:17] Configurazione avanzata git...[0m
 [0;32m✅ [2025-05-13 10:39:17] Configurazione git completata con successo[0m
+=======
+📆 2025-04-24 08:39:27 - 🔧 Configurazione git di base...
+📆 2025-04-24 08:39:27 - ✅ Configurazione git completata
+📆 2025-04-24 10:29:41 - 🔧 Configurazione git di base...
+📆 2025-04-24 10:29:41 - ✅ Configurazione git completata
+📆 2025-04-24 12:45:31 - 🔧 Configurazione git di base...
+📆 2025-04-24 12:45:31 - ✅ Configurazione git completata
+📆 2025-04-24 15:12:46 - 🔧 Configurazione git di base...
+📆 2025-04-24 15:12:46 - ✅ Configurazione git completata
+📆 2025-04-24 17:17:01 - 🔧 Configurazione git di base...
+📆 2025-04-24 17:17:01 - ✅ Configurazione git completata
+📆 2025-04-30 17:10:09 - 🔧 Configurazione git di base...
+📆 2025-04-30 17:10:09 - ✅ Configurazione git completata
+📆 2025-04-30 18:10:11 - 🔧 Configurazione git di base...
+📆 2025-04-30 18:10:11 - ✅ Configurazione git completata
+📆 2025-04-30 18:16:41 - 🔧 Configurazione git di base...
+📆 2025-04-30 18:16:41 - ✅ Configurazione git completata
+📆 2025-04-30 19:19:30 - 🔧 Configurazione git di base...
+📆 2025-04-30 19:19:30 - ✅ Configurazione git completata
+📆 2025-05-02 15:56:52 - 🔧 Configurazione git di base...
+📆 2025-05-02 15:56:52 - ✅ Configurazione git completata📆 2025-05-05 10:41:02 - 🔧 Configurazione git di base...
+📆 2025-05-05 10:41:02 - ✅ Configurazione git completata
+📆 2025-05-05 10:47:12 - 🔧 Configurazione git di base...
+📆 2025-05-05 10:47:12 - ✅ Configurazione git completata📆 2025-05-05 22:55:32 - 🔧 Configurazione git di base...
+📆 2025-05-05 22:55:32 - ✅ Configurazione git completata[0;34mℹ️ [2025-04-22 13:13:39] Inizializzazione repository locale[0m
+[0;34mℹ️ [2025-04-22 13:13:39] Creazione branch main[0m
+[0;34mℹ️ [2025-04-22 13:13:39] Configurazione remote origin[0m
+[0;34mℹ️ [2025-04-22 13:13:40] Fetch da remote[0m
+[0;34mℹ️ [2025-04-22 13:14:21] Commit dei file locali[0m
+[0;34mℹ️ [2025-04-22 13:14:21] Merge con remote[0m
+[0;34mℹ️ [2025-04-22 13:14:23] Commit finale e push[0m
+[0;34mℹ️ [2025-04-22 13:14:25] Pulizia repository locale[0m
+📆 2025-05-06 08:55:27 - 🔧 Configurazione git di base...
+📆 2025-05-06 08:55:27 - ✅ Configurazione git completata
+[0;34mℹ️ [2025-05-06 11:27:37] Configurazione avanzata git...[0m
+[0;32m✅ [2025-05-06 11:27:37] Configurazione git completata con successo[0m
+[0;34mℹ️ [2025-05-06 11:49:19] Configurazione avanzata git...[0m
+[0;32m✅ [2025-05-06 11:49:19] Configurazione git completata con successo[0m
+[0;34mℹ️ [2025-05-06 14:03:31] Configurazione avanzata git...[0m
+[0;32m✅ [2025-05-06 14:03:31] Configurazione git completata con successo[0m
+[0;34mℹ️ [2025-05-13 10:46:15] Configurazione avanzata git...[0m
+[0;32m✅ [2025-05-13 10:46:15] Configurazione git completata con successo[0m
+>>>>>>> b677b6c (.)
