@@ -83,6 +83,7 @@ Questa soluzione mantiene la funzionalità originale migliorando al contempo la 
 
 
 
+<<<<<<< HEAD
 =======
 
 **Problema**: Diversi file del modulo Media contenevano conflitti di merge non risolti, indicati da marcatori `` e `aurmich/dev
@@ -103,6 +104,19 @@ aurmich/dev
 =======
 >>>>>>> aurmich/dev
 >>>>>>> aurmich/dev
+=======
+
+**Problema**: Diversi file del modulo Media contenevano conflitti di merge non risolti, indicati da marcatori `` e `aurmich/dev
+
+
+**Problema**: Diversi file del modulo Media contenevano conflitti di merge non risolti, indicati da marcatori `` e `>>>>>>> origin/dev`. Questi conflitti impedivano la corretta esecuzione del codice e causavano errori di sintassi.
+
+**Problema**: Diversi file del modulo Media contenevano conflitti di merge non risolti, indicati da marcatori `` e `>>>>>>> origin/dev`. Questi conflitti impedivano la corretta esecuzione del codice e causavano errori di sintassi.
+aurmich/dev
+
+**Problema**: Diversi file del modulo Media contenevano conflitti di merge non risolti, indicati da marcatori `` e `aurmich/dev
+
+>>>>>>> a316777 (.)
 
 **Soluzione implementata**:
 1. Analisi sistematica dei conflitti di merge in ciascun file
@@ -117,7 +131,10 @@ aurmich/dev
 - `MediaRelationManager.php`
 - `PHPSTAN_LEVEL10_FIXES.md`
 
+<<<<<<< HEAD
 >>>>>>> 5770259 (.)
+=======
+>>>>>>> a316777 (.)
 ## Principi Applicati
 
 1. **Uso appropriato di PHPDoc per tipi speciali**: Quando PHP non supporta nativamente un tipo (come `resource`), utilizzare annotazioni PHPDoc per fornire informazioni di tipo a PHPStan.

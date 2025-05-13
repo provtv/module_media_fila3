@@ -107,7 +107,10 @@ public function getFileAttribute(?string $value): ?string
 ### 5. SubtitleService.php
 
 
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> a316777 (.)
 
 **Problema**: Conflitto nella modalità di aggiornamento del modello Eloquent nel metodo `upateModel()`. Le versioni in conflitto differivano nella gestione dell'assegnazione e nell'utilizzo di `tap($this->model)->update($up)`.
 
@@ -151,15 +154,21 @@ public function getFromXml(): array
  */
 public function getFromXml($xmlFile)
 
+<<<<<<< HEAD
 =======
 >>>>>>> aurmich/dev
 >>>>>>> 5770259 (.):docs/CONFLITTI_MERGE_RISOLTI.md
+=======
+>>>>>>> a316777 (.)
 ```
 
 ### 6. ConvertVideoAction.php
 
 
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> a316777 (.)
 
 **Problema**: Conflitto nella gestione degli import e nella struttura del metodo execute. Le versioni in conflitto differivano nell'ordine degli import e nella presenza di linee vuote superflue tra i blocchi di codice.
 
@@ -184,9 +193,12 @@ Per approfondimenti generali sulle strategie di risoluzione dei conflitti, fare 
 
 ### 7. VideoStream.php
 
+<<<<<<< HEAD
 =======
 >>>>>>> aurmich/dev
 >>>>>>> 5770259 (.):docs/CONFLITTI_MERGE_RISOLTI.md
+=======
+>>>>>>> a316777 (.)
 
 **Problema**: Conflitto nella costruzione e inizializzazione del servizio VideoStream, con differenze nell'implementazione delle tipizzazioni e nel metodo di ottenere il MIME type.
 
@@ -219,7 +231,10 @@ public function __construct(string $disk, string $path)
 
 
 ### 8. MediaResource.php
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> a316777 (.)
 
 ### 7. MediaResource.php
 ### 8. MediaResource.php
@@ -257,7 +272,10 @@ public static function getFormSchema(): array
 
 
 ### 9. test.blade.php
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> a316777 (.)
 
 ### 8. test.blade.php
 ### 9. test.blade.php
@@ -288,7 +306,10 @@ public static function getFormSchema(): array
 
 
 ### 10. MediaConvertResource.php
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> a316777 (.)
 
 ### 9. MediaConvertResource.php
 ### 10. MediaConvertResource.php
@@ -331,7 +352,10 @@ Per dettagli completi sulla risoluzione di MediaConvertResource, vedere [documen
 
 
 ### 11. Merge.php
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> a316777 (.)
 
 ### 10. Merge.php
 ### 11. Merge.php
@@ -341,7 +365,10 @@ Per dettagli completi sulla risoluzione di MediaConvertResource, vedere [documen
 **Intento funzionale**: Garantire una composizione orizzontale delle immagini robusta, efficiente e compatibile con la pipeline Media, mantenendo la massima leggibilità e manutenibilità del codice.
 
 
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> a316777 (.)
 
 **Decisione architetturale**: È stata adottata la versione che utilizza il driver Gd di Intervention Image, con gestione esplicita delle dimensioni della canvas e posizionamento progressivo delle immagini. La soluzione mantiene la compatibilità con l’ecosistema Laravel e assicura la massima chiarezza del flusso di composizione.
 
@@ -358,9 +385,12 @@ Per approfondimenti generali sulle strategie di risoluzione dei conflitti, fare 
 
 ### 12. VideoEntry.php
 
+<<<<<<< HEAD
 =======
 >>>>>>> aurmich/dev
 >>>>>>> 5770259 (.):docs/CONFLITTI_MERGE_RISOLTI.md
+=======
+>>>>>>> a316777 (.)
 
 **Problema**: Conflitto nell'implementazione del componente VideoEntry, con differenze nella gestione dei tipi e nella formattazione.
 
@@ -399,7 +429,10 @@ Per prevenire o gestire meglio i conflitti Git in futuro:
 - [Documentazione Laravel FFMpeg](https://github.com/protonemedia/laravel-ffmpeg)
 - [PHP 8.x Nullsafe Operator](https://www.php.net/manual/en/migration80.new-features.php#migration80.new-features.nullsafe-operator)
 
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> a316777 (.)
 
 - [PHPStan Documentation](https://phpstan.org/user-guide/getting-started) 
 - [PHPStan Documentation](https://phpstan.org/user-guide/getting-started)
@@ -440,6 +473,9 @@ Per maggiori dettagli, consultare il [documento dedicato alla risoluzione dei co
 * [conflitti_merge_risolti.md](../../Xot/docs/conflitti_merge_risolti.md)
 * [conflitti_merge_risolti.md](../../UI/docs/conflitti_merge_risolti.md)
 
+<<<<<<< HEAD
 =======
 >>>>>>> aurmich/dev
 >>>>>>> 5770259 (.):docs/CONFLITTI_MERGE_RISOLTI.md
+=======
+>>>>>>> a316777 (.)

@@ -15,6 +15,7 @@ aurmich/dev
 
 
 
+<<<<<<< HEAD
 =======
 =======
 
@@ -30,6 +31,13 @@ aurmich/dev
 >>>>>>> aurmich/dev
 >>>>>>> aurmich/dev
 >>>>>>> 5770259 (.)
+=======
+
+
+
+aurmich/dev
+
+>>>>>>> a316777 (.)
 ## Informazioni Generali
 - **Nome**: `laraxot/module_media_fila3`
 - **Descrizione**: Modulo dedicato alla gestione di immagini e video
@@ -53,6 +61,7 @@ app/
 ### Versione HEAD
 
 
+<<<<<<< HEAD
 =======
 
 =======
@@ -60,6 +69,10 @@ app/
 =======
 >>>>>>> aurmich/dev
 >>>>>>> 5770259 (.)
+=======
+
+
+>>>>>>> a316777 (.)
 ## Aggiornamenti Recenti
 
 ### Risoluzione Conflitti Git
@@ -83,12 +96,16 @@ Per maggiori dettagli, consultare il [Rapporto sulla Risoluzione dei Conflitti](
 
 ---
 
+<<<<<<< HEAD
 =======
 
 =======
 >>>>>>> aurmich/dev
 >>>>>>> aurmich/dev
 >>>>>>> 5770259 (.)
+=======
+
+>>>>>>> a316777 (.)
 ## Dipendenze
 ### Pacchetti Required
 - PHP ^8.2
@@ -170,15 +187,23 @@ composer format        # Formatta il codice
 
 
 
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> a316777 (.)
 ## Changelog
 ### Versione HEAD
 
 Le modifiche vengono tracciate nel repository GitHub.
+<<<<<<< HEAD
 =======
 
 
 >>>>>>> 5770259 (.)
+=======
+
+
+>>>>>>> a316777 (.)
 ## Changelog
 Le modifiche vengono tracciate nel repository GitHub. 
 
@@ -300,7 +325,10 @@ Le modifiche vengono tracciate nel repository GitHub.
 ---
 
 
+<<<<<<< HEAD
 =======
 >>>>>>> aurmich/dev
 >>>>>>> aurmich/dev
 >>>>>>> 5770259 (.)
+=======
+>>>>>>> a316777 (.)
