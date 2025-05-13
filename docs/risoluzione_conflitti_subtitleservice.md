@@ -6,11 +6,6 @@
 ## Cosa
 
 - Rimozione dei marker di conflitto .
-<<<<<<< HEAD
-=======
-=======
->>>>>>> a316777 (.)
-- Rimozione dei marker di conflitto (``, `=======`, `>>>>>>> aurmich/dev`).
 
 - Eliminazione delle righe duplicate e delle linee vuote ridondanti.
 - Mantenimento dell'utilizzo di `tap($this->model)->update($up)` per garantire coerenza e robustezza.
