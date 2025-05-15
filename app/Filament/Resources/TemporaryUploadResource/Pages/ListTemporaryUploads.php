@@ -24,7 +24,11 @@ class ListTemporaryUploads extends XotBaseListRecords
     /**
      * @return array<string, TextColumn>
      */
+<<<<<<< HEAD
     public function getTableColumns(): array
+=======
+    public function getListTableColumns(): array
+>>>>>>> 2f8e9ec (.)
     {
         return [
             'folder' => TextColumn::make('folder')

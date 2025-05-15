@@ -1,5 +1,6 @@
 <?php
 
+<<<<<<< HEAD
 return array (
   'navigation' => 
   array (
@@ -20,3 +21,13 @@ return array (
     ),
   ),
 );
+=======
+return [
+    'navigation' => [
+        'label' => 'media convert',
+        'group' => 'media convert',
+        'icon' => 'media convert',
+        'sort' => 20,
+    ],
+];
+>>>>>>> 2f8e9ec (.)

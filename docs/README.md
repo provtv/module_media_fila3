@@ -323,6 +323,7 @@ $media->convert('thumb', [
 
 ---
 
+<<<<<<< HEAD
 ## Server MCP consigliati per Media
 
 Per il modulo Media, si consiglia di utilizzare i seguenti server MCP:
@@ -340,3 +341,5 @@ Per il modulo Media, si consiglia di utilizzare i seguenti server MCP:
 
 Per dettagli e best practice consulta la guida generale MCP nel workspace.
 
+=======
+>>>>>>> 2f8e9ec (.)
