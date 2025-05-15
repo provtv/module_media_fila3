@@ -1,15 +1,12 @@
 # Analisi PHPStan per il modulo Media
 
-Data: Wed Apr 23 21:22:52 CEST 2025
+Data: Wed Apr 23 10:44:04 CEST 2025
 
 ## Riassunto
 
 | Livello | Stato | Errori |
 |---------|-------|--------|
-| 1 | ✅ Successo | Nessun errore |
-| 2 | ✅ Successo | Nessun errore |
-| 3 | ✅ Successo | Nessun errore |
-| 4 | ❌ Errore | Errore di esecuzione |
+| 1 | ❌ Errore | Errore di esecuzione |
 ## Collegamenti
 
 - [Report Generale](/docs/phpstan/README.md)
