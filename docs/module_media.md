@@ -1,5 +1,6 @@
 # Modulo Media
 
+<<<<<<< Updated upstream
 <<<<<<< HEAD
 > **Collegamento globale:** Per le strategie generali e le best practices sulla risoluzione dei conflitti git, vedi [docs/git_conflict_resolution.md](../../../../docs/git_conflict_resolution.md).
 
@@ -35,6 +36,10 @@ aurmich/dev
 >>>>>>> aurmich/dev
 >>>>>>> 5770259 (.)
 >>>>>>> 2f8e9ec (.)
+=======
+> **Collegamento globale:** Per le strategie generali e le best practices sulla risoluzione dei conflitti git, vedi [docs/git_conflict_resolution.md](../../../../docs/git_conflict_resolution.md).
+
+>>>>>>> Stashed changes
 ## Informazioni Generali
 - **Nome**: `laraxot/module_media_fila3`
 - **Descrizione**: Modulo dedicato alla gestione di immagini e video
@@ -55,6 +60,7 @@ app/
 └── Services/       # Servizi media
 ```
 
+<<<<<<< Updated upstream
 <<<<<<< HEAD
 =======
 ### Versione HEAD
@@ -68,6 +74,8 @@ app/
 >>>>>>> aurmich/dev
 >>>>>>> 5770259 (.)
 >>>>>>> 2f8e9ec (.)
+=======
+>>>>>>> Stashed changes
 ## Aggiornamenti Recenti
 
 ### Risoluzione Conflitti Git
@@ -83,6 +91,7 @@ Sono stati risolti importanti conflitti di merge in diversi file critici del mod
 
 La risoluzione ha puntato a mantenere la coerenza del codice, evitando duplicazioni e garantendo il corretto funzionamento delle funzionalità di gestione media e del sistema di registrazione componenti.
 
+<<<<<<< Updated upstream
 <<<<<<< HEAD
 Per maggiori dettagli, consultare la [documentazione locale sulla risoluzione dei conflitti](./conflitti_merge_risolti.md) e la [documentazione globale](../../../../docs/git_conflict_resolution.md).
 =======
@@ -226,6 +235,9 @@ app/
 └── Services/       # Servizi media
 ```
 >>>>>>> 2f8e9ec (.)
+=======
+Per maggiori dettagli, consultare la [documentazione locale sulla risoluzione dei conflitti](./conflitti_merge_risolti.md) e la [documentazione globale](../../../../docs/git_conflict_resolution.md).
+>>>>>>> Stashed changes
 
 ## Dipendenze
 ### Pacchetti Required
@@ -307,6 +319,7 @@ composer format        # Formatta il codice
    - Verificare supporto GD/Imagick
 
 ## Changelog
+<<<<<<< Updated upstream
 <<<<<<< HEAD
 Le modifiche vengono tracciate nel repository GitHub.
 
@@ -324,3 +337,10 @@ Le modifiche vengono tracciate nel repository GitHub.
 >>>>>>> aurmich/dev
 >>>>>>> 5770259 (.)
 >>>>>>> 2f8e9ec (.)
+=======
+Le modifiche vengono tracciate nel repository GitHub.
+
+---
+
+> **Collegamento globale:** Questa documentazione locale dettaglia i casi concreti e le decisioni architetturali adottate nel modulo Media. Per le strategie generali e le best practices, consulta sempre anche la documentazione globale in [docs/git_conflict_resolution.md](../../../../docs/git_conflict_resolution.md).
+>>>>>>> Stashed changes

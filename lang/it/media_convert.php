@@ -1,6 +1,9 @@
 <?php
 
+<<<<<<< Updated upstream
 <<<<<<< HEAD
+=======
+>>>>>>> Stashed changes
 return array (
   'navigation' => 
   array (
@@ -21,6 +24,7 @@ return array (
     ),
   ),
 );
+<<<<<<< Updated upstream
 =======
 return [
     'navigation' => [
@@ -31,3 +35,5 @@ return [
     ],
 ];
 >>>>>>> 2f8e9ec (.)
+=======
+>>>>>>> Stashed changes

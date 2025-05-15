@@ -6,11 +6,14 @@
 ## Cosa
 
 - Rimozione dei marker di conflitto .
+<<<<<<< Updated upstream
 <<<<<<< HEAD
 =======
 =======
 - Rimozione dei marker di conflitto (``, `=======`, `>>>>>>> aurmich/dev`).
 >>>>>>> 2f8e9ec (.)
+=======
+>>>>>>> Stashed changes
 
 - Eliminazione delle righe duplicate e delle linee vuote ridondanti.
 - Mantenimento dell'utilizzo di `tap($this->model)->update($up)` per garantire coerenza e robustezza.
