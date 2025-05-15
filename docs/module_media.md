@@ -1,11 +1,14 @@
 # Modulo Media
 
+<<<<<<< Updated upstream
 <<<<<<< HEAD
 =======
 <<<<<<< HEAD
 <<<<<<< Updated upstream
 <<<<<<< HEAD
 >>>>>>> ffd5433 (.)
+=======
+>>>>>>> Stashed changes
 > **Collegamento globale:** Per le strategie generali e le best practices sulla risoluzione dei conflitti git, vedi [docs/git_conflict_resolution.md](../../../../docs/git_conflict_resolution.md).
 
 ## Informazioni Generali
@@ -44,6 +47,7 @@ Sono stati risolti importanti conflitti di merge in diversi file critici del mod
 La risoluzione ha puntato a mantenere la coerenza del codice, evitando duplicazioni e garantendo il corretto funzionamento delle funzionalità di gestione media e del sistema di registrazione componenti.
 
 Per maggiori dettagli, consultare la [documentazione locale sulla risoluzione dei conflitti](./conflitti_merge_risolti.md) e la [documentazione globale](../../../../docs/git_conflict_resolution.md).
+<<<<<<< Updated upstream
 <<<<<<< HEAD
 =======
 =======
@@ -51,16 +55,9 @@ Per maggiori dettagli, consultare il [Rapporto sulla Risoluzione dei Conflitti](
 
 
 ### Versione Incoming
-
-
----
-
 =======
+>>>>>>> Stashed changes
 
-=======
->>>>>>> aurmich/dev
->>>>>>> aurmich/dev
->>>>>>> 5770259 (.)
 ## Dipendenze
 ### Pacchetti Required
 - PHP ^8.2
@@ -140,10 +137,8 @@ composer format        # Formatta il codice
    - Controllare log di sistema
    - Verificare supporto GD/Imagick
 
-
-
-=======
 ## Changelog
+<<<<<<< Updated upstream
 ### Versione HEAD
 
 Le modifiche vengono tracciate nel repository GitHub.
@@ -371,11 +366,14 @@ Le modifiche vengono tracciate nel repository GitHub.
 >>>>>>> 5770259 (.)
 >>>>>>> 2f8e9ec (.)
 =======
+=======
+>>>>>>> Stashed changes
 Le modifiche vengono tracciate nel repository GitHub.
 
 ---
 
 > **Collegamento globale:** Questa documentazione locale dettaglia i casi concreti e le decisioni architetturali adottate nel modulo Media. Per le strategie generali e le best practices, consulta sempre anche la documentazione globale in [docs/git_conflict_resolution.md](../../../../docs/git_conflict_resolution.md).
+<<<<<<< Updated upstream
 >>>>>>> Stashed changes
 =======
 ## Analisi PHPStan
@@ -407,3 +405,5 @@ L'analisi statica del codice con PHPStan ha identificato diverse aree di miglior
 Le modifiche vengono tracciate nel repository GitHub. 
 >>>>>>> e876fa3 (.)
 >>>>>>> ffd5433 (.)
+=======
+>>>>>>> Stashed changes

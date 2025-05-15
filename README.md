@@ -1,8 +1,5 @@
-<<<<<<< HEAD
 ### Versione HEAD
 
-=======
->>>>>>> e876fa3 (.)
 # 🎉 Unlock the Power of Media with Fila3 Module! 🚀
 
 ![GitHub issues](https://img.shields.io/github/issues/laraxot/module_media_fila3)
@@ -63,7 +60,6 @@ This project is licensed under the MIT License - see the LICENSE file for detail
 👤 Author
 Marco Sottana
 Check out more of my work at marco76tv!
-<<<<<<< HEAD
 
 ### Versione Incoming
 
@@ -186,5 +182,3 @@ Este proyecto está distribuido bajo la licencia MIT. Ver el archivo [LICENSE](L
 
 ---
 
-=======
->>>>>>> e876fa3 (.)

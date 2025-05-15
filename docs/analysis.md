@@ -58,7 +58,6 @@ Modules/Media/
 - Integration tests with dependent modules
 - Security testing
 - Performance testing
-<<<<<<< HEAD
 ### Versione HEAD
 
 
@@ -83,5 +82,3 @@ Modules/Media/
 
 ---
 
-=======
->>>>>>> e876fa3 (.)

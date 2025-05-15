@@ -22,11 +22,6 @@ use Webmozart\Assert\Assert;
 
 /**
  * Classe per convertire video utilizzando MediaConvert e tenere traccia del progresso.
-<<<<<<< HEAD
-=======
- * 
- * @method \ProtoneMedia\LaravelFFMpeg\Drivers\PHPFFMpeg inFormat(DefaultVideo $format)
->>>>>>> e876fa3 (.)
  */
 class ConvertVideoByMediaConvertAction
 {

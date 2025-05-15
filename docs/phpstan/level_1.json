@@ -1,3 +1,4 @@
+<<<<<<< Updated upstream
 <<<<<<< HEAD
 Note: Using configuration file /var/www/html/_bases/base_quaeris_fila3_mono/laravel/phpstan.neon.
   0/76 [░░░░░░░░░░░░░░░░░░░░░░░░░░░░]   0%[1G[2K 20/76 [▓▓▓▓▓▓▓░░░░░░░░░░░░░░░░░░░░░]  26%[1G[2K 40/76 [▓▓▓▓▓▓▓▓▓▓▓▓▓▓░░░░░░░░░░░░░░]  52%[1G[2K 60/76 [▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓░░░░░░]  78%[1G[2K 76/76 [▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓] 100%
@@ -6,3 +7,9 @@ Note: Using configuration file /var/www/html/_bases/base_quaeris_fila3_mono/lara
 =======
 {"totals":{"errors":0,"file_errors":1},"files":{"/var/www/html/_bases/base_quaeris_fila3_mono/laravel/Modules/Media/app/Actions/Video/ConvertVideoAction.php":{"errors":1,"messages":[{"message":"Class ProtoneMedia\\LaravelFFMpeg\\FFMpeg\\MediaExporter not found.","line":54,"ignorable":true,"tip":"Learn more at https://phpstan.org/user-guide/discovering-symbols","identifier":"class.notFound"}]}},"errors":[]}
 >>>>>>> ffd5433 (.)
+=======
+Note: Using configuration file /var/www/html/_bases/base_quaeris_fila3_mono/laravel/phpstan.neon.
+  0/76 [░░░░░░░░░░░░░░░░░░░░░░░░░░░░]   0%[1G[2K 20/76 [▓▓▓▓▓▓▓░░░░░░░░░░░░░░░░░░░░░]  26%[1G[2K 40/76 [▓▓▓▓▓▓▓▓▓▓▓▓▓▓░░░░░░░░░░░░░░]  52%[1G[2K 60/76 [▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓░░░░░░]  78%[1G[2K 76/76 [▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓] 100%
+
+{"totals":{"errors":0,"file_errors":0},"files":{},"errors":[]}
+>>>>>>> Stashed changes

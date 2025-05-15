@@ -22,6 +22,7 @@ class ListMedia extends XotBaseListRecords
     /**
      * @return array<string, Tables\Columns\Column>
      */
+<<<<<<< Updated upstream
 <<<<<<< HEAD
     public function getTableColumns(): array
 =======
@@ -39,6 +40,9 @@ class ListMedia extends XotBaseListRecords
     public function getListTableColumns(): array
 >>>>>>> e876fa3 (.)
 >>>>>>> ffd5433 (.)
+=======
+    public function getTableColumns(): array
+>>>>>>> Stashed changes
     {
         return [
             'id' => TextColumn::make('id')

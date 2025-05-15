@@ -46,12 +46,8 @@ class YourResource extends Resource
 - Rimossi conflitti di merge
 - Migliorata la documentazione del codice
 - Aggiunta tipizzazione stretta
-<<<<<<< HEAD
 - Implementata integrazione Laraxot 
 ## Collegamenti tra versioni di media-relation-manager.md
 * [media-relation-manager.md](../../../Media/docs/filament/relation-managers/media-relation-manager.md)
 * [media-relation-manager.md](../../../Media/docs/resources/media-relation-manager.md)
 
-=======
-- Implementata integrazione Laraxot 
->>>>>>> e876fa3 (.)

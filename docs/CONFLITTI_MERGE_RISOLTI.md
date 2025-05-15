@@ -106,7 +106,6 @@ public function getFileAttribute(?string $value): ?string
 
 ### 5. SubtitleService.php
 
-<<<<<<< HEAD
 **Problema**: Conflitto nella modalità di aggiornamento del modello Eloquent nel metodo `upateModel()`. Le versioni in conflitto differivano nella gestione dell'assegnazione e nell'utilizzo di `tap($this->model)->update($up)`.
 
 **Intento funzionale**: Garantire che il modello venga aggiornato in modo atomico e che l'istanza aggiornata venga sempre assegnata correttamente alla proprietà. L'obiettivo è mantenere la robustezza, evitare duplicazioni e assicurare coerenza con il resto della codebase.
@@ -118,11 +117,6 @@ Per approfondimenti generali sulle strategie di risoluzione dei conflitti, fare 
 ---
 
 **Collegamento bidirezionale:** questo file è referenziato anche nella documentazione principale in `/docs/risoluzione_conflitti_git.md`.
-=======
-**Problema**: Conflitto nella definizione dei tipi di ritorno PHPDoc per il metodo `getFromXml()` con diverse versioni di tipizzazione dei dati.
-
-**Soluzione**: È stata adottata la versione con la tipizzazione più dettagliata e completa, preservando anche il commento psalm che fornisce informazioni più specifiche sulla struttura dell'array.
->>>>>>> e876fa3 (.)
 
 ```php
 /**
@@ -136,7 +130,6 @@ public function getFromXml(): array
 }
 ```
 
-<<<<<<< HEAD
 **Problema**: Conflitto nella definizione dei tipi di ritorno PHPDoc per il metodo `getFromXml()` con diverse versioni di tipizzazione dei dati.
 
 **Soluzione**: È stata adottata la versione con la tipizzazione più dettagliata e completa, preservando anche il commento psalm che fornisce informazioni più specifiche sulla struttura dell'array.
@@ -187,10 +180,6 @@ Per approfondimenti generali sulle strategie di risoluzione dei conflitti, fare 
 
 ### 7. VideoStream.php
 
-=======
-### 6. VideoStream.php
-
->>>>>>> e876fa3 (.)
 **Problema**: Conflitto nella costruzione e inizializzazione del servizio VideoStream, con differenze nell'implementazione delle tipizzazioni e nel metodo di ottenere il MIME type.
 
 **Soluzione**: È stata adottata la versione più robusta che determina il MIME type in base all'estensione del file anziché utilizzare il metodo `mimeType()` di Laravel. Questo approccio è più efficiente e riduce la dipendenza da metodi esterni potenzialmente instabili.
@@ -220,11 +209,7 @@ public function __construct(string $disk, string $path)
 }
 ```
 
-<<<<<<< HEAD
 ### 8. MediaResource.php
-=======
-### 7. MediaResource.php
->>>>>>> e876fa3 (.)
 
 **Problema**: Conflitto nella struttura dello schema del form per la risorsa Media, con differenze nell'uso di chiavi nominate vs componenti Filament direttamente.
 
@@ -257,11 +242,7 @@ public static function getFormSchema(): array
 }
 ```
 
-<<<<<<< HEAD
 ### 9. test.blade.php
-=======
-### 8. test.blade.php
->>>>>>> e876fa3 (.)
 
 **Problema**: Conflitto nelle variabili utilizzate nel template Blade per accedere alle proprietà degli oggetti, con errori di sintassi nelle proprietà.
 
@@ -287,11 +268,7 @@ public static function getFormSchema(): array
 @endforeach
 ```
 
-<<<<<<< HEAD
 ### 10. MediaConvertResource.php
-=======
-### 9. MediaConvertResource.php
->>>>>>> e876fa3 (.)
 
 **Problema**: Conflitto tra tre versioni della stessa risorsa Filament, con differenze nell'implementazione dello schema del form e nella navigazione.
 
@@ -329,7 +306,6 @@ public static function getFormSchema(): array
 
 Per dettagli completi sulla risoluzione di MediaConvertResource, vedere [documentazione dedicata](../../../../docs/media_convert_resource_conflict.md).
 
-<<<<<<< HEAD
 ### 11. Merge.php
 
 **Problema**: Conflitti storici nella gestione dei driver di Intervention Image, nella modalità di composizione delle immagini e nella gestione dei parametri di input/output.
@@ -352,10 +328,6 @@ Per approfondimenti generali sulle strategie di risoluzione dei conflitti, fare 
 
 ### 12. VideoEntry.php
 
-=======
-### 10. VideoEntry.php
-
->>>>>>> e876fa3 (.)
 **Problema**: Conflitto nell'implementazione del componente VideoEntry, con differenze nella gestione dei tipi e nella formattazione.
 
 **Soluzione**: È stata adottata l'implementazione più robusta con controlli di tipo completi e documentazione dettagliata, mantenendo la coerenza stilistica senza linee vuote superflue. Per dettagli completi, vedere [documentazione dedicata](./risoluzione_conflitti_video_entry.md).
@@ -392,7 +364,6 @@ Per prevenire o gestire meglio i conflitti Git in futuro:
 
 - [Documentazione Laravel FFMpeg](https://github.com/protonemedia/laravel-ffmpeg)
 - [PHP 8.x Nullsafe Operator](https://www.php.net/manual/en/migration80.new-features.php#migration80.new-features.nullsafe-operator)
-<<<<<<< HEAD
 
 - [PHPStan Documentation](https://phpstan.org/user-guide/getting-started)
 
@@ -419,6 +390,3 @@ I problemi di conflitto nei file relativi all'integrazione di FFmpeg erano princ
 ### Documentazione
 
 Per maggiori dettagli, consultare il [documento dedicato alla risoluzione dei conflitti FFmpeg](risoluzione_conflitti_ffmpeg.md).
-=======
-- [PHPStan Documentation](https://phpstan.org/user-guide/getting-started) 
->>>>>>> e876fa3 (.)

@@ -58,7 +58,6 @@
 - [CDN](packages/cdn.md)
 - [Performance](packages/performance.md)
 - [Integrazioni](packages/integrations.md) 
-<<<<<<< HEAD
 ### Versione HEAD
 
 
@@ -79,5 +78,3 @@
 
 ---
 
-=======
->>>>>>> e876fa3 (.)

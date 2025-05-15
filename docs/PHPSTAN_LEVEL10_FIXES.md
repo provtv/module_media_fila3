@@ -1,5 +1,6 @@
 # Correzioni PHPStan Livello 10 - Modulo Media
 
+<<<<<<< Updated upstream
 <<<<<<< HEAD
 > **Collegamento globale:** Per le strategie generali e le best practices sulla risoluzione dei conflitti git, vedi [docs/git_conflict_resolution.md](../../../../docs/git_conflict_resolution.md).
 
@@ -18,6 +19,10 @@
 =======
 >>>>>>> e876fa3 (.)
 >>>>>>> ffd5433 (.)
+=======
+> **Collegamento globale:** Per le strategie generali e le best practices sulla risoluzione dei conflitti git, vedi [docs/git_conflict_resolution.md](../../../../docs/git_conflict_resolution.md).
+
+>>>>>>> Stashed changes
 Questo documento traccia gli errori PHPStan di livello 10 identificati nel modulo Media e le relative soluzioni implementate.
 
 ## Errori Identificati
@@ -99,6 +104,7 @@ Questa soluzione mantiene la funzionalità originale migliorando al contempo la 
 
 ### 5. Risoluzione dei conflitti di merge nei file del modulo Media
 
+<<<<<<< Updated upstream
 <<<<<<< HEAD
 **Problema**: Diversi file del modulo Media contenevano conflitti di merge non risolti, indicati da marcatori git (`=======`, `>>>>>>>`, ecc.). Questi conflitti impedivano la corretta esecuzione del codice e causavano errori di sintassi.
 =======
@@ -137,6 +143,9 @@ aurmich/dev
 **Problema**: Diversi file del modulo Media contenevano conflitti di merge non risolti, indicati da marcatori . Questi conflitti impedivano la corretta esecuzione del codice e causavano errori di sintassi.
 >>>>>>> e876fa3 (.)
 >>>>>>> ffd5433 (.)
+=======
+**Problema**: Diversi file del modulo Media contenevano conflitti di merge non risolti, indicati da marcatori git (`=======`, `>>>>>>>`, ecc.). Questi conflitti impedivano la corretta esecuzione del codice e causavano errori di sintassi.
+>>>>>>> Stashed changes
 
 **Soluzione implementata**:
 1. Analisi sistematica dei conflitti di merge in ciascun file
@@ -151,6 +160,7 @@ aurmich/dev
 - `MediaRelationManager.php`
 - `PHPSTAN_LEVEL10_FIXES.md`
 
+<<<<<<< Updated upstream
 <<<<<<< HEAD
 =======
 <<<<<<< HEAD
@@ -164,22 +174,20 @@ aurmich/dev
 =======
 >>>>>>> e876fa3 (.)
 >>>>>>> ffd5433 (.)
+=======
+>>>>>>> Stashed changes
 ## Principi Applicati
 
 1. **Uso appropriato di PHPDoc per tipi speciali**: Quando PHP non supporta nativamente un tipo (come `resource`), utilizzare annotazioni PHPDoc per fornire informazioni di tipo a PHPStan.
 2. **Inizializzazione appropriata**: Inizializzare le proprietà con valori appropriati per il loro tipo.
 3. **Documentazione chiara**: Fornire commenti esplicativi che indicano lo scopo e il tipo atteso delle proprietà.
-<<<<<<< HEAD
-=======
-4. **Risoluzione sistematica dei conflitti**: Analizzare attentamente i conflitti di merge e risolverli mantenendo la versione più completa e documentata del codice.
-5. **Backup prima delle modifiche**: Creare backup dei file originali prima di apportare modifiche significative.
->>>>>>> e876fa3 (.)
 
 ## Prossimi Passi
 
 1. Completare la revisione di `SubtitleService.php` per risolvere i problemi di tipo complessi.
 2. Aggiornare il modello `Media.php` per specificare tipi più precisi per le proprietà attualmente documentate come `mixed`.
 3. Eseguire l'analisi PHPStan a livello 10 per verificare che le correzioni risolvano effettivamente gli errori.
+<<<<<<< Updated upstream
 <<<<<<< HEAD
 =======
 <<<<<<< HEAD
@@ -188,10 +196,13 @@ aurmich/dev
 =======
 >>>>>>> Stashed changes
 >>>>>>> ffd5433 (.)
+=======
+>>>>>>> Stashed changes
 4. Documentare pattern e soluzioni standard per gestire risorse di file e altri tipi speciali nel progetto.
 
 ---
 
+<<<<<<< Updated upstream
 <<<<<<< HEAD
 > **Collegamento globale:** Questa documentazione locale dettaglia i casi concreti e le decisioni architetturali adottate nel modulo Media. Per le strategie generali e le best practices, consulta sempre anche la documentazione globale in [docs/git_conflict_resolution.md](../../../../docs/git_conflict_resolution.md). 
 =======
@@ -208,3 +219,6 @@ aurmich/dev
 5. Documentare le procedure di risoluzione dei conflitti di merge per prevenire problemi simili in futuro.
 >>>>>>> e876fa3 (.)
 >>>>>>> ffd5433 (.)
+=======
+> **Collegamento globale:** Questa documentazione locale dettaglia i casi concreti e le decisioni architetturali adottate nel modulo Media. Per le strategie generali e le best practices, consulta sempre anche la documentazione globale in [docs/git_conflict_resolution.md](../../../../docs/git_conflict_resolution.md). 
+>>>>>>> Stashed changes
