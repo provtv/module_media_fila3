@@ -1,3 +1,4 @@
+<<<<<<< Updated upstream
 
 
 =======
@@ -39,3 +40,12 @@ aurmich/dev
 =======
 >>>>>>> aurmich/dev
 >>>>>>> aurmich/dev
+=======
+# Analisi PHPStan Livello 3 per il modulo Media
+
+Data: Wed Apr 23 21:23:14 CEST 2025
+
+## Nessun errore trovato
+
+Il modulo Media ha superato l'analisi PHPStan al livello 3 senza errori.
+>>>>>>> Stashed changes
