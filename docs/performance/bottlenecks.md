@@ -224,6 +224,7 @@ Implementare:
          );
    }
    ```
+<<<<<<< HEAD
 ### Versione HEAD
 
 
@@ -245,3 +246,5 @@ Implementare:
 
 ---
 
+=======
+>>>>>>> e876fa3 (.)

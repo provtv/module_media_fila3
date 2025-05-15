@@ -1,5 +1,13 @@
 <?php
 
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+<<<<<<< Updated upstream
+<<<<<<< HEAD
+=======
+>>>>>>> Stashed changes
+>>>>>>> ffd5433 (.)
 return array (
   'navigation' => 
   array (
@@ -20,3 +28,24 @@ return array (
     ),
   ),
 );
+<<<<<<< HEAD
+=======
+<<<<<<< Updated upstream
+=======
+=======
+>>>>>>> e876fa3 (.)
+return [
+    'navigation' => [
+        'label' => 'media convert',
+        'group' => 'media convert',
+        'icon' => 'media convert',
+        'sort' => 20,
+    ],
+];
+<<<<<<< HEAD
+>>>>>>> 2f8e9ec (.)
+=======
+>>>>>>> Stashed changes
+=======
+>>>>>>> e876fa3 (.)
+>>>>>>> ffd5433 (.)

@@ -75,6 +75,7 @@ Overall Module Completion: 60%
    - Query optimization
    - Cache implementation
    - Priority: High
+<<<<<<< HEAD
 ### Versione HEAD
 
 
@@ -102,3 +103,5 @@ Overall Module Completion: 60%
 
 ---
 
+=======
+>>>>>>> e876fa3 (.)

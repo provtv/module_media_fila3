@@ -10,21 +10,31 @@ use Filament\Tables\Actions\ActionGroup;
 use Illuminate\Database\Eloquent\Model;
 use Modules\Media\Filament\Resources\HasMediaResource\Actions\AddAttachmentAction;
 use Modules\Media\Filament\Resources\MediaResource;
+<<<<<<< HEAD
 use Modules\Xot\Filament\Resources\XotBaseResource\RelationManagers\XotBaseRelationManager;
+=======
+use Modules\Xot\Filament\Resources\XotBaseResource\RelationManager\XotBaseRelationManager;
+>>>>>>> e876fa3 (.)
 use Modules\Xot\Filament\Traits\NavigationLabelTrait;
 
 class MediaRelationManager extends XotBaseRelationManager
 {
+<<<<<<< HEAD
     
 
+=======
+>>>>>>> e876fa3 (.)
     protected static string $relationship = 'media';
 
     protected static ?string $inverseRelationship = 'model';
 
+<<<<<<< HEAD
     
 
     
 
+=======
+>>>>>>> e876fa3 (.)
     /**
      * @return array<string, Action|ActionGroup>
      */

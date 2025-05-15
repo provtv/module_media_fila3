@@ -347,6 +347,7 @@ final class Media extends Model
         );
     }
 }
+<<<<<<< HEAD
 ### Versione HEAD
 
 ``` 
@@ -362,3 +363,6 @@ final class Media extends Model
 
 ---
 
+=======
+``` 
+>>>>>>> e876fa3 (.)

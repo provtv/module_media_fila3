@@ -25,7 +25,23 @@ class ListMediaConverts extends XotBaseListRecords
     /**
      * @return array<string, Tables\Columns\Column>
      */
+<<<<<<< HEAD
     public function getTableColumns(): array
+=======
+<<<<<<< HEAD
+<<<<<<< Updated upstream
+<<<<<<< HEAD
+    public function getTableColumns(): array
+=======
+    public function getListTableColumns(): array
+>>>>>>> 2f8e9ec (.)
+=======
+    public function getTableColumns(): array
+>>>>>>> Stashed changes
+=======
+    public function getListTableColumns(): array
+>>>>>>> e876fa3 (.)
+>>>>>>> ffd5433 (.)
     {
         return [
             'id' => TextColumn::make('id')
