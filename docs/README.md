@@ -323,10 +323,6 @@ $media->convert('thumb', [
 
 ---
 
-<<<<<<< Updated upstream
-<<<<<<< HEAD
-=======
->>>>>>> Stashed changes
 ## Server MCP consigliati per Media
 
 Per il modulo Media, si consiglia di utilizzare i seguenti server MCP:
@@ -344,8 +340,3 @@ Per il modulo Media, si consiglia di utilizzare i seguenti server MCP:
 
 Per dettagli e best practice consulta la guida generale MCP nel workspace.
 
-<<<<<<< Updated upstream
-=======
->>>>>>> 2f8e9ec (.)
-=======
->>>>>>> Stashed changes

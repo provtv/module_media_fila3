@@ -1,16 +1,7 @@
-<<<<<<< Updated upstream
-<<<<<<< HEAD
-=======
->>>>>>> Stashed changes
 # Risoluzione Conflitti Merge - Modulo Media
 
 > **Collegamento globale:** Per le strategie generali e le best practices sulla risoluzione dei conflitti git, vedi [docs/git_conflict_resolution.md](../../../../docs/git_conflict_resolution.md).
 
-<<<<<<< Updated upstream
-=======
->>>>>>> 2f8e9ec (.)
-=======
->>>>>>> Stashed changes
 # Risoluzione dei Conflitti Git nel Modulo Media
 
 ## Panoramica
@@ -119,15 +110,6 @@ public function getFileAttribute(?string $value): ?string
 
 ### 5. SubtitleService.php
 
-<<<<<<< Updated upstream
-<<<<<<< HEAD
-=======
-
-=======
-
->>>>>>> 2f8e9ec (.)
-=======
->>>>>>> Stashed changes
 **Problema**: Conflitto nella modalità di aggiornamento del modello Eloquent nel metodo `upateModel()`. Le versioni in conflitto differivano nella gestione dell'assegnazione e nell'utilizzo di `tap($this->model)->update($up)`.
 
 **Intento funzionale**: Garantire che il modello venga aggiornato in modo atomico e che l'istanza aggiornata venga sempre assegnata correttamente alla proprietà. L'obiettivo è mantenere la robustezza, evitare duplicazioni e assicurare coerenza con il resto della codebase.
@@ -150,16 +132,8 @@ public function getFromXml(): array
 {
     // Implementazione...
 }
-<<<<<<< Updated upstream
-<<<<<<< HEAD
 ```
 
-=======
->>>>>>> 2f8e9ec (.)
-=======
-```
-
->>>>>>> Stashed changes
 **Problema**: Conflitto nella definizione dei tipi di ritorno PHPDoc per il metodo `getFromXml()` con diverse versioni di tipizzazione dei dati.
 
 **Soluzione**: È stata adottata la versione con la tipizzazione più dettagliata e completa, preservando anche il commento psalm che fornisce informazioni più specifiche sulla struttura dell'array.
@@ -179,29 +153,10 @@ public function getFromXml(): array
  * }>
  */
 public function getFromXml($xmlFile)
-<<<<<<< Updated upstream
-<<<<<<< HEAD
-=======
-
-=======
->>>>>>> aurmich/dev
->>>>>>> 5770259 (.):docs/CONFLITTI_MERGE_RISOLTI.md
->>>>>>> 2f8e9ec (.)
-=======
->>>>>>> Stashed changes
 ```
 
 ### 6. ConvertVideoAction.php
 
-<<<<<<< Updated upstream
-<<<<<<< HEAD
-=======
-
-=======
-
->>>>>>> 2f8e9ec (.)
-=======
->>>>>>> Stashed changes
 **Problema**: Conflitto nella gestione degli import e nella struttura del metodo execute. Le versioni in conflitto differivano nell'ordine degli import e nella presenza di linee vuote superflue tra i blocchi di codice.
 
 **Intento funzionale**: Garantire chiarezza e leggibilità, mantenendo la coerenza con il resto del modulo e assicurando che la logica di conversione video sia atomica e facilmente manutenibile.
@@ -215,14 +170,7 @@ Per approfondimenti generali sulle strategie di risoluzione dei conflitti, fare 
 **Collegamento bidirezionale:** questo file è referenziato anche nella documentazione principale in `/docs/risoluzione_conflitti_git.md`.
 
 ### 6. VideoStream.php
-<<<<<<< Updated upstream
-<<<<<<< HEAD
 
-=======
->>>>>>> 2f8e9ec (.)
-=======
-
->>>>>>> Stashed changes
 **Problema**: Conflitto nella modalità di restituzione del percorso del file convertito. Le versioni in conflitto differivano nell'utilizzo di `Storage::disk()->url()` vs `Storage::disk()->path()`.
 
 **Intento funzionale**: Standardizzare la modalità di restituzione dei percorsi file in tutto il modulo Media.
@@ -233,16 +181,6 @@ Per approfondimenti generali sulle strategie di risoluzione dei conflitti, fare 
 
 ### 7. VideoStream.php
 
-<<<<<<< Updated upstream
-<<<<<<< HEAD
-=======
-=======
->>>>>>> aurmich/dev
->>>>>>> 5770259 (.):docs/CONFLITTI_MERGE_RISOLTI.md
-
->>>>>>> 2f8e9ec (.)
-=======
->>>>>>> Stashed changes
 **Problema**: Conflitto nella costruzione e inizializzazione del servizio VideoStream, con differenze nell'implementazione delle tipizzazioni e nel metodo di ottenere il MIME type.
 
 **Soluzione**: È stata adottata la versione più robusta che determina il MIME type in base all'estensione del file anziché utilizzare il metodo `mimeType()` di Laravel. Questo approccio è più efficiente e riduce la dipendenza da metodi esterni potenzialmente instabili.
@@ -272,17 +210,6 @@ public function __construct(string $disk, string $path)
 }
 ```
 
-<<<<<<< Updated upstream
-<<<<<<< HEAD
-=======
-
-### 8. MediaResource.php
-=======
-
-### 7. MediaResource.php
->>>>>>> 2f8e9ec (.)
-=======
->>>>>>> Stashed changes
 ### 8. MediaResource.php
 
 **Problema**: Conflitto nella struttura dello schema del form per la risorsa Media, con differenze nell'uso di chiavi nominate vs componenti Filament direttamente.
@@ -316,17 +243,6 @@ public static function getFormSchema(): array
 }
 ```
 
-<<<<<<< Updated upstream
-<<<<<<< HEAD
-=======
-
-### 9. test.blade.php
-=======
-
-### 8. test.blade.php
->>>>>>> 2f8e9ec (.)
-=======
->>>>>>> Stashed changes
 ### 9. test.blade.php
 
 **Problema**: Conflitto nelle variabili utilizzate nel template Blade per accedere alle proprietà degli oggetti, con errori di sintassi nelle proprietà.
@@ -353,17 +269,6 @@ public static function getFormSchema(): array
 @endforeach
 ```
 
-<<<<<<< Updated upstream
-<<<<<<< HEAD
-=======
-
-### 10. MediaConvertResource.php
-=======
-
-### 9. MediaConvertResource.php
->>>>>>> 2f8e9ec (.)
-=======
->>>>>>> Stashed changes
 ### 10. MediaConvertResource.php
 
 **Problema**: Conflitto tra tre versioni della stessa risorsa Filament, con differenze nell'implementazione dello schema del form e nella navigazione.
@@ -402,35 +307,13 @@ public static function getFormSchema(): array
 
 Per dettagli completi sulla risoluzione di MediaConvertResource, vedere [documentazione dedicata](../../../../docs/media_convert_resource_conflict.md).
 
-<<<<<<< Updated upstream
-<<<<<<< HEAD
-=======
-
-### 11. Merge.php
-=======
-
-### 10. Merge.php
->>>>>>> 2f8e9ec (.)
-=======
->>>>>>> Stashed changes
 ### 11. Merge.php
 
 **Problema**: Conflitti storici nella gestione dei driver di Intervention Image, nella modalità di composizione delle immagini e nella gestione dei parametri di input/output.
 
 **Intento funzionale**: Garantire una composizione orizzontale delle immagini robusta, efficiente e compatibile con la pipeline Media, mantenendo la massima leggibilità e manutenibilità del codice.
 
-<<<<<<< Updated upstream
-<<<<<<< HEAD
 **Decisione architetturale**: È stata adottata la versione che utilizza il driver Gd di Intervention Image, con gestione esplicita delle dimensioni della canvas e posizionamento progressivo delle immagini. La soluzione mantiene la compatibilità con l'ecosistema Laravel e assicura la massima chiarezza del flusso di composizione.
-=======
-
-=======
-
-**Decisione architetturale**: È stata adottata la versione che utilizza il driver Gd di Intervention Image, con gestione esplicita delle dimensioni della canvas e posizionamento progressivo delle immagini. La soluzione mantiene la compatibilità con l’ecosistema Laravel e assicura la massima chiarezza del flusso di composizione.
->>>>>>> 2f8e9ec (.)
-=======
-**Decisione architetturale**: È stata adottata la versione che utilizza il driver Gd di Intervention Image, con gestione esplicita delle dimensioni della canvas e posizionamento progressivo delle immagini. La soluzione mantiene la compatibilità con l'ecosistema Laravel e assicura la massima chiarezza del flusso di composizione.
->>>>>>> Stashed changes
 
 Per approfondimenti generali sulle strategie di risoluzione dei conflitti, fare riferimento alla [documentazione centrale](../../../../docs/risoluzione_conflitti_git.md).
 
@@ -439,21 +322,6 @@ Per approfondimenti generali sulle strategie di risoluzione dei conflitti, fare 
 **Collegamento bidirezionale:** questo file è referenziato anche nella documentazione principale in `/docs/risoluzione_conflitti_git.md`.
 
 ### 10. VideoEntry.php
-<<<<<<< Updated upstream
-<<<<<<< HEAD
-=======
-**Decisione architetturale**: È stata adottata la versione che utilizza il driver Gd di Intervention Image, con gestione esplicita delle dimensioni della canvas e posizionamento progressivo delle immagini. La soluzione mantiene la compatibilità con l'ecosistema Laravel e assicura la massima chiarezza del flusso di composizione.
-
-Per approfondimenti generali sulle strategie di risoluzione dei conflitti, fare riferimento alla [documentazione centrale](../../../../docs/risoluzione_conflitti_git.md).
-
-### 12. VideoEntry.php
-
-=======
->>>>>>> aurmich/dev
->>>>>>> 5770259 (.):docs/CONFLITTI_MERGE_RISOLTI.md
->>>>>>> 2f8e9ec (.)
-=======
->>>>>>> Stashed changes
 
 **Problema**: Conflitto nell'implementazione del componente VideoEntry, con differenze nella gestione dei tipi e nella formattazione.
 
@@ -492,59 +360,6 @@ Per prevenire o gestire meglio i conflitti Git in futuro:
 - [Documentazione Laravel FFMpeg](https://github.com/protonemedia/laravel-ffmpeg)
 - [PHP 8.x Nullsafe Operator](https://www.php.net/manual/en/migration80.new-features.php#migration80.new-features.nullsafe-operator)
 
-<<<<<<< Updated upstream
-<<<<<<< HEAD
 ---
 
 > **Collegamento globale:** Questa documentazione locale dettaglia i casi concreti e le decisioni architetturali adottate nel modulo Media. Per le strategie generali e le best practices, consulta sempre anche la documentazione globale in [docs/git_conflict_resolution.md](../../../../docs/git_conflict_resolution.md).
-=======
-=======
-
-- [PHPStan Documentation](https://phpstan.org/user-guide/getting-started) 
-- [PHPStan Documentation](https://phpstan.org/user-guide/getting-started)
-
-## Conflitti nell'integrazione FFmpeg (15/06/2024)
-
-I problemi di conflitto nei file relativi all'integrazione di FFmpeg erano principalmente legati a:
-
-1. **Duplicazione di importazioni**: Diversi namespace erano importati più volte.
-2. **Incoerenza nelle restituzioni**: Alcune azioni convertivano i path in URL, altre restituivano solo il path.
-3. **Spazi bianchi e linee vuote eccessive**: Lo stile di codice era inconsistente.
-
-### Azioni intraprese
-
-#### 1. File `Merge.php`
-- Rimossi duplicati delle importazioni
-- Eliminati spazi e linee vuote eccessive
-- Mantenuta una struttura coerente con il pattern utilizzato in altre azioni
-
-#### 2. File `ConvertVideoAction.php`
-- Ordinato e deduplicato le importazioni
-- Standardizzato a `Storage::disk($disk_mp4)->path($file_new)` per coerenza
-- Uniformato lo stile di codice
-
-### Documentazione
-
-Per maggiori dettagli, consultare il [documento dedicato alla risoluzione dei conflitti FFmpeg](risoluzione_conflitti_ffmpeg.md). 
-
-## Collegamenti tra versioni di CONFLITTI_MERGE_RISOLTI.md
-* [CONFLITTI_MERGE_RISOLTI.md](../../../Gdpr/docs/CONFLITTI_MERGE_RISOLTI.md)
-* [CONFLITTI_MERGE_RISOLTI.md](../../../Xot/docs/CONFLITTI_MERGE_RISOLTI.md)
-* [CONFLITTI_MERGE_RISOLTI.md](../../../UI/docs/CONFLITTI_MERGE_RISOLTI.md)
-* [CONFLITTI_MERGE_RISOLTI.md](../../../Media/docs/CONFLITTI_MERGE_RISOLTI.md)
-
-
-## Collegamenti tra versioni di conflitti_merge_risolti.md
-* [conflitti_merge_risolti.md](../../Gdpr/docs/conflitti_merge_risolti.md)
-* [conflitti_merge_risolti.md](../../Xot/docs/conflitti_merge_risolti.md)
-* [conflitti_merge_risolti.md](../../UI/docs/conflitti_merge_risolti.md)
-
-=======
->>>>>>> aurmich/dev
->>>>>>> 5770259 (.):docs/CONFLITTI_MERGE_RISOLTI.md
->>>>>>> 2f8e9ec (.)
-=======
----
-
-> **Collegamento globale:** Questa documentazione locale dettaglia i casi concreti e le decisioni architetturali adottate nel modulo Media. Per le strategie generali e le best practices, consulta sempre anche la documentazione globale in [docs/git_conflict_resolution.md](../../../../docs/git_conflict_resolution.md).
->>>>>>> Stashed changes
