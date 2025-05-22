@@ -1,5 +1,6 @@
 # Correzioni PHPStan Livello 10 - Modulo Media
 
+<<<<<<< HEAD
 Questo documento traccia gli errori PHPStan di livello 10 identificati nel modulo Media e le relative soluzioni implementate.
 
 ## Collegamenti Bidirezionali
@@ -7,6 +8,12 @@ Questo documento traccia gli errori PHPStan di livello 10 identificati nel modul
 - [Linee Guida Generali per la Risoluzione dei Conflitti Git](../../../../docs/risoluzione_conflitti_git.md)
 - [Documentazione Conflitti Git nei Moduli](../../../../docs/conflitti_git_moduli.md)
 
+=======
+> **Collegamento globale:** Per le strategie generali e le best practices sulla risoluzione dei conflitti git, vedi [docs/git_conflict_resolution.md](../../../../docs/git_conflict_resolution.md).
+
+Questo documento traccia gli errori PHPStan di livello 10 identificati nel modulo Media e le relative soluzioni implementate.
+
+>>>>>>> 4026c11 (.)
 ## Errori Identificati
 
 ### 1. Uso del tipo mixed per risorsa di file in VideoStream.php
@@ -86,6 +93,7 @@ Questa soluzione mantiene la funzionalità originale migliorando al contempo la 
 
 ### 5. Risoluzione dei conflitti di merge nei file del modulo Media
 
+<<<<<<< HEAD
 
 **Problema**: Diversi file del modulo Media contenevano conflitti di merge non risolti, indicati da marcatori 
 **Problema**: Diversi file del modulo Media contenevano conflitti di merge non risolti, indicati da marcatori  Questi conflitti impedivano la corretta esecuzione del codice e causavano errori di sintassi.
@@ -95,6 +103,9 @@ aurmich/dev
 
 
 **Problema**: Diversi file del modulo Media contenevano conflitti di merge non risolti, indicati da marcatori 
+=======
+**Problema**: Diversi file del modulo Media contenevano conflitti di merge non risolti, indicati da marcatori git (`=======`, `>>>>>>>`, ecc.). Questi conflitti impedivano la corretta esecuzione del codice e causavano errori di sintassi.
+>>>>>>> 4026c11 (.)
 
 **Soluzione implementata**:
 1. Analisi sistematica dei conflitti di merge in ciascun file
@@ -114,14 +125,18 @@ aurmich/dev
 1. **Uso appropriato di PHPDoc per tipi speciali**: Quando PHP non supporta nativamente un tipo (come `resource`), utilizzare annotazioni PHPDoc per fornire informazioni di tipo a PHPStan.
 2. **Inizializzazione appropriata**: Inizializzare le proprietà con valori appropriati per il loro tipo.
 3. **Documentazione chiara**: Fornire commenti esplicativi che indicano lo scopo e il tipo atteso delle proprietà.
+<<<<<<< HEAD
 4. **Risoluzione sistematica dei conflitti**: Analizzare attentamente i conflitti di merge e risolverli mantenendo la versione più completa e documentata del codice.
 5. **Backup prima delle modifiche**: Creare backup dei file originali prima di apportare modifiche significative.
+=======
+>>>>>>> 4026c11 (.)
 
 ## Prossimi Passi
 
 1. Completare la revisione di `SubtitleService.php` per risolvere i problemi di tipo complessi.
 2. Aggiornare il modello `Media.php` per specificare tipi più precisi per le proprietà attualmente documentate come `mixed`.
 3. Eseguire l'analisi PHPStan a livello 10 per verificare che le correzioni risolvano effettivamente gli errori.
+<<<<<<< HEAD
 4. Implementare test automatizzati per verificare il corretto funzionamento del modulo Media dopo le correzioni.
 5. Documentare le procedure di risoluzione dei conflitti di merge per prevenire problemi simili in futuro.
 
@@ -140,3 +155,10 @@ aurmich/dev
 * [phpstan_level10_fixes.md](../../Lang/docs/phpstan_level10_fixes.md)
 * [phpstan_level10_fixes.md](../../Job/docs/phpstan_level10_fixes.md)
 
+=======
+4. Documentare pattern e soluzioni standard per gestire risorse di file e altri tipi speciali nel progetto.
+
+---
+
+> **Collegamento globale:** Questa documentazione locale dettaglia i casi concreti e le decisioni architetturali adottate nel modulo Media. Per le strategie generali e le best practices, consulta sempre anche la documentazione globale in [docs/git_conflict_resolution.md](../../../../docs/git_conflict_resolution.md). 
+>>>>>>> 4026c11 (.)

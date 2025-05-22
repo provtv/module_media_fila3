@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 ### Versione HEAD
 
 PHPSTAN_LEVEL10_FIXES_media.md
@@ -16,3 +17,6 @@ PHPSTAN_LEVEL10_FIXES_media.md
 
 ---
 
+=======
+PHPSTAN_LEVEL10_FIXES_media.md
+>>>>>>> 4026c11 (.)
