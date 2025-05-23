@@ -1,10 +1,3 @@
-<<<<<<< HEAD
-# Risoluzione Conflitti Merge - Modulo Media
-
-> **Collegamento globale:** Per le strategie generali e le best practices sulla risoluzione dei conflitti git, vedi [docs/git_conflict_resolution.md](../../../../docs/git_conflict_resolution.md).
-
-=======
->>>>>>> 4026c11 (.)
 # Risoluzione dei Conflitti Git nel Modulo Media
 
 ## Panoramica
@@ -156,12 +149,9 @@ public function getFromXml(): array
  * }>
  */
 public function getFromXml($xmlFile)
-<<<<<<< HEAD
-=======
 {
     // Implementazione...
 }
->>>>>>> 4026c11 (.)
 ```
 
 ### 6. ConvertVideoAction.php
@@ -332,15 +322,12 @@ Per approfondimenti generali sulle strategie di risoluzione dei conflitti, fare 
 
 ### 10. VideoEntry.php
 
-<<<<<<< HEAD
-=======
 **Decisione architetturale**: È stata adottata la versione che utilizza il driver Gd di Intervention Image, con gestione esplicita delle dimensioni della canvas e posizionamento progressivo delle immagini. La soluzione mantiene la compatibilità con l'ecosistema Laravel e assicura la massima chiarezza del flusso di composizione.
 
 Per approfondimenti generali sulle strategie di risoluzione dei conflitti, fare riferimento alla [documentazione centrale](../../../../docs/risoluzione_conflitti_git.md).
 
 ### 12. VideoEntry.php
 
->>>>>>> 4026c11 (.)
 **Problema**: Conflitto nell'implementazione del componente VideoEntry, con differenze nella gestione dei tipi e nella formattazione.
 
 **Soluzione**: È stata adottata l'implementazione più robusta con controlli di tipo completi e documentazione dettagliata, mantenendo la coerenza stilistica senza linee vuote superflue. Per dettagli completi, vedere [documentazione dedicata](./risoluzione_conflitti_video_entry.md).
@@ -378,11 +365,6 @@ Per prevenire o gestire meglio i conflitti Git in futuro:
 - [Documentazione Laravel FFMpeg](https://github.com/protonemedia/laravel-ffmpeg)
 - [PHP 8.x Nullsafe Operator](https://www.php.net/manual/en/migration80.new-features.php#migration80.new-features.nullsafe-operator)
 
-<<<<<<< HEAD
----
-
-> **Collegamento globale:** Questa documentazione locale dettaglia i casi concreti e le decisioni architetturali adottate nel modulo Media. Per le strategie generali e le best practices, consulta sempre anche la documentazione globale in [docs/git_conflict_resolution.md](../../../../docs/git_conflict_resolution.md).
-=======
 - [PHPStan Documentation](https://phpstan.org/user-guide/getting-started)
 
 ## Conflitti nell'integrazione FFmpeg (15/06/2024)
@@ -408,4 +390,3 @@ I problemi di conflitto nei file relativi all'integrazione di FFmpeg erano princ
 ### Documentazione
 
 Per maggiori dettagli, consultare il [documento dedicato alla risoluzione dei conflitti FFmpeg](risoluzione_conflitti_ffmpeg.md).
->>>>>>> 4026c11 (.)
