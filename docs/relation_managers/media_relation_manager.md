@@ -1,9 +1,31 @@
-# MediaRelationManager Documentation (OBSOLETO)
+# MediaRelationManager
 
-Questa pagina è stata consolidata e sostituita dalla documentazione più completa e aggiornata sul `MediaRelationManager` che si trova in:
+## Descrizione
+Questo file gestisce la relazione media all'interno del sistema Filament, seguendo le best practices di Laraxot.
 
--   **[MediaRelationManager (Modulo Media)](../resources/media-relation-manager.md)**
+## Modifiche Effettuate
+- Risoluzione dei conflitti di merge
+- Implementazione corretta delle azioni della tabella secondo le convenzioni Filament
+- Aggiunta di tipizzazione stretta per i metodi
+- Rimozione di codice duplicato
 
-Si prega di fare riferimento al nuovo documento per tutte le informazioni relative alla configurazione, all'utilizzo e alla personalizzazione del `MediaRelationManager`, inclusa l'integrazione con Spatie Media Library e le linee guida per estendere `XotBaseRelationManager`.
+## Struttura
+- Namespace: `Modules\Media\Filament\Resources\HasMediaResource\RelationManagers`
+- Classe Base: `XotBaseRelationManager`
+- Relazione: `media`
+- Relazione Inversa: `model`
 
-**Si prega di aggiornare eventuali segnalibri o link per puntare al nuovo percorso.**
+## Azioni della Tabella
+Le azioni sono implementate seguendo le convenzioni documentate in `filament_table_actions.md`:
+- Chiavi in snake_case
+- Tipizzazione stretta
+- Documentazione PHPDoc completa
+
+## Collegamenti
+- [Convenzioni Table Actions](../filament_table_actions.md)
+- [Documentazione Media Module](../module_media.md)
+
+## Note di Manutenzione
+- Mantenere la coerenza con le convenzioni di naming
+- Assicurarsi che tutte le azioni abbiano chiavi stringa
+- Mantenere la documentazione PHPDoc aggiornata 
