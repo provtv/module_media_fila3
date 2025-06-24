@@ -26,6 +26,7 @@ class IconMediaColumn extends IconColumn
         $attachment=$this->getName();
 
 <<<<<<< HEAD
+<<<<<<< HEAD
         $this->default(fn($record)=>$record->getFirstMedia($attachment))
                 ->icon('heroicon-o-document-text')
                 ->color(fn ($record) => $record->getFirstMedia($attachment) ? 'success' : 'danger')
@@ -33,6 +34,8 @@ class IconMediaColumn extends IconColumn
 
                 ->action(function ($record) use ($attachment) {
 =======
+=======
+>>>>>>> 6901e2e (.)
         $this->default(
             fn($record)=>$record->getFirstMedia($attachment))
                 ->icon('heroicon-o-document-text')
@@ -41,7 +44,10 @@ class IconMediaColumn extends IconColumn
 
                 ->action(function ($record) use ($attachment) {
                     // @phpstan-ignore-next-line
+<<<<<<< HEAD
 >>>>>>> 41bb1cf (.)
+=======
+>>>>>>> 6901e2e (.)
                     $media = $record->getFirstMedia($attachment);
                     if (!$media) {
                         return;
