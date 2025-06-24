@@ -25,35 +25,13 @@ class IconMediaColumn extends IconColumn
         parent::setUp();
         $attachment=$this->getName();
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
         $this->default(fn($record)=>$record->getFirstMedia($attachment))
                 ->icon('heroicon-o-document-text')
                 ->color(fn ($record) => $record->getFirstMedia($attachment) ? 'success' : 'danger')
                 ->tooltip(fn ($record) => $record->getFirstMedia($attachment)?->file_name ?? 'Documento non caricato')
 
                 ->action(function ($record) use ($attachment) {
-=======
-=======
->>>>>>> 6901e2e (.)
-=======
->>>>>>> f654c99 (.)
-        $this->default(
-            fn($record)=>$record->getFirstMedia($attachment))
-                ->icon('heroicon-o-document-text')
-                ->color(fn ($record) => $record->getFirstMedia($attachment) ? 'success' : 'danger')
-                ->tooltip(fn ($record) => $record->getFirstMedia($attachment)->file_name ?? 'Documento non caricato')
-
-                ->action(function ($record) use ($attachment) {
                     // @phpstan-ignore-next-line
-<<<<<<< HEAD
-<<<<<<< HEAD
->>>>>>> 41bb1cf (.)
-=======
->>>>>>> 6901e2e (.)
-=======
->>>>>>> f654c99 (.)
                     $media = $record->getFirstMedia($attachment);
                     if (!$media) {
                         return;
