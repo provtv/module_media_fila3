@@ -31,26 +31,17 @@ class IconMediaColumn extends IconColumn
                 ->color(fn ($record) => $record->getFirstMedia($attachment) ? 'success' : 'danger')
                 ->tooltip(fn ($record) => $record->getFirstMedia($attachment)->file_name ?? 'Documento non caricato')
 
-<<<<<<< HEAD
                 ->action(function ($record,\Illuminate\Http\Request $request) use ($attachment) {
                     // @phpstan-ignore method.nonObject
-=======
-                ->action(function ($record) use ($attachment) {
-                    // @phpstan-ignore-next-line
->>>>>>> e1f56f1 (.)
                     $media = $record->getFirstMedia($attachment);
                     if (!$media) {
                         return;
                     }
 
-<<<<<<< HEAD
                     return $media->toInlineResponse($request);
                     //return $media->toResponse($request);
 
                     //return Storage::disk($media->disk)->download($media->getPathRelativeToRoot());
-=======
-                    return Storage::disk($media->disk)->download($media->getPathRelativeToRoot());
->>>>>>> e1f56f1 (.)
                     //return Storage::disk($media->disk)
                     //    ->temporaryUploadUrl($media->getPathRelativeToRoot(),now()->addMinutes(5));
 
