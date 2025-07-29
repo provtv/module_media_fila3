@@ -3,21 +3,6 @@
 return [
     'fields' => [
         'change-state' => [
-<<<<<<< HEAD
-            'label' => 'change state',
-        ],
-        'state' => [
-            'label' => 'state',
-            'placeholder' => 'state',
-            'helper_text' => 'state',
-            'description' => 'state',
-        ],
-        'message' => [
-            'label' => 'message',
-            'placeholder' => 'message',
-            'helper_text' => 'message',
-            'description' => 'message',
-=======
             'label' => 'Change state',
             'placeholder' => 'Select new state',
             'help' => 'Modify the current state of the element',
@@ -37,7 +22,6 @@ return [
             'help' => 'Informative message for the user',
             'description' => 'Message text',
             'helper_text' => '',
->>>>>>> f351bb7 (.)
         ],
     ],
 ];

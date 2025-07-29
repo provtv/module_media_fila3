@@ -43,11 +43,7 @@ return array (
     ),
     'certificate' => 
     array (
-<<<<<<< HEAD
-      'label' => 'Certificato',
-=======
       'label' => 'Certificato1',
->>>>>>> f351bb7 (.)
       'placeholder' => 'Carica il certificato',
       'helper_text' => 'Formati supportati: PDF, JPG, PNG',
       'description' => 'Certificato medico o documentazione sanitaria',
