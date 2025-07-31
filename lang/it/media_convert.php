@@ -1,22 +1,35 @@
 <?php
 
 return array (
-  'navigation' => 
+  'navigation' =>
   array (
     'label' => 'media convert',
     'group' => 'media convert',
     'icon' => 'media convert',
     'sort' => 20,
   ),
-  'fields' => 
+  'fields' =>
   array (
-    'applyFilters' => 
+    'applyFilters' =>
     array (
       'label' => 'applyFilters',
     ),
-    'toggleColumns' => 
+    'toggleColumns' =>
     array (
       'label' => 'toggleColumns',
     ),
   ),
 );
+<<<<<<< Updated upstream
+=======
+return [
+    'navigation' => [
+        'label' => 'media convert',
+        'group' => 'media convert',
+        'icon' => 'media convert',
+        'sort' => 20,
+    ],
+];
+>>>>>>> 2f8e9ec (.)
+=======
+>>>>>>> Stashed changes
