@@ -4,22 +4,37 @@ declare(strict_types=1);
 
 namespace Modules\Media\Actions;
 
+<<<<<<< HEAD
+=======
+use Illuminate\Support\Arr;
+use Modules\UI\Actions\Icon\GetAllIconsAction;
+use Webmozart\Assert\Assert;
+>>>>>>> 673bf32 (.)
 use Filament\Forms;
 use Filament\Forms\Set;
 use function Safe\glob;
 use Filament\Forms\Form;
+<<<<<<< HEAD
 use Illuminate\Support\Arr;
 use Illuminate\Support\Str;
 use Webmozart\Assert\Assert;
 use Illuminate\Support\HtmlString;
 use Illuminate\Contracts\View\View;
 use Illuminate\Support\Facades\Storage;
+=======
+use Illuminate\Support\Str;
+use Illuminate\Support\HtmlString;
+use Illuminate\Contracts\View\View;
+>>>>>>> 673bf32 (.)
 use Filament\Forms\Components\TextInput;
 use Filament\Forms\Components\FileUpload;
 use Filament\Pages\SubNavigationPosition;
 use Illuminate\Contracts\Support\Htmlable;
 use Illuminate\Contracts\Support\Renderable;
+<<<<<<< HEAD
 use Modules\UI\Actions\Icon\GetAllIconsAction;
+=======
+>>>>>>> 673bf32 (.)
 use Modules\Xot\Actions\ModelClass\CountAction;
 use Filament\Resources\Resource as FilamentResource;
 use Modules\Xot\Filament\Traits\NavigationLabelTrait;
@@ -33,7 +48,11 @@ class GetAttachmentsSchemaAction
     /**
      * 
      */
+<<<<<<< HEAD
     public function execute(array $attachments, string $disk='attachments'): array
+=======
+    public function execute(array $attachments, string $disk='local'): array
+>>>>>>> 673bf32 (.)
     {
         $schema = [];
         $sessionId = session()->getId();
