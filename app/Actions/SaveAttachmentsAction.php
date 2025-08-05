@@ -14,10 +14,7 @@ use Webmozart\Assert\Assert;
 use Spatie\MediaLibrary\HasMedia;
 use Illuminate\Support\HtmlString;
 use Illuminate\Contracts\View\View;
-<<<<<<< HEAD
 use Illuminate\Support\Facades\Storage;
-=======
->>>>>>> 673bf32 (.)
 use Filament\Forms\Components\TextInput;
 use Filament\Forms\Components\FileUpload;
 use Filament\Pages\SubNavigationPosition;
@@ -28,20 +25,16 @@ use Modules\Xot\Actions\ModelClass\CountAction;
 use Filament\Resources\Resource as FilamentResource;
 use Modules\Xot\Filament\Traits\NavigationLabelTrait;
 use Filament\Forms\Components\SpatieMediaLibraryFileUpload;
-<<<<<<< HEAD
 use function Safe\tempnam;
 use function Safe\file_put_contents;
 use function Safe\unlink;
 
-=======
->>>>>>> 673bf32 (.)
 
 /**
  *
  */
 class SaveAttachmentsAction
 {
-<<<<<<< HEAD
 
     public function execute(HasMedia $record, array $attachments, array $data, string $disk = 'attachments'): void
     {
@@ -111,17 +104,6 @@ class SaveAttachmentsAction
                 //$media=$record->addMediaFromRequest($attachment)
 
                // $media=$record->addMedia($full_path)
-=======
-    /**
-     *
-     */
-    public function execute(HasMedia $record,array $attachments,array $data, string $disk='local'): void
-    {
-        $data_attachments = [];
-        foreach ($attachments as $attachment) {
-                /** @phpstan-ignore method.notFound */
-                $media=$record->addMediaFromDisk($data[$attachment],$disk)
->>>>>>> 673bf32 (.)
                     ->toMediaCollection($attachment);
                 $data_attachments[$attachment]=$media->getPathRelativeToRoot();
 

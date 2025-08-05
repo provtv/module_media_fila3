@@ -11,11 +11,6 @@ namespace Modules\Media\Models;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
 /**
-<<<<<<< HEAD
-=======
- * 
- *
->>>>>>> 673bf32 (.)
  * @property int $id
  * @property int $media_id
  * @property string|null $codec_video
