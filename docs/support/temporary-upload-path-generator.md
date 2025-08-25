@@ -1,5 +1,6 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 # TemporaryUploadPathGenerator
 
 ## Descrizione
@@ -56,6 +57,8 @@ Questa classe gestisce la generazione dei percorsi per i file temporanei caricat
 =======
 =======
 >>>>>>> fa3ca25 (.)
+=======
+>>>>>>> 7895f70 (.)
 # TemporaryUploadPathGenerator Documentation
 
 ## Overview
@@ -169,6 +172,7 @@ $originalPath = $generator->getPath($media);
 $conversionPath = $generator->getPathForConversions($media);
 $responsivePath = $generator->getPathForResponsiveImages($media);
 <<<<<<< HEAD
+<<<<<<< HEAD
 ``` 
 >>>>>>> 92c69f6 (.)
 <<<<<<< HEAD
@@ -177,3 +181,6 @@ $responsivePath = $generator->getPathForResponsiveImages($media);
 >>>>>>> fa3ca25 (.)
 =======
 >>>>>>> 66de764 (.)
+=======
+``` 
+>>>>>>> 7895f70 (.)
