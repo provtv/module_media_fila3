@@ -16,7 +16,10 @@ use Modules\Media\Tests\TestCase;
 */
 
 pest()->extend(TestCase::class)
+<<<<<<< HEAD
     ->use(Illuminate\Foundation\Testing\RefreshDatabase::class)
+=======
+>>>>>>> fa3ca25 (.)
     ->in('Feature', 'Unit');
 
 /*

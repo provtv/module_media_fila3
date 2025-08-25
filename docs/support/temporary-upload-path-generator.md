@@ -1,4 +1,5 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 # TemporaryUploadPathGenerator
 
 ## Descrizione
@@ -53,6 +54,8 @@ Questa classe gestisce la generazione dei percorsi per i file temporanei caricat
 - Verificare la compatibilità con le nuove versioni di Laravel
 - Testare la generazione di percorsi univoci 
 =======
+=======
+>>>>>>> fa3ca25 (.)
 # TemporaryUploadPathGenerator Documentation
 
 ## Overview
@@ -165,5 +168,9 @@ $media = Media::find(1);
 $originalPath = $generator->getPath($media);
 $conversionPath = $generator->getPathForConversions($media);
 $responsivePath = $generator->getPathForResponsiveImages($media);
+<<<<<<< HEAD
 ``` 
 >>>>>>> 92c69f6 (.)
+=======
+``` 
+>>>>>>> fa3ca25 (.)
