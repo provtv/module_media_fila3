@@ -171,6 +171,9 @@ $responsivePath = $generator->getPathForResponsiveImages($media);
 <<<<<<< HEAD
 ``` 
 >>>>>>> 92c69f6 (.)
+<<<<<<< HEAD
 =======
 ``` 
 >>>>>>> fa3ca25 (.)
+=======
+>>>>>>> 66de764 (.)
