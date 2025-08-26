@@ -256,3 +256,7 @@ class GetAttachmentsSchemaActionTest extends TestCase
         $this->assertStringContainsString('Select invoice file', $component->getPlaceholder());
     }
 }
+<<<<<<< HEAD
+=======
+
+>>>>>>> 4c4fdfa (.)
