@@ -16,7 +16,10 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\Storage;
 use Filament\Forms\Components\TextInput;
 use Filament\Tables\Columns\SelectColumn;
+<<<<<<< HEAD
 use Modules\Media\Actions\CloudFront\GetCloudFrontSignedUrlAction;
+=======
+>>>>>>> 9c5e628 (.)
 
 class IconMediaColumn extends IconColumn
 {
@@ -31,6 +34,7 @@ class IconMediaColumn extends IconColumn
                 ->icon('heroicon-o-document-text')
                 ->color(fn ($record) => $record->getFirstMedia($attachment) ? 'success' : 'danger')
                 ->tooltip(fn ($record) => $record->getFirstMedia($attachment)->file_name ?? 'Documento non caricato')
+<<<<<<< HEAD
                /*
                  ->url(function($record) use ($attachment){
                     $media = $record->getFirstMedia($attachment);
@@ -47,12 +51,20 @@ class IconMediaColumn extends IconColumn
                 
                 ->action(function ($record,\Illuminate\Http\Request $request) use ($attachment) {
                     
+=======
+
+                ->action(function ($record,\Illuminate\Http\Request $request) use ($attachment) {
+>>>>>>> 9c5e628 (.)
                     // @phpstan-ignore method.nonObject
                     $media = $record->getFirstMedia($attachment);
                     if (!$media) {
                         return;
                     }
+<<<<<<< HEAD
                     //dddx($media->getPath());
+=======
+
+>>>>>>> 9c5e628 (.)
                     return $media->toInlineResponse($request);
                     //return $media->toResponse($request);
 
@@ -63,6 +75,7 @@ class IconMediaColumn extends IconColumn
                     //return response()->streamDownload(function () use ($media) {
                     //    echo $media->get();
                     //}, $media->file_name);
+<<<<<<< HEAD
                     
                     //$headers=[
                     //    'Content-Type' => $media->mime_type,
@@ -76,6 +89,20 @@ class IconMediaColumn extends IconColumn
                     //
                 })
                   
+=======
+                    /*
+                    $headers=[
+                        'Content-Type' => $media->mime_type,
+                        'Content-Disposition' => 'inline; filename="' . basename($media->getPathRelativeToRoot()) . '"'
+                    ];
+                    $path = Storage::disk($media->disk)->path($media->getPathRelativeToRoot());
+                    return response()->file($path, $headers);
+                    */
+                    /*
+                    return Storage::disk($media->disk)->response($media->getPathRelativeToRoot(), null, $headers);
+                    */
+                })
+>>>>>>> 9c5e628 (.)
                 ;
 
 
