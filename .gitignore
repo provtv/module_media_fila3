@@ -1,4 +1,7 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> da8eaf7 (.)
 # Dependencies and packages
 /vendor/
 /node_modules/
@@ -59,6 +62,7 @@ Homestead.json
 docs/phpstan/
 docs/cache/
 cache/
+<<<<<<< HEAD
 =======
 vendor
 /vendor/
@@ -168,3 +172,5 @@ cache/
 # PHPStan documentation
 docs/phpstan/
 >>>>>>> 9c5e628 (.)
+=======
+>>>>>>> da8eaf7 (.)

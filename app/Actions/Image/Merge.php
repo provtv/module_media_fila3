@@ -22,9 +22,12 @@ class Merge
         $manager = new InterventionImageManager(['driver' => 'gd']);
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 <<<<<<< HEAD
 >>>>>>> 9c5e628 (.)
+=======
+>>>>>>> da8eaf7 (.)
         // Carica le immagini
         $image1 = $manager->make($path1);
         $image2 = $manager->make($path2);
@@ -36,6 +39,7 @@ class Merge
         $image1->save($outputPath);
 
         return true;
+<<<<<<< HEAD
 <<<<<<< HEAD
 =======
 =======
@@ -76,5 +80,7 @@ class Merge
         $img_canvas->save(public_path().'/'.$filenameOut, 100);
 >>>>>>> 1c3ced0 (.)
 >>>>>>> 9c5e628 (.)
+=======
+>>>>>>> da8eaf7 (.)
     }
 }

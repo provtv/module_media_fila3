@@ -1,6 +1,9 @@
 <?php
 
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> da8eaf7 (.)
 return array (
   'navigation' => 
   array (
@@ -84,6 +87,7 @@ return array (
     ),
   ),
 );
+<<<<<<< HEAD
 =======
 return [
     'navigation' => [
@@ -102,3 +106,5 @@ return [
     ],
 ];
 >>>>>>> 9c5e628 (.)
+=======
+>>>>>>> da8eaf7 (.)

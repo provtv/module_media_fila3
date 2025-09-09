@@ -1,6 +1,9 @@
 <?php
 
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> da8eaf7 (.)
 return array (
   'fields' => 
   array (
@@ -34,6 +37,7 @@ return array (
     ),
   ),
 );
+<<<<<<< HEAD
 =======
 return [
     'fields' => [
@@ -61,3 +65,5 @@ return [
     ],
 ];
 >>>>>>> 9c5e628 (.)
+=======
+>>>>>>> da8eaf7 (.)
