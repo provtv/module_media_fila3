@@ -64,8 +64,4 @@ class MediaConvertPolicy extends MediaBasePolicy
     {
         return $user->hasPermissionTo('media_convert.forceDelete');
     }
-<<<<<<< HEAD
 }
-=======
-}
->>>>>>> 8e094f6 (.)

@@ -10,13 +10,6 @@ namespace Modules\Media\Models;
 
 use Eloquent;
 use Exception;
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> da8eaf7 (.)
-=======
->>>>>>> 8e094f6 (.)
 use Modules\Xot\Traits\Updater;
 use Illuminate\Database\Eloquent\Builder;
 use Modules\Media\Enums\AttachmentTypeEnum;
@@ -25,20 +18,6 @@ use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Collection as EloquentCollection;
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-use Illuminate\Database\Eloquent\Builder;
-use Illuminate\Database\Eloquent\Collection as EloquentCollection;
-use Illuminate\Database\Eloquent\Relations\BelongsTo;
-use Illuminate\Database\Eloquent\Relations\HasMany;
-use Modules\Media\Enums\AttachmentTypeEnum;
-use Modules\Xot\Traits\Updater;
->>>>>>> 9c5e628 (.)
-=======
->>>>>>> da8eaf7 (.)
-=======
->>>>>>> 8e094f6 (.)
 use Spatie\MediaLibrary\MediaCollections\Models\Media as SpatieMedia;
 
 /**
@@ -250,47 +229,17 @@ use Spatie\MediaLibrary\MediaCollections\Models\Media as SpatieMedia;
  * @method static \Spatie\MediaLibrary\MediaCollections\Models\Collections\MediaCollection<int, static> get($columns = ['*'])
  * @method static \Spatie\MediaLibrary\MediaCollections\Models\Collections\MediaCollection<int, static> all($columns = ['*'])
  * @method static \Spatie\MediaLibrary\MediaCollections\Models\Collections\MediaCollection<int, static> get($columns = ['*'])
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
  * @mixin IdeHelperMedia
  * @method static \Modules\Media\Database\Factories\MediaFactory factory($count = null, $state = [])
-=======
->>>>>>> 9c5e628 (.)
-=======
- * @mixin IdeHelperMedia
- * @method static \Modules\Media\Database\Factories\MediaFactory factory($count = null, $state = [])
->>>>>>> da8eaf7 (.)
-=======
- * @mixin IdeHelperMedia
- * @method static \Modules\Media\Database\Factories\MediaFactory factory($count = null, $state = [])
->>>>>>> 8e094f6 (.)
  * @mixin Eloquent
  */
 class Media extends SpatieMedia
 {
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> da8eaf7 (.)
-=======
->>>>>>> 8e094f6 (.)
     use HasFactory;
     use Updater;
 
 
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-    use Updater;
-
->>>>>>> 9c5e628 (.)
-=======
->>>>>>> da8eaf7 (.)
-=======
->>>>>>> 8e094f6 (.)
     /** @var string */
     protected $connection = 'media';
 
@@ -398,13 +347,6 @@ class Media extends SpatieMedia
             'responsive_images' => 'array',
         ];
     }
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> da8eaf7 (.)
-=======
->>>>>>> 8e094f6 (.)
 
    /**
      * Create a new factory instance for the model.
@@ -416,12 +358,4 @@ class Media extends SpatieMedia
         return app(GetFactoryAction::class)->execute(static::class);
     }
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> 9c5e628 (.)
-=======
->>>>>>> da8eaf7 (.)
-=======
->>>>>>> 8e094f6 (.)
 }

@@ -11,29 +11,16 @@ parameters:
         - ./database
 
     excludePaths:
-<<<<<<< HEAD
-        - ./vendor (?)
-        - ./tests
-        - ./app_old (?)
-=======
         - ./vendor
         - ./tests
         - ./app_old
->>>>>>> 8e094f6 (.)
 
     scanFiles:
         - ../../vendor/pbmedia/laravel-ffmpeg/src/Support/FFMpeg.php
         - ../../vendor/pbmedia/laravel-ffmpeg/src/MediaOpener.php
         - ../../vendor/pbmedia/laravel-ffmpeg/src/FFMpeg/MediaExporter.php
 
-<<<<<<< HEAD
-    # checkMissingIterableValueType: false
-    # checkGenericClassInNonGenericObjectType: false
-    # treatPhpDocTypesAsCertain: false
-    # reportUnmatchedIgnoredErrors: false
-=======
     checkMissingIterableValueType: false
     checkGenericClassInNonGenericObjectType: false
     treatPhpDocTypesAsCertain: false
     reportUnmatchedIgnoredErrors: false
->>>>>>> 8e094f6 (.)

@@ -21,8 +21,4 @@ abstract class MediaBasePolicy
 
         return null;
     }
-<<<<<<< HEAD
 }
-=======
-}
->>>>>>> 8e094f6 (.)

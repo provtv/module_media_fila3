@@ -64,8 +64,4 @@ class MediaPolicy extends MediaBasePolicy
     {
         return $user->hasPermissionTo('media.forceDelete');
     }
-<<<<<<< HEAD
 }
-=======
-}
->>>>>>> 8e094f6 (.)
