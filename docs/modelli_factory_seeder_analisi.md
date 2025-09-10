@@ -32,7 +32,11 @@ Questo documento analizza tutti i modelli del modulo Media verificando la presen
 - **Versioning**: Gestione versioni multiple file
 
 **Relazioni Business Logic**:
+<<<<<<< HEAD
 - **<nome progetto>**: Documenti pazienti, referti medici, immagini profilo
+=======
+- **SaluteOra**: Documenti pazienti, referti medici, immagini profilo
+>>>>>>> 052c3ad7 (.)
 - **User**: Avatar utenti, documenti identità
 - **Cms**: Immagini contenuti, allegati pagine
 - **Notify**: Allegati notifiche email
@@ -195,7 +199,11 @@ Tutti i file factory devono essere validati con PHPStan livello 9:
 - [Performance Optimization](./performance_optimization.md)
 
 ### Moduli Collegati
+<<<<<<< HEAD
 - [<nome progetto> Module](../../<nome progetto>/docs/modelli_factory_seeder_analisi.md) - Documenti medici
+=======
+- [SaluteOra Module](../../SaluteOra/docs/modelli_factory_seeder_analisi.md) - Documenti medici
+>>>>>>> 052c3ad7 (.)
 - [User Module](../../User/docs/modelli_factory_seeder_analisi.md) - Avatar e documenti utente
 - [Cms Module](../../Cms/docs/modelli_factory_seeder_analisi.md) - Contenuti multimediali
 - [Notify Module](../../Notify/docs/modelli_factory_seeder_analisi.md) - Allegati notifiche

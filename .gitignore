@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 
 # Dependencies and packages
 /docs/vendor/
@@ -16,10 +17,27 @@ yarn-error.log
 /build/
 build/
 composer.lock
+=======
+# Dependencies and packages
+/vendor/
+/node_modules/
+/docs/vendor/
+
+# Lock files and cache
+*.lock
+composer.lock
+package-lock.json
+*.cache
+yarn-error.log
+npm-debug.log
+.phpunit.result.cache
+.php-cs-fixer.cache
+>>>>>>> 052c3ad7 (.)
 
 # Log files
 *.log
 
+<<<<<<< HEAD
 # Laravel specific
 .env
 app/storage/
@@ -61,3 +79,47 @@ docs/phpstan/
 
 # Other
 storage/*.key
+=======
+# Build directories
+/build/
+/build
+build/
+
+# Laravel specific
+bootstrap/compiled.php
+app/storage/
+public/storage
+public/hot
+public_html/storage
+public_html/hot
+storage/*.key
+.env
+
+# Local configurations
+Homestead.yaml
+Homestead.json
+/.vagrant
+
+# Git specific
+.git-blame-ignore-revs
+.git-rewrite/
+.git-rewrite
+
+# Temporary and system files
+*.tmp
+*.swp
+*.swo
+*.stackdump
+*.exe
+*:Zone.Identifier
+.DS_Store
+*.old
+*.old1
+*.backup
+*.bak
+
+# Documentation and cache
+docs/phpstan/
+docs/cache/
+cache/
+>>>>>>> 052c3ad7 (.)

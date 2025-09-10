@@ -13,7 +13,11 @@ L'errore si verifica nel metodo `getUploadedFiles` di `Filament\Forms\Components
 
 ### Contesto dell'Errore
 - **Widget**: `Modules\User\Filament\Widgets\RegistrationWidget`
+<<<<<<< HEAD
 - **Resource**: `Modules\<nome modulo>\Filament\Resources\PatientResource`
+=======
+- **Resource**: `Modules\SaluteOra\Filament\Resources\PatientResource`
+>>>>>>> 052c3ad7 (.)
 - **Campi coinvolti**:
   - `data.health_card`
   - `data.identity_document`
