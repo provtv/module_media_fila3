@@ -8,10 +8,14 @@ use Exception;
 use Illuminate\Support\Arr;
 use Spatie\ModelStates\State;
 <<<<<<< HEAD
+<<<<<<< HEAD
 use Modules\Xot\Contracts\UserContract;
 =======
 use Modules\SaluteOra\Models\User;
 >>>>>>> 052c3ad7 (.)
+=======
+use Modules\User\Models\User;
+>>>>>>> 9e0a19a3 (.)
 use Filament\Tables\Actions\Action;
 use Filament\Forms\Components\Select;
 use Filament\Forms\Components\Textarea;
