@@ -23,11 +23,14 @@ class Merge
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 <<<<<<< HEAD
 >>>>>>> 9c5e628 (.)
 =======
 >>>>>>> da8eaf7 (.)
+=======
+>>>>>>> 8e094f6 (.)
         // Carica le immagini
         $image1 = $manager->make($path1);
         $image2 = $manager->make($path2);
@@ -39,6 +42,7 @@ class Merge
         $image1->save($outputPath);
 
         return true;
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 =======
@@ -82,5 +86,7 @@ class Merge
 >>>>>>> 9c5e628 (.)
 =======
 >>>>>>> da8eaf7 (.)
+=======
+>>>>>>> 8e094f6 (.)
     }
 }

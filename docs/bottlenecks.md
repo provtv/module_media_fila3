@@ -242,6 +242,7 @@ class Media extends Model
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 =======
 >>>>>>> 9c5e628 (.)
@@ -251,6 +252,9 @@ class Media extends Model
 =======
 
 >>>>>>> da8eaf7 (.)
+=======
+
+>>>>>>> 8e094f6 (.)
 # Supervisor config (/etc/supervisor/conf.d/laravel-media-worker.conf)
 [program:laravel-media-worker]
 process_name=%(program_name)s_%(process_num)02d

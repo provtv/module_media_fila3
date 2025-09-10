@@ -7,7 +7,11 @@ namespace Modules\Media\Filament\Tables\Columns;
 use Exception;
 use Illuminate\Support\Arr;
 use Spatie\ModelStates\State;
+<<<<<<< HEAD
 use Modules\SaluteOra\Models\User;
+=======
+use Modules\Xot\Contracts\UserContract;
+>>>>>>> 8e094f6 (.)
 use Filament\Tables\Actions\Action;
 use Filament\Forms\Components\Select;
 use Filament\Forms\Components\Textarea;

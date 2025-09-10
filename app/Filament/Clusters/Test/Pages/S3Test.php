@@ -16,17 +16,23 @@ use Illuminate\Support\Facades\Log;
 use function Safe\file_put_contents;
 use Filament\Forms\ComponentContainer;
 <<<<<<< HEAD
+<<<<<<< HEAD
 use Filament\Forms\Components\Textarea;
 use Illuminate\Support\Facades\Storage;
 use Modules\Media\Datas\CloudFrontData;
 
 =======
+=======
+>>>>>>> 8e094f6 (.)
 use Illuminate\Support\Facades\Config;
 use Filament\Forms\Components\Textarea;
 use Illuminate\Support\Facades\Storage;
 
 use Modules\Media\Datas\CloudFrontData;
+<<<<<<< HEAD
 >>>>>>> da8eaf7 (.)
+=======
+>>>>>>> 8e094f6 (.)
 use Filament\Notifications\Notification;
 use Filament\Forms\Components\FileUpload;
 use Modules\Media\Filament\Clusters\Test;
@@ -126,7 +132,10 @@ class S3Test extends XotBasePage
     protected function getFormSchema(): array
     {
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> 8e094f6 (.)
         $prefix=Config::string('media-library.prefix');
         
         $attachmentDir = 'form-attachments';
@@ -134,17 +143,24 @@ class S3Test extends XotBasePage
             $attachmentDir =$prefix.'/'.$attachmentDir;
         }
         
+<<<<<<< HEAD
 >>>>>>> da8eaf7 (.)
+=======
+>>>>>>> 8e094f6 (.)
         return [
             Grid::make(2)
                 ->schema([
                     FileUpload::make('attachment')
                         ->disk('s3')
 <<<<<<< HEAD
+<<<<<<< HEAD
                         ->directory('form-attachments')
 =======
                         ->directory($attachmentDir)
 >>>>>>> da8eaf7 (.)
+=======
+                        ->directory($attachmentDir)
+>>>>>>> 8e094f6 (.)
                         ->visibility('private')
                         ->columnSpan(1),
 

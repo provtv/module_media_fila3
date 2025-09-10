@@ -65,12 +65,16 @@ use Illuminate\Database\Eloquent\Relations\BelongsTo;
  * @property-read \Modules\Xot\Contracts\ProfileContract|null $updater
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
  * @mixin IdeHelperMediaConvert
 =======
 >>>>>>> 9c5e628 (.)
 =======
  * @mixin IdeHelperMediaConvert
 >>>>>>> da8eaf7 (.)
+=======
+ * @mixin IdeHelperMediaConvert
+>>>>>>> 8e094f6 (.)
  * @mixin \Eloquent
  */
 class MediaConvert extends BaseModel

@@ -64,4 +64,8 @@ class TemporaryUploadPolicy extends MediaBasePolicy
     {
         return $user->hasPermissionTo('temporary_upload.forceDelete');
     }
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> 8e094f6 (.)

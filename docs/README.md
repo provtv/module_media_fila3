@@ -1,7 +1,10 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> da8eaf7 (.)
+=======
+>>>>>>> 8e094f6 (.)
 # 📁 **Media Module** - Sistema Avanzato Gestione File Multimediali
 
 [![Laravel 12.x](https://img.shields.io/badge/Laravel-12.x-red.svg)](https://laravel.com/)
@@ -31,6 +34,7 @@ Il modulo **Media** è il centro di gestione file multimediali dell'applicazione
 ### 📁 **File Upload System**
 ```php
 // Upload sicuro con validazione
+<<<<<<< HEAD
 <<<<<<< HEAD
 =======
 # Modulo Media
@@ -164,6 +168,8 @@ class User extends Model
 >>>>>>> 9c5e628 (.)
 =======
 >>>>>>> da8eaf7 (.)
+=======
+>>>>>>> 8e094f6 (.)
 use Modules\Media\Traits\HasMedia;
 
 class User extends XotBaseModel
@@ -171,8 +177,11 @@ class User extends XotBaseModel
     use HasMedia;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> da8eaf7 (.)
+=======
+>>>>>>> 8e094f6 (.)
     
     protected $fillable = ['name', 'email'];
 }
@@ -602,6 +611,7 @@ ffmpeg -codecs
 **🚀 Performance**: 95/100 score  
 **🔧 S3Test Corrections**: Completate ✅
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 
     protected $fillable = [
@@ -867,4 +877,6 @@ docs/
 >>>>>>> 9c5e628 (.)
 =======
 >>>>>>> da8eaf7 (.)
+=======
+>>>>>>> 8e094f6 (.)
 

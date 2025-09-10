@@ -4,15 +4,26 @@ declare(strict_types=1);
 
 namespace Modules\Media\Tests\Unit\Models;
 
+<<<<<<< HEAD
 use Modules\Media\Models\BaseModel;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Illuminate\Database\Eloquent\Model;
+=======
+use Illuminate\Database\Eloquent\Model;
+use Illuminate\Foundation\Testing\RefreshDatabase;
+use Modules\Media\Models\BaseModel;
+>>>>>>> 8e094f6 (.)
 use Tests\TestCase;
 
 uses(TestCase::class, RefreshDatabase::class);
 
 beforeEach(function () {
+<<<<<<< HEAD
     $this->baseModel = new class extends BaseModel {
+=======
+    $this->baseModel = new class extends BaseModel
+    {
+>>>>>>> 8e094f6 (.)
         protected $table = 'test_media_table';
     };
 });

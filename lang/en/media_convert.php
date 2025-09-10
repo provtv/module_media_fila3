@@ -2,8 +2,11 @@
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> da8eaf7 (.)
+=======
+>>>>>>> 8e094f6 (.)
 return array (
   'navigation' => 
   array (
@@ -88,6 +91,7 @@ return array (
   ),
 );
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 return [
     'navigation' => [
@@ -108,3 +112,5 @@ return [
 >>>>>>> 9c5e628 (.)
 =======
 >>>>>>> da8eaf7 (.)
+=======
+>>>>>>> 8e094f6 (.)
