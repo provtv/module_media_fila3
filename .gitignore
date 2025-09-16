@@ -5,6 +5,7 @@
 
 # Lock files and cache
 *.lock
+<<<<<<< HEAD
 *.cache
 *.phar
 *.jar
@@ -12,12 +13,22 @@ package-lock.json
 yarn-error.log
 npm-debug.log
 composer.lock
+=======
+composer.lock
+package-lock.json
+*.cache
+yarn-error.log
+npm-debug.log
+>>>>>>> ec17afd (.)
 .phpunit.result.cache
 .php-cs-fixer.cache
 
 # Log files
 *.log
+<<<<<<< HEAD
 error_log
+=======
+>>>>>>> ec17afd (.)
 
 # Build directories
 /build/
@@ -34,20 +45,26 @@ public_html/hot
 storage/*.key
 .env
 
+<<<<<<< HEAD
 # Database directories
 database/Factories_
 database/Factories_old
 database/Migrations_old
 
+=======
+>>>>>>> ec17afd (.)
 # Local configurations
 Homestead.yaml
 Homestead.json
 /.vagrant
 
+<<<<<<< HEAD
 # IDE specific
 /.idea
 .phpintel
 
+=======
+>>>>>>> ec17afd (.)
 # Git specific
 .git-blame-ignore-revs
 .git-rewrite/
@@ -66,13 +83,32 @@ Homestead.json
 *.backup
 *.backup.*
 *.bak
+<<<<<<< HEAD
 *.new
+=======
+>>>>>>> ec17afd (.)
 
 # Documentation and cache
 docs/phpstan/
 docs/cache/
 cache/
 
+<<<<<<< HEAD
 # Development tools
 .windsurf/
 .cursor/
+=======
+# Old directories
+resources/views/Components_old
+database/Migrations_old
+database/Seeders_old
+database/Factories_old
+database_old
+
+# Old directories to ignore
+resources/views/Components_old
+database/Migrations_old
+database/Seeders_old
+database/Factories_old
+database_old
+>>>>>>> ec17afd (.)
