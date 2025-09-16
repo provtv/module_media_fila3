@@ -5,16 +5,19 @@
 
 # Lock files and cache
 *.lock
-composer.lock
-package-lock.json
 *.cache
+*.phar
+*.jar
+package-lock.json
 yarn-error.log
 npm-debug.log
+composer.lock
 .phpunit.result.cache
 .php-cs-fixer.cache
 
 # Log files
 *.log
+error_log
 
 # Build directories
 /build/
@@ -31,10 +34,19 @@ public_html/hot
 storage/*.key
 .env
 
+# Database directories
+database/Factories_
+database/Factories_old
+database/Migrations_old
+
 # Local configurations
 Homestead.yaml
 Homestead.json
 /.vagrant
+
+# IDE specific
+/.idea
+.phpintel
 
 # Git specific
 .git-blame-ignore-revs
@@ -54,8 +66,13 @@ Homestead.json
 *.backup
 *.backup.*
 *.bak
+*.new
 
 # Documentation and cache
 docs/phpstan/
 docs/cache/
 cache/
+
+# Development tools
+.windsurf/
+.cursor/
