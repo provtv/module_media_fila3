@@ -1,5 +1,6 @@
 # Collegamento alle Traduzioni del Modulo Media
 
+<<<<<<< HEAD
 Questo modulo utilizza le traduzioni centralizzate nella cartella [Lang](../../Lang/project_docs/).
 
 Consulta la documentazione delle traduzioni:
@@ -10,6 +11,8 @@ Consulta la documentazione delle traduzioni:
 ## Collegamento Bidirezionale
 
 Per ogni risorsa o campo localizzato, vedi anche il file corrispondente in questo modulo e la relativa sezione in [Lang](../../Lang/project_docs/).
+=======
+>>>>>>> b94526c9b (.)
 Questo modulo utilizza le traduzioni centralizzate nella cartella [Lang](../../Lang/docs/).
 
 Consulta la documentazione delle traduzioni:
@@ -22,6 +25,7 @@ Consulta la documentazione delle traduzioni:
 Per ogni risorsa o campo localizzato, vedi anche il file corrispondente in questo modulo e la relativa sezione in [Lang](../../Lang/docs/).
 
 > Aggiorna entrambi i riferimenti se aggiungi nuove chiavi di traduzione o modifichi la struttura.
+<<<<<<< HEAD
 
 ## Collegamenti tra versioni di lang-link.md
 * [lang-link.md](../../../Chart/project_docs/lang-link.md)
@@ -53,3 +57,5 @@ Per ogni risorsa o campo localizzato, vedi anche il file corrispondente in quest
 * [lang-link.md](../../../Patient/docs/lang-link.md)
 * [lang-link.md](../../../Cms/docs/lang-link.md)
 
+=======
+>>>>>>> b94526c9b (.)

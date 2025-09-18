@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 namic-component :component="$getEntryWrapperView()" :entry="$entry">
+=======
+<x-dynamic-component :component="$getEntryWrapperView()" :entry="$entry">
+>>>>>>> b94526c9b (.)
     @php
         $limit = $getLimit();
         $state = \Illuminate\Support\Arr::wrap($getState());

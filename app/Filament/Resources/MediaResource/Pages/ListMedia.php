@@ -22,9 +22,14 @@ class ListMedia extends XotBaseListRecords
     /**
      * @return array<string, Tables\Columns\Column>
      */
+<<<<<<< HEAD
     public function getTableColumns(): array
     {
         /** @var array<string, \Filament\Tables\Columns\Column> */
+=======
+    public function getListTableColumns(): array
+    {
+>>>>>>> b94526c9b (.)
         return [
             'id' => TextColumn::make('id')
                 ->sortable()
@@ -89,7 +94,12 @@ class ListMedia extends XotBaseListRecords
                     static fn ($record) => response()->download($record->getPath(), $record->file_name)
                 ),
             'convert' => Action::make('convert')
+<<<<<<< HEAD
                 ->icon('media-convert')
+=======
+                
+                ->icon('convert01')
+>>>>>>> b94526c9b (.)
                 ->color('gray')
                 ->url(
                     function ($record): string {

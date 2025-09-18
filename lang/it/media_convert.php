@@ -1,5 +1,6 @@
 <?php
 
+<<<<<<< HEAD
 declare(strict_types=1);
 
 
@@ -24,3 +25,13 @@ return array (
     ),
   ),
 );
+=======
+return [
+    'navigation' => [
+        'label' => 'media convert',
+        'group' => 'media convert',
+        'icon' => 'media convert',
+        'sort' => 20,
+    ],
+];
+>>>>>>> b94526c9b (.)

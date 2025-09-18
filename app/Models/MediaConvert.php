@@ -11,6 +11,11 @@ namespace Modules\Media\Models;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
 /**
+<<<<<<< HEAD
+=======
+ * 
+ *
+>>>>>>> b94526c9b (.)
  * @property int $id
  * @property int $media_id
  * @property string|null $codec_video
@@ -63,7 +68,10 @@ use Illuminate\Database\Eloquent\Relations\BelongsTo;
  * @method static \Illuminate\Database\Eloquent\Builder|MediaConvert whereWidth($value)
  * @property-read \Modules\Xot\Contracts\ProfileContract|null $creator
  * @property-read \Modules\Xot\Contracts\ProfileContract|null $updater
+<<<<<<< HEAD
  * @mixin IdeHelperMediaConvert
+=======
+>>>>>>> b94526c9b (.)
  * @mixin \Eloquent
  */
 class MediaConvert extends BaseModel

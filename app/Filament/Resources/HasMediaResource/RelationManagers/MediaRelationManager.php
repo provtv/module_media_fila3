@@ -6,6 +6,7 @@ namespace Modules\Media\Filament\Resources\HasMediaResource\RelationManagers;
 
 use Filament\Forms\Form;
 use Filament\Tables\Actions\Action;
+<<<<<<< HEAD
 use Illuminate\Database\Eloquent\Model;
 use Filament\Tables\Actions\ActionGroup;
 use Modules\Media\Filament\Resources\MediaResource;
@@ -17,14 +18,28 @@ class MediaRelationManager extends XotBaseRelationManager
 {
 
 
+=======
+use Filament\Tables\Actions\ActionGroup;
+use Illuminate\Database\Eloquent\Model;
+use Modules\Media\Filament\Resources\HasMediaResource\Actions\AddAttachmentAction;
+use Modules\Media\Filament\Resources\MediaResource;
+use Modules\Xot\Filament\Resources\XotBaseResource\RelationManager\XotBaseRelationManager;
+use Modules\Xot\Filament\Traits\NavigationLabelTrait;
+
+class MediaRelationManager extends XotBaseRelationManager
+{
+>>>>>>> b94526c9b (.)
     protected static string $relationship = 'media';
 
     protected static ?string $inverseRelationship = 'model';
 
+<<<<<<< HEAD
 
 
 
 
+=======
+>>>>>>> b94526c9b (.)
     /**
      * @return array<string, Action|ActionGroup>
      */

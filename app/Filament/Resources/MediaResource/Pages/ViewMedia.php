@@ -84,7 +84,10 @@ class ViewMedia extends \Modules\Xot\Filament\Resources\Pages\XotBaseViewRecord
      */
     protected function getHeaderActions(): array
     {
+<<<<<<< HEAD
         /** @var array<string, \Filament\Actions\Action> */
+=======
+>>>>>>> b94526c9b (.)
         return [
             DeleteAction::make(),
         ];
