@@ -24,6 +24,7 @@ class VideoPlayer extends Component
      */
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     public function __construct(): void {
 =======
     public function __construct(public string $mp4Src, public int $currentTime, ?string $driver = null)
@@ -33,6 +34,10 @@ class VideoPlayer extends Component
     public function __construct(public string $mp4Src, public int $currentTime, ?string $driver = null)
     {
 >>>>>>> d9766aa8a (.)
+=======
+    public function __construct(public string $mp4Src, public int $currentTime, ?string $driver = null)
+    {
+>>>>>>> 6b7c164a6 (.)
         $xot = XotData::make();
         Assert::string($driver ??= $xot->video_player);
 
@@ -46,6 +51,7 @@ class VideoPlayer extends Component
      */
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     public function render(): void {
 =======
     public function render()
@@ -55,6 +61,10 @@ class VideoPlayer extends Component
     public function render()
     {
 >>>>>>> d9766aa8a (.)
+=======
+    public function render()
+    {
+>>>>>>> 6b7c164a6 (.)
         /**
          * @phpstan-var view-string
          */

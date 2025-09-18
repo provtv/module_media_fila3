@@ -26,6 +26,7 @@ class GetVideoFrameContentAction
      */
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     public function execute(): void {
 =======
     public function execute(string $disk_mp4, string $file_mp4, int $time)
@@ -35,6 +36,10 @@ class GetVideoFrameContentAction
     public function execute(string $disk_mp4, string $file_mp4, int $time)
     {
 >>>>>>> d9766aa8a (.)
+=======
+    public function execute(string $disk_mp4, string $file_mp4, int $time)
+    {
+>>>>>>> 6b7c164a6 (.)
         if (! Storage::disk($disk_mp4)->exists($file_mp4)) {
             return '';
         }

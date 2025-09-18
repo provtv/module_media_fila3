@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 
 return array (
@@ -64,6 +65,8 @@ return array (
 =======
 =======
 >>>>>>> d9766aa8a (.)
+=======
+>>>>>>> 6b7c164a6 (.)
 return [
     'actions' => [
         'create' => [
@@ -98,6 +101,9 @@ return [
     ],
 ];
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> b94526c9b (.)
 =======
 >>>>>>> d9766aa8a (.)
+=======
+>>>>>>> 6b7c164a6 (.)

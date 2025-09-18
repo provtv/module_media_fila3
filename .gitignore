@@ -1,5 +1,6 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 # ==============================================
 # LARAXOT MODULE MEDIA - .GITIGNORE
 # ==============================================
@@ -150,6 +151,8 @@ test_media_files/
 =======
 =======
 >>>>>>> d9766aa8a (.)
+=======
+>>>>>>> 6b7c164a6 (.)
 vendor
 /vendor/
 node_modules/
@@ -250,9 +253,12 @@ cache/
 .php-cs-fixer.cache
 .php-cs-fixer.cache
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 # File di log
 *.log
 >>>>>>> b94526c9b (.)
 =======
 >>>>>>> d9766aa8a (.)
+=======
+>>>>>>> 6b7c164a6 (.)

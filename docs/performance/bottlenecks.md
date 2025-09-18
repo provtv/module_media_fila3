@@ -226,6 +226,7 @@ Implementare:
    ```
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 ### Versione HEAD
 
 
@@ -251,3 +252,5 @@ Implementare:
 >>>>>>> b94526c9b (.)
 =======
 >>>>>>> d9766aa8a (.)
+=======
+>>>>>>> 6b7c164a6 (.)

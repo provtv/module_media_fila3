@@ -13,6 +13,7 @@ use Illuminate\Database\Eloquent\Relations\BelongsTo;
 /**
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
  * 
  *
@@ -21,6 +22,10 @@ use Illuminate\Database\Eloquent\Relations\BelongsTo;
  * 
  *
 >>>>>>> d9766aa8a (.)
+=======
+ * 
+ *
+>>>>>>> 6b7c164a6 (.)
  * @property int $id
  * @property int $media_id
  * @property string|null $codec_video
@@ -75,11 +80,14 @@ use Illuminate\Database\Eloquent\Relations\BelongsTo;
  * @property-read \Modules\Xot\Contracts\ProfileContract|null $updater
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
  * @mixin IdeHelperMediaConvert
 =======
 >>>>>>> b94526c9b (.)
 =======
 >>>>>>> d9766aa8a (.)
+=======
+>>>>>>> 6b7c164a6 (.)
  * @mixin \Eloquent
  */
 class MediaConvert extends BaseModel

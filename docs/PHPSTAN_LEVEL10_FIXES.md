@@ -83,6 +83,7 @@ Questa soluzione mantiene la funzionalità originale migliorando al contempo la 
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 **Problema**: Diversi file del modulo Media contenevano conflitti di merge non risolti, indicati da marcatori `<<<<<<< HEAD` e `aurmich/dev
 =======
@@ -102,6 +103,9 @@ aurmich/dev
 =======
 **Problema**: Diversi file del modulo Media contenevano conflitti di merge non risolti, indicati da marcatori `<<<<<<< HEAD` e `>>>>>>> origin/dev`. Questi conflitti impedivano la corretta esecuzione del codice e causavano errori di sintassi.
 >>>>>>> d9766aa8a (.)
+=======
+**Problema**: Diversi file del modulo Media contenevano conflitti di merge non risolti, indicati da marcatori `<<<<<<< HEAD` e `>>>>>>> origin/dev`. Questi conflitti impedivano la corretta esecuzione del codice e causavano errori di sintassi.
+>>>>>>> 6b7c164a6 (.)
 
 **Soluzione implementata**:
 1. Analisi sistematica dei conflitti di merge in ciascun file

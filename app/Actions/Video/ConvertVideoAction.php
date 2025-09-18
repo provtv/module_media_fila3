@@ -10,11 +10,14 @@ namespace Modules\Media\Actions\Video;
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 use FFMpeg\Format\Video\X264;
 >>>>>>> b94526c9b (.)
 =======
 >>>>>>> d9766aa8a (.)
+=======
+>>>>>>> 6b7c164a6 (.)
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Str;
 use ProtoneMedia\LaravelFFMpeg\Support\FFMpeg;
@@ -23,12 +26,16 @@ use Spatie\QueueableAction\QueueableAction;
 use Webmozart\Assert\Assert;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 use FFMpeg\Format\Video\X264;
 =======
 >>>>>>> b94526c9b (.)
 =======
 use FFMpeg\Format\Video\X264;
 >>>>>>> d9766aa8a (.)
+=======
+use FFMpeg\Format\Video\X264;
+>>>>>>> 6b7c164a6 (.)
 
 class ConvertVideoAction
 {
@@ -44,6 +51,7 @@ class ConvertVideoAction
         $openedMedia = $media->open($file_mp4);
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
         
 =======
 
@@ -51,6 +59,9 @@ class ConvertVideoAction
 =======
         
 >>>>>>> d9766aa8a (.)
+=======
+        
+>>>>>>> 6b7c164a6 (.)
         $exportedMedia = $openedMedia->export();
 
         $format = new X264();
@@ -59,14 +70,18 @@ class ConvertVideoAction
         $toDiskMedia = $exportedMedia->toDisk($disk_mp4);
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> d9766aa8a (.)
+=======
+>>>>>>> 6b7c164a6 (.)
         
         $formattedMedia = $toDiskMedia->inFormat($format);
         
         $formattedMedia->save($file_new);
 
         return Storage::disk($disk_mp4)->url($file_new);
+<<<<<<< HEAD
 <<<<<<< HEAD
 =======
 
@@ -78,5 +93,7 @@ class ConvertVideoAction
 >>>>>>> b94526c9b (.)
 =======
 >>>>>>> d9766aa8a (.)
+=======
+>>>>>>> 6b7c164a6 (.)
     }
 }

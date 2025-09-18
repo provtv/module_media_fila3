@@ -7,11 +7,14 @@ namespace Modules\Media\Models;
 use Illuminate\Database\Eloquent\Builder;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 =======
 >>>>>>> b94526c9b (.)
 =======
 >>>>>>> d9766aa8a (.)
+=======
+>>>>>>> 6b7c164a6 (.)
 use Illuminate\Database\Eloquent\MassPrunable;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Http\UploadedFile;
@@ -50,16 +53,20 @@ use Webmozart\Assert\Assert;
  * @method static \Illuminate\Database\Eloquent\Builder<static>|TemporaryUpload whereUpdatedBy($value)
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
  * @mixin IdeHelperTemporaryUpload
  * @method static \Modules\Media\Database\Factories\TemporaryUploadFactory factory($count = null, $state = [])
 =======
 >>>>>>> b94526c9b (.)
 =======
 >>>>>>> d9766aa8a (.)
+=======
+>>>>>>> 6b7c164a6 (.)
  * @mixin \Eloquent
  */
 class TemporaryUpload extends Model implements HasMedia
 {
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
     use HasFactory;
@@ -86,6 +93,11 @@ class TemporaryUpload extends Model implements HasMedia
     use MassPrunable;
 
 >>>>>>> d9766aa8a (.)
+=======
+    use InteractsWithMedia;
+    use MassPrunable;
+
+>>>>>>> 6b7c164a6 (.)
     public static ?\Closure $manipulatePreview = null;
 
     public static ?string $disk = null;
@@ -96,6 +108,7 @@ class TemporaryUpload extends Model implements HasMedia
     /**
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
      * @var array<string>
 =======
      * @var array<string>|bool
@@ -103,6 +116,9 @@ class TemporaryUpload extends Model implements HasMedia
 =======
      * @var array<string>|bool
 >>>>>>> d9766aa8a (.)
+=======
+     * @var array<string>|bool
+>>>>>>> 6b7c164a6 (.)
      */
     protected $guarded = [];
 

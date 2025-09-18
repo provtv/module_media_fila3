@@ -44,6 +44,7 @@ class VideoStream
      */
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     public function __construct(): void {
 =======
     public function __construct(string $disk, string $path)
@@ -53,6 +54,10 @@ class VideoStream
     public function __construct(string $disk, string $path)
     {
 >>>>>>> d9766aa8a (.)
+=======
+    public function __construct(string $disk, string $path)
+    {
+>>>>>>> 6b7c164a6 (.)
         $filesystem = Storage::disk($disk);
 
         if (!$filesystem->exists($path)) {

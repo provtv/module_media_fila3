@@ -21,11 +21,14 @@ class MediaConvertResource extends XotBaseResource
     {
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
         /** @var array<string, \Filament\Forms\Components\Component> */
 =======
 >>>>>>> b94526c9b (.)
 =======
 >>>>>>> d9766aa8a (.)
+=======
+>>>>>>> 6b7c164a6 (.)
         return [
             'format' => Radio::make('format')
                 ->options([

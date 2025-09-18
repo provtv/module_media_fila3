@@ -1,5 +1,6 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 nds('media::layouts.master')
 =======
 @extends('media::layouts.master')
@@ -7,6 +8,9 @@ nds('media::layouts.master')
 =======
 @extends('media::layouts.master')
 >>>>>>> d9766aa8a (.)
+=======
+@extends('media::layouts.master')
+>>>>>>> 6b7c164a6 (.)
 
 @section('content')
     <h1>Hello World</h1>

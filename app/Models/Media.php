@@ -12,6 +12,7 @@ use Eloquent;
 use Exception;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 use Modules\Xot\Traits\Updater;
 use Illuminate\Database\Eloquent\Builder;
 use Modules\Media\Enums\AttachmentTypeEnum;
@@ -23,6 +24,8 @@ use Illuminate\Database\Eloquent\Collection as EloquentCollection;
 =======
 =======
 >>>>>>> d9766aa8a (.)
+=======
+>>>>>>> 6b7c164a6 (.)
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Collection as EloquentCollection;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
@@ -30,9 +33,12 @@ use Illuminate\Database\Eloquent\Relations\HasMany;
 use Modules\Media\Enums\AttachmentTypeEnum;
 use Modules\Xot\Traits\Updater;
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> b94526c9b (.)
 =======
 >>>>>>> d9766aa8a (.)
+=======
+>>>>>>> 6b7c164a6 (.)
 use Spatie\MediaLibrary\MediaCollections\Models\Media as SpatieMedia;
 
 /**
@@ -246,16 +252,20 @@ use Spatie\MediaLibrary\MediaCollections\Models\Media as SpatieMedia;
  * @method static \Spatie\MediaLibrary\MediaCollections\Models\Collections\MediaCollection<int, static> get($columns = ['*'])
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
  * @mixin IdeHelperMedia
  * @method static \Modules\Media\Database\Factories\MediaFactory factory($count = null, $state = [])
 =======
 >>>>>>> b94526c9b (.)
 =======
 >>>>>>> d9766aa8a (.)
+=======
+>>>>>>> 6b7c164a6 (.)
  * @mixin Eloquent
  */
 class Media extends SpatieMedia
 {
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
     use HasFactory;
@@ -271,6 +281,10 @@ class Media extends SpatieMedia
     use Updater;
 
 >>>>>>> d9766aa8a (.)
+=======
+    use Updater;
+
+>>>>>>> 6b7c164a6 (.)
     /** @var string */
     protected $connection = 'media';
 
@@ -380,6 +394,7 @@ class Media extends SpatieMedia
     }
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 
    /**
      * Create a new factory instance for the model.
@@ -395,4 +410,6 @@ class Media extends SpatieMedia
 >>>>>>> b94526c9b (.)
 =======
 >>>>>>> d9766aa8a (.)
+=======
+>>>>>>> 6b7c164a6 (.)
 }

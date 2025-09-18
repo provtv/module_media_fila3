@@ -26,6 +26,7 @@ class ListTemporaryUploads extends XotBaseListRecords
      */
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     public function getTableColumns(): array
     {
         /** @var array<string, \Filament\Tables\Columns\Column> */
@@ -37,6 +38,10 @@ class ListTemporaryUploads extends XotBaseListRecords
     public function getListTableColumns(): array
     {
 >>>>>>> d9766aa8a (.)
+=======
+    public function getListTableColumns(): array
+    {
+>>>>>>> 6b7c164a6 (.)
         return [
             'folder' => TextColumn::make('folder')
                 ->searchable()

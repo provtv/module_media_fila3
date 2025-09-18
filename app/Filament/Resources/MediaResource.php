@@ -23,11 +23,14 @@ class MediaResource extends XotBaseResource
     {
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
         /** @var array<string, \Filament\Forms\Components\Component> */
 =======
 >>>>>>> b94526c9b (.)
 =======
 >>>>>>> d9766aa8a (.)
+=======
+>>>>>>> 6b7c164a6 (.)
         return [
             'file' => FileUpload::make('file')
                 ->hint(static::trans('fields.file_hint'))

@@ -2,6 +2,7 @@
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 declare(strict_types=1);
 
 
@@ -29,6 +30,8 @@ return array (
 =======
 =======
 >>>>>>> d9766aa8a (.)
+=======
+>>>>>>> 6b7c164a6 (.)
 return [
     'navigation' => [
         'label' => 'media convert',
@@ -38,6 +41,9 @@ return [
     ],
 ];
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> b94526c9b (.)
 =======
 >>>>>>> d9766aa8a (.)
+=======
+>>>>>>> 6b7c164a6 (.)
