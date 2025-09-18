@@ -1,4 +1,4 @@
-<x-filament::page>
+lament::page>
     @php
         // Ensure $results is defined with a default value
         $results = $results ?? null;

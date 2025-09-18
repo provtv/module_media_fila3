@@ -42,8 +42,7 @@ class VideoStream
      *
      * @throws Exception If the file does not exist or other errors
      */
-    public function __construct(string $disk, string $path)
-    {
+    public function __construct(): void {
         $filesystem = Storage::disk($disk);
 
         if (!$filesystem->exists($path)) {

@@ -16,8 +16,7 @@ abstract class BaseS3Action
     protected string $bucketName;
     protected LoggerInterface $logger;
 
-    public function __construct(LoggerInterface $logger)
-    {
+    public function __construct(): void {
         $this->logger = $logger;
         $this->bucketName = $this->getStringConfig('media.aws.bucket_name', 'AWS_BUCKET_NAME', '');
         

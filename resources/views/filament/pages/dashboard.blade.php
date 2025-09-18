@@ -1,4 +1,4 @@
-<x-filament::page>
+lament::page>
     {{--
    
     --}}
