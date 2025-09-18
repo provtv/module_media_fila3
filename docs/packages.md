@@ -59,6 +59,7 @@
 - [Performance](packages/performance.md)
 - [Integrazioni](packages/integrations.md) 
 <<<<<<< HEAD
+<<<<<<< HEAD
 ### Versione HEAD
 
 
@@ -81,3 +82,5 @@
 
 =======
 >>>>>>> b94526c9b (.)
+=======
+>>>>>>> d9766aa8a (.)

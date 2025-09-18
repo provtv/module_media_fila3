@@ -19,9 +19,12 @@ class EditTemporaryUpload extends \Modules\Xot\Filament\Resources\Pages\XotBaseE
     protected function getHeaderActions(): array
     {
 <<<<<<< HEAD
+<<<<<<< HEAD
         /** @var array<string, \Filament\Actions\Action> */
 =======
 >>>>>>> b94526c9b (.)
+=======
+>>>>>>> d9766aa8a (.)
         return [
             DeleteAction::make(),
         ];

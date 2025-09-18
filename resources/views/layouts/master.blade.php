@@ -1,8 +1,12 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 TYPE html>
 =======
 <!DOCTYPE html>
 >>>>>>> b94526c9b (.)
+=======
+<!DOCTYPE html>
+>>>>>>> d9766aa8a (.)
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 
 <head>

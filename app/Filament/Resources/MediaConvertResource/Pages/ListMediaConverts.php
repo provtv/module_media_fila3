@@ -26,6 +26,7 @@ class ListMediaConverts extends XotBaseListRecords
      * @return array<string, Tables\Columns\Column>
      */
 <<<<<<< HEAD
+<<<<<<< HEAD
     public function getTableColumns(): array
     {
         /** @var array<string, \Filament\Tables\Columns\Column> */
@@ -33,6 +34,10 @@ class ListMediaConverts extends XotBaseListRecords
     public function getListTableColumns(): array
     {
 >>>>>>> b94526c9b (.)
+=======
+    public function getListTableColumns(): array
+    {
+>>>>>>> d9766aa8a (.)
         return [
             'id' => TextColumn::make('id')
                 ->sortable(),

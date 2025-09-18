@@ -1,4 +1,5 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 [{"name":"convert-video-command","class":"ConvertVideoCommand","module":null,"path":null,"ns":"Modules\\Media\\Console\\Commands\\ConvertVideoCommand"}]
 =======
 <<<<<<< HEAD
@@ -8,6 +9,8 @@
 =======
 >>>>>>> aurmich/dev
 >>>>>>> aurmich/dev
+=======
+>>>>>>> d9766aa8a (.)
 [
     {
         "name": "convert-video-command",
@@ -16,6 +19,7 @@
         "path": null,
         "ns": "Modules\\Media\\Console\\Commands\\ConvertVideoCommand"
     }
+<<<<<<< HEAD
 ]
 <<<<<<< HEAD
 =======
@@ -27,3 +31,6 @@
 >>>>>>> aurmich/dev
 >>>>>>> aurmich/dev
 >>>>>>> b94526c9b (.)
+=======
+]
+>>>>>>> d9766aa8a (.)

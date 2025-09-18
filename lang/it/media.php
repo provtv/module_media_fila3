@@ -1,6 +1,7 @@
 <?php
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 declare(strict_types=1);
 
 
@@ -69,6 +70,8 @@ return array (
   ),
 );
 =======
+=======
+>>>>>>> d9766aa8a (.)
 return [
     'pages' => 'Pagine',
     'widgets' => 'Widgets',
@@ -118,4 +121,7 @@ return [
         ],
     ],
 ];
+<<<<<<< HEAD
 >>>>>>> b94526c9b (.)
+=======
+>>>>>>> d9766aa8a (.)

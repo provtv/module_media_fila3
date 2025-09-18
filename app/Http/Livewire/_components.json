@@ -1,4 +1,5 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 [{"name":"card.video.clip","class":"Card\\Video\\Clip","module":null,"path":null,"ns":"Modules\\Media\\Http\\Livewire\\Card\\Video\\Clip"}]
 =======
 <<<<<<< HEAD
@@ -8,6 +9,8 @@
 =======
 >>>>>>> aurmich/dev
 >>>>>>> aurmich/dev
+=======
+>>>>>>> d9766aa8a (.)
 [
     {
         "name": "card.video.clip",
@@ -16,6 +19,7 @@
         "path": null,
         "ns": "Modules\\Media\\Http\\Livewire\\Card\\Video\\Clip"
     }
+<<<<<<< HEAD
 ]
 <<<<<<< HEAD
 =======
@@ -27,3 +31,6 @@
 >>>>>>> aurmich/dev
 >>>>>>> aurmich/dev
 >>>>>>> b94526c9b (.)
+=======
+]
+>>>>>>> d9766aa8a (.)

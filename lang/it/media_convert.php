@@ -1,6 +1,7 @@
 <?php
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 declare(strict_types=1);
 
 
@@ -26,6 +27,8 @@ return array (
   ),
 );
 =======
+=======
+>>>>>>> d9766aa8a (.)
 return [
     'navigation' => [
         'label' => 'media convert',
@@ -34,4 +37,7 @@ return [
         'sort' => 20,
     ],
 ];
+<<<<<<< HEAD
 >>>>>>> b94526c9b (.)
+=======
+>>>>>>> d9766aa8a (.)

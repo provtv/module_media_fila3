@@ -11,6 +11,7 @@ namespace Modules\Media\Models;
 use Eloquent;
 use Exception;
 <<<<<<< HEAD
+<<<<<<< HEAD
 use Modules\Xot\Traits\Updater;
 use Illuminate\Database\Eloquent\Builder;
 use Modules\Media\Enums\AttachmentTypeEnum;
@@ -20,13 +21,18 @@ use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Collection as EloquentCollection;
 =======
+=======
+>>>>>>> d9766aa8a (.)
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Collection as EloquentCollection;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 use Modules\Media\Enums\AttachmentTypeEnum;
 use Modules\Xot\Traits\Updater;
+<<<<<<< HEAD
 >>>>>>> b94526c9b (.)
+=======
+>>>>>>> d9766aa8a (.)
 use Spatie\MediaLibrary\MediaCollections\Models\Media as SpatieMedia;
 
 /**
@@ -239,14 +245,18 @@ use Spatie\MediaLibrary\MediaCollections\Models\Media as SpatieMedia;
  * @method static \Spatie\MediaLibrary\MediaCollections\Models\Collections\MediaCollection<int, static> all($columns = ['*'])
  * @method static \Spatie\MediaLibrary\MediaCollections\Models\Collections\MediaCollection<int, static> get($columns = ['*'])
 <<<<<<< HEAD
+<<<<<<< HEAD
  * @mixin IdeHelperMedia
  * @method static \Modules\Media\Database\Factories\MediaFactory factory($count = null, $state = [])
 =======
 >>>>>>> b94526c9b (.)
+=======
+>>>>>>> d9766aa8a (.)
  * @mixin Eloquent
  */
 class Media extends SpatieMedia
 {
+<<<<<<< HEAD
 <<<<<<< HEAD
     use HasFactory;
     use Updater;
@@ -257,6 +267,10 @@ class Media extends SpatieMedia
     use Updater;
 
 >>>>>>> b94526c9b (.)
+=======
+    use Updater;
+
+>>>>>>> d9766aa8a (.)
     /** @var string */
     protected $connection = 'media';
 
@@ -365,6 +379,7 @@ class Media extends SpatieMedia
         ];
     }
 <<<<<<< HEAD
+<<<<<<< HEAD
 
    /**
      * Create a new factory instance for the model.
@@ -378,4 +393,6 @@ class Media extends SpatieMedia
 
 =======
 >>>>>>> b94526c9b (.)
+=======
+>>>>>>> d9766aa8a (.)
 }

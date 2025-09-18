@@ -1,6 +1,7 @@
 # Modulo Media
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -11,6 +12,8 @@ aurmich/dev
 =======
 >>>>>>> aurmich/dev
 >>>>>>> aurmich/dev
+=======
+>>>>>>> d9766aa8a (.)
 ## Informazioni Generali
 - **Nome**: `laraxot/module_media_fila3`
 - **Descrizione**: Modulo dedicato alla gestione di immagini e video
@@ -31,6 +34,7 @@ app/
 └── Services/       # Servizi media
 ```
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 =======
 <<<<<<< HEAD
@@ -57,6 +61,8 @@ Per maggiori dettagli, consultare il [Rapporto sulla Risoluzione dei Conflitti](
 =======
 >>>>>>> aurmich/dev
 >>>>>>> aurmich/dev
+=======
+>>>>>>> d9766aa8a (.)
 ## Dipendenze
 ### Pacchetti Required
 - PHP ^8.2
@@ -137,6 +143,7 @@ composer format        # Formatta il codice
    - Verificare supporto GD/Imagick
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 ## Changelog
 Le modifiche vengono tracciate nel repository GitHub.
 =======
@@ -155,3 +162,7 @@ aurmich/dev
 Le modifiche vengono tracciate nel repository GitHub.
 >>>>>>> aurmich/dev
 >>>>>>> aurmich/dev
+=======
+## Changelog
+Le modifiche vengono tracciate nel repository GitHub. 
+>>>>>>> d9766aa8a (.)

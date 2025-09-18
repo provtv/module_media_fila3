@@ -14,11 +14,16 @@ class FileExtensionRule implements Rule
     protected array $validExtensions = [];
 
 <<<<<<< HEAD
+<<<<<<< HEAD
     public function __construct(): void {
 =======
     public function __construct(array $validExtensions = [])
     {
 >>>>>>> b94526c9b (.)
+=======
+    public function __construct(array $validExtensions = [])
+    {
+>>>>>>> d9766aa8a (.)
         $this->validExtensions = array_map(
             static fn (string $extension): string => mb_strtolower($extension),
             $validExtensions,

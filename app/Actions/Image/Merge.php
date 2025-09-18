@@ -1,16 +1,23 @@
 <?php
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> d9766aa8a (.)
 /**
  * @see https://github.com/protonemedia/laravel-ffmpeg
  */
 
+<<<<<<< HEAD
 >>>>>>> b94526c9b (.)
+=======
+>>>>>>> d9766aa8a (.)
 declare(strict_types=1);
 
 namespace Modules\Media\Actions\Image;
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 use Intervention\Image\ImageManager as InterventionImageManager;
 
@@ -41,6 +48,8 @@ class Merge
 
         return true;
 =======
+=======
+>>>>>>> d9766aa8a (.)
 // use Intervention\Image\Facades\Image;
 use Intervention\Image\Drivers\Gd\Driver;
 use Intervention\Image\ImageManager;
@@ -63,7 +72,10 @@ class Merge
     public function execute(array $filenames, string $filenameOut): void
     {
         $manager = app(ImageManager::class);
+<<<<<<< HEAD
 
+=======
+>>>>>>> d9766aa8a (.)
         $width = 0;
         $height = 0;
 
@@ -86,6 +98,9 @@ class Merge
         }
 
         $img_canvas->save(public_path().'/'.$filenameOut, 100);
+<<<<<<< HEAD
 >>>>>>> b94526c9b (.)
+=======
+>>>>>>> d9766aa8a (.)
     }
 }

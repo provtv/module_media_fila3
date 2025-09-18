@@ -20,17 +20,23 @@ class ConvertAction extends Action
         parent::setUp();
         $this->translateLabel()
 <<<<<<< HEAD
+<<<<<<< HEAD
             ->tooltip('convert')
             ->openUrlInNewTab()
             ->icon('media-convert')
 =======
+=======
+>>>>>>> d9766aa8a (.)
 
             ->tooltip('convert')
             ->openUrlInNewTab()
             // ->icon('heroicon-o-cloud-arrow-down')
             // ->icon('fas-file-excel')
             ->icon('convert01')
+<<<<<<< HEAD
 >>>>>>> b94526c9b (.)
+=======
+>>>>>>> d9766aa8a (.)
             ->form([
                 Radio::make('format')
                     ->options([

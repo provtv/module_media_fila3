@@ -1,4 +1,5 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 [{"name":"video-player","class":"VideoPlayer","module":null,"path":null,"ns":"Modules\\Media\\View\\Components\\VideoPlayer"}]
 =======
 <<<<<<< HEAD
@@ -8,6 +9,8 @@
 =======
 >>>>>>> aurmich/dev
 >>>>>>> aurmich/dev
+=======
+>>>>>>> d9766aa8a (.)
 [
     {
         "name": "video-player",
@@ -16,6 +19,7 @@
         "path": null,
         "ns": "Modules\\Media\\View\\Components\\VideoPlayer"
     }
+<<<<<<< HEAD
 ]
 <<<<<<< HEAD
 =======
@@ -27,3 +31,6 @@
 >>>>>>> aurmich/dev
 >>>>>>> aurmich/dev
 >>>>>>> b94526c9b (.)
+=======
+]
+>>>>>>> d9766aa8a (.)

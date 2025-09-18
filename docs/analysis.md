@@ -59,6 +59,7 @@ Modules/Media/
 - Security testing
 - Performance testing
 <<<<<<< HEAD
+<<<<<<< HEAD
 ### Versione HEAD
 
 
@@ -85,3 +86,5 @@ Modules/Media/
 
 =======
 >>>>>>> b94526c9b (.)
+=======
+>>>>>>> d9766aa8a (.)
