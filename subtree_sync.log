@@ -40,4 +40,9 @@
 [0;32m✅ [2025-04-23 14:59:06] Configurazione git completata con successo[0m
 [0;34mℹ️ [2025-04-23 15:01:53] Configurazione avanzata git...[0m
 [0;32m✅ [2025-04-23 15:01:53] Configurazione git completata con successo[0m
+<<<<<<< HEAD
 >>>>>>> 6b7c164a6 (.)
+=======
+[0;34mℹ️ [2025-04-23 15:03:24] Configurazione avanzata git...[0m
+[0;32m✅ [2025-04-23 15:03:24] Configurazione git completata con successo[0m
+>>>>>>> 68bfd76ae (.)
